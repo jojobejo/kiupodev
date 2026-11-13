@@ -35,7 +35,7 @@ class M_PojasaPic extends CI_Model
     public function get_active_vendors()
     {
         $this->db->select('kd_vendor_jasa, nama_vendor, kategori_jasa');
-        $this->db->from('tbpo_jasa_vendor');
+        $this->db->from('tbpo_vendor_jasa');
         $this->db->where('status_vendor', 'AKTIF');
         $this->db->where('deleted_at IS NULL', null, false);
         $this->db->order_by('nama_vendor', 'ASC');
@@ -49,7 +49,7 @@ class M_PojasaPic extends CI_Model
             ->where('kd_vendor_jasa', $vendorCode)
             ->where('status_vendor', 'AKTIF')
             ->where('deleted_at IS NULL', null, false)
-            ->count_all_results('tbpo_jasa_vendor') > 0;
+            ->count_all_results('tbpo_vendor_jasa') > 0;
     }
 
     /** Server-side Select2 source. Master specifications are authoritative and read-only for PIC. */
@@ -138,7 +138,7 @@ class M_PojasaPic extends CI_Model
         $purchaseJoin = $hasPurchaseIntegration
             ? ' LEFT JOIN tbpo_jasa_purchase_submission ps ON ps.kd_po_jasa=r.kd_po_jasa LEFT JOIN tbpo_po_nk pn ON pn.id_po_nk=ps.id_po_nk'
             : '';
-        $fromSql = ' FROM tbpo_jasa_request r LEFT JOIN tbpo_jasa_vendor v ON v.kd_vendor_jasa = r.kd_vendor_jasa' . $purchaseJoin . ' WHERE ' . implode(' AND ', $where);
+        $fromSql = ' FROM tbpo_jasa_request r LEFT JOIN tbpo_vendor_jasa v ON v.kd_vendor_jasa = r.kd_vendor_jasa' . $purchaseJoin . ' WHERE ' . implode(' AND ', $where);
         $filtered = (int) $this->db->query('SELECT COUNT(*) AS total' . $fromSql, $filteredBinds)->row()->total;
         $orderColumn = isset($columns[$params['order_column']]) ? $columns[$params['order_column']] : 'r.id_po_jasa';
         $orderDirection = strtolower($params['order_direction']) === 'asc' ? 'ASC' : 'DESC';
@@ -154,7 +154,7 @@ class M_PojasaPic extends CI_Model
     {
         $this->db->select('r.*, v.nama_vendor, v.kategori_jasa');
         $this->db->from('tbpo_jasa_request r');
-        $this->db->join('tbpo_jasa_vendor v', 'v.kd_vendor_jasa = r.kd_vendor_jasa', 'left');
+        $this->db->join('tbpo_vendor_jasa v', 'v.kd_vendor_jasa = r.kd_vendor_jasa', 'left');
         $this->db->where('r.kd_po_jasa', $requestCode);
         $this->db->where('r.deleted_at IS NULL', null, false);
         if ($context['role'] !== 'ADMIN') {

@@ -44,7 +44,7 @@ class PojasaPhase5Check extends CI_Controller
             'file_path' => 'images/pojasa/PHASE5-TEST/quotation.txt', 'file_original' => 'quotation.txt',
             'mime_type' => 'text/plain', 'file_size_bytes' => 10, 'sha256' => str_repeat('5', 64),
         ));
-        $this->assert('master_supplier_synced_as_service_vendor', $comparison1['success'] && (int) $this->db->where('source_supplier_code', $master['source_code'])->count_all_results('tbpo_jasa_vendor') === 1, $comparison1);
+        $this->assert('master_supplier_synced_as_service_vendor', $comparison1['success'] && (int) $this->db->where('source_supplier_code', $master['source_code'])->count_all_results('tbpo_vendor_jasa') === 1, $comparison1);
         $comparisonDocument = $this->db->get_where('tbpo_jasa_vendor_comparison', array('id_vendor_comparison' => $comparison1['id']))->row();
         $this->assert('comparison_supporting_document_is_linked', $comparisonDocument && (int) $comparisonDocument->id_dokumen > 0, $comparisonDocument);
 
@@ -171,7 +171,7 @@ class PojasaPhase5Check extends CI_Controller
     }
 
     private function findStock($rows, $id) { foreach ($rows as $row) { if ((int) $row['id_brg_nk'] === $id) { return $row; } } return null; }
-    private function counts() { return array('request' => (int) $this->db->count_all('tbpo_jasa_request'), 'vendor' => (int) $this->db->count_all('tbpo_jasa_vendor'), 'comparison' => (int) $this->db->count_all('tbpo_jasa_vendor_comparison'), 'allocation' => (int) $this->db->count_all('tbpo_jasa_stock_allocation'), 'draft' => (int) $this->db->count_all('tbpo_jasa_draft_pembelian'), 'spk' => (int) $this->db->count_all('tbpo_jasa_spk'), 'transaction' => (int) $this->db->count_all('tbpo_transaksi')); }
+    private function counts() { return array('request' => (int) $this->db->count_all('tbpo_jasa_request'), 'vendor' => (int) $this->db->count_all('tbpo_vendor_jasa'), 'comparison' => (int) $this->db->count_all('tbpo_jasa_vendor_comparison'), 'allocation' => (int) $this->db->count_all('tbpo_jasa_stock_allocation'), 'draft' => (int) $this->db->count_all('tbpo_jasa_draft_pembelian'), 'spk' => (int) $this->db->count_all('tbpo_jasa_spk'), 'transaction' => (int) $this->db->count_all('tbpo_transaksi')); }
     private function token() { return sprintf('50000000-0000-4000-8000-%012d', $this->sequence++); }
     private function assert($name, $passed, $detail = null) { $row = array('name' => $name, 'passed' => (bool) $passed); if (!$passed && $detail !== null) { $row['detail'] = $detail; } $this->checks[] = $row; }
 }

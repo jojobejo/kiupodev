@@ -4,7 +4,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class M_Pojasa extends CI_Model
 {
     private $requiredTables = array(
-        'tbpo_jasa_vendor',
+        'tbpo_vendor_jasa',
         'tbpo_jasa_request',
         'tbpo_jasa_request_detail',
         'tbpo_jasa_note',
@@ -48,7 +48,7 @@ class M_Pojasa extends CI_Model
 
     public function get_active_vendors()
     {
-        $this->db->from('tbpo_jasa_vendor');
+        $this->db->from('tbpo_vendor_jasa');
         $this->db->where('status_vendor', 'AKTIF');
         $this->db->order_by('nama_vendor', 'ASC');
 
@@ -57,7 +57,7 @@ class M_Pojasa extends CI_Model
 
     public function get_all_vendors()
     {
-        $this->db->from('tbpo_jasa_vendor');
+        $this->db->from('tbpo_vendor_jasa');
         $this->db->order_by('id_vendor_jasa', 'DESC');
 
         return $this->db->get()->result();
@@ -65,7 +65,7 @@ class M_Pojasa extends CI_Model
 
     public function get_vendor($kd_vendor_jasa)
     {
-        $this->db->from('tbpo_jasa_vendor');
+        $this->db->from('tbpo_vendor_jasa');
         $this->db->where('kd_vendor_jasa', $kd_vendor_jasa);
 
         return $this->db->get()->row();
@@ -73,7 +73,7 @@ class M_Pojasa extends CI_Model
 
     public function get_active_vendor_by_name($nama_vendor)
     {
-        $this->db->from('tbpo_jasa_vendor');
+        $this->db->from('tbpo_vendor_jasa');
         $this->db->where('LOWER(nama_vendor)', strtolower(trim((string) $nama_vendor)));
         $this->db->where('status_vendor', 'AKTIF');
 
@@ -82,14 +82,14 @@ class M_Pojasa extends CI_Model
 
     public function insert_vendor($data)
     {
-        return $this->db->insert('tbpo_jasa_vendor', $data);
+        return $this->db->insert('tbpo_vendor_jasa', $data);
     }
 
     public function update_vendor($kd_vendor_jasa, $data)
     {
         $this->db->where('kd_vendor_jasa', $kd_vendor_jasa);
 
-        return $this->db->update('tbpo_jasa_vendor', $data);
+        return $this->db->update('tbpo_vendor_jasa', $data);
     }
 
     public function delete_vendor($kd_vendor_jasa)
@@ -100,7 +100,7 @@ class M_Pojasa extends CI_Model
 
         $this->db->where('kd_vendor_jasa', $kd_vendor_jasa);
 
-        return $this->db->delete('tbpo_jasa_vendor');
+        return $this->db->delete('tbpo_vendor_jasa');
     }
 
     public function vendor_has_request($kd_vendor_jasa)
@@ -113,7 +113,7 @@ class M_Pojasa extends CI_Model
 
     public function generate_kd_vendor()
     {
-        $row = $this->db->query("SELECT MAX(RIGHT(kd_vendor_jasa, 4)) AS kd_max FROM tbpo_jasa_vendor")->row();
+        $row = $this->db->query("SELECT MAX(RIGHT(kd_vendor_jasa, 4)) AS kd_max FROM tbpo_vendor_jasa")->row();
         $next = $row && $row->kd_max ? ((int) $row->kd_max) + 1 : 1;
 
         return 'VJ' . sprintf('%04d', $next);
@@ -191,7 +191,7 @@ class M_Pojasa extends CI_Model
     {
         $this->db->select('r.*, v.nama_vendor, v.kategori_jasa, v.nama_pic, v.no_telpon');
         $this->db->from('tbpo_jasa_request r');
-        $this->db->join('tbpo_jasa_vendor v', 'v.kd_vendor_jasa = r.kd_vendor_jasa', 'left');
+        $this->db->join('tbpo_vendor_jasa v', 'v.kd_vendor_jasa = r.kd_vendor_jasa', 'left');
         if ($this->db->table_exists('tbpo_jasa_purchase_submission')) {
             $this->db->select('ps.kd_po_nk, pn.status AS po_pembelian_status');
             $this->db->join('tbpo_jasa_purchase_submission ps', 'ps.kd_po_jasa=r.kd_po_jasa', 'left');
@@ -213,7 +213,7 @@ class M_Pojasa extends CI_Model
     {
         $this->db->select('r.*, v.nama_vendor, v.kategori_jasa, v.nama_pic, v.no_telpon, v.email, v.alamat_vendor, v.npwp');
         $this->db->from('tbpo_jasa_request r');
-        $this->db->join('tbpo_jasa_vendor v', 'v.kd_vendor_jasa = r.kd_vendor_jasa', 'left');
+        $this->db->join('tbpo_vendor_jasa v', 'v.kd_vendor_jasa = r.kd_vendor_jasa', 'left');
         $this->db->where('r.kd_po_jasa', $kd_po_jasa);
 
         return $this->db->get()->row();
@@ -557,7 +557,7 @@ class M_Pojasa extends CI_Model
         $this->db->select('COALESCE(bs.total_realisasi, 0) AS total_realisasi');
         $this->db->select('COALESCE(bs.total_selisih, 0) AS total_selisih');
         $this->db->from('tbpo_jasa_request r');
-        $this->db->join('tbpo_jasa_vendor v', 'v.kd_vendor_jasa = r.kd_vendor_jasa', 'left');
+        $this->db->join('tbpo_vendor_jasa v', 'v.kd_vendor_jasa = r.kd_vendor_jasa', 'left');
         $this->db->join('tbpo_jasa_bast b', 'b.kd_po_jasa = r.kd_po_jasa', 'left');
         $this->db->join('tbpo_jasa_evaluation e', 'e.kd_po_jasa = r.kd_po_jasa', 'left');
         $this->db->join('(SELECT kd_po_jasa, SUM(nominal_realisasi) AS total_realisasi, SUM(selisih) AS total_selisih FROM tbpo_jasa_biaya GROUP BY kd_po_jasa) bs', 'bs.kd_po_jasa = r.kd_po_jasa', 'left');
@@ -577,7 +577,7 @@ class M_Pojasa extends CI_Model
         $this->db->select('COALESCE(SUM(bs.total_realisasi), 0) AS total_realisasi');
         $this->db->select('COALESCE(AVG(e.total_score), 0) AS avg_score');
         $this->db->select('COALESCE(AVG(DATEDIFF(b.tgl_bast, r.tgl_request)), 0) AS avg_durasi_hari');
-        $this->db->from('tbpo_jasa_vendor v');
+        $this->db->from('tbpo_vendor_jasa v');
         $this->db->join('tbpo_jasa_request r', "r.kd_vendor_jasa = v.kd_vendor_jasa AND r.status IN ('DONE','DITUTUP')", 'left');
         $this->db->join('tbpo_jasa_bast b', 'b.kd_po_jasa = r.kd_po_jasa', 'left');
         $this->db->join('tbpo_jasa_evaluation e', 'e.kd_po_jasa = r.kd_po_jasa', 'left');

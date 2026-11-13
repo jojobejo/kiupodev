@@ -138,7 +138,7 @@ class M_PojasaWorkflow extends CI_Model
         }
         $baseWhere = $where;
         $baseBinds = $binds;
-        $from = ' FROM tbpo_jasa_request r LEFT JOIN tbpo_jasa_vendor v ON v.kd_vendor_jasa = r.kd_vendor_jasa';
+        $from = ' FROM tbpo_jasa_request r LEFT JOIN tbpo_vendor_jasa v ON v.kd_vendor_jasa = r.kd_vendor_jasa';
         $total = (int) $this->db->query('SELECT COUNT(*) total' . $from . ' WHERE ' . implode(' AND ', $baseWhere), $baseBinds)->row()->total;
 
         $filterStatus = strtoupper(trim((string) $params['status']));
@@ -174,7 +174,7 @@ class M_PojasaWorkflow extends CI_Model
     {
         $this->db->select('r.*, v.nama_vendor, v.kategori_jasa');
         $this->db->from('tbpo_jasa_request r');
-        $this->db->join('tbpo_jasa_vendor v', 'v.kd_vendor_jasa = r.kd_vendor_jasa', 'left');
+        $this->db->join('tbpo_vendor_jasa v', 'v.kd_vendor_jasa = r.kd_vendor_jasa', 'left');
         $this->db->where('r.kd_po_jasa', $requestCode);
         $request = $this->db->get()->row();
 
@@ -290,7 +290,7 @@ class M_PojasaWorkflow extends CI_Model
         }
         if ($type === 'draft') {
             return $this->db->select('d.*,v.nama_vendor,u.nama_user AS created_name')
-                ->from('tbpo_jasa_draft_pembelian d')->join('tbpo_jasa_vendor v', 'v.id_vendor_jasa=d.id_vendor_jasa', 'left')
+                ->from('tbpo_jasa_draft_pembelian d')->join('tbpo_vendor_jasa v', 'v.id_vendor_jasa=d.id_vendor_jasa', 'left')
                 ->join('tbpo_user u', 'u.id_user=d.created_by', 'left')
                 ->where('d.id_material', (int) $materialId)->order_by('d.id_draft_pembelian', 'DESC')->get()->result_array();
         }
@@ -317,125 +317,9 @@ class M_PojasaWorkflow extends CI_Model
 
     public function get_active_vendors()
     {
-        $this->sync_master_suppliers_to_vendors();
 
         return $this->db->select('kd_vendor_jasa, nama_vendor, kategori_jasa')
-            ->order_by('nama_vendor', 'ASC')->get_where('tbpo_jasa_vendor', array('status_vendor' => 'AKTIF', 'deleted_at' => null))->result_array();
-    }
-
-    public function sync_master_suppliers_to_vendors()
-    {
-        $existingVendors = $this->db->select('source_supplier_code')->where('source_supplier_code IS NOT NULL', null, false)->get('tbpo_jasa_vendor')->result_array();
-        $existingCodes = array_column($existingVendors, 'source_supplier_code');
-
-        $suppliers = $this->db->get('tbpo_suplier')->result_array();
-        foreach ($suppliers as $s) {
-            $codeSup = trim((string)$s['kd_suplier']);
-            if ($codeSup === '' || in_array($codeSup, $existingCodes, true)) {
-                continue;
-            }
-            $code = $this->M_PojasaCore->generateAtomicNumber('VENDOR', 'ALL', 'VJ', 4, array(
-                array('table' => 'tbpo_jasa_vendor', 'column' => 'kd_vendor_jasa'),
-            ));
-            if (!$code) {
-                break;
-            }
-            $this->db->insert('tbpo_jasa_vendor', array(
-                'kd_vendor_jasa' => $code,
-                'source_type' => 'MASTER_SUPPLIER',
-                'source_supplier_code' => $codeSup,
-                'vendor_type' => 'VENDOR',
-                'nama_vendor' => trim($s['nama_suplier']),
-                'nama_vendor_normalized' => strtoupper(trim($s['nama_suplier'])),
-                'no_telpon' => trim($s['no_telpon']),
-                'email' => trim($s['email']),
-                'alamat_vendor' => trim($s['alamat_suplier']),
-                'status_vendor' => 'AKTIF',
-                'created_by' => 'SYSTEM',
-                'created_name' => 'Auto Sync Master Supplier',
-            ));
-            $existingCodes[] = $codeSup;
-        }
-    }
-
-    public function generate_supplier_code($name)
-    {
-        $clean = preg_replace('/\b(PT|CV|UD|PD|TB|TOKO|KOPERASI)\b/i', '', $name);
-        $clean = strtoupper(preg_replace('/[^a-zA-Z0-9]/', '', $clean));
-        if (strlen($clean) < 5) {
-            $prefix = str_pad($clean, 5, 'X');
-        } else {
-            $prefix = substr($clean, 0, 5);
-        }
-        $rows = $this->db->select('kd_suplier')->like('kd_suplier', $prefix, 'after')->get('tbpo_suplier')->result_array();
-        $maxNum = 0;
-        foreach ($rows as $r) {
-            $code = trim($r['kd_suplier']);
-            $suffix = substr($code, strlen($prefix));
-            if (is_numeric($suffix)) {
-                $num = (int) $suffix;
-                if ($num > $maxNum) {
-                    $maxNum = $num;
-                }
-            }
-        }
-        return $prefix . sprintf('%02d', $maxNum + 1);
-    }
-
-    public function save_manual_vendor_to_supplier($vendorName, $context)
-    {
-        $vendorName = trim((string) $vendorName);
-        if ($vendorName === '') {
-            return null;
-        }
-
-        // Periksa apakah nama supplier sudah ada di tbpo_suplier
-        $existingSupplier = $this->db->get_where('tbpo_suplier', array('nama_suplier' => $vendorName))->row();
-        if ($existingSupplier) {
-            $kdSupplier = $existingSupplier->kd_suplier;
-        } else {
-            $kdSupplier = $this->generate_supplier_code($vendorName);
-            $this->db->insert('tbpo_suplier', array(
-                'kd_suplier' => $kdSupplier,
-                'nama_suplier' => $vendorName,
-                'alamat_suplier' => '-',
-                'no_telpon' => '-',
-                'no_fax' => '-',
-                'email' => '-',
-                'gbr_logo' => 'default.png',
-            ));
-        }
-
-        // Periksa apakah sudah ada di tbpo_jasa_vendor
-        $existingVendor = $this->db->get_where('tbpo_jasa_vendor', array('source_supplier_code' => $kdSupplier, 'deleted_at' => null))->row();
-        if ($existingVendor) {
-            return $existingVendor;
-        }
-
-        // Daftarkan ke tbpo_jasa_vendor
-        $kdVendor = $this->M_PojasaCore->generateAtomicNumber('VENDOR', 'ALL', 'VJ', 4, array(
-            array('table' => 'tbpo_jasa_vendor', 'column' => 'kd_vendor_jasa'),
-        ));
-        if (!$kdVendor) {
-            return null;
-        }
-
-        $this->db->insert('tbpo_jasa_vendor', array(
-            'kd_vendor_jasa' => $kdVendor,
-            'source_type' => 'MASTER_SUPPLIER',
-            'source_supplier_code' => $kdSupplier,
-            'vendor_type' => 'VENDOR',
-            'nama_vendor' => $vendorName,
-            'nama_vendor_normalized' => strtoupper($vendorName),
-            'no_telpon' => '-',
-            'email' => '-',
-            'alamat_vendor' => '-',
-            'status_vendor' => 'AKTIF',
-            'created_by' => isset($context['kode_user']) ? $context['kode_user'] : 'PURCHASING',
-            'created_name' => isset($context['nama_user']) ? $context['nama_user'] : 'Purchasing User',
-        ));
-
-        return $this->db->get_where('tbpo_jasa_vendor', array('kd_vendor_jasa' => $kdVendor))->row();
+            ->order_by('nama_vendor', 'ASC')->get_where('tbpo_vendor_jasa', array('status_vendor' => 'AKTIF', 'deleted_at' => null))->result_array();
     }
 
     public function save_purchasing_review($context, $requestCode, $payload, $expectedStatus, $expectedVersion)
@@ -495,15 +379,6 @@ class M_PojasaWorkflow extends CI_Model
         if ($segment === 'purchasing') {
             $vendorCode = trim((string) (isset($payload['kd_vendor_jasa']) ? $payload['kd_vendor_jasa'] : ''));
             $vendorName = trim((string) (isset($payload['vendor_usulan']) ? $payload['vendor_usulan'] : ''));
-
-            if ($vendorCode === '__MANUAL__' || ($vendorCode === '' && $vendorName !== '')) {
-                // Simpan vendor manual langsung ke master supplier (tbpo_suplier) & tbpo_jasa_vendor
-                $savedVendor = $this->save_manual_vendor_to_supplier($vendorName, $context);
-                if ($savedVendor) {
-                    $vendorCode = $savedVendor->kd_vendor_jasa;
-                    $vendorName = $savedVendor->nama_vendor;
-                }
-            }
 
             $update['kd_vendor_jasa'] = $vendorCode !== '' ? $vendorCode : null;
             $update['vendor_usulan'] = $vendorName !== '' ? $vendorName : null;
@@ -621,6 +496,25 @@ class M_PojasaWorkflow extends CI_Model
                 'is_active' => 1
             );
             $this->db->insert('tbpo_jasa_material', $data);
+            $materialId = (int) $this->db->insert_id();
+            $available = 0;
+            if ($stockId) {
+                $this->db->query('SELECT id_brg_nk FROM tbpo_barang_nk WHERE id_brg_nk=? FOR UPDATE', array($stockId));
+                $stock = $this->db->query('SELECT qty_ready FROM v_stockbarangnk WHERE id_brg_nk=?', array($stockId))->row();
+                $reserved = $this->db->query("SELECT COALESCE(SUM(qty_allocation-qty_received-qty_released),0) qty FROM tbpo_jasa_stock_allocation WHERE id_brg_nk=? AND status_allocation IN ('ACTIVE','PARTIAL')", array($stockId))->row();
+                $available = max(0, (float) ($stock ? $stock->qty_ready : 0) - (float) $reserved->qty);
+            }
+            $shortage = max(0, round((float) $row['qty'] - $available, 2));
+            if ($shortage > 0) {
+                $this->db->where('id_material', $materialId)->update('tbpo_jasa_material', array('sumber_material' => $available > 0 ? 'CAMPURAN' : 'PEMBELIAN'));
+                $this->db->insert('tbpo_jasa_draft_pembelian', array(
+                    'kd_po_jasa' => $requestCode, 'revision_no' => $revisionNo, 'id_material' => $materialId,
+                    'qty' => $shortage, 'harga_estimasi' => $row['harga_pembanding'], 'status_draft' => 'DRAFT',
+                    'keterangan' => 'Otomatis dari tambahan material Purchasing: kekurangan stok.',
+                    'created_by' => (int) $context['id_user'],
+                    'idempotency_token' => sprintf('%s-%s-4%s-a%s-%s', bin2hex(random_bytes(4)), bin2hex(random_bytes(2)), substr(bin2hex(random_bytes(2)), 0, 3), substr(bin2hex(random_bytes(2)), 0, 3), bin2hex(random_bytes(6))),
+                ));
+            }
             return;
         }
 
@@ -632,6 +526,10 @@ class M_PojasaWorkflow extends CI_Model
             $data['sumber_material'] = $data['reference_type'] === 'MASTER' && $finalStockId ? 'STOK' : 'MANUAL';
             $data['total_estimasi'] = round((float) $row['harga_pembanding'] * $row['qty'], 2);
             $this->db->where('id_material', (int) $row['id'])->update('tbpo_jasa_material', $data);
+            if ($row['harga_pembanding'] !== null) {
+                $this->db->where(array('id_material' => (int) $row['id'], 'status_draft' => 'DRAFT'))
+                    ->set('version', 'version+1', false)->update('tbpo_jasa_draft_pembelian', array('harga_estimasi' => $row['harga_pembanding']));
+            }
         }
     }
 

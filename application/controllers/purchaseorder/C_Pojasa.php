@@ -1528,19 +1528,19 @@ class C_Pojasa extends CI_Controller
 
     private function appendVendorAuditColumns(&$data, $statusVendor)
     {
-        if ($this->db->field_exists('created_name', 'tbpo_jasa_vendor')) {
+        if ($this->db->field_exists('created_name', 'tbpo_vendor_jasa')) {
             $data['created_name'] = $this->session->userdata('nama_user');
         }
 
-        if ($this->db->field_exists('requested_by', 'tbpo_jasa_vendor')) {
+        if ($this->db->field_exists('requested_by', 'tbpo_vendor_jasa')) {
             $data['requested_by'] = $this->session->userdata('kode');
         }
 
-        if ($this->db->field_exists('requested_name', 'tbpo_jasa_vendor')) {
+        if ($this->db->field_exists('requested_name', 'tbpo_vendor_jasa')) {
             $data['requested_name'] = $this->session->userdata('nama_user');
         }
 
-        if ($this->db->field_exists('requested_departemen', 'tbpo_jasa_vendor')) {
+        if ($this->db->field_exists('requested_departemen', 'tbpo_vendor_jasa')) {
             $data['requested_departemen'] = $this->session->userdata('departemen');
         }
 
@@ -1551,15 +1551,15 @@ class C_Pojasa extends CI_Controller
 
     private function appendVendorApprovalColumns(&$data)
     {
-        if ($this->db->field_exists('approved_by', 'tbpo_jasa_vendor')) {
+        if ($this->db->field_exists('approved_by', 'tbpo_vendor_jasa')) {
             $data['approved_by'] = $this->session->userdata('kode');
         }
 
-        if ($this->db->field_exists('approved_name', 'tbpo_jasa_vendor')) {
+        if ($this->db->field_exists('approved_name', 'tbpo_vendor_jasa')) {
             $data['approved_name'] = $this->session->userdata('nama_user');
         }
 
-        if ($this->db->field_exists('approved_at', 'tbpo_jasa_vendor')) {
+        if ($this->db->field_exists('approved_at', 'tbpo_vendor_jasa')) {
             $data['approved_at'] = date('Y-m-d H:i:s');
         }
     }

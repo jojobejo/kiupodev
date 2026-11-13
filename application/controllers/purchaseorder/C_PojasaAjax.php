@@ -118,9 +118,8 @@ class C_PojasaAjax extends CI_Controller
         }
 
         $context = pojasa_session_context();
-        // The Purchasing UI warning is enforced server-side as well.  The
-        // request cannot move to PIC while an item's cart/draft remains active.
-        if ($context['role'] === 'PURCHASING' && $action === 'UPDATE') {
+        // Complete material planning before submitting the Purchasing review to Kadep.
+        if (in_array($context['role'], array('PURCHASING', 'ADMIN'), true) && $action === 'SUBMIT') {
             $request = $this->M_PojasaWorkflow->get_request($requestCode, $context);
             if ($request && $request->status === 'MENUNGGU_PURCHASING_AWAL') {
                 $pending = 0;
@@ -133,7 +132,7 @@ class C_PojasaAjax extends CI_Controller
                 }
                 if ($pending > 0) {
                     return $this->jsonResponse(false, 'PURCHASE_DRAFT_REVIEW_REQUIRED',
-                        'Masih ada ' . $pending . ' material dengan draft pembelian aktif. Tinjau dan cek ulang seluruh draft sebelum melanjutkan workflow.',
+                        'Masih ada ' . $pending . ' material yang belum terpenuhi dari stok atau draft pembelian. Lengkapi draft sebelum mengajukan ke Kadep.',
                         array('pending_material_count' => $pending, 'pending_materials' => $pendingMaterials), 409);
                 }
             }

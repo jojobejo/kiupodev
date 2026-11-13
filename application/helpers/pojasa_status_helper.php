@@ -58,9 +58,9 @@ function pojasa_next_status($currentStatus, $action, $departemen, $dirutOpsAppro
     $action = strtoupper(trim((string) $action));
     $transitions = array(
         'DRAFT' => array('SUBMIT' => 'MENUNGGU_PURCHASING_AWAL'),
-        'MENUNGGU_PURCHASING_AWAL' => array('UPDATE' => 'MENUNGGU_KONFIRMASI_PIC'),
+        'MENUNGGU_PURCHASING_AWAL' => array('SUBMIT' => 'MENUNGGU_KADEP'),
         'MENUNGGU_KONFIRMASI_PIC' => array(
-            'ACC' => 'MENUNGGU_PURCHASING',
+            'ACC' => 'MENUNGGU_KADEP',
             'REVISI' => 'REVISI_PIC',
         ),
         'MENUNGGU_KADEP' => array(
@@ -138,7 +138,7 @@ function pojasa_workflow_actions($status)
         return array('ACC', 'REVISI', 'REJECT');
     }
     if ($status === 'MENUNGGU_PURCHASING_AWAL') {
-        return array('UPDATE');
+        return array('SUBMIT');
     }
     if ($status === 'MENUNGGU_PURCHASING') {
         return array('SUBMIT');

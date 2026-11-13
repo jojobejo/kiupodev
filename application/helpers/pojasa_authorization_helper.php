@@ -6,6 +6,9 @@ function pojasa_normalize_department($departemen)
     $departemen = strtoupper(trim((string) $departemen));
     $departemen = preg_replace('/\s+/', ' ', $departemen);
 
+    if ($departemen === 'DIREKTUR UTAMA') {
+        return 'DIREKTUR';
+    }
     if ($departemen === 'DIREKTUR OPRASIONAL') {
         return 'DIREKTUR OPERASIONAL';
     }

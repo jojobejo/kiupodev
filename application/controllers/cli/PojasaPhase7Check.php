@@ -29,7 +29,7 @@ class PojasaPhase7Check extends CI_Controller
         $stock = $this->db->query('SELECT * FROM v_stockbarangnk WHERE qty_ready >= 3 ORDER BY qty_ready DESC LIMIT 1')->row();
         if (!$users || !$stock) { $this->assert('phase7_fixtures_available', false); return; }
         $before = $this->counts();
-        $masterBefore = (int) $this->db->count_all('tbpo_jasa_vendor');
+        $masterBefore = (int) $this->db->count_all('tbpo_vendor_jasa');
         $transactionBefore = (int) $this->db->count_all('tbpo_transaksi');
         $this->db->trans_begin();
 
@@ -54,7 +54,7 @@ class PojasaPhase7Check extends CI_Controller
         ));
         $manualRow = $this->db->get_where('tbpo_jasa_vendor_comparison', array('id_vendor_comparison' => $manual['id']))->row();
         $this->assert('manual_offer_does_not_create_active_master_vendor', $manual['success'] && !$manualRow->id_vendor_jasa
-            && $manualRow->manual_vendor_name === 'Teknisi Manual Phase 7' && (int) $this->db->count_all('tbpo_jasa_vendor') === $masterBefore, $manualRow);
+            && $manualRow->manual_vendor_name === 'Teknisi Manual Phase 7' && (int) $this->db->count_all('tbpo_vendor_jasa') === $masterBefore, $manualRow);
         $selected = $this->M_PojasaPurchasing->select_comparison($users['purchasing'], $code, $manual['id'], 'Vendor manual sesuai kebutuhan.');
         $request = $this->M_PojasaCore->get_request($code);
         $this->assert('manual_offer_is_renderable_as_selected_request_vendor', $selected['success'] && !$request->kd_vendor_jasa && $request->vendor_usulan === 'Teknisi Manual Phase 7');

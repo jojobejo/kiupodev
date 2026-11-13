@@ -484,3 +484,8 @@ $route['api/barang']                                    = 'api/C_Api/get_data_ba
 
 $route['stockkomersil']                                 = 'stock/C_Stockkomersil/api_stock_komersil';
 $route['api/stockkomersil']                             = 'stock/C_Stockkomersil/api_stock_komersil';
+
+// Master vendor jasa: Purchasing dan Admin.
+$route['pojasa/ajax/purchasing/vendor/list']['get'] = 'purchaseorder/C_PojasaPurchasing/vendor_list';
+$route['pojasa/ajax/purchasing/vendor/save']['post'] = 'purchaseorder/C_PojasaPurchasing/vendor_save';
+$route['pojasa/ajax/purchasing/vendor/delete']['post'] = 'purchaseorder/C_PojasaPurchasing/vendor_delete';

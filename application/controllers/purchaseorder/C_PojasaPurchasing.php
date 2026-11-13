@@ -56,6 +56,42 @@ class C_PojasaPurchasing extends CI_Controller
         return $this->json($result['success'], $result['code'], $result['success'] ? 'Barang ditandai siap diambil.' : 'Permintaan belum siap diproses.', $result['success'] ? array('pickup' => $this->M_PojasaPickup->state($code)) : array(), $result['success'] ? 200 : 403);
     }
 
+    public function vendor_list()
+    {
+        if (!$this->guardAjax('GET', false, true)) return;
+        $this->load->model('PO/M_VendorJasa');
+        return $this->json(true, 'OK', 'Daftar vendor dimuat.', array('items' => $this->M_VendorJasa->listing(substr(trim((string) $this->input->get('q', true)), 0, 150)), 'csrf_token' => pojasa_csrf_token()));
+    }
+
+    public function vendor_save()
+    {
+        if (!$this->guardAjax('POST', true, true)) return;
+        $data = array();
+        $limits = array('nama_vendor' => 150, 'alamat_vendor' => 5000, 'no_telpon' => 50, 'nama_pic' => 100, 'email' => 120, 'no_fax' => 50, 'deskripsi_vendor' => 5000);
+        foreach ($limits as $field => $limit) {
+            $data[$field] = trim((string) $this->input->post($field, true));
+            if (mb_strlen($data[$field]) > $limit) return $this->json(false, 'VALIDATION_ERROR', 'Data vendor terlalu panjang.', array(), 422);
+        }
+        if ($data['nama_vendor'] === '') return $this->json(false, 'VALIDATION_ERROR', 'Nama vendor wajib diisi.', array(), 422);
+        if ($data['email'] !== '' && !filter_var($data['email'], FILTER_VALIDATE_EMAIL)) return $this->json(false, 'VALIDATION_ERROR', 'Email vendor harus valid jika diisi. Email boleh dikosongkan.', array(), 422);
+        $data['nama_vendor_normalized'] = mb_strtoupper(preg_replace('/\s+/', ' ', $data['nama_vendor']), 'UTF-8');
+        $this->load->model('PO/M_VendorJasa');
+        $result = $this->M_VendorJasa->save($this->context(), (int) $this->input->post('id_vendor_jasa'), (int) $this->input->post('version'), $data);
+        if (!$result['success']) return $this->modelError($result);
+        return $this->json(true, 'SAVED', 'Vendor berhasil disimpan.', array('id' => $result['id'], 'csrf_token' => pojasa_csrf_token()));
+    }
+
+    public function vendor_delete()
+    {
+        if (!$this->guardAjax('POST', true, true)) return;
+        $id = (int) $this->input->post('id_vendor_jasa');
+        if ($id <= 0) return $this->json(false, 'VALIDATION_ERROR', 'Vendor tidak valid.', array(), 422);
+        $this->load->model('PO/M_VendorJasa');
+        $result = $this->M_VendorJasa->save($this->context(), $id, (int) $this->input->post('version'), array(), true);
+        if (!$result['success']) return $this->modelError($result);
+        return $this->json(true, 'DELETED', 'Vendor berhasil dihapus dari daftar aktif.', array('csrf_token' => pojasa_csrf_token()));
+    }
+
     public function vendor_search()
     {
         if (!$this->guardAjax('GET', false, true)) {
@@ -99,8 +135,8 @@ class C_PojasaPurchasing extends CI_Controller
         );
         $errors = array();
         if (!preg_match('/^[A-Z0-9_-]{5,30}$/', $requestCode)) { $errors['kd_po_jasa'] = 'Kode request tidak valid.'; }
-        if (!in_array($sourceType, array('MASTER', 'JASA', 'MANUAL'), true)) { $errors['vendor'] = 'Sumber vendor tidak valid.'; }
-        if (in_array($sourceType, array('MASTER', 'JASA'), true) && !preg_match('/^[A-Z0-9._-]{1,25}$/', $sourceCode)) { $errors['vendor'] = 'Pilih vendor dari hasil pencarian.'; }
+        if (!in_array($sourceType, array('JASA', 'MANUAL'), true)) { $errors['vendor'] = 'Sumber vendor tidak valid.'; }
+        if (in_array($sourceType, array('JASA'), true) && !preg_match('/^[A-Z0-9._-]{1,25}$/', $sourceCode)) { $errors['vendor'] = 'Pilih vendor dari hasil pencarian.'; }
         if ($sourceType === 'MANUAL' && mb_strlen($manualVendorName) > 180) { $errors['manual_vendor_name'] = 'Nama vendor manual maksimal 180 karakter.'; }
         if ($amount === false || $amount <= 0 || $amount >= 10000000000000000) { $errors['amount'] = 'Nilai penawaran harus lebih dari 0.'; }
         if ($quotationDate !== '' && !$this->validDate($quotationDate)) { $errors['quotation_date'] = 'Tanggal penawaran tidak valid.'; }
@@ -203,7 +239,7 @@ class C_PojasaPurchasing extends CI_Controller
         if ($materialId <= 0 || $qty === false || $qty <= 0 || $price === false || $price < 0 || mb_strlen($note) > 5000 || !$this->validUuid($token)) {
             return $this->json(false, 'VALIDATION_ERROR', 'Data draft pembelian tidak valid.', array(), 422);
         }
-        if ($vendorId > 0 && (int) $this->db->where(array('id_vendor_jasa' => $vendorId, 'status_vendor' => 'AKTIF'))->count_all_results('tbpo_jasa_vendor') !== 1) {
+        if ($vendorId > 0 && (int) $this->db->where(array('id_vendor_jasa' => $vendorId, 'status_vendor' => 'AKTIF'))->count_all_results('tbpo_vendor_jasa') !== 1) {
             return $this->json(false, 'VALIDATION_ERROR', 'Vendor draft tidak valid.', array(), 422);
         }
         $result = $this->M_PojasaPurchasing->save_purchase_draft($this->context(), $requestCode, $materialId, array(

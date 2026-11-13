@@ -62,7 +62,7 @@ class M_PojasaSettlement extends CI_Model
         if($r->status!=='DITUTUP' || !$this->db->where('kd_po_jasa',$code)->count_all_results('tbpo_jasa_bast')) return $this->abort('BAST_REQUIRED');
         $old=$this->db->get_where('tbpo_jasa_evaluation',array('kd_po_jasa'=>$code))->row_array();
         if((int)$input['row_version']!==($old?(int)$old['row_version']:0)) return $this->abort('CONCURRENT_UPDATE');
-        $vendor=$r->kd_vendor_jasa?$this->db->get_where('tbpo_jasa_vendor',array('kd_vendor_jasa'=>$r->kd_vendor_jasa))->row():null;
+        $vendor=$r->kd_vendor_jasa?$this->db->get_where('tbpo_vendor_jasa',array('kd_vendor_jasa'=>$r->kd_vendor_jasa))->row():null;
         $name=$vendor?$vendor->nama_vendor:$r->vendor_usulan;
         if(trim((string)$name)==='') return $this->abort('VENDOR_REQUIRED');
         $data=array_merge($scores,array('kd_po_jasa'=>$code,'kd_vendor_jasa'=>$vendor?$vendor->kd_vendor_jasa:null,

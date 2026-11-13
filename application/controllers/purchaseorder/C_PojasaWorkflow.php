@@ -243,19 +243,10 @@ class C_PojasaWorkflow extends CI_Controller
         $startDate = trim((string) (isset($payload['tgl_mulai_pekerjaan']) ? $payload['tgl_mulai_pekerjaan'] : ''));
         $endDate = trim((string) (isset($payload['tgl_selesai_pekerjaan']) ? $payload['tgl_selesai_pekerjaan'] : ''));
         if ($segment === 'purchasing') {
-            if ($vendorCode !== '' && $vendorCode !== '__MANUAL__') {
-                if ((int) $this->db->where(array('kd_vendor_jasa' => $vendorCode, 'status_vendor' => 'AKTIF'))->where('deleted_at IS NULL', null, false)->count_all_results('tbpo_jasa_vendor') !== 1) {
-                    $errors['vendor'] = 'Pilih satu vendor aktif atau isi nama vendor manual.';
-                }
-                $vendorName = '';
-            } elseif ($vendorCode === '__MANUAL__' || ($vendorCode === '' && $vendorName !== '')) {
-                $vendorCode = '__MANUAL__';
-                if ($vendorName === '' || mb_strlen($vendorName) > 180) {
-                    $errors['vendor'] = 'Nama vendor manual wajib diisi dan maksimal 180 karakter.';
-                }
-            } else {
-                $errors['vendor'] = 'Pilih vendor aktif atau pilih pengisian manual.';
+            if ($vendorCode === '' || (int) $this->db->where(array('kd_vendor_jasa' => $vendorCode, 'status_vendor' => 'AKTIF', 'deleted_at' => null))->count_all_results('tbpo_vendor_jasa') !== 1) {
+                $errors['vendor'] = 'Pilih vendor aktif dari daftar vendor.';
             }
+            $vendorName = '';
         }
         if (mb_strlen($note) > 5000) {
             $errors['note'] = 'Catatan maksimal 5.000 karakter.';
@@ -337,6 +328,12 @@ class C_PojasaWorkflow extends CI_Controller
             $cleanRow['keterangan_purchasing'] = null;
             if (!$isScope) {
                 $stockId = isset($row['id_brg_nk']) && (int) $row['id_brg_nk'] > 0 ? (int) $row['id_brg_nk'] : (!$isNew && !empty($source['id_brg_nk']) ? (int) $source['id_brg_nk'] : null);
+                if ($stockId) {
+                    $stock = $this->db->select('b.nama_barang,s.nm_satuan')->from('tbpo_barang_nk b')->join('tbpo_satuan s', 's.id_satuan=b.satuan')->where('b.id_brg_nk', $stockId)->get()->row();
+                    if (!$stock) { $errors['material_stock_' . $index] = 'Barang stok tidak ditemukan.'; continue; }
+                    $cleanRow['nama_material'] = $stock->nama_barang;
+                    $cleanRow['satuan'] = $stock->nm_satuan;
+                }
                 $cleanRow['id_brg_nk'] = $stockId;
                 $cleanRow['reference_type'] = $stockId ? 'MASTER' : 'MANUAL';
             }

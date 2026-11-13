@@ -8,7 +8,7 @@ class M_PojasaCore extends CI_Model
         'tbpo_jasa_scope',
         'tbpo_jasa_material',
         'tbpo_jasa_dokumen',
-        'tbpo_jasa_vendor',
+        'tbpo_vendor_jasa',
         'tbpo_jasa_stock_allocation',
         'tbpo_jasa_draft_pembelian',
         'tbpo_jasa_approval',
@@ -422,19 +422,19 @@ class M_PojasaCore extends CI_Model
             return array('success' => false, 'code' => 'INVALID_ACTION');
         }
         if ($stage === 'PURCHASING' && $request->status === 'MENUNGGU_PURCHASING_AWAL'
-            && $action === 'OK' && empty($request->reviewed_at_purchasing)) {
+            && $action === 'SUBMIT' && empty($request->reviewed_at_purchasing)) {
             $this->db->trans_rollback();
             return array('success' => false, 'code' => 'PURCHASING_REVIEW_NOT_SAVED');
         }
-        if ($stage === 'PURCHASING' && $request->status === 'MENUNGGU_PURCHASING_AWAL' && $action === 'OK') {
+        if ($stage === 'PURCHASING' && $request->status === 'MENUNGGU_PURCHASING_AWAL' && $action === 'SUBMIT') {
             $activeVendor = !empty($request->kd_vendor_jasa)
-                ? $this->db->get_where('tbpo_jasa_vendor', array(
+                ? $this->db->get_where('tbpo_vendor_jasa', array(
                     'kd_vendor_jasa' => $request->kd_vendor_jasa,
                     'status_vendor' => 'AKTIF',
                     'deleted_at' => null,
                 ))->row()
                 : null;
-            if (!$activeVendor && trim((string) $request->vendor_usulan) === '') {
+            if (!$activeVendor) {
                 $this->db->trans_rollback();
                 return array('success' => false, 'code' => 'PURCHASING_VENDOR_REQUIRED');
             }
@@ -937,7 +937,7 @@ class M_PojasaCore extends CI_Model
         $conditions = array(
             'kode_user = ?',
             "(aksess_lv = 2 AND UPPER(TRIM(departement)) = 'PURCHASING')",
-            "(aksess_lv = 3 AND UPPER(TRIM(departement)) = 'DIREKTUR')",
+            "(aksess_lv = 3 AND UPPER(TRIM(departement)) IN ('DIREKTUR', 'DIREKTUR UTAMA'))",
         );
         $binds = array($request->kd_user);
         if (pojasa_requires_dirut_ops($request->departemen)) {
@@ -969,7 +969,7 @@ class M_PojasaCore extends CI_Model
         ))->result_array();
         $vendor = null;
         if (!empty($request->kd_vendor_jasa)) {
-            $vendor = $this->db->get_where('tbpo_jasa_vendor', array('kd_vendor_jasa' => $request->kd_vendor_jasa))->row_array();
+            $vendor = $this->db->get_where('tbpo_vendor_jasa', array('kd_vendor_jasa' => $request->kd_vendor_jasa))->row_array();
         }
         $vendorComparison = array();
         if ($this->db->table_exists('tbpo_jasa_vendor_comparison')) {
@@ -1013,7 +1013,7 @@ class M_PojasaCore extends CI_Model
         } elseif ($nextStatus === 'MENUNGGU_DIRUT_OPS') {
             $users = $this->db->query("SELECT id_user FROM tbpo_user WHERE aksess_lv = 6 AND UPPER(TRIM(departement)) IN ('DIREKTUR OPERASIONAL','DIREKTUR OPRASIONAL')")->result();
         } elseif ($nextStatus === 'MENUNGGU_DIREKTUR') {
-            $users = $this->db->query("SELECT id_user FROM tbpo_user WHERE aksess_lv = 3 AND UPPER(TRIM(departement)) = 'DIREKTUR'")->result();
+            $users = $this->db->query("SELECT id_user FROM tbpo_user WHERE aksess_lv = 3 AND UPPER(TRIM(departement)) IN ('DIREKTUR', 'DIREKTUR UTAMA')")->result();
         } else {
             $users = $this->db->query('SELECT id_user FROM tbpo_user WHERE kode_user = ?', array($request->kd_user))->result();
         }

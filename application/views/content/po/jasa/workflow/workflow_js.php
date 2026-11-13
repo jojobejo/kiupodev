@@ -16,6 +16,9 @@
     devPurchaseSubmit: <?= json_encode(base_url('pojasa/ajax/purchasing/purchase/dev-submit')) ?>,
     pickupDecision: <?= json_encode(base_url('pojasa/ajax/workflow/pickup/decision')) ?>,
     createDemo: <?= json_encode(base_url('pojasa/ajax/workflow/demo/create')) ?>,
+    vendorList: <?= json_encode(base_url('pojasa/ajax/purchasing/vendor/list')) ?>,
+    vendorSave: <?= json_encode(base_url('pojasa/ajax/purchasing/vendor/save')) ?>,
+    vendorDelete: <?= json_encode(base_url('pojasa/ajax/purchasing/vendor/delete')) ?>,
     stocks: <?= json_encode(base_url('pojasa/ajax/purchasing/stocks')) ?>
   };
   var actionMeta = {
@@ -28,6 +31,144 @@
     SUBMIT: { label: 'AJUKAN', icon: 'fa-paper-plane', color: 'primary' },
     TERBITKAN: { label: 'TERBITKAN SPK & PO', icon: 'fa-file-signature', color: 'primary' }
   };
+
+
+  var vendorRows = [], vendorTable = null, vendorBusy = false, vendorLoading = false, vendorMode = '', vendorDirty = false, vendorNoticeTimer;
+  $('#workflowVendorChoice').select2({width: '100%', placeholder: 'Cari nama vendor', allowClear: true});
+  function vendorNotice(message, error) {
+    clearTimeout(vendorNoticeTimer);
+    $('#workflowVendorNotice').stop(true, true).removeClass('alert-danger alert-success').addClass(error ? 'alert-danger' : 'alert-success').text(message).fadeIn(120);
+    if (!error) vendorNoticeTimer = setTimeout(function() { $('#workflowVendorNotice').fadeOut(180); }, 4500);
+  }
+  function vendorFailure(response) {
+    vendorNotice((response && response.message) || 'Permintaan gagal. Silakan coba lagi.', true);
+    updateCsrf(response || {});
+  }
+  function setVendorBusy(busy) {
+    vendorBusy = busy;
+    $('#workflowVendorForm :input, #workflowVendorNew, #workflowVendorRefresh, #workflowVendorModal .vendor-cancel, #workflowVendorModal .vendor-actions button').prop('disabled', busy);
+    $('#workflowVendorSubmit').html(busy ? '<i class="fas fa-spinner fa-spin mr-1"></i>Menyimpan...' : '<i class="fas fa-save mr-1"></i>Simpan vendor');
+  }
+  function syncVendorChoices() {
+    var select = $('#workflowVendorChoice'), selected = select.val();
+    select.empty().append(new Option('', ''));
+    vendorRows.forEach(function(v) { select.append(new Option(v.nama_vendor, v.kd_vendor_jasa)); });
+    select.val(selected).trigger('change.select2');
+    if (selected && !select.val()) {
+      setPurchasingReviewStatus(false, 'purchasing');
+      $('.workflow-save-purchasing-form').prop('disabled', false);
+    }
+  }
+  function refreshVendors() {
+    if (vendorLoading) return;
+    vendorLoading = true;
+    $('#workflowVendorLoading').show();
+    $('#workflowVendorRefresh').prop('disabled', true).find('i').addClass('fa-spin');
+    return $.ajax({url:endpoints.vendorList, dataType:'json'}).done(function(response) {
+      updateCsrf(response);
+      if (!response.success) { vendorFailure(response); return; }
+      vendorRows = response.data.items || [];
+      $('#workflowVendorCount').text(vendorRows.length + ' vendor');
+      if (!vendorTable) {
+        vendorTable = $('#workflowVendorTable').DataTable({
+          dom: 'rtip', pageLength: 10, lengthChange: false, paging: true, searching: true,
+          order: [[0, 'asc']], columnDefs: [{targets: 6, orderable: false, searchable: false}],
+          language: {emptyTable: 'Belum ada vendor. Klik Tambah vendor untuk memulai.', zeroRecords: 'Tidak ada vendor yang cocok dengan pencarian.', info: 'Menampilkan _START_–_END_ dari _TOTAL_ vendor', infoEmpty: 'Tidak ada vendor', infoFiltered: '(dari _MAX_ vendor)', paginate: {previous: 'Sebelumnya', next: 'Berikutnya'}}
+        });
+      }
+      vendorTable.clear();
+      vendorRows.forEach(function(v) {
+        var tr = $('<tr>').attr('data-vendor-id', v.id_vendor_jasa), name = $('<td>').append($('<span class="vendor-name">').text(v.nama_vendor));
+        name.append($('<small class="vendor-description">').text(v.deskripsi_vendor || 'Belum ada deskripsi').attr('title', v.deskripsi_vendor || ''));
+        tr.append(name);
+        ['alamat_vendor','no_telpon','nama_pic','email','no_fax'].forEach(function(field) { tr.append($('<td>').text(v[field] || '-')); });
+        var actions = $('<td class="vendor-actions">');
+        [{action:'detail',icon:'eye',label:'Lihat detail',color:'primary'}, {action:'edit',icon:'edit',label:'Edit vendor',color:'warning'}, {action:'delete',icon:'trash',label:'Hapus vendor',color:'danger'}].forEach(function(a) {
+          actions.append($('<button type="button" class="btn btn-sm mr-1">').addClass('btn-outline-' + a.color + ' vendor-' + a.action).attr({'data-vendor-id':v.id_vendor_jasa, title:a.label, 'aria-label':a.label + ' ' + v.nama_vendor}).append($('<i>').addClass('fas fa-' + a.icon)));
+        });
+        tr.append(actions); vendorTable.row.add(tr[0]);
+      });
+      vendorTable.search($('#workflowVendorSearch').val() || '').draw(false);
+      vendorTable.columns.adjust();
+      syncVendorChoices();
+    }).fail(function(xhr) { vendorFailure(xhr.responseJSON); }).always(function() {
+      vendorLoading = false; $('#workflowVendorLoading').hide();
+      $('#workflowVendorRefresh').prop('disabled', vendorBusy).find('i').removeClass('fa-spin');
+    });
+  }
+  function closeVendorEditor() {
+    $('#workflowVendorEditor').stop(true, true).slideUp(160);
+    $('#workflowVendorForm')[0].reset();
+    $('#workflowVendorForm input[type=hidden]').val('');
+    $('#workflowVendorTable tr').removeClass('vendor-active');
+    vendorDirty = false; vendorMode = '';
+  }
+  function discardVendorChanges(next) {
+    if (vendorBusy) return;
+    if (!vendorDirty) { next(); return; }
+    Swal.fire({title:'Abaikan perubahan?',text:'Perubahan vendor belum disimpan.',icon:'question',showCancelButton:true,confirmButtonText:'Ya, abaikan',cancelButtonText:'Lanjut edit'}).then(function(result) { if (result.isConfirmed || result.value) { vendorDirty=false; next(); } });
+  }
+  function openVendorEditor(vendor, mode) {
+    discardVendorChanges(function() {
+      var form = $('#workflowVendorForm'); form[0].reset();
+      form.find('[name]').each(function() { $(this).val(vendor ? (vendor[this.name] || '') : ''); });
+      vendorMode = mode; vendorDirty = false;
+      form.find('input:not([type=hidden]), textarea').prop('readonly', mode === 'detail');
+      $('#workflowVendorFormTitle').text(mode === 'detail' ? 'Detail vendor' : (vendor ? 'Edit vendor' : 'Tambah vendor baru'));
+      $('#workflowVendorSubmit').toggle(mode !== 'detail');
+      $('#workflowVendorEditDetail').toggle(mode === 'detail');
+      $('#workflowVendorDescriptionCount').text(String(form.find('[name=deskripsi_vendor]').val() || '').length + ' / 5000');
+      $('#workflowVendorTable tr').removeClass('vendor-active');
+      if (vendor) $('#workflowVendorTable tr[data-vendor-id="' + Number(vendor.id_vendor_jasa) + '"]').addClass('vendor-active');
+      $('#workflowVendorEditor').stop(true, true).slideDown(180, function() {
+        var body = $('#workflowVendorModal .modal-body'); body.animate({scrollTop:0}, 180);
+        if (mode !== 'detail') $('#vendorField_nama_vendor').trigger('focus');
+      });
+    });
+  }
+  function vendorById(id) { return vendorRows.filter(function(v) { return Number(v.id_vendor_jasa) === Number(id); })[0]; }
+  $('#workflowVendorList').on('click', function() { $('#workflowVendorModal').modal('show'); refreshVendors(); });
+  $('#workflowVendorModal').on('shown.bs.modal', function() { if (vendorTable) vendorTable.columns.adjust(); }).on('hide.bs.modal', function(event) {
+    if (vendorBusy) { event.preventDefault(); return; }
+    if (vendorDirty) { event.preventDefault(); discardVendorChanges(function() { closeVendorEditor(); $('#workflowVendorModal').modal('hide'); }); }
+  }).on('hidden.bs.modal', function() { closeVendorEditor(); $('#workflowVendorNotice').hide(); });
+  $('#workflowVendorSearch').on('input', function() { if (vendorTable) vendorTable.search(this.value).draw(); });
+  $('#workflowVendorRefresh').on('click', refreshVendors);
+  $('#workflowVendorNew').on('click', function() { openVendorEditor(null, 'new'); });
+  $('#workflowVendorModal').on('click', '.vendor-cancel', function() { discardVendorChanges(closeVendorEditor); });
+  $('#workflowVendorForm').on('input change', ':input:not([type=hidden])', function() {
+    if (vendorMode !== 'detail') vendorDirty = true;
+    $('#workflowVendorDescriptionCount').text(String($('#vendorField_deskripsi_vendor').val() || '').length + ' / 5000');
+  });
+  $('#workflowVendorModal').on('click', '.vendor-edit, .vendor-detail', function() {
+    var vendor = vendorById($(this).attr('data-vendor-id'));
+    if (vendor && !vendorBusy) openVendorEditor(vendor, $(this).hasClass('vendor-detail') ? 'detail' : 'edit');
+  });
+  $('#workflowVendorEditDetail').on('click', function() { var v=vendorById($('#workflowVendorForm [name=id_vendor_jasa]').val()); if (v) openVendorEditor(v, 'edit'); });
+  $('#workflowVendorForm').on('submit', function(event) {
+    event.preventDefault(); if (vendorBusy || vendorMode === 'detail' || !this.reportValidity()) return;
+    var payload = $(this).serialize() + '&csrf_token=' + encodeURIComponent(csrfToken);
+    setVendorBusy(true);
+    $.ajax({url:endpoints.vendorSave,method:'POST',dataType:'json',headers:{'X-POJASA-CSRF':csrfToken},data:payload}).done(function(response) {
+      updateCsrf(response); if (!response.success) { vendorFailure(response); return; }
+      closeVendorEditor(); vendorNotice(response.message || 'Vendor berhasil disimpan.'); refreshVendors();
+    }).fail(function(xhr) { vendorFailure(xhr.responseJSON); }).always(function() { setVendorBusy(false); });
+  });
+  $('#workflowVendorModal').on('click', '.vendor-delete', function() {
+    if (vendorBusy) return;
+    var v=vendorById($(this).attr('data-vendor-id')); if (!v) return;
+    var hadUnsavedChanges = vendorDirty;
+    discardVendorChanges(function() {
+      Swal.fire({title:'Hapus vendor?',text:v.nama_vendor + ' akan dihapus dari daftar vendor aktif.',icon:'warning',showCancelButton:true,confirmButtonColor:'#dc3545',confirmButtonText:'Ya, hapus vendor',cancelButtonText:'Batal'}).then(function(result) {
+        if (!result.isConfirmed && !result.value) { vendorDirty = hadUnsavedChanges; return; }
+        setVendorBusy(true);
+        $.ajax({url:endpoints.vendorDelete,method:'POST',dataType:'json',headers:{'X-POJASA-CSRF':csrfToken},data:{id_vendor_jasa:v.id_vendor_jasa,version:v.version,csrf_token:csrfToken}}).done(function(response) {
+          updateCsrf(response); if (!response.success) { vendorFailure(response); return; }
+          closeVendorEditor(); vendorNotice(response.message || 'Vendor berhasil dihapus.'); refreshVendors();
+        }).fail(function(xhr) { vendorFailure(xhr.responseJSON); }).always(function() { setVendorBusy(false); });
+      });
+    });
+  });
 
   var table = null;
   if ($('#workflowIssueSpkPurchase').length) { $('#workflowDetailProcess').addClass('d-none'); }
@@ -140,7 +281,7 @@
     var meta = actionMeta[selectedAction];
     var isDirectorApproval = selectedAction === 'ACC' && currentState.request.status === 'MENUNGGU_DIREKTUR';
     Swal.fire({
-      title: isDirectorApproval ? 'Setujui request Direktur?' : meta.label + ' request?',
+      title: isDirectorApproval ? 'Setujui request Direktur?' : actionLabel(selectedAction, currentState.request) + ' request?',
       text: confirmationText(selectedAction, currentState.request),
       icon: selectedAction === 'REJECT' ? 'warning' : 'question',
       showCancelButton: true, confirmButtonText: isDirectorApproval ? 'Ya, setujui' : 'Ya, proses', cancelButtonText: 'Batal',
@@ -153,8 +294,7 @@
 
   $(document).on('click', '.workflow-save-section', function() {
     var button = $(this), segment = String(button.data('review-section') || (button.hasClass('workflow-save-purchasing-form') ? 'purchasing' : (button.attr('id') === 'workflowSaveScope' ? 'scope' : 'material')));
-    var manualVendor = $('#workflowVendorChoice').val() === '__MANUAL__';
-    var payload = { segment: segment, kd_vendor_jasa: manualVendor ? '__MANUAL__' : $('#workflowVendorChoice').val(), vendor_usulan: manualVendor ? $.trim($('#workflowManualVendor').val()) : '', note: $('#workflowPurchasingNote').val(), tgl_mulai_pekerjaan: $('#workflowStartDate').val(), tgl_selesai_pekerjaan: $('#workflowEndDate').val(), scopes: collectReviewRows('#workflowScopeTable'), materials: collectReviewRows('#workflowMaterialTable'), deleted_scopes: $('#workflowScopeTable').data('deleted') || [], deleted_materials: $('#workflowMaterialTable').data('deleted') || [] };
+    var payload = { segment: segment, kd_vendor_jasa: $('#workflowVendorChoice').val(), vendor_usulan: '', note: $('#workflowPurchasingNote').val(), tgl_mulai_pekerjaan: $('#workflowStartDate').val(), tgl_selesai_pekerjaan: $('#workflowEndDate').val(), scopes: collectReviewRows('#workflowScopeTable'), materials: collectReviewRows('#workflowMaterialTable'), deleted_scopes: $('#workflowScopeTable').data('deleted') || [], deleted_materials: $('#workflowMaterialTable').data('deleted') || [] };
     var isPurchasingRevision = ['REVISI_PURCHASING_KADEP', 'REVISI_PURCHASING_DIROPS', 'REVISI_PURCHASING_DIRUT']
       .indexOf(String($('#workflowDetailExpectedStatus').val() || '')) !== -1;
     if (segment === 'purchasing' && isPurchasingRevision && !$.trim(payload.note)) {
@@ -163,8 +303,8 @@
       });
       return;
     }
-    if (segment === 'purchasing' && (!$('#workflowVendorChoice').val() || (manualVendor && !$.trim(payload.vendor_usulan)))) {
-      Swal.fire('Vendor wajib dipilih', 'Pilih vendor aktif atau isi nama vendor secara manual.');
+    if (segment === 'purchasing' && !$('#workflowVendorChoice').val()) {
+      Swal.fire('Vendor wajib dipilih', 'Pilih vendor dari daftar vendor jasa.');
       return;
     }
     if (segment === 'purchasing' && (!payload.tgl_mulai_pekerjaan || !payload.tgl_selesai_pekerjaan)) {
@@ -207,7 +347,7 @@
         $(segment === 'scope' ? '#workflowSaveScope' : '#workflowSaveMaterial').addClass('d-none');
       }
       Swal.fire({ title: 'Perubahan tersimpan', text: response.message, icon: 'success', timer: 1500, showConfirmButton: false }).then(function() {
-        if (segment === 'purchasing') {
+        if (segment === 'purchasing' || segment === 'material') {
           window.location.reload();
         }
       });
@@ -251,13 +391,6 @@
     if (!editing) { setPurchasingReviewStatus(false, 'purchasing'); }
   });
   $(document).on('change', '#workflowVendorChoice', function() {
-    var manual = $(this).val() === '__MANUAL__';
-    $('#workflowManualVendorWrap').toggle(manual);
-    if (!manual) { $('#workflowManualVendor').val(''); }
-    setPurchasingReviewStatus(false, 'purchasing');
-    $('.workflow-save-purchasing-form').prop('disabled', false);
-  });
-  $(document).on('input change', '#workflowManualVendor', function() {
     setPurchasingReviewStatus(false, 'purchasing');
     $('.workflow-save-purchasing-form').prop('disabled', false);
   });
@@ -449,9 +582,7 @@
     $('#workflowDetailVendor').text(state.request.vendor || '-');
     if ($('#workflowVendorChoice').length) {
       var vendorCode = state.request.kd_vendor_jasa || '';
-      $('#workflowVendorChoice').val(vendorCode || (state.request.vendor_usulan ? '__MANUAL__' : ''));
-      $('#workflowManualVendor').val(state.request.vendor_usulan || '');
-      $('#workflowManualVendorWrap').toggle(!vendorCode);
+      $('#workflowVendorChoice').val(vendorCode).trigger('change.select2');
     }
     $('#workflowPurchasingNote').val(state.request.purchasing_note || '');
     renderPurchasingReviewStatus(state.request, state.review_segments || null);
@@ -480,7 +611,7 @@
     var body = $('#workflowDraftPurchaseBody').empty();
     if (!drafts.length) { body.append('<tr><td colspan="5" class="text-center text-muted">Belum ada draft PO Pembelian aktif.</td></tr>'); return; }
     drafts.forEach(function(draft) {
-      body.append('<tr><td><strong>' + escapeHtml(draft.nama_material) + '</strong><br><small class="text-muted">' + escapeHtml(draft.satuan || '-') + '</small></td><td class="text-right">' + Number(draft.qty || 0).toLocaleString('id-ID', {maximumFractionDigits: 2}) + '</td><td class="text-right">' + formatRupiah(draft.harga_estimasi || 0) + '</td><td>' + escapeHtml(draft.keterangan || '-') + '</td><td><button type="button" class="btn btn-xs btn-outline-warning workflow-revise-draft" data-draft-id="' + Number(draft.id_draft_pembelian) + '" data-material="' + escapeHtml(draft.nama_material) + '"><i class="fas fa-edit mr-1"></i>Revisi</button></td></tr>');
+      body.append('<tr><td><strong>' + escapeHtml(draft.nama_material) + '</strong><br><small class="text-muted">' + escapeHtml(draft.satuan || '-') + '</small></td><td class="text-right">' + Number(draft.qty || 0).toLocaleString('id-ID', {maximumFractionDigits: 2}) + '</td><td class="text-right">' + formatRupiah(draft.harga_estimasi || 0) + '<br><small>Total: ' + formatRupiah(Number(draft.qty || 0) * Number(draft.harga_estimasi || 0)) + '</small></td><td>' + escapeHtml(draft.keterangan || '-') + '</td><td><button type="button" class="btn btn-xs btn-outline-warning workflow-revise-draft" data-draft-id="' + Number(draft.id_draft_pembelian) + '" data-material="' + escapeHtml(draft.nama_material) + '"><i class="fas fa-edit mr-1"></i>Revisi</button></td></tr>');
     });
   }
 
@@ -610,7 +741,7 @@
       templateResult: function(item) {
         if (item.loading) return item.text;
         var data = item.itemData || {};
-        var qty = Number(data.qty_ready || 0);
+        var qty = Number(data.available_stock || 0);
         var badgeColor = qty > 0 ? 'badge-success' : 'badge-danger';
         var kode = data.kode_barang ? ('<span class="badge badge-secondary mr-1">' + escapeHtml(data.kode_barang) + '</span>') : '';
         return $('<div class="d-flex justify-content-between align-items-center py-1">' +
@@ -639,7 +770,7 @@
       if (itemData.deskripsi) {
         row.find('.workflow-description').val(itemData.deskripsi);
       }
-      var ready = Number(itemData.qty_ready || 0);
+      var ready = Number(itemData.available_stock || 0);
       row.find('.js-available').text(ready.toLocaleString('id-ID', {maximumFractionDigits: 2}));
       row.find('.js-ready').val(ready);
       row.find('.js-source').text('STOK');
@@ -737,7 +868,7 @@
     if (action === 'PENDING') { return 'Request akan tetap terkunci untuk PIC sampai KADEP memberi tindakan lanjutan.'; }
     if (action === 'REVISI') { return 'Request akan dikembalikan ke pihak yang wajib melakukan perbaikan.'; }
     if (action === 'REJECT') { return 'Request akan masuk ke status penolakan terminal.'; }
-    if (action === 'OK' && request.status === 'MENUNGGU_PURCHASING_AWAL') { return 'Harga dan vendor Purchasing akan diteruskan ke Kadep untuk approval.'; }
+    if (action === 'SUBMIT' && (request.status === 'MENUNGGU_PURCHASING_AWAL' || request.status === 'MENUNGGU_PURCHASING')) { return 'Harga dan vendor Purchasing akan diteruskan ke Kadep untuk approval.'; }
     if (action === 'REVISI' && request.status === 'MENUNGGU_PURCHASING_AWAL') { return 'Request dikembalikan ke PIC untuk diperbaiki.'; }
     if (action === 'ACC' && request.status === 'MENUNGGU_KONFIRMASI_PIC') { return 'Konfirmasi PIC historis akan diteruskan ke Kadep.'; }
     if (action === 'SUBMIT') { return 'Request akan diajukan kembali ke approver yang meminta revisi.'; }
@@ -745,6 +876,7 @@
   }
 
   function actionLabel(action, request) {
+    if (action === 'SUBMIT' && ['MENUNGGU_PURCHASING_AWAL', 'MENUNGGU_PURCHASING'].indexOf(request.status) !== -1) { return 'AJUKAN KE KADEP'; }
     if (request.status === 'MENUNGGU_KONFIRMASI_PIC' && action === 'ACC') { return 'KONFIRMASI KESEPAKATAN'; }
     if (request.status === 'MENUNGGU_KONFIRMASI_PIC' && action === 'REVISI') { return 'REVISI DATA'; }
     return actionMeta[action].label;

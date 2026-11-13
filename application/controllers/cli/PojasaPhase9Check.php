@@ -27,30 +27,35 @@ class PojasaPhase9Check extends CI_Controller
 
     private function testSequentialFlow()
     {
+        if (!$this->persist) $this->db->trans_begin();
         $users = $this->users();
         if (!$users) {
             $this->assert('phase9_users_available', false, 'PIC, KADEP satu departemen, Purchasing, Direktur Operasional, dan Direktur wajib tersedia.');
             return;
         }
         $before = $this->counts();
-        if (!$this->persist) {
-            $this->db->trans_begin();
-        }
         $code = $this->persist ? 'PJTEST' . date('dmyHis') : 'P9TESTFLOW001';
         $this->createRequest($code, $users);
 
         $directorSkip = $this->approve($users['director'], $code, 'ACC');
         $this->assert('director_cannot_skip_sequence', !$directorSkip['success'] && $directorSkip['code'] === 'FORBIDDEN', $directorSkip);
+        $wrongKadep = $users['kadep']; $wrongKadep['departemen'] = 'OTHER_DEPARTMENT';
+        $requestFixture = $this->M_PojasaCore->get_request($code);
+        $this->assert('wrong_department_cannot_approve', !pojasa_can_act_on_request($wrongKadep, $requestFixture, 'KADEP'));
+        $this->db->where('kd_po_jasa', $code)->update('tbpo_jasa_request', array('reviewed_at_purchasing'=>null));
+        $notReviewed = $this->approve($users['purchasing'], $code, 'SUBMIT');
+        $this->assert('purchasing_must_save_review', !$notReviewed['success'] && $notReviewed['code']==='PURCHASING_REVIEW_NOT_SAVED', $notReviewed);
+        $this->db->where('kd_po_jasa', $code)->update('tbpo_jasa_request', array('reviewed_at_purchasing'=>'2026-09-11 08:00:00'));
+        $oldAction = $this->approve($users['purchasing'], $code, 'UPDATE');
+        $this->assert('old_pic_update_action_disabled', !$oldAction['success'] && $oldAction['code']==='INVALID_ACTION', $oldAction);
         $steps = array(
-            $this->approve($users['purchasing'], $code, 'UPDATE'),
-            $this->approve($users['pic'], $code, 'ACC'),
             $this->approve($users['purchasing'], $code, 'SUBMIT'),
             $this->approve($users['kadep'], $code, 'ACC'),
             $this->approve($users['dirops'], $code, 'ACC'),
             $this->approve($users['director'], $code, 'ACC'),
             $this->approve($users['purchasing'], $code, 'TERBITKAN'),
         );
-        $expected = array('MENUNGGU_KONFIRMASI_PIC', 'MENUNGGU_PURCHASING', 'MENUNGGU_KADEP', 'MENUNGGU_DIRUT_OPS',
+        $expected = array('MENUNGGU_KADEP', 'MENUNGGU_DIRUT_OPS',
             'MENUNGGU_DIREKTUR', 'MENUNGGU_PENERBITAN_PURCHASING', 'SPK_TERBIT');
         $actual = array_map(function ($step) { return isset($step['status']) ? $step['status'] : null; }, $steps);
         $this->assert('mandatory_sequential_statuses', $actual === $expected, array('expected' => $expected, 'actual' => $actual));
@@ -67,12 +72,15 @@ class PojasaPhase9Check extends CI_Controller
             ->get_where('tbpo_jasa_approval', array('kd_po_jasa' => $code))->result_array();
         $stages = array_map(function ($row) { return $row['approval_stage']; }, $history);
         $this->assert('approval_history_matches_business_roles', $stages === array(
-            'PURCHASING', 'PIC', 'PURCHASING', 'KADEP', 'DIREKTUR_OPERASIONAL', 'DIREKTUR', 'PURCHASING',
+            'PURCHASING', 'KADEP', 'DIREKTUR_OPERASIONAL', 'DIREKTUR', 'PURCHASING',
         ), $stages);
         $picNotif = (int) $this->db->where(array('kd_po_jasa' => $code,
             'recipient_user_id' => $users['pic']['id_user'], 'event_type' => 'MENUNGGU_KONFIRMASI_PIC'))
             ->count_all_results('tbpo_jasa_notifikasi');
-        $this->assert('initial_purchasing_notifies_pic', $picNotif > 0);
+        $this->assert('initial_purchasing_does_not_require_pic_confirmation', $picNotif === 0);
+        foreach (array('kadep'=>'MENUNGGU_KADEP', 'dirops'=>'MENUNGGU_DIRUT_OPS', 'director'=>'MENUNGGU_DIREKTUR') as $recipient=>$event) {
+            $this->assert('notifies_' . $recipient, (int)$this->db->where(array('kd_po_jasa'=>$code, 'recipient_user_id'=>$users[$recipient]['id_user'], 'event_type'=>$event))->count_all_results('tbpo_jasa_notifikasi') > 0);
+        }
 
         if ($this->persist) {
             $this->testManualMasterAndStoreArtifacts($code, $legacyPo ? $legacyPo->kd_po_nk : '', $users['purchasing']);
@@ -130,7 +138,7 @@ class PojasaPhase9Check extends CI_Controller
     private function createRequest($code, $users)
     {
         $this->db->insert('tbpo_jasa_request', array(
-            'kd_po_jasa' => $code, 'vendor_usulan' => 'Vendor Phase 9',
+            'kd_po_jasa' => $code, 'kd_vendor_jasa' => $this->db->get_where('tbpo_vendor_jasa', array('status_vendor'=>'AKTIF', 'deleted_at'=>null), 1)->row()->kd_vendor_jasa,
             'kd_user' => $users['pic']['kode_user'], 'nm_user' => $users['pic']['nama_user'],
             'departemen' => $users['pic']['departemen'], 'tgl_request' => '2026-09-11', 'tgl_target' => '2026-09-30',
             'tgl_mulai_pekerjaan' => '2026-09-12', 'tgl_selesai_pekerjaan' => '2026-09-30',
@@ -142,12 +150,12 @@ class PojasaPhase9Check extends CI_Controller
         $this->db->insert('tbpo_jasa_scope', array(
             'kd_po_jasa' => $code, 'revision_no' => 1, 'line_no' => 1, 'jenis_scope' => 'JASA',
             'nama_scope' => 'Pemasangan', 'deskripsi' => 'Uji Phase 9', 'qty' => 1, 'satuan' => 'LOT',
-            'harga_estimasi' => 100000, 'total_estimasi' => 100000, 'is_active' => 1,
+            'harga_estimasi' => 100000, 'harga_pembanding_purchasing' => 100000, 'total_estimasi' => 100000, 'is_active' => 1,
         ));
         $this->db->insert('tbpo_jasa_material', array(
             'kd_po_jasa' => $code, 'revision_no' => 1, 'line_no' => 1, 'nama_material' => 'Material Phase 9',
             'deskripsi' => 'Material uji PO otomatis', 'qty_kebutuhan' => 2, 'satuan' => 'PCS',
-            'harga_estimasi' => 25000, 'total_estimasi' => 50000, 'sumber_material' => 'PEMBELIAN',
+            'harga_estimasi' => 25000, 'harga_pembanding_purchasing' => 25000, 'total_estimasi' => 50000, 'sumber_material' => 'PEMBELIAN',
             'created_by' => $users['pic']['id_user'], 'is_active' => 1,
         ));
         $materialId = (int) $this->db->insert_id();
@@ -169,6 +177,15 @@ class PojasaPhase9Check extends CI_Controller
 
     private function users()
     {
+        if (!$this->persist) {
+            $users = array(); $tag = 'FLOW' . bin2hex(random_bytes(4));
+            foreach (array('pic'=>array(4,'GA'), 'kadep'=>array(5,'GA'), 'purchasing'=>array(2,'PURCHASING'), 'dirops'=>array(6,'DIREKTUR OPERASIONAL'), 'director'=>array(3,'DIREKTUR')) as $name=>$settings) {
+                $row = array('kode_user'=>$tag.$name, 'nama_user'=>'Fixture '.$name, 'username'=>$tag.$name, 'password'=>bin2hex(random_bytes(16)), 'aksess_lv'=>$settings[0], 'departement'=>$settings[1]);
+                $this->db->insert('tbpo_user', $row); $row['id_user'] = (int)$this->db->insert_id();
+                $users[$name] = $this->context($row);
+            }
+            return $users;
+        }
         $pair = $this->db->query("SELECT p.id_user pic_id,k.id_user kadep_id FROM tbpo_user p JOIN tbpo_user k ON UPPER(TRIM(k.departement))=UPPER(TRIM(p.departement)) AND k.aksess_lv=5 WHERE p.aksess_lv=4 ORDER BY p.id_user LIMIT 1")->row();
         $purchasing = $this->db->query("SELECT * FROM tbpo_user WHERE aksess_lv=2 AND UPPER(TRIM(departement))='PURCHASING' LIMIT 1")->row_array();
         $dirops = $this->db->query("SELECT * FROM tbpo_user WHERE aksess_lv=6 AND UPPER(TRIM(departement)) IN ('DIREKTUR OPERASIONAL','DIREKTUR OPRASIONAL') LIMIT 1")->row_array();

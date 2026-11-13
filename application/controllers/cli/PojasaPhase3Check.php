@@ -53,7 +53,7 @@ class PojasaPhase3Check extends CI_Controller
             return;
         }
         $before = (int) $this->db->count_all('tbpo_jasa_request');
-        $vendorCountBefore = (int) $this->db->count_all('tbpo_jasa_vendor');
+        $vendorCountBefore = (int) $this->db->count_all('tbpo_vendor_jasa');
         $context = array(
             'id_user' => (int) $pic->id_user,
             'kode_user' => (string) $pic->kode_user,
@@ -87,7 +87,7 @@ class PojasaPhase3Check extends CI_Controller
         $request = $code ? $this->M_PojasaPic->get_request($code, $context) : null;
         $this->assert('draft_created', $saved['success'] && $request && $request->status === 'DRAFT', $saved);
         $this->assert('manual_vendor_saved_on_request', $request && empty($request->kd_vendor_jasa) && $request->vendor_usulan === 'Vendor Uji Fase 3');
-        $this->assert('manual_vendor_does_not_create_master', (int) $this->db->count_all('tbpo_jasa_vendor') === $vendorCountBefore);
+        $this->assert('manual_vendor_does_not_create_master', (int) $this->db->count_all('tbpo_vendor_jasa') === $vendorCountBefore);
         $this->assert('draft_atomic_number_format', (bool) preg_match('/^PJASA\d{10}$/', $code), $code);
         $this->assert('draft_totals_calculated', $request && (float) $request->estimasi_total_jasa === 250000.0 && (float) $request->estimasi_total_bahan === 30000.0 && (float) $request->estimasi_total === 280000.0);
         $this->assert('pic_owner_can_edit_draft', $this->M_PojasaPic->can_edit($request, $context));
