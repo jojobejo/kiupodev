@@ -244,12 +244,12 @@ class C_PojasaWorkflow extends CI_Controller
         $endDate = trim((string) (isset($payload['tgl_selesai_pekerjaan']) ? $payload['tgl_selesai_pekerjaan'] : ''));
         if ($segment === 'purchasing') {
             if ($vendorCode !== '' && $vendorCode !== '__MANUAL__') {
-                if ($vendorName !== '' || (int) $this->db->where(array('kd_vendor_jasa' => $vendorCode, 'status_vendor' => 'AKTIF'))->where('deleted_at IS NULL', null, false)->count_all_results('tbpo_jasa_vendor') !== 1) {
+                if ((int) $this->db->where(array('kd_vendor_jasa' => $vendorCode, 'status_vendor' => 'AKTIF'))->where('deleted_at IS NULL', null, false)->count_all_results('tbpo_jasa_vendor') !== 1) {
                     $errors['vendor'] = 'Pilih satu vendor aktif atau isi nama vendor manual.';
                 }
                 $vendorName = '';
-            } elseif ($vendorCode === '__MANUAL__') {
-                $vendorCode = '';
+            } elseif ($vendorCode === '__MANUAL__' || ($vendorCode === '' && $vendorName !== '')) {
+                $vendorCode = '__MANUAL__';
                 if ($vendorName === '' || mb_strlen($vendorName) > 180) {
                     $errors['vendor'] = 'Nama vendor manual wajib diisi dan maksimal 180 karakter.';
                 }
@@ -335,7 +335,11 @@ class C_PojasaWorkflow extends CI_Controller
                 'satuan' => $unit,
             );
             $cleanRow['keterangan_purchasing'] = null;
-            if (!$isScope && !$isNew) { $cleanRow['id_brg_nk'] = $source['id_brg_nk']; $cleanRow['reference_type'] = $source['reference_type']; }
+            if (!$isScope) {
+                $stockId = isset($row['id_brg_nk']) && (int) $row['id_brg_nk'] > 0 ? (int) $row['id_brg_nk'] : (!$isNew && !empty($source['id_brg_nk']) ? (int) $source['id_brg_nk'] : null);
+                $cleanRow['id_brg_nk'] = $stockId;
+                $cleanRow['reference_type'] = $stockId ? 'MASTER' : 'MANUAL';
+            }
             $clean[] = $cleanRow;
         }
         return $clean;
@@ -376,7 +380,7 @@ class C_PojasaWorkflow extends CI_Controller
             && $request->purchasing_revision_status === $request->status
         );
         $purchasingRevisionNotes = array();
-        $reviewSegments = array('purchasing' => false, 'scope' => false, 'material' => false);
+        $reviewSegments = array('purchasing' => false, 'scope' => false, 'material' => empty($materials));
         $reviewPrefix = $isPurchasingRevision ? 'REVISI_PURCHASING_' : 'REVIEW_PURCHASING_';
         foreach ($history['logs'] as $log) {
             if ($log['event_type'] === 'REVISI_PURCHASING_DISIMPAN' || $log['event_type'] === 'REVISI_PURCHASING_PURCHASING_DISIMPAN') {
@@ -390,7 +394,7 @@ class C_PojasaWorkflow extends CI_Controller
             }
         }
         if (!$isPurchasingRevision && !empty($request->reviewed_at_purchasing)
-            && !array_filter($reviewSegments)) {
+            && !$reviewSegments['purchasing'] && !$reviewSegments['scope']) {
             $reviewSegments = array('purchasing' => true, 'scope' => true, 'material' => true);
         }
         return array(

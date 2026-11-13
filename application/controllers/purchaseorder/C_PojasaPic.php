@@ -565,12 +565,18 @@ class C_PojasaPic extends CI_Controller
     private function validateLines($rows, $type, &$errors)
     {
         if (!is_array($rows)) {
+            if ($type === 'material') {
+                return array();
+            }
             $errors[$type] = 'Format baris tidak valid.';
             return array();
         }
         $clean = array();
         foreach ($rows as $index => $row) {
             if (!is_array($row)) {
+                if ($type === 'material') {
+                    continue;
+                }
                 $errors[$type . '_' . $index] = 'Format baris tidak valid.';
                 continue;
             }
@@ -581,46 +587,58 @@ class C_PojasaPic extends CI_Controller
             $unit = trim((string) (isset($row['satuan']) ? $row['satuan'] : ''));
             $qty = $this->parseNumber(isset($row[$qtyKey]) ? $row[$qtyKey] : '');
             $price = 0;
-            $isEmpty = $name === '' && $description === '' && ($qty === false || $qty == 0);
+            $catalogId = $type === 'material' ? (int) (isset($row['id_brg_nk']) ? $row['id_brg_nk'] : 0) : 0;
+            $isEmpty = $catalogId <= 0 && $name === '' && $description === '' && ($qty === false || $qty == 0) && ($type !== 'material' || $unit === '');
             if ($isEmpty) {
                 continue;
             }
-            if ($name === '' || mb_strlen($name) > 180) {
-                $errors[$type . '_' . $index . '_name'] = 'Nama wajib diisi, maksimal 180 karakter.';
-            }
-            if (mb_strlen($description) > 5000) {
-                $errors[$type . '_' . $index . '_description'] = 'Deskripsi maksimal 5.000 karakter.';
-            }
-            if ($qty === false || $qty <= 0 || $qty >= 10000000000000000) {
-                $errors[$type . '_' . $index . '_qty'] = 'Qty harus lebih dari 0.';
-            }
-            if ($unit === '' || mb_strlen($unit) > 40) {
-                $errors[$type . '_' . $index . '_unit'] = 'Satuan wajib diisi, maksimal 40 karakter.';
-            }
-            if ($errors) {
-                continue;
-            }
-            if ($type === 'scope') {
-                $clean[] = array('nama_scope' => $name, 'deskripsi' => $description, 'qty' => $qty, 'satuan' => $unit, 'harga_estimasi' => $price);
-            } else {
-                $catalogId = (int) (isset($row['id_brg_nk']) ? $row['id_brg_nk'] : 0);
+
+            $master = null;
+            $referenceType = 'MANUAL';
+            if ($type === 'material') {
                 $referenceType = strtoupper(trim((string) (isset($row['reference_type']) ? $row['reference_type'] : ($catalogId ? 'MASTER' : 'MANUAL'))));
                 if (!in_array($referenceType, array('MASTER', 'MANUAL'), true)) {
                     $errors[$type . '_' . $index . '_reference'] = 'Referensi barang tidak valid.';
                     continue;
                 }
-                $master = null;
                 if ($referenceType === 'MASTER') {
                     $master = $this->M_PojasaPic->get_catalog_material($catalogId);
                     if (!$master) {
                         $errors[$type . '_' . $index . '_reference'] = 'Barang master tidak ditemukan atau tidak aktif.';
                         continue;
                     }
-                    // Do not trust browser-sent master text: Purchasing-owned master data wins.
+                    // Gunakan data master barang milik Purchasing sebagai sumber otoritatif
                     $name = trim((string) $master['nama_barang']);
                     $description = trim((string) $master['descnk']);
-                    if ((string) $master['satuan'] !== '') $unit = (string) $master['satuan'];
+                    if ((string) $master['satuan'] !== '') {
+                        $unit = (string) $master['satuan'];
+                    }
                 }
+            }
+
+            $rowHasError = false;
+            if ($name === '' || mb_strlen($name) > 180) {
+                $errors[$type . '_' . $index . '_name'] = 'Nama wajib diisi, maksimal 180 karakter.';
+                $rowHasError = true;
+            }
+            if (mb_strlen($description) > 5000) {
+                $errors[$type . '_' . $index . '_description'] = 'Deskripsi maksimal 5.000 karakter.';
+                $rowHasError = true;
+            }
+            if ($qty === false || $qty <= 0 || $qty >= 10000000000000000) {
+                $errors[$type . '_' . $index . '_qty'] = 'Qty harus lebih dari 0.';
+                $rowHasError = true;
+            }
+            if ($unit === '' || mb_strlen($unit) > 40) {
+                $errors[$type . '_' . $index . '_unit'] = 'Satuan wajib diisi, maksimal 40 karakter.';
+                $rowHasError = true;
+            }
+            if ($rowHasError) {
+                continue;
+            }
+            if ($type === 'scope') {
+                $clean[] = array('nama_scope' => $name, 'deskripsi' => $description, 'qty' => $qty, 'satuan' => $unit, 'harga_estimasi' => $price);
+            } else {
                 $clean[] = array(
                     'id_brg_nk' => $master ? (int) $master['id_brg_nk'] : null,
                     'id_usulan_barang' => (int) (isset($row['id_usulan_barang']) ? $row['id_usulan_barang'] : 0),

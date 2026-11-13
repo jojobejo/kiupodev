@@ -1,3 +1,4 @@
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 <script>
 (function($) {
   'use strict';
@@ -13,8 +14,9 @@
     draft: <?= json_encode(base_url('pojasa/ajax/purchasing/draft/save')) ?>,
     draftCancel: <?= json_encode(base_url('pojasa/ajax/purchasing/draft/cancel')) ?>,
     devPurchaseSubmit: <?= json_encode(base_url('pojasa/ajax/purchasing/purchase/dev-submit')) ?>,
-    pickupDecision: <?= json_encode(base_url('pojasa/ajax/workflow/pickup/decision')) ?>
-    ,createDemo: <?= json_encode(base_url('pojasa/ajax/workflow/demo/create')) ?>
+    pickupDecision: <?= json_encode(base_url('pojasa/ajax/workflow/pickup/decision')) ?>,
+    createDemo: <?= json_encode(base_url('pojasa/ajax/workflow/demo/create')) ?>,
+    stocks: <?= json_encode(base_url('pojasa/ajax/purchasing/stocks')) ?>
   };
   var actionMeta = {
     OK: { label: 'OK - TERUSKAN KE KADEP', icon: 'fa-check', color: 'success' },
@@ -152,7 +154,7 @@
   $(document).on('click', '.workflow-save-section', function() {
     var button = $(this), segment = String(button.data('review-section') || (button.hasClass('workflow-save-purchasing-form') ? 'purchasing' : (button.attr('id') === 'workflowSaveScope' ? 'scope' : 'material')));
     var manualVendor = $('#workflowVendorChoice').val() === '__MANUAL__';
-    var payload = { segment: segment, kd_vendor_jasa: manualVendor ? '' : $('#workflowVendorChoice').val(), vendor_usulan: manualVendor ? $('#workflowManualVendor').val() : '', note: $('#workflowPurchasingNote').val(), tgl_mulai_pekerjaan: $('#workflowStartDate').val(), tgl_selesai_pekerjaan: $('#workflowEndDate').val(), scopes: collectReviewRows('#workflowScopeTable'), materials: collectReviewRows('#workflowMaterialTable'), deleted_scopes: $('#workflowScopeTable').data('deleted') || [], deleted_materials: $('#workflowMaterialTable').data('deleted') || [] };
+    var payload = { segment: segment, kd_vendor_jasa: manualVendor ? '__MANUAL__' : $('#workflowVendorChoice').val(), vendor_usulan: manualVendor ? $.trim($('#workflowManualVendor').val()) : '', note: $('#workflowPurchasingNote').val(), tgl_mulai_pekerjaan: $('#workflowStartDate').val(), tgl_selesai_pekerjaan: $('#workflowEndDate').val(), scopes: collectReviewRows('#workflowScopeTable'), materials: collectReviewRows('#workflowMaterialTable'), deleted_scopes: $('#workflowScopeTable').data('deleted') || [], deleted_materials: $('#workflowMaterialTable').data('deleted') || [] };
     var isPurchasingRevision = ['REVISI_PURCHASING_KADEP', 'REVISI_PURCHASING_DIROPS', 'REVISI_PURCHASING_DIRUT']
       .indexOf(String($('#workflowDetailExpectedStatus').val() || '')) !== -1;
     if (segment === 'purchasing' && isPurchasingRevision && !$.trim(payload.note)) {
@@ -199,18 +201,35 @@
         var tableSelector = segment === 'scope' ? '#workflowScopeTable' : '#workflowMaterialTable';
         $(tableSelector).data('editing', false).find('input, textarea').prop('readonly', true).removeClass('workflow-edit-active');
         $(tableSelector).find('.workflow-delete-row, .workflow-add-draft').prop('disabled', true);
+        $(tableSelector).find('.workflow-stock-select').prop('disabled', true);
         $('.workflow-save-review[data-review-section="' + segment + '"]').prop('disabled', true);
         $('.workflow-toggle-section[data-section="' + segment + '"]').removeClass('btn-secondary active').addClass('btn-outline-warning');
         $(segment === 'scope' ? '#workflowSaveScope' : '#workflowSaveMaterial').addClass('d-none');
       }
-      Swal.fire({ title: 'Perubahan tersimpan', text: response.message, icon: 'success', timer: 1700, showConfirmButton: false });
+      Swal.fire({ title: 'Perubahan tersimpan', text: response.message, icon: 'success', timer: 1500, showConfirmButton: false }).then(function() {
+        if (segment === 'purchasing') {
+          window.location.reload();
+        }
+      });
       $(document).trigger('pojasa:refresh-notifications');
     }).fail(function(xhr) { showAjaxError(xhr, 'Review Purchasing gagal disimpan.'); })
       .always(function() { button.prop('disabled', false); });
   });
 
   $(document).on('click', '.workflow-toggle-edit', function() { var button=$(this), target = $(button.data('target')), editing=target.prop('readonly'); target.prop('readonly', !editing); button.toggleClass('btn-outline-warning', !editing).toggleClass('btn-secondary', editing); $(button.data('save')).toggleClass('d-none', !editing); });
-  $(document).on('click', '.workflow-toggle-section', function() { var button=$(this), section=button.data('section'), table = section === 'scope' ? $('#workflowScopeTable') : $('#workflowMaterialTable'), editing = !!table.data('editing'); table.find('input, textarea').prop('readonly', editing).toggleClass('workflow-edit-active', !editing); table.find('.workflow-delete-row').prop('disabled', editing); if(section==='material'){ $('#workflowPurchasingNote, .workflow-schedule-input').prop('readonly', editing).toggleClass('workflow-edit-active', !editing); table.find('.workflow-add-draft').each(function(){ $(this).prop('disabled', !editing ? !(Number($(this).data('qty')) > 0) : true); });} table.data('editing', !editing); button.toggleClass('btn-outline-warning', editing).toggleClass('btn-secondary', !editing); $(button.data('save')).toggleClass('d-none', editing); });
+  $(document).on('click', '.workflow-toggle-section', function() {
+    var button=$(this), section=button.data('section'), table = section === 'scope' ? $('#workflowScopeTable') : $('#workflowMaterialTable'), editing = !!table.data('editing');
+    table.find('input, textarea').prop('readonly', editing).toggleClass('workflow-edit-active', !editing);
+    table.find('.workflow-delete-row').prop('disabled', editing);
+    if(section==='material'){
+      $('#workflowPurchasingNote, .workflow-schedule-input').prop('readonly', editing).toggleClass('workflow-edit-active', !editing);
+      table.find('.workflow-add-draft').each(function(){ $(this).prop('disabled', !editing ? !(Number($(this).data('qty')) > 0) : true); });
+      table.find('.workflow-stock-select').prop('disabled', editing);
+    }
+    table.data('editing', !editing);
+    button.toggleClass('btn-outline-warning', editing).toggleClass('btn-secondary', !editing);
+    $(button.data('save')).toggleClass('d-none', editing);
+  });
   $(document).on('click', '.workflow-toggle-section', function() {
     var section = String($(this).data('section') || '');
     var table = section === 'scope' ? $('#workflowScopeTable') : $('#workflowMaterialTable');
@@ -235,7 +254,12 @@
     var manual = $(this).val() === '__MANUAL__';
     $('#workflowManualVendorWrap').toggle(manual);
     if (!manual) { $('#workflowManualVendor').val(''); }
-    if ($(this).hasClass('workflow-edit-active')) { setPurchasingReviewStatus(false, 'purchasing'); $('.workflow-save-purchasing-form').prop('disabled', false); }
+    setPurchasingReviewStatus(false, 'purchasing');
+    $('.workflow-save-purchasing-form').prop('disabled', false);
+  });
+  $(document).on('input change', '#workflowManualVendor', function() {
+    setPurchasingReviewStatus(false, 'purchasing');
+    $('.workflow-save-purchasing-form').prop('disabled', false);
   });
   $(document).on('input change', '.workflow-edit-active', function() {
     var section = $(this).hasClass('workflow-purchasing-form-input') ? 'purchasing' : ($(this).closest('#workflowScopeTable').length ? 'scope' : 'material');
@@ -534,18 +558,154 @@
 
   function collectReviewRows(selector) {
     var rows=[];
-    $(selector+' tbody tr[data-id], '+selector+' tbody tr[data-new="1"]').each(function(){var row=$(this), price=priceValue(row.find('.workflow-comparison-price').val());rows.push({id:Number(row.data('id'))||0,is_new:Number(row.data('new'))===1,nama_scope:selector==='#workflowScopeTable'?row.find('.workflow-name').val():undefined,nama_material:selector==='#workflowMaterialTable'?row.find('.workflow-name').val():undefined,deskripsi:row.find('.workflow-description').val(),qty:row.find('.workflow-qty').val(),satuan:row.find('.workflow-unit').val(),harga_pembanding:price === null ? '' : price,keterangan_purchasing:''});});
+    $(selector+' tbody tr[data-id], '+selector+' tbody tr[data-new="1"]').each(function(){
+      var row=$(this), price=priceValue(row.find('.workflow-comparison-price').val());
+      var isMaterial = selector === '#workflowMaterialTable';
+      var stockId = isMaterial ? (Number(row.find('.workflow-id-brg-nk').val()) || null) : undefined;
+      var refType = isMaterial ? (row.find('.workflow-ref-type').val() || (stockId ? 'MASTER' : 'MANUAL')) : undefined;
+      rows.push({
+        id: Number(row.data('id')) || 0,
+        is_new: Number(row.data('new')) === 1,
+        nama_scope: selector === '#workflowScopeTable' ? row.find('.workflow-name').val() : undefined,
+        nama_material: isMaterial ? row.find('.workflow-name').val() : undefined,
+        id_brg_nk: stockId,
+        reference_type: refType,
+        deskripsi: row.find('.workflow-description').val(),
+        qty: row.find('.workflow-qty').val(),
+        satuan: row.find('.workflow-unit').val(),
+        harga_pembanding: price === null ? '' : price,
+        keterangan_purchasing: ''
+      });
+    });
     return rows;
   }
 
-  function addReviewRow(section) {
-    var isScope=section==='scope', table=isScope?$('#workflowScopeTable'):$('#workflowMaterialTable');
-    table.find('.workflow-empty').remove();
-    var action='<button type="button" class="btn btn-xs btn-outline-danger workflow-delete-row" title="Hapus"><i class="fas fa-trash"></i></button>';
-    var html='<tr data-id="0" data-material="0" data-new="1"><td><input class="form-control form-control-sm workflow-name" maxlength="255" placeholder="'+(isScope?'Nama scope':'Nama material')+'"></td><td><div class="d-flex"><input type="number" min="0.01" step="0.01" class="form-control form-control-sm workflow-qty mr-1" placeholder="Qty"><input class="form-control form-control-sm workflow-unit" maxlength="50" placeholder="Satuan"></div>'+(isScope?'':'<small class="text-muted d-block mt-1">Stok tersedia: 0</small>')+'</td><td><input type="text" inputmode="numeric" class="form-control form-control-sm workflow-comparison-price" placeholder="Harga satuan"></td><td class="text-right"><span class="workflow-purchasing-estimate">-</span></td><td><textarea class="form-control form-control-sm workflow-description" rows="2" maxlength="5000" placeholder="Keterangan / spesifikasi"></textarea></td><td class="workflow-table-actions">'+action+'</td></tr>';
-    table.find('tbody').append(html); table.find('tbody tr:last .workflow-delete-row').prop('disabled', !table.data('editing')); table.find('tbody tr:last input, tbody tr:last textarea').toggleClass('workflow-edit-active', !!table.data('editing'));
+  function initStockSelect2(select) {
+    if (!select || !select.length || select.hasClass('select2-hidden-accessible')) return;
+    select.select2({
+      width: '100%',
+      placeholder: 'Cari kode / nama barang stok...',
+      allowClear: true,
+      ajax: {
+        url: endpoints.stocks,
+        dataType: 'json',
+        delay: 300,
+        data: function(params) {
+          return { q: params.term || '' };
+        },
+        processResults: function(response) {
+          var items = (response && response.data && response.data.items) ? response.data.items : [];
+          return {
+            results: items.map(function(item) {
+              var label = (item.kode_barang ? item.kode_barang + ' - ' : '') + item.nama_barang;
+              return {
+                id: item.id_brg_nk,
+                text: label,
+                itemData: item
+              };
+            })
+          };
+        }
+      },
+      templateResult: function(item) {
+        if (item.loading) return item.text;
+        var data = item.itemData || {};
+        var qty = Number(data.qty_ready || 0);
+        var badgeColor = qty > 0 ? 'badge-success' : 'badge-danger';
+        var kode = data.kode_barang ? ('<span class="badge badge-secondary mr-1">' + escapeHtml(data.kode_barang) + '</span>') : '';
+        return $('<div class="d-flex justify-content-between align-items-center py-1">' +
+          '<div>' + kode + '<strong>' + escapeHtml(data.nama_barang || item.text) + '</strong>' +
+          (data.deskripsi ? '<small class="d-block text-muted">' + escapeHtml(data.deskripsi) + '</small>' : '') +
+          '</div>' +
+          '<span class="badge ' + badgeColor + ' ml-2">Stok: ' + qty.toLocaleString('id-ID', {maximumFractionDigits: 2}) + ' ' + escapeHtml(data.satuan || '') + '</span>' +
+          '</div>');
+      },
+      templateSelection: function(item) {
+        if (!item.id) return item.text;
+        var data = item.itemData || {};
+        return (data.kode_barang ? data.kode_barang + ' - ' : '') + (data.nama_barang || item.text);
+      }
+    });
+
+    select.on('select2:select', function(event) {
+      var itemData = (event.params && event.params.data && event.params.data.itemData) ? event.params.data.itemData : {};
+      var row = select.closest('tr');
+      row.find('.workflow-id-brg-nk').val(itemData.id_brg_nk || '');
+      row.find('.workflow-ref-type').val('MASTER');
+      row.find('.workflow-name').val(itemData.nama_barang || '');
+      if (itemData.satuan) {
+        row.find('.workflow-unit').val(itemData.satuan);
+      }
+      if (itemData.deskripsi) {
+        row.find('.workflow-description').val(itemData.deskripsi);
+      }
+      var ready = Number(itemData.qty_ready || 0);
+      row.find('.js-available').text(ready.toLocaleString('id-ID', {maximumFractionDigits: 2}));
+      row.find('.js-ready').val(ready);
+      row.find('.js-source').text('STOK');
+      row.find('.workflow-name').trigger('input');
+    }).on('select2:clear', function() {
+      var row = select.closest('tr');
+      row.find('.workflow-id-brg-nk').val('');
+      row.find('.workflow-ref-type').val('MANUAL');
+      row.find('.js-available').text('0');
+      row.find('.js-ready').val('0');
+      row.find('.js-source').text('MANUAL');
+      row.find('.workflow-name').trigger('input');
+    });
   }
- {
+
+  function addReviewRow(section) {
+    var isScope = section === 'scope';
+    var table = isScope ? $('#workflowScopeTable') : $('#workflowMaterialTable');
+    table.find('.workflow-empty').remove();
+    var action = '<button type="button" class="btn btn-xs btn-outline-danger workflow-delete-row" title="Hapus"><i class="fas fa-trash"></i></button>';
+    var newRow;
+
+    if (isScope) {
+      newRow = $('<tr data-id="0" data-new="1">' +
+        '<td><input class="form-control form-control-sm workflow-name" maxlength="255" placeholder="Nama scope"></td>' +
+        '<td><div class="d-flex"><input type="number" min="0.01" step="0.01" class="form-control form-control-sm workflow-qty mr-1" placeholder="Qty"><input class="form-control form-control-sm workflow-unit" maxlength="50" placeholder="Satuan"></div></td>' +
+        '<td><input type="text" inputmode="numeric" class="form-control form-control-sm workflow-comparison-price" placeholder="Harga satuan"></td>' +
+        '<td class="text-right"><span class="workflow-purchasing-estimate">-</span></td>' +
+        '<td><textarea class="form-control form-control-sm workflow-description" rows="2" maxlength="5000" placeholder="Keterangan / spesifikasi"></textarea></td>' +
+        '<td class="workflow-table-actions">' + action + '</td>' +
+        '</tr>');
+    } else {
+      newRow = $('<tr data-id="0" data-material="0" data-new="1">' +
+        '<td>' +
+          '<input type="hidden" class="workflow-id-brg-nk" value="">' +
+          '<input type="hidden" class="workflow-ref-type" value="MANUAL">' +
+          '<div class="workflow-stock-select-wrap mb-1">' +
+            '<select class="form-control form-control-sm workflow-stock-select" style="width:100%">' +
+              '<option value="">-- Pilih Stok Non-Komersil (atau ketik manual) --</option>' +
+            '</select>' +
+          '</div>' +
+          '<input class="form-control form-control-sm workflow-name workflow-manual-name" maxlength="255" placeholder="Nama material (manual / dari stok)">' +
+          '<small class="text-muted d-block mt-1"><i class="fas fa-info-circle mr-1"></i>Pilih stok atau ketik manual jika barang tidak ada</small>' +
+        '</td>' +
+        '<td>' +
+          '<div class="d-flex"><input type="number" min="0.01" step="0.01" class="form-control form-control-sm workflow-qty mr-1" placeholder="Qty"><input class="form-control form-control-sm workflow-unit" maxlength="50" placeholder="Satuan"></div>' +
+          '<small class="text-muted js-source">MANUAL</small>' +
+          '<small class="text-muted d-block mt-1">Stok tersedia: <span class="js-available">0</span></small>' +
+        '</td>' +
+        '<td><input type="text" inputmode="numeric" class="form-control form-control-sm workflow-comparison-price" placeholder="Harga satuan"></td>' +
+        '<td class="text-right"><span class="workflow-purchasing-estimate">-</span></td>' +
+        '<td><textarea class="form-control form-control-sm workflow-description" rows="2" maxlength="5000" placeholder="Keterangan / spesifikasi"></textarea></td>' +
+        '<td class="workflow-table-actions">' + action + '</td>' +
+        '</tr>');
+    }
+
+    table.find('tbody').append(newRow);
+    newRow.find('.workflow-delete-row').prop('disabled', !table.data('editing'));
+    newRow.find('input, textarea').toggleClass('workflow-edit-active', !!table.data('editing'));
+
+    if (!isScope) {
+      initStockSelect2(newRow.find('.workflow-stock-select'));
+    }
+  }
+
+  function renderTotals(totals) {
     $('#workflowDetailScopeTotal').text(formatRupiah(totals.jasa));
     $('#workflowDetailMaterialTotal').text(formatRupiah(totals.material));
     $('#workflowDetailGrandTotal').text(formatRupiah(totals.grand_total));

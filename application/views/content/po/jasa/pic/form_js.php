@@ -32,12 +32,19 @@
     $('#scopeTable tbody').append($('#scopeRowTemplate').html());
   });
   $('#addMaterialRow').on('click', function() {
+    $('#materialTable tbody .material-empty-row').remove();
     var row = $($('#materialRowTemplate').html());
     $('#materialTable tbody').append(row);
     initializeMaterialCatalog(row);
   });
   $(document).on('click', '.remove-line', function() {
+    var table = $(this).closest('table');
     $(this).closest('tr').remove();
+    if (table.attr('id') === 'materialTable' && !table.find('tbody tr.material-row').length) {
+      table.find('tbody').append(
+        '<tr class="material-empty-row"><td colspan="5" class="text-center text-muted py-3">Belum ada item material / alat dan bahan (opsional). Klik <strong>Tambah baris</strong> jika diperlukan.</td></tr>'
+      );
+    }
     calculateAll();
   });
   $(document).on('input change', '.line-qty', calculateAll);
@@ -251,7 +258,7 @@
 
   function collectPayload() {
     var scopes = [];
-    $('#scopeTable tbody tr').each(function() {
+    $('#scopeTable tbody tr.scope-row').each(function() {
       scopes.push({
         nama_scope: $(this).find('.line-name').val(),
         deskripsi: $(this).find('.line-description').val(),
@@ -261,15 +268,24 @@
       });
     });
     var materials = [];
-    $('#materialTable tbody tr').each(function() {
+    $('#materialTable tbody tr.material-row').each(function() {
+      var catalogId = $.trim(String($(this).find('.material-catalog').val() || ''));
+      var name = $.trim(String($(this).find('.line-name').val() || ''));
+      var description = $.trim(String($(this).find('.line-description').val() || ''));
+      var qty = $.trim(String($(this).find('.line-qty').val() || ''));
+      var unit = $.trim(String($(this).find('.line-unit').val() || ''));
+      // Abaikan baris material yang kosong sepenuhnya karena material bersifat opsional
+      if (catalogId === '' && name === '' && description === '' && (qty === '' || Number(qty) === 0) && unit === '') {
+        return;
+      }
       materials.push({
-        id_brg_nk: $(this).find('.material-catalog').val(),
+        id_brg_nk: catalogId,
         id_usulan_barang: $(this).find('.material-proposal-id').val(),
         reference_type: $(this).find('.material-reference-type').val(),
-        nama_material: $(this).find('.line-name').val(),
-        deskripsi: $(this).find('.line-description').val(),
-        qty_kebutuhan: $(this).find('.line-qty').val(),
-        satuan: $(this).find('.line-unit').val(),
+        nama_material: name,
+        deskripsi: description,
+        qty_kebutuhan: qty,
+        satuan: unit,
         harga_estimasi: 0
       });
     });
@@ -301,36 +317,45 @@
     if (blank($('#workPurpose').val())) missing('Tujuan pekerjaan', $('#workPurpose'));
 
     var scopeRows = 0;
-    $('#scopeTable tbody tr').each(function(index) {
+    $('#scopeTable tbody tr.scope-row').each(function(index) {
       var row = $(this);
       var values = [row.find('.line-name').val(), row.find('.line-description').val(), row.find('.line-qty').val(), row.find('.line-unit').val()];
       if (values.every(blank)) return;
       scopeRows++;
       validateLine(row, 'Scope pekerjaan baris ' + (index + 1), errors, function(field) {
         if (!firstField) firstField = field;
-      });
+      }, true);
     });
     if (!scopeRows) missing('Minimal satu baris Scope Pekerjaan', $('#addScopeRow'));
 
-    $('#materialTable tbody tr').each(function(index) {
+    // Material / Alat dan Bahan bersifat opsional; validasi hanya jika baris diisi
+    $('#materialTable tbody tr.material-row').each(function(index) {
       var row = $(this);
-      var values = [row.find('.line-name').val(), row.find('.line-description').val(), row.find('.line-qty').val(), row.find('.line-unit').val()];
-      if (values.every(blank)) return;
+      var catalogId = row.find('.material-catalog').val();
+      var qtyVal = row.find('.line-qty').val();
+      var values = [catalogId, row.find('.line-name').val(), row.find('.line-description').val(), qtyVal, row.find('.line-unit').val()];
+      if (values.every(blank) || (blank(catalogId) && blank(row.find('.line-name').val()) && blank(row.find('.line-description').val()) && (blank(qtyVal) || Number(qtyVal) === 0) && blank(row.find('.line-unit').val()))) {
+        return;
+      }
       validateLine(row, 'Material / Alat dan Bahan baris ' + (index + 1), errors, function(field) {
         if (!firstField) firstField = field;
-      });
+      }, false);
     });
     validateSubmitForm.firstField = firstField;
     return errors;
   }
 
-  function validateLine(row, label, errors, setFirstField) {
+  function validateLine(row, label, errors, setFirstField, requireDescription) {
     var fields = [
       { selector: '.line-name', label: 'Nama' },
-      { selector: '.line-description', label: 'Deskripsi' },
-      { selector: '.line-qty', label: 'Qty' },
-      { selector: '.line-unit', label: 'Satuan' },
     ];
+    if (requireDescription !== false) {
+      fields.push({ selector: '.line-description', label: 'Deskripsi' });
+    }
+    fields.push(
+      { selector: '.line-qty', label: 'Qty' },
+      { selector: '.line-unit', label: 'Satuan' }
+    );
     fields.forEach(function(item) {
       var field = row.find(item.selector);
       if ($.trim(String(field.val() || '')) === '') {

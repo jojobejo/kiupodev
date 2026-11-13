@@ -97,7 +97,7 @@ $h = static function ($value) {
 
       <div class="card card-outline card-warning">
         <div class="card-header">
-          <h3 class="card-title"><i class="fas fa-tools mr-1"></i> Material / Alat dan Bahan</h3>
+          <h3 class="card-title"><i class="fas fa-tools mr-1"></i> Material / Alat dan Bahan <small class="text-muted">(Opsional)</small></h3>
           <div class="card-tools"><button type="button" id="addMaterialRow" class="btn btn-sm btn-warning"><i class="fas fa-plus mr-1"></i> Tambah baris</button></div>
         </div>
         <div class="card-body p-0">
@@ -105,15 +105,21 @@ $h = static function ($value) {
             <table class="table table-bordered table-sm mb-0" id="materialTable">
               <thead><tr><th style="min-width:180px">Nama alat/bahan</th><th style="min-width:200px">Deskripsi / spesifikasi</th><th style="width:100px">Qty</th><th style="width:110px">Satuan</th><th style="width:45px"></th></tr></thead>
               <tbody>
-                <?php foreach ($materials ?: array(array()) as $row) : ?>
-                  <tr class="material-row">
-                    <td><select class="form-control form-control-sm material-catalog" data-selected-id="<?= $h(isset($row['id_brg_nk']) ? $row['id_brg_nk'] : '') ?>" data-selected-text="<?= $h(isset($row['kd_barang'], $row['nama_material']) ? ((isset($row['kd_barang']) ? $row['kd_barang'] . ' — ' : '') . (isset($row['nama_material']) ? $row['nama_material'] : '')) : '') ?>"></select><input type="hidden" class="material-reference-type" value="<?= $h(isset($row['reference_type']) ? $row['reference_type'] : (!empty($row['id_brg_nk']) ? 'MASTER' : 'MANUAL')) ?>"><input type="hidden" class="material-proposal-id" value="<?= $h(isset($row['id_usulan_barang']) ? $row['id_usulan_barang'] : '') ?>"><input class="form-control form-control-sm line-name mt-1" maxlength="180" value="<?= $h(isset($row['nama_material']) ? $row['nama_material'] : '') ?>" placeholder="Nama barang manual" <?= !empty($row['id_brg_nk']) ? 'readonly' : '' ?>><small class="material-proposal-label text-muted"><?= !empty($row['kode_usulan']) ? $h($row['kode_usulan'] . ' · ' . $row['status_usulan']) : '' ?></small></td>
-                    <td><textarea class="form-control form-control-sm line-description" rows="1" maxlength="5000" placeholder="Spesifikasi alat/bahan" <?= !empty($row['id_brg_nk']) ? 'readonly' : '' ?>><?= $h(isset($row['deskripsi']) ? $row['deskripsi'] : '') ?></textarea></td>
-                    <td><input type="number" min="0" step="0.01" class="form-control form-control-sm line-qty" value="<?= $h(isset($row['qty_kebutuhan']) ? $row['qty_kebutuhan'] : '') ?>" placeholder="0"></td>
-                    <td><input class="form-control form-control-sm line-unit" maxlength="40" value="<?= $h(isset($row['satuan_tampil']) ? $row['satuan_tampil'] : (isset($row['satuan']) ? $row['satuan'] : '')) ?>" placeholder="Meter"></td>
-                    <td class="text-center align-middle"><button type="button" class="btn btn-xs btn-outline-danger remove-line" title="Hapus baris"><i class="fas fa-times"></i></button></td>
+                <?php if (empty($materials)) : ?>
+                  <tr class="material-empty-row">
+                    <td colspan="5" class="text-center text-muted py-3">Belum ada item material / alat dan bahan (opsional). Klik <strong>Tambah baris</strong> jika diperlukan.</td>
                   </tr>
-                <?php endforeach; ?>
+                <?php else : ?>
+                  <?php foreach ($materials as $row) : ?>
+                    <tr class="material-row">
+                      <td><select class="form-control form-control-sm material-catalog" data-selected-id="<?= $h(isset($row['id_brg_nk']) ? $row['id_brg_nk'] : '') ?>" data-selected-text="<?= $h(isset($row['kd_barang'], $row['nama_material']) ? ((isset($row['kd_barang']) ? $row['kd_barang'] . ' — ' : '') . (isset($row['nama_material']) ? $row['nama_material'] : '')) : '') ?>"></select><input type="hidden" class="material-reference-type" value="<?= $h(isset($row['reference_type']) ? $row['reference_type'] : (!empty($row['id_brg_nk']) ? 'MASTER' : 'MANUAL')) ?>"><input type="hidden" class="material-proposal-id" value="<?= $h(isset($row['id_usulan_barang']) ? $row['id_usulan_barang'] : '') ?>"><input class="form-control form-control-sm line-name mt-1" maxlength="180" value="<?= $h(isset($row['nama_material']) ? $row['nama_material'] : '') ?>" placeholder="Nama barang manual" <?= !empty($row['id_brg_nk']) ? 'readonly' : '' ?>><small class="material-proposal-label text-muted"><?= !empty($row['kode_usulan']) ? $h($row['kode_usulan'] . ' · ' . $row['status_usulan']) : '' ?></small></td>
+                      <td><textarea class="form-control form-control-sm line-description" rows="1" maxlength="5000" placeholder="Spesifikasi alat/bahan" <?= !empty($row['id_brg_nk']) ? 'readonly' : '' ?>><?= $h(isset($row['deskripsi']) ? $row['deskripsi'] : '') ?></textarea></td>
+                      <td><input type="number" min="0" step="0.01" class="form-control form-control-sm line-qty" value="<?= $h(isset($row['qty_kebutuhan']) ? $row['qty_kebutuhan'] : '') ?>" placeholder="0"></td>
+                      <td><input class="form-control form-control-sm line-unit" maxlength="40" value="<?= $h(isset($row['satuan_tampil']) ? $row['satuan_tampil'] : (isset($row['satuan']) ? $row['satuan'] : '')) ?>" placeholder="Meter"></td>
+                      <td class="text-center align-middle"><button type="button" class="btn btn-xs btn-outline-danger remove-line" title="Hapus baris"><i class="fas fa-times"></i></button></td>
+                    </tr>
+                  <?php endforeach; ?>
+                <?php endif; ?>
               </tbody>
             </table>
           </div>
