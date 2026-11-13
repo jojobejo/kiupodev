@@ -1,0 +1,52 @@
+{
+  "date": "2026-11-11",
+  "timezone": "Asia/Jakarta",
+  "decision": "P2_CLOSED_STRUCTURE_AND_SYSTEM",
+  "scope": [
+    "PO nonkomersil",
+    "Request PIC",
+    "approval Kadep/Direktur",
+    "penerimaan",
+    "pickup",
+    "mutasi dan halaman stok LIFO",
+    "adjustment"
+  ],
+  "data_migration_gate": false,
+  "http_test_groups_passed": 9,
+  "synthetic_fixtures_cleaned": true,
+  "structure": {
+    "result": "PASS",
+    "base_tables": 96,
+    "views": 1,
+    "historical_rows": 0,
+    "foundation_replay": "PASS",
+    "schema_replay": "PASS",
+    "p2_contract": "PASS",
+    "cross_database_dependencies": 0,
+    "scratch_schema_removed_on_exit": true
+  },
+  "integrity": {
+    "kiucoid_kiupo_baru": {
+      "base_tables": 95,
+      "existing_data_unchanged": true
+    },
+    "kiucoid_po": {
+      "base_tables": 44,
+      "existing_data_unchanged": true
+    },
+    "kiucoid_kiupo_merge_p0_20261110": {
+      "base_tables": 133,
+      "existing_data_unchanged": true
+    }
+  },
+  "sha256": {
+    "application/controllers/purchaseorder/C_Reqpic.php": "5ecc7afe304e036260ff6dc22d86cd23fc776da7eb619af1ebc4ba4c7fe61561",
+    "application/controllers/postatus/C_PoStatus.php": "9d2acaef3ec828a4eb14f8fc9fb20a9989bf79548c5b9e3c22e55181be3304f4",
+    "application/controllers/stock/C_Stocknonkomersil.php": "11daac83bb24cf87ac9fe7f8fafe097bf3b52d7c8a10f48d7663b7f6d4034f7d",
+    "application/models/PO/M_Reqpic.php": "25565344d1c8472323294bbf315d12a2ddbe2ede399be531b48fb84d511d4157",
+    "application/models/stock/M_StockLifo.php": "e90ea9a1db539108960c3631b8349e38de2c3a598f3143eb58f79532db603f26",
+    "database/sql/stock_nonkomersil_lifo_foundation_20260918.sql": "801b687efc210ee939d9080846c860a1aa357d42cbc644fe6d3d746e88c2698b",
+    "database/sql/p2_system_preflight_20261111.sql": "7694cae808c511e4cfd30535c2593e4f38aee396a924400056107a86c19373da",
+    "database/schema/p2_merged_structure_20261111.sql": "1e49298a6b36ad5588c7d65f1100f1b60278e7b159f1e24bbbe24df4036bf6a4"
+  }
+}

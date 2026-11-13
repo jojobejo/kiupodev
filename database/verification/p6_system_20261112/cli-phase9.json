@@ -1,0 +1,39 @@
+{
+    "success": true,
+    "persistent": false,
+    "artifacts": [],
+    "checks": [
+        {
+            "name": "phase9_schema_ready",
+            "passed": true
+        },
+        {
+            "name": "director_cannot_skip_sequence",
+            "passed": true
+        },
+        {
+            "name": "mandatory_sequential_statuses",
+            "passed": true
+        },
+        {
+            "name": "purchasing_issues_spk_after_director_approval",
+            "passed": true
+        },
+        {
+            "name": "purchasing_creates_purchase_order_after_director_approval",
+            "passed": true
+        },
+        {
+            "name": "approval_history_matches_business_roles",
+            "passed": true
+        },
+        {
+            "name": "initial_purchasing_notifies_pic",
+            "passed": true
+        },
+        {
+            "name": "phase9_transaction_rolled_back_cleanly",
+            "passed": true
+        }
+    ]
+}

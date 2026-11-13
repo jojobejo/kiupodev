@@ -1,0 +1,101 @@
+{
+    "success": true,
+    "checks": [
+        {
+            "name": "phase3_schema_ready",
+            "passed": true
+        },
+        {
+            "name": "document_text_allowed",
+            "passed": true
+        },
+        {
+            "name": "document_extension_blocked",
+            "passed": true
+        },
+        {
+            "name": "document_mime_mismatch_blocked",
+            "passed": true
+        },
+        {
+            "name": "document_over_10mb_blocked",
+            "passed": true
+        },
+        {
+            "name": "draft_created",
+            "passed": true
+        },
+        {
+            "name": "manual_vendor_saved_on_request",
+            "passed": true
+        },
+        {
+            "name": "manual_vendor_does_not_create_master",
+            "passed": true
+        },
+        {
+            "name": "draft_atomic_number_format",
+            "passed": true
+        },
+        {
+            "name": "draft_totals_calculated",
+            "passed": true
+        },
+        {
+            "name": "pic_owner_can_edit_draft",
+            "passed": true
+        },
+        {
+            "name": "other_pic_cannot_read",
+            "passed": true
+        },
+        {
+            "name": "datatable_owner_filter",
+            "passed": true
+        },
+        {
+            "name": "submit_requires_document",
+            "passed": true
+        },
+        {
+            "name": "document_record_added",
+            "passed": true
+        },
+        {
+            "name": "draft_submitted_to_initial_purchasing",
+            "passed": true
+        },
+        {
+            "name": "submitted_request_locked",
+            "passed": true
+        },
+        {
+            "name": "pending_kadep_locked",
+            "passed": true
+        },
+        {
+            "name": "revision_saved_as_new_revision",
+            "passed": true
+        },
+        {
+            "name": "revision_resubmitted",
+            "passed": true
+        },
+        {
+            "name": "document_soft_archive",
+            "passed": true
+        },
+        {
+            "name": "draft_soft_delete",
+            "passed": true
+        },
+        {
+            "name": "pic_actions_audited",
+            "passed": true
+        },
+        {
+            "name": "transactional_test_rolled_back",
+            "passed": true
+        }
+    ]
+}

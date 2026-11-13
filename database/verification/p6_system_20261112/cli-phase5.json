@@ -1,0 +1,89 @@
+{
+    "success": true,
+    "checks": [
+        {
+            "name": "phase5_schema_ready",
+            "passed": true
+        },
+        {
+            "name": "master_supplier_ajax_source_available",
+            "passed": true
+        },
+        {
+            "name": "master_supplier_synced_as_service_vendor",
+            "passed": true
+        },
+        {
+            "name": "comparison_supporting_document_is_linked",
+            "passed": true
+        },
+        {
+            "name": "manual_vendor_and_multiple_comparisons_saved",
+            "passed": true
+        },
+        {
+            "name": "selected_vendor_reason_and_request_reference_saved",
+            "passed": true
+        },
+        {
+            "name": "selected_comparison_cannot_be_deleted",
+            "passed": true
+        },
+        {
+            "name": "comparison_delete_is_soft_archive",
+            "passed": true
+        },
+        {
+            "name": "reservation_does_not_reduce_physical_stock",
+            "passed": true
+        },
+        {
+            "name": "reservation_idempotency_is_scoped_to_payload_and_actor",
+            "passed": true
+        },
+        {
+            "name": "stock_conflict_blocks_over_allocation",
+            "passed": true
+        },
+        {
+            "name": "stock_search_subtracts_active_reservations",
+            "passed": true
+        },
+        {
+            "name": "purchase_draft_references_request_and_source_material",
+            "passed": true
+        },
+        {
+            "name": "release_restores_available_stock_without_stock_transaction",
+            "passed": true
+        },
+        {
+            "name": "reject_auto_releases_reservation_and_cancels_draft",
+            "passed": true
+        },
+        {
+            "name": "director_acc_waits_for_purchasing_issuance",
+            "passed": true
+        },
+        {
+            "name": "purchasing_issues_unique_spk_with_vendor_snapshot",
+            "passed": true
+        },
+        {
+            "name": "pic_owner_can_view_issued_spk",
+            "passed": true
+        },
+        {
+            "name": "spk_document_renders_company_print_compatible_draft",
+            "passed": true
+        },
+        {
+            "name": "cross_department_purchasing_access_and_kadep_restriction",
+            "passed": true
+        },
+        {
+            "name": "phase5_transaction_rolled_back_cleanly",
+            "passed": true
+        }
+    ]
+}

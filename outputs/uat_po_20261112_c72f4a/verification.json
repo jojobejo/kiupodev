@@ -1,0 +1,18 @@
+{
+  "scenarios": 80,
+  "role_checklists": 41,
+  "prerequisites": 11,
+  "roles": 6,
+  "scenario_status": "Belum Diuji",
+  "manual_acceptance": "Belum diputuskan",
+  "recalculation_tests": "PASS",
+  "rendered_sheets": [
+    "Ringkasan",
+    "Skenario",
+    "Peran",
+    "Prasyarat",
+    "Data Uji",
+    "Temuan",
+    "Persetujuan"
+  ]
+}

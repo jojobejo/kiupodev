@@ -1,0 +1,4446 @@
+{
+  "PONK0702250016": [
+    {
+      "id_batch": 4010,
+      "id_transnk_masuk": 6263,
+      "kd_barangsys": "QBUK003",
+      "names": [
+        "Buku Hardcover"
+      ],
+      "qty_sisa": 2.0,
+      "referensi_sumber": "ADJQTY2410250005",
+      "transaction_note": "Stok Lama (Lemari Arsip)",
+      "reason_code": "TIDAK_ADA_HARGA_BARANG",
+      "reason": "Tidak ada detail pembelian berharga dengan kode barang dan kode sistem yang sama pada kedua sumber lokal.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 4,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "ae9509eb18fdfed3610d2f3d0a36e25067e4abdec0f54f0e57a354ca750c8009",
+          "attachment_refs": []
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 4,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "ae9509eb18fdfed3610d2f3d0a36e25067e4abdec0f54f0e57a354ca750c8009",
+          "attachment_refs": []
+        }
+      ]
+    }
+  ],
+  "PONK0702250024": [
+    {
+      "id_batch": 3382,
+      "id_transnk_masuk": 3100,
+      "kd_barangsys": "QKER015",
+      "names": [
+        "Kertas Bufalo"
+      ],
+      "qty_sisa": 79.0,
+      "referensi_sumber": "ADJQTY1604250002",
+      "transaction_note": "Menyesuaikan Stok Fisik",
+      "reason_code": "TIDAK_ADA_HARGA_BARANG",
+      "reason": "Tidak ada detail pembelian berharga dengan kode barang dan kode sistem yang sama pada kedua sumber lokal.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 1,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "36a5f49932d1d5f1eccd4857664221c0803a15e4776114cdf95b060551ee5d4a",
+          "attachment_refs": []
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 1,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "36a5f49932d1d5f1eccd4857664221c0803a15e4776114cdf95b060551ee5d4a",
+          "attachment_refs": []
+        }
+      ]
+    }
+  ],
+  "PONK0702250025": [
+    {
+      "id_batch": 3381,
+      "id_transnk_masuk": 3099,
+      "kd_barangsys": "QKER016",
+      "names": [
+        "Kertas Bufalo"
+      ],
+      "qty_sisa": 172.0,
+      "referensi_sumber": "ADJQTY1604250001",
+      "transaction_note": "Menyesuaikan Stok Fisik",
+      "reason_code": "TIDAK_ADA_HARGA_BARANG",
+      "reason": "Tidak ada detail pembelian berharga dengan kode barang dan kode sistem yang sama pada kedua sumber lokal.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 1,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "2f29ecd41d0bbab0ca3af5bdfb80287b3c997261cd826bd309999bcda1ffde24",
+          "attachment_refs": []
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 1,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "2f29ecd41d0bbab0ca3af5bdfb80287b3c997261cd826bd309999bcda1ffde24",
+          "attachment_refs": []
+        }
+      ]
+    }
+  ],
+  "PONK0702250026": [
+    {
+      "id_batch": 3207,
+      "id_transnk_masuk": 2247,
+      "kd_barangsys": "QBAT005",
+      "names": [
+        "Batrai ABC"
+      ],
+      "qty_sisa": 5.0,
+      "referensi_sumber": "ADJQTY0702250027",
+      "transaction_note": "menyesuaikan stok fisik",
+      "reason_code": "TIDAK_ADA_HARGA_BARANG",
+      "reason": "Tidak ada detail pembelian berharga dengan kode barang dan kode sistem yang sama pada kedua sumber lokal.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 2,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "bcaa6812984efea749e7627835148b2f0ccad4d8aae1b591c0c2be759ded8c29",
+          "attachment_refs": []
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 2,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "bcaa6812984efea749e7627835148b2f0ccad4d8aae1b591c0c2be759ded8c29",
+          "attachment_refs": []
+        }
+      ]
+    }
+  ],
+  "PONK0702250028": [
+    {
+      "id_batch": 3208,
+      "id_transnk_masuk": 2248,
+      "kd_barangsys": "QBAT006",
+      "names": [
+        "Batrai ABC"
+      ],
+      "qty_sisa": 2.0,
+      "referensi_sumber": "ADJQTY0702250029",
+      "transaction_note": "menyesuaikan stok fisik",
+      "reason_code": "TIDAK_ADA_HARGA_BARANG",
+      "reason": "Tidak ada detail pembelian berharga dengan kode barang dan kode sistem yang sama pada kedua sumber lokal.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 2,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "85534ccf1b3534fb33462d43f4efe8859d0302eb6bf879e964c0d99621b084d8",
+          "attachment_refs": []
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 2,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "85534ccf1b3534fb33462d43f4efe8859d0302eb6bf879e964c0d99621b084d8",
+          "attachment_refs": []
+        }
+      ]
+    }
+  ],
+  "PONK0702250030": [
+    {
+      "id_batch": 3209,
+      "id_transnk_masuk": 2249,
+      "kd_barangsys": "QPEN004",
+      "names": [
+        "Pensil"
+      ],
+      "qty_sisa": 11.0,
+      "referensi_sumber": "ADJQTY0702250031",
+      "transaction_note": "menyesuaikan stok fisik",
+      "reason_code": "TIDAK_ADA_HARGA_BARANG",
+      "reason": "Tidak ada detail pembelian berharga dengan kode barang dan kode sistem yang sama pada kedua sumber lokal.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 2,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "e5409418345097719a7ed8ac29990aa00e097233e889cc6ac6a925233fd544de",
+          "attachment_refs": []
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 2,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "e5409418345097719a7ed8ac29990aa00e097233e889cc6ac6a925233fd544de",
+          "attachment_refs": []
+        }
+      ]
+    }
+  ],
+  "PONK0702250032": [
+    {
+      "id_batch": 3210,
+      "id_transnk_masuk": 2250,
+      "kd_barangsys": "QRAU001",
+      "names": [
+        "Rautan"
+      ],
+      "qty_sisa": 2.0,
+      "referensi_sumber": "ADJQTY0702250033",
+      "transaction_note": "menyesuaikan stok fisik",
+      "reason_code": "TIDAK_ADA_HARGA_BARANG",
+      "reason": "Tidak ada detail pembelian berharga dengan kode barang dan kode sistem yang sama pada kedua sumber lokal.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 1,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "2f1029db48b88ee6acee8bc6cbbfac2159cbf04c592d444086d95c5f1942fdf9",
+          "attachment_refs": []
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 1,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "2f1029db48b88ee6acee8bc6cbbfac2159cbf04c592d444086d95c5f1942fdf9",
+          "attachment_refs": []
+        }
+      ]
+    }
+  ],
+  "PONK0702250034": [
+    {
+      "id_batch": 3211,
+      "id_transnk_masuk": 2251,
+      "kd_barangsys": "QKAP001",
+      "names": [
+        "Kapur Ajaib"
+      ],
+      "qty_sisa": 27.0,
+      "referensi_sumber": "ADJQTY0702250035",
+      "transaction_note": "menyesuaikan stok fisik",
+      "reason_code": "TIDAK_ADA_HARGA_BARANG",
+      "reason": "Tidak ada detail pembelian berharga dengan kode barang dan kode sistem yang sama pada kedua sumber lokal.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 2,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "4ada9cd1f56356e2dc5978e173442342ed5cd81bd079844fcae68eed8292d347",
+          "attachment_refs": []
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 2,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "4ada9cd1f56356e2dc5978e173442342ed5cd81bd079844fcae68eed8292d347",
+          "attachment_refs": []
+        }
+      ]
+    }
+  ],
+  "PONK0702250038": [
+    {
+      "id_batch": 3213,
+      "id_transnk_masuk": 2253,
+      "kd_barangsys": "QLAM014",
+      "names": [
+        "Lampu UV"
+      ],
+      "qty_sisa": 1.0,
+      "referensi_sumber": "ADJQTY0702250039",
+      "transaction_note": "menyesuaikan stok fisik",
+      "reason_code": "TIDAK_ADA_HARGA_BARANG",
+      "reason": "Tidak ada detail pembelian berharga dengan kode barang dan kode sistem yang sama pada kedua sumber lokal.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 1,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "05a8e250f47d0e3b211e95ee00787f1692aeb4f5f84370f1fd93ab4da456ae33",
+          "attachment_refs": []
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 1,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "05a8e250f47d0e3b211e95ee00787f1692aeb4f5f84370f1fd93ab4da456ae33",
+          "attachment_refs": []
+        }
+      ]
+    }
+  ],
+  "PONK0702250040": [
+    {
+      "id_batch": 3214,
+      "id_transnk_masuk": 2254,
+      "kd_barangsys": "QBAT007",
+      "names": [
+        "Batrai"
+      ],
+      "qty_sisa": 4.0,
+      "referensi_sumber": "ADJQTY0702250041",
+      "transaction_note": "menyesuaikan stok fisik",
+      "reason_code": "TIDAK_ADA_RUJUKAN_BATCH",
+      "reason": "Ada harga pembelian barang yang sama, tetapi tidak ada rujukan yang mengikat batch penyesuaian ini ke pembelian tersebut.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 14,
+          "deleted_transactions": 0,
+          "priced_details": 2,
+          "source_evidence_sha256": "77203890a84228d74b8b122763a80e1b31c03dfe534ead5ff6b4149467a589f9",
+          "attachment_refs": [
+            {
+              "id_fk_bukti": 996,
+              "kd_po_nk": "NKPO2104260038",
+              "keterangan": "",
+              "user_upload": "KEU111",
+              "file_name": "2026041777086541",
+              "file_uploaded": "2026041777086541",
+              "create_at": "2026-04-25 10:09:01"
+            },
+            {
+              "id_fk_bukti": 1040,
+              "kd_po_nk": "NKPO0905260035",
+              "keterangan": "",
+              "user_upload": "KEU111",
+              "file_name": "2026051778310332",
+              "file_uploaded": "2026051778310332",
+              "create_at": "2026-05-09 14:05:32"
+            }
+          ]
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 15,
+          "deleted_transactions": 0,
+          "priced_details": 2,
+          "source_evidence_sha256": "bf442e412da118bcc2da21affe1e9a741636660facd68ed117b37629bc74ff49",
+          "attachment_refs": [
+            {
+              "id_fk_bukti": 996,
+              "kd_po_nk": "NKPO2104260038",
+              "keterangan": "",
+              "user_upload": "KEU111",
+              "file_name": "2026041777086541",
+              "file_uploaded": "2026041777086541",
+              "create_at": "2026-04-25 10:09:01"
+            },
+            {
+              "id_fk_bukti": 1040,
+              "kd_po_nk": "NKPO0905260035",
+              "keterangan": "",
+              "user_upload": "KEU111",
+              "file_name": "2026051778310332",
+              "file_uploaded": "2026051778310332",
+              "create_at": "2026-05-09 14:05:32"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "PONK0702250042": [
+    {
+      "id_batch": 3215,
+      "id_transnk_masuk": 2255,
+      "kd_barangsys": "QKRE014",
+      "names": [
+        "Kresek"
+      ],
+      "qty_sisa": 4.0,
+      "referensi_sumber": "ADJQTY0702250043",
+      "transaction_note": "menyesuaikan stok fisik",
+      "reason_code": "TIDAK_ADA_HARGA_BARANG",
+      "reason": "Tidak ada detail pembelian berharga dengan kode barang dan kode sistem yang sama pada kedua sumber lokal.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 6,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "35305cee55301ed43fd4602f86c02982417528ec2dc14b0c413424feddd297fa",
+          "attachment_refs": []
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 6,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "35305cee55301ed43fd4602f86c02982417528ec2dc14b0c413424feddd297fa",
+          "attachment_refs": []
+        }
+      ]
+    }
+  ],
+  "PONK1301250001": [
+    {
+      "id_batch": 3906,
+      "id_transnk_masuk": 5754,
+      "kd_barangsys": "QBOX001",
+      "names": [
+        "Box File"
+      ],
+      "qty_sisa": 1.0,
+      "referensi_sumber": "ADJQTY2609250001",
+      "transaction_note": "Stok dari GA",
+      "reason_code": "TIDAK_ADA_HARGA_BARANG",
+      "reason": "Tidak ada detail pembelian berharga dengan kode barang dan kode sistem yang sama pada kedua sumber lokal.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 13,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "8f056211f7f06cd952fbe797e856b0ff1deeed7d9ae5dcc000486d50f917d722",
+          "attachment_refs": []
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 13,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "8f056211f7f06cd952fbe797e856b0ff1deeed7d9ae5dcc000486d50f917d722",
+          "attachment_refs": []
+        }
+      ]
+    }
+  ],
+  "PONK1305260002": [
+    {
+      "id_batch": 4816,
+      "id_transnk_masuk": 9968,
+      "kd_barangsys": "QJAM001",
+      "names": [
+        "Jam Dinding"
+      ],
+      "qty_sisa": 3.0,
+      "referensi_sumber": "ADJQTY1305260005",
+      "transaction_note": "Bonus Wijaya Machinery",
+      "reason_code": "TIDAK_ADA_HARGA_BARANG",
+      "reason": "Tidak ada detail pembelian berharga dengan kode barang dan kode sistem yang sama pada kedua sumber lokal.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 1,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "0be9998385dc8bfb98621a9cd39e22c2e364a7e5187baa6abe1cfbe2a77564d4",
+          "attachment_refs": []
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 1,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "0be9998385dc8bfb98621a9cd39e22c2e364a7e5187baa6abe1cfbe2a77564d4",
+          "attachment_refs": []
+        }
+      ]
+    }
+  ],
+  "PONK1305260003": [
+    {
+      "id_batch": 4815,
+      "id_transnk_masuk": 9967,
+      "kd_barangsys": "QNOT008",
+      "names": [
+        "Notebook Hardcover"
+      ],
+      "qty_sisa": 5.0,
+      "referensi_sumber": "ADJQTY1305260004",
+      "transaction_note": "Bonus Wijaya Machinery",
+      "reason_code": "TIDAK_ADA_HARGA_BARANG",
+      "reason": "Tidak ada detail pembelian berharga dengan kode barang dan kode sistem yang sama pada kedua sumber lokal.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 1,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "cc73f41b9535644e9be025e9429d1d690f26eaa0bc5e30d5917ff4794b417abc",
+          "attachment_refs": []
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 2,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "e7ab82fb0aced071fad43f01441b3f3bf7fb89deadb1581ae6957e9e1bec0cab",
+          "attachment_refs": []
+        }
+      ]
+    }
+  ],
+  "PONK1401260001": [
+    {
+      "id_batch": 4315,
+      "id_transnk_masuk": 7747,
+      "kd_barangsys": "QNOT007",
+      "names": [
+        "Notepad Kecil"
+      ],
+      "qty_sisa": 4.0,
+      "referensi_sumber": "ADJQTY1401260002",
+      "transaction_note": "Stok dari Kenso",
+      "reason_code": "TIDAK_ADA_HARGA_BARANG",
+      "reason": "Tidak ada detail pembelian berharga dengan kode barang dan kode sistem yang sama pada kedua sumber lokal.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 2,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "2c07b31b84e4635d7ba56213a3fa2498c18d8a2f92b7d38fd4af3dd1e11cc8bc",
+          "attachment_refs": []
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 2,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "2c07b31b84e4635d7ba56213a3fa2498c18d8a2f92b7d38fd4af3dd1e11cc8bc",
+          "attachment_refs": []
+        }
+      ]
+    }
+  ],
+  "PONK2501250003": [
+    {
+      "id_batch": 4294,
+      "id_transnk_masuk": 7670,
+      "kd_barangsys": "QREF005",
+      "names": [
+        "Refil Spidol Boardmarker"
+      ],
+      "qty_sisa": 1.0,
+      "referensi_sumber": "ADJQTY0901260004",
+      "transaction_note": "Stok Lama (tidak penuh)",
+      "reason_code": "BOTOL_TIDAK_PENUH",
+      "reason": "Catatan menyebut stok lama tidak penuh. Harga botol utuh pada PO 252 belum membuktikan nilai tiap botol sisa.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 6,
+          "deleted_transactions": 0,
+          "priced_details": 1,
+          "source_evidence_sha256": "d5c3af25f6a3b07b9f030610967951c1f3d9186126eaa30df323092b0d211417",
+          "attachment_refs": [
+            {
+              "id_fk_bukti": 149,
+              "kd_po_nk": "NKPO2501250010",
+              "keterangan": "Offline Agung Wardhana",
+              "user_upload": "KEU02",
+              "file_name": "2025011738054339",
+              "file_uploaded": "2025011738054339",
+              "create_at": "2025-01-28 15:52:19"
+            }
+          ]
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 6,
+          "deleted_transactions": 0,
+          "priced_details": 1,
+          "source_evidence_sha256": "a60e1b670c9fcac15c332100e015c273b532691dc82a29e7ccd547c8e3cd95ff",
+          "attachment_refs": [
+            {
+              "id_fk_bukti": 149,
+              "kd_po_nk": "NKPO2501250010",
+              "keterangan": "Offline Agung Wardhana",
+              "user_upload": "KEU02",
+              "file_name": "2025011738054339",
+              "file_uploaded": "2025011738054339",
+              "create_at": "2025-01-28 15:52:19"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "PONK2911250001": [
+    {
+      "id_batch": 4152,
+      "id_transnk_masuk": 6963,
+      "kd_barangsys": "QPAP007",
+      "names": [
+        "Paper Bag"
+      ],
+      "qty_sisa": 16.0,
+      "referensi_sumber": "ADJQTY2911250014",
+      "transaction_note": "Stok dari Alfabeta",
+      "reason_code": "TIDAK_ADA_HARGA_BARANG",
+      "reason": "Tidak ada detail pembelian berharga dengan kode barang dan kode sistem yang sama pada kedua sumber lokal.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 1,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "376324ab71718f40b488ef391368dfb6cb69b1fcfcb48bf9e7ff52dd72380e30",
+          "attachment_refs": []
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 1,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "376324ab71718f40b488ef391368dfb6cb69b1fcfcb48bf9e7ff52dd72380e30",
+          "attachment_refs": []
+        }
+      ]
+    }
+  ],
+  "PONK2911250010": [
+    {
+      "id_batch": 4149,
+      "id_transnk_masuk": 6954,
+      "kd_barangsys": "QBUL006",
+      "names": [
+        "Bulpen Gel"
+      ],
+      "qty_sisa": 22.0,
+      "referensi_sumber": "ADJQTY2911250011",
+      "transaction_note": "Stok dari AlfaBeta",
+      "reason_code": "TIDAK_ADA_HARGA_BARANG",
+      "reason": "Tidak ada detail pembelian berharga dengan kode barang dan kode sistem yang sama pada kedua sumber lokal.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 30,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "2e6bab679ac9d6439aaa678f3ac1f753992de4e41e481b0c2af7489202220a4e",
+          "attachment_refs": []
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 38,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "3bae0622f87de8539f4b91a61c16b97bd915260c7a6403a4d765512a002e5d58",
+          "attachment_refs": []
+        }
+      ]
+    }
+  ],
+  "QACE002": [
+    {
+      "id_batch": 4440,
+      "id_transnk_masuk": 8276,
+      "kd_barangsys": "PONK3105250001",
+      "names": [
+        "Aceton"
+      ],
+      "qty_sisa": 1.0,
+      "referensi_sumber": "ADJQTY0902260001",
+      "transaction_note": "Aceton +- 200 ml (adjustment untuk tracking ambil)",
+      "reason_code": "VOLUME_DAN_LOT_BELUM_TERBUKTI",
+      "reason": "Kode QACE002 mencakup pembelian 1 liter dan 200 ml dengan beberapa harga. Penyesuaian untuk tracking/sisa relabel belum mengikat jumlah serta volume ke lot tertentu.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 19,
+          "deleted_transactions": 0,
+          "priced_details": 5,
+          "source_evidence_sha256": "d039ce96b2ac8318a135d36c297f73e3920e60cb2a656b819f62130a4dd51992",
+          "attachment_refs": [
+            {
+              "id_fk_bukti": 295,
+              "kd_po_nk": "NKPO3105250001",
+              "keterangan": "Online - Shopee (BlessKimia.id)",
+              "user_upload": "KEU011",
+              "file_name": "2025061748835598",
+              "file_uploaded": "2025061748835598.jpeg",
+              "create_at": "2025-06-02 10:39:58"
+            },
+            {
+              "id_fk_bukti": 518,
+              "kd_po_nk": "NKPO0110250102",
+              "keterangan": "",
+              "user_upload": "KEU011",
+              "file_name": "2025101759471961",
+              "file_uploaded": "2025101759471961",
+              "create_at": "2025-10-03 13:12:41"
+            },
+            {
+              "id_fk_bukti": 1084,
+              "kd_po_nk": "NKPO2305260003",
+              "keterangan": "",
+              "user_upload": "KEU111",
+              "file_name": "2026051779517952",
+              "file_uploaded": "2026051779517952",
+              "create_at": "2026-05-23 13:32:32"
+            },
+            {
+              "id_fk_bukti": 1305,
+              "kd_po_nk": "NKPO1308260165",
+              "keterangan": "",
+              "user_upload": "KEU111",
+              "file_name": "2026081786591696",
+              "file_uploaded": "2026081786591696",
+              "create_at": "2026-08-13 10:28:16"
+            },
+            {
+              "id_fk_bukti": 1311,
+              "kd_po_nk": "NKPO1808260001",
+              "keterangan": "",
+              "user_upload": "KEU111",
+              "file_name": "2026081787025861",
+              "file_uploaded": "2026081787025861",
+              "create_at": "2026-08-18 11:04:21"
+            }
+          ]
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 22,
+          "deleted_transactions": 0,
+          "priced_details": 6,
+          "source_evidence_sha256": "a493845735668bf90c2a62a3cddf1411f7e7607e69f0e590b347ced017c26485",
+          "attachment_refs": [
+            {
+              "id_fk_bukti": 295,
+              "kd_po_nk": "NKPO3105250001",
+              "keterangan": "Online - Shopee (BlessKimia.id)",
+              "user_upload": "KEU011",
+              "file_name": "2025061748835598",
+              "file_uploaded": "2025061748835598.jpeg",
+              "create_at": "2025-06-02 10:39:58"
+            },
+            {
+              "id_fk_bukti": 518,
+              "kd_po_nk": "NKPO0110250102",
+              "keterangan": "",
+              "user_upload": "KEU011",
+              "file_name": "2025101759471961",
+              "file_uploaded": "2025101759471961",
+              "create_at": "2025-10-03 13:12:41"
+            },
+            {
+              "id_fk_bukti": 1084,
+              "kd_po_nk": "NKPO2305260003",
+              "keterangan": "",
+              "user_upload": "KEU111",
+              "file_name": "2026051779517952",
+              "file_uploaded": "2026051779517952",
+              "create_at": "2026-05-23 13:32:32"
+            },
+            {
+              "id_fk_bukti": 1305,
+              "kd_po_nk": "NKPO1308260165",
+              "keterangan": "",
+              "user_upload": "KEU111",
+              "file_name": "2026081786591696",
+              "file_uploaded": "2026081786591696",
+              "create_at": "2026-08-13 10:28:16"
+            },
+            {
+              "id_fk_bukti": 1311,
+              "kd_po_nk": "NKPO1808260001",
+              "keterangan": "",
+              "user_upload": "KEU111",
+              "file_name": "2026081787025861",
+              "file_uploaded": "2026081787025861",
+              "create_at": "2026-08-18 11:04:21"
+            },
+            {
+              "id_fk_bukti": 1467,
+              "kd_po_nk": "NKPO2710260229",
+              "keterangan": "",
+              "user_upload": "KEU111",
+              "file_name": "2026101793090437",
+              "file_uploaded": "2026101793090437",
+              "create_at": "2026-10-27 15:40:37"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id_batch": 5235,
+      "id_transnk_masuk": 11712,
+      "kd_barangsys": "PONK3105250001",
+      "names": [
+        "Aceton"
+      ],
+      "qty_sisa": 1.0,
+      "referensi_sumber": "ADJQTY2008260001",
+      "transaction_note": "Pengembalian sisa aceton relabel armeira",
+      "reason_code": "VOLUME_DAN_LOT_BELUM_TERBUKTI",
+      "reason": "Kode QACE002 mencakup pembelian 1 liter dan 200 ml dengan beberapa harga. Penyesuaian untuk tracking/sisa relabel belum mengikat jumlah serta volume ke lot tertentu.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 19,
+          "deleted_transactions": 0,
+          "priced_details": 5,
+          "source_evidence_sha256": "d039ce96b2ac8318a135d36c297f73e3920e60cb2a656b819f62130a4dd51992",
+          "attachment_refs": [
+            {
+              "id_fk_bukti": 295,
+              "kd_po_nk": "NKPO3105250001",
+              "keterangan": "Online - Shopee (BlessKimia.id)",
+              "user_upload": "KEU011",
+              "file_name": "2025061748835598",
+              "file_uploaded": "2025061748835598.jpeg",
+              "create_at": "2025-06-02 10:39:58"
+            },
+            {
+              "id_fk_bukti": 518,
+              "kd_po_nk": "NKPO0110250102",
+              "keterangan": "",
+              "user_upload": "KEU011",
+              "file_name": "2025101759471961",
+              "file_uploaded": "2025101759471961",
+              "create_at": "2025-10-03 13:12:41"
+            },
+            {
+              "id_fk_bukti": 1084,
+              "kd_po_nk": "NKPO2305260003",
+              "keterangan": "",
+              "user_upload": "KEU111",
+              "file_name": "2026051779517952",
+              "file_uploaded": "2026051779517952",
+              "create_at": "2026-05-23 13:32:32"
+            },
+            {
+              "id_fk_bukti": 1305,
+              "kd_po_nk": "NKPO1308260165",
+              "keterangan": "",
+              "user_upload": "KEU111",
+              "file_name": "2026081786591696",
+              "file_uploaded": "2026081786591696",
+              "create_at": "2026-08-13 10:28:16"
+            },
+            {
+              "id_fk_bukti": 1311,
+              "kd_po_nk": "NKPO1808260001",
+              "keterangan": "",
+              "user_upload": "KEU111",
+              "file_name": "2026081787025861",
+              "file_uploaded": "2026081787025861",
+              "create_at": "2026-08-18 11:04:21"
+            }
+          ]
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 22,
+          "deleted_transactions": 0,
+          "priced_details": 6,
+          "source_evidence_sha256": "a493845735668bf90c2a62a3cddf1411f7e7607e69f0e590b347ced017c26485",
+          "attachment_refs": [
+            {
+              "id_fk_bukti": 295,
+              "kd_po_nk": "NKPO3105250001",
+              "keterangan": "Online - Shopee (BlessKimia.id)",
+              "user_upload": "KEU011",
+              "file_name": "2025061748835598",
+              "file_uploaded": "2025061748835598.jpeg",
+              "create_at": "2025-06-02 10:39:58"
+            },
+            {
+              "id_fk_bukti": 518,
+              "kd_po_nk": "NKPO0110250102",
+              "keterangan": "",
+              "user_upload": "KEU011",
+              "file_name": "2025101759471961",
+              "file_uploaded": "2025101759471961",
+              "create_at": "2025-10-03 13:12:41"
+            },
+            {
+              "id_fk_bukti": 1084,
+              "kd_po_nk": "NKPO2305260003",
+              "keterangan": "",
+              "user_upload": "KEU111",
+              "file_name": "2026051779517952",
+              "file_uploaded": "2026051779517952",
+              "create_at": "2026-05-23 13:32:32"
+            },
+            {
+              "id_fk_bukti": 1305,
+              "kd_po_nk": "NKPO1308260165",
+              "keterangan": "",
+              "user_upload": "KEU111",
+              "file_name": "2026081786591696",
+              "file_uploaded": "2026081786591696",
+              "create_at": "2026-08-13 10:28:16"
+            },
+            {
+              "id_fk_bukti": 1311,
+              "kd_po_nk": "NKPO1808260001",
+              "keterangan": "",
+              "user_upload": "KEU111",
+              "file_name": "2026081787025861",
+              "file_uploaded": "2026081787025861",
+              "create_at": "2026-08-18 11:04:21"
+            },
+            {
+              "id_fk_bukti": 1467,
+              "kd_po_nk": "NKPO2710260229",
+              "keterangan": "",
+              "user_upload": "KEU111",
+              "file_name": "2026101793090437",
+              "file_uploaded": "2026101793090437",
+              "create_at": "2026-10-27 15:40:37"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "QAMP007": [
+    {
+      "id_batch": 2700,
+      "id_transnk_masuk": 8,
+      "kd_barangsys": "KEU2QAMP0078",
+      "names": [
+        "Amplop"
+      ],
+      "qty_sisa": 1.0,
+      "referensi_sumber": "PONK1410240001IN8",
+      "transaction_note": "Saldo Awal",
+      "reason_code": "SALDO_AWAL_TANPA_HARGA",
+      "reason": "Saldo awal tidak memiliki detail harga atau rujukan pembelian untuk batch ini di kedua sumber lokal.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 41,
+          "deleted_transactions": 3,
+          "priced_details": 4,
+          "source_evidence_sha256": "c27291cf62f21c38212e38cef92e3ed8d46ed73912f2e035642db909282fe095",
+          "attachment_refs": [
+            {
+              "id_fk_bukti": 30,
+              "kd_po_nk": "NKPO2910240015",
+              "keterangan": "agung wardana",
+              "user_upload": "KEU02",
+              "file_name": "2024101730186232",
+              "file_uploaded": "2024101730186232",
+              "create_at": "2024-10-29 14:17:12"
+            },
+            {
+              "id_fk_bukti": 279,
+              "kd_po_nk": "NKPO2005250004",
+              "keterangan": "Offline - Agung Wardana",
+              "user_upload": "KEU011",
+              "file_name": "2025051747962702",
+              "file_uploaded": "2025051747962702.jpeg",
+              "create_at": "2025-05-23 08:11:42"
+            },
+            {
+              "id_fk_bukti": 550,
+              "kd_po_nk": "NKPO1010250107",
+              "keterangan": "Online - Shopee",
+              "user_upload": "KEU011",
+              "file_name": "2025101761018073",
+              "file_uploaded": "2025101761018073",
+              "create_at": "2025-10-21 10:41:13"
+            },
+            {
+              "id_fk_bukti": 1041,
+              "kd_po_nk": "NKPO0805260002",
+              "keterangan": "",
+              "user_upload": "KEU012",
+              "file_name": "2026051778469672",
+              "file_uploaded": "2026051778469672",
+              "create_at": "2026-05-11 10:21:12"
+            }
+          ]
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 43,
+          "deleted_transactions": 3,
+          "priced_details": 4,
+          "source_evidence_sha256": "dc9f4724cf451dc7a20f12c09eed87984fb862d071cd8dc7f62e5b8e918a5929",
+          "attachment_refs": [
+            {
+              "id_fk_bukti": 30,
+              "kd_po_nk": "NKPO2910240015",
+              "keterangan": "agung wardana",
+              "user_upload": "KEU02",
+              "file_name": "2024101730186232",
+              "file_uploaded": "2024101730186232",
+              "create_at": "2024-10-29 14:17:12"
+            },
+            {
+              "id_fk_bukti": 279,
+              "kd_po_nk": "NKPO2005250004",
+              "keterangan": "Offline - Agung Wardana",
+              "user_upload": "KEU011",
+              "file_name": "2025051747962702",
+              "file_uploaded": "2025051747962702.jpeg",
+              "create_at": "2025-05-23 08:11:42"
+            },
+            {
+              "id_fk_bukti": 550,
+              "kd_po_nk": "NKPO1010250107",
+              "keterangan": "Online - Shopee",
+              "user_upload": "KEU011",
+              "file_name": "2025101761018073",
+              "file_uploaded": "2025101761018073",
+              "create_at": "2025-10-21 10:41:13"
+            },
+            {
+              "id_fk_bukti": 1041,
+              "kd_po_nk": "NKPO0805260002",
+              "keterangan": "",
+              "user_upload": "KEU012",
+              "file_name": "2026051778469672",
+              "file_uploaded": "2026051778469672",
+              "create_at": "2026-05-11 10:21:12"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "QBAT001": [
+    {
+      "id_batch": 2708,
+      "id_transnk_masuk": 16,
+      "kd_barangsys": "KEU2QBAT00116",
+      "names": [
+        "Batrai"
+      ],
+      "qty_sisa": 2.0,
+      "referensi_sumber": "PONK1410240001IN16",
+      "transaction_note": "Saldo Awal",
+      "reason_code": "SALDO_AWAL_TANPA_HARGA",
+      "reason": "Saldo awal tidak memiliki detail harga atau rujukan pembelian untuk batch ini di kedua sumber lokal.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 4,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "cfef2a4cd7bc4d75e5e339a1cab6a5ea838483e399103f6b5561094f365bf78b",
+          "attachment_refs": []
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 4,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "cfef2a4cd7bc4d75e5e339a1cab6a5ea838483e399103f6b5561094f365bf78b",
+          "attachment_refs": []
+        }
+      ]
+    },
+    {
+      "id_batch": 4589,
+      "id_transnk_masuk": 9065,
+      "kd_barangsys": "KEU2QBAT00116",
+      "names": [
+        "Batrai"
+      ],
+      "qty_sisa": 2.0,
+      "referensi_sumber": "ADJQTY2603260001",
+      "transaction_note": "Dikembalikan dari GA (bekas remote ac)",
+      "reason_code": "TIDAK_ADA_HARGA_BARANG",
+      "reason": "Tidak ada detail pembelian berharga dengan kode barang dan kode sistem yang sama pada kedua sumber lokal.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 4,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "cfef2a4cd7bc4d75e5e339a1cab6a5ea838483e399103f6b5561094f365bf78b",
+          "attachment_refs": []
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 4,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "cfef2a4cd7bc4d75e5e339a1cab6a5ea838483e399103f6b5561094f365bf78b",
+          "attachment_refs": []
+        }
+      ]
+    }
+  ],
+  "QBAT003": [
+    {
+      "id_batch": 2709,
+      "id_transnk_masuk": 17,
+      "kd_barangsys": "KEU2QBAT00317",
+      "names": [
+        "Batrai"
+      ],
+      "qty_sisa": 1.0,
+      "referensi_sumber": "PONK1410240001IN17",
+      "transaction_note": "Saldo Awal",
+      "reason_code": "SALDO_AWAL_TANPA_HARGA",
+      "reason": "Saldo awal tidak memiliki detail harga atau rujukan pembelian untuk batch ini di kedua sumber lokal.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 22,
+          "deleted_transactions": 0,
+          "priced_details": 2,
+          "source_evidence_sha256": "9c3d5df0f10c16c61eb79eba1a676f777c6d2fc2803af6139e087552c5a25b79",
+          "attachment_refs": [
+            {
+              "id_fk_bukti": 311,
+              "kd_po_nk": "NKPO1006250010",
+              "keterangan": "Online - Shopee. \r\nBatrai AAA - Macan Tertawa Rp 51.869, \r\nLampu Hannochs 12 Watt - Mikro Elektrik Rp 135.082, \r\nStella Pocket - Kana-Store Rp 23.804, \r\nPita Printer - Fixprint Jakarta Rp 84.300.",
+              "user_upload": "KEU011",
+              "file_name": "2025061749632189",
+              "file_uploaded": "2025061749632189.jpg",
+              "create_at": "2025-06-11 15:56:30"
+            },
+            {
+              "id_fk_bukti": 958,
+              "kd_po_nk": "NKPO1104260037",
+              "keterangan": "",
+              "user_upload": "KEU111",
+              "file_name": "2026041776650688",
+              "file_uploaded": "2026041776650688",
+              "create_at": "2026-04-20 09:04:48"
+            }
+          ]
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 23,
+          "deleted_transactions": 0,
+          "priced_details": 2,
+          "source_evidence_sha256": "0a4d1e87024fbef7608e15be843f985d7a07ccd2296a88bb268184683685bc2a",
+          "attachment_refs": [
+            {
+              "id_fk_bukti": 311,
+              "kd_po_nk": "NKPO1006250010",
+              "keterangan": "Online - Shopee. \r\nBatrai AAA - Macan Tertawa Rp 51.869, \r\nLampu Hannochs 12 Watt - Mikro Elektrik Rp 135.082, \r\nStella Pocket - Kana-Store Rp 23.804, \r\nPita Printer - Fixprint Jakarta Rp 84.300.",
+              "user_upload": "KEU011",
+              "file_name": "2025061749632189",
+              "file_uploaded": "2025061749632189.jpg",
+              "create_at": "2025-06-11 15:56:30"
+            },
+            {
+              "id_fk_bukti": 958,
+              "kd_po_nk": "NKPO1104260037",
+              "keterangan": "",
+              "user_upload": "KEU111",
+              "file_name": "2026041776650688",
+              "file_uploaded": "2026041776650688",
+              "create_at": "2026-04-20 09:04:48"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "QBIN003": [
+    {
+      "id_batch": 3121,
+      "id_transnk_masuk": 2049,
+      "kd_barangsys": "PONK0411240005",
+      "names": [
+        "Binder Clips"
+      ],
+      "qty_sisa": 1.0,
+      "referensi_sumber": "ADJQTY3101250015",
+      "transaction_note": "menyesuaikan fisik",
+      "reason_code": "TIDAK_ADA_RUJUKAN_BATCH",
+      "reason": "Ada harga pembelian barang yang sama, tetapi tidak ada rujukan yang mengikat batch penyesuaian ini ke pembelian tersebut.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 8,
+          "deleted_transactions": 0,
+          "priced_details": 2,
+          "source_evidence_sha256": "28a5c7af8ab613d1d9e67a87d003fd7f396abbc96bff4e77bcf233d780198146",
+          "attachment_refs": [
+            {
+              "id_fk_bukti": 63,
+              "kd_po_nk": "NKPO0811240021",
+              "keterangan": "Agung Wardana",
+              "user_upload": "KEU02",
+              "file_name": "2024111732005279",
+              "file_uploaded": "2024111732005279",
+              "create_at": "2024-11-19 15:34:39"
+            },
+            {
+              "id_fk_bukti": 65,
+              "kd_po_nk": "NKPO1611240004",
+              "keterangan": "Agung Wardana",
+              "user_upload": "KEU02",
+              "file_name": "2024111732005510",
+              "file_uploaded": "2024111732005510",
+              "create_at": "2024-11-19 15:38:30"
+            }
+          ]
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 8,
+          "deleted_transactions": 0,
+          "priced_details": 2,
+          "source_evidence_sha256": "02ef2ddff953589f2b9642b45070d671eafb63ca9ed24b4d4b448cf0fbcca5c0",
+          "attachment_refs": [
+            {
+              "id_fk_bukti": 63,
+              "kd_po_nk": "NKPO0811240021",
+              "keterangan": "Agung Wardana",
+              "user_upload": "KEU02",
+              "file_name": "2024111732005279",
+              "file_uploaded": "2024111732005279",
+              "create_at": "2024-11-19 15:34:39"
+            },
+            {
+              "id_fk_bukti": 65,
+              "kd_po_nk": "NKPO1611240004",
+              "keterangan": "Agung Wardana",
+              "user_upload": "KEU02",
+              "file_name": "2024111732005510",
+              "file_uploaded": "2024111732005510",
+              "create_at": "2024-11-19 15:38:30"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "QBUK001": [
+    {
+      "id_batch": 3245,
+      "id_transnk_masuk": 2440,
+      "kd_barangsys": "KEU2QBUK00121",
+      "names": [
+        "Buku Tulis"
+      ],
+      "qty_sisa": 25.0,
+      "referensi_sumber": "ADJQTY2602250001",
+      "transaction_note": "Ambil stok dari Gudang Promosi",
+      "reason_code": "TIDAK_ADA_HARGA_BARANG",
+      "reason": "Tidak ada detail pembelian berharga dengan kode barang dan kode sistem yang sama pada kedua sumber lokal.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 69,
+          "deleted_transactions": 3,
+          "priced_details": 0,
+          "source_evidence_sha256": "e12ccf2534981ad9f397a95d9a013e768591c622980a36f376691cb23bc5f561",
+          "attachment_refs": []
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 75,
+          "deleted_transactions": 3,
+          "priced_details": 0,
+          "source_evidence_sha256": "f24b35dbfb0af1aaff9f9474fc7b727fd21aff2a1fcf93f489101dc7838c2944",
+          "attachment_refs": []
+        }
+      ]
+    },
+    {
+      "id_batch": 4151,
+      "id_transnk_masuk": 6956,
+      "kd_barangsys": "KEU2QBUK00121",
+      "names": [
+        "Buku Tulis"
+      ],
+      "qty_sisa": 1.0,
+      "referensi_sumber": "ADJQTY2911250013",
+      "transaction_note": "Stok dari AlfaBeta",
+      "reason_code": "TIDAK_ADA_HARGA_BARANG",
+      "reason": "Tidak ada detail pembelian berharga dengan kode barang dan kode sistem yang sama pada kedua sumber lokal.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 69,
+          "deleted_transactions": 3,
+          "priced_details": 0,
+          "source_evidence_sha256": "e12ccf2534981ad9f397a95d9a013e768591c622980a36f376691cb23bc5f561",
+          "attachment_refs": []
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 75,
+          "deleted_transactions": 3,
+          "priced_details": 0,
+          "source_evidence_sha256": "f24b35dbfb0af1aaff9f9474fc7b727fd21aff2a1fcf93f489101dc7838c2944",
+          "attachment_refs": []
+        }
+      ]
+    },
+    {
+      "id_batch": 5006,
+      "id_transnk_masuk": 10757,
+      "kd_barangsys": "KEU2QBUK00121",
+      "names": [
+        "Buku Tulis"
+      ],
+      "qty_sisa": 33.0,
+      "referensi_sumber": "ADJQTY2906260001",
+      "transaction_note": "Stok dari gudang",
+      "reason_code": "TIDAK_ADA_HARGA_BARANG",
+      "reason": "Tidak ada detail pembelian berharga dengan kode barang dan kode sistem yang sama pada kedua sumber lokal.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 69,
+          "deleted_transactions": 3,
+          "priced_details": 0,
+          "source_evidence_sha256": "e12ccf2534981ad9f397a95d9a013e768591c622980a36f376691cb23bc5f561",
+          "attachment_refs": []
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 75,
+          "deleted_transactions": 3,
+          "priced_details": 0,
+          "source_evidence_sha256": "f24b35dbfb0af1aaff9f9474fc7b727fd21aff2a1fcf93f489101dc7838c2944",
+          "attachment_refs": []
+        }
+      ]
+    }
+  ],
+  "QBUK004": [
+    {
+      "id_batch": 4997,
+      "id_transnk_masuk": 10703,
+      "kd_barangsys": "PONK1908250002",
+      "names": [
+        "Buku Barcode Bayer"
+      ],
+      "qty_sisa": 7.0,
+      "referensi_sumber": "ADJQTY2506260001",
+      "transaction_note": "Stok dari Bayer",
+      "reason_code": "TIDAK_ADA_HARGA_BARANG",
+      "reason": "Tidak ada detail pembelian berharga dengan kode barang dan kode sistem yang sama pada kedua sumber lokal.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 20,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "019e04c27131e409df7031ccd43d66880b05b51ed4370833d512c4ab787c0ad8",
+          "attachment_refs": []
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 21,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "3e32006a3ca1360c86f0b3566e5b1c67bba7bbdaf7c3d84c13667114f0b41993",
+          "attachment_refs": []
+        }
+      ]
+    }
+  ],
+  "QBUL002": [
+    {
+      "id_batch": 2714,
+      "id_transnk_masuk": 22,
+      "kd_barangsys": "KEU2QBUL00222",
+      "names": [
+        "Bulpen"
+      ],
+      "qty_sisa": 1.0,
+      "referensi_sumber": "PONK1410240001IN22",
+      "transaction_note": "Saldo Awal",
+      "reason_code": "SALDO_AWAL_TANPA_HARGA",
+      "reason": "Saldo awal tidak memiliki detail harga atau rujukan pembelian untuk batch ini di kedua sumber lokal.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 20,
+          "deleted_transactions": 1,
+          "priced_details": 2,
+          "source_evidence_sha256": "72f30e7231542d6f0d4f0138092aa2928196edfc58f2bfe3a47e0677deb0f9dc",
+          "attachment_refs": [
+            {
+              "id_fk_bukti": 345,
+              "kd_po_nk": "NKPO0307250021",
+              "keterangan": "Online - Shopee. Bulpen Hitam & Biru - Toko Alat Tulis Makadata, Shopee. Kartu Stok Kuning - Wahana atk, Shopee. Lampu Hannochs 25 Watt - Cello Electricm Shopee. Lampu Hannochs 12 Watt - Nyala Elektrik, Shopee. Stella Aerosol - Almiraco, Shopee. Toilet Cleaner - AtharShop18, Shopee. Super Pell Apel&Lemon - Unilever Indonesia Official Shop, Shopee",
+              "user_upload": "KEU011",
+              "file_name": "2025071751697925",
+              "file_uploaded": "2025071751697925",
+              "create_at": "2025-07-05 13:45:25"
+            },
+            {
+              "id_fk_bukti": 1356,
+              "kd_po_nk": "NKPO0509260008",
+              "keterangan": "",
+              "user_upload": "KEU111",
+              "file_name": "2026091788586798",
+              "file_uploaded": "2026091788586798",
+              "create_at": "2026-09-05 12:39:58"
+            }
+          ]
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 20,
+          "deleted_transactions": 1,
+          "priced_details": 2,
+          "source_evidence_sha256": "39c473d902320812690be2d0c883fb98ed01397b978dde14f0a34c1bfec4408b",
+          "attachment_refs": [
+            {
+              "id_fk_bukti": 345,
+              "kd_po_nk": "NKPO0307250021",
+              "keterangan": "Online - Shopee. Bulpen Hitam & Biru - Toko Alat Tulis Makadata, Shopee. Kartu Stok Kuning - Wahana atk, Shopee. Lampu Hannochs 25 Watt - Cello Electricm Shopee. Lampu Hannochs 12 Watt - Nyala Elektrik, Shopee. Stella Aerosol - Almiraco, Shopee. Toilet Cleaner - AtharShop18, Shopee. Super Pell Apel&Lemon - Unilever Indonesia Official Shop, Shopee",
+              "user_upload": "KEU011",
+              "file_name": "2025071751697925",
+              "file_uploaded": "2025071751697925",
+              "create_at": "2025-07-05 13:45:25"
+            },
+            {
+              "id_fk_bukti": 1356,
+              "kd_po_nk": "NKPO0509260008",
+              "keterangan": "",
+              "user_upload": "KEU111",
+              "file_name": "2026091788586798",
+              "file_uploaded": "2026091788586798",
+              "create_at": "2026-09-05 12:39:58"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "QCDR001": [
+    {
+      "id_batch": 2719,
+      "id_transnk_masuk": 27,
+      "kd_barangsys": "KEU2QCDR00127",
+      "names": [
+        "CDR"
+      ],
+      "qty_sisa": 50.0,
+      "referensi_sumber": "PONK1410240001IN27",
+      "transaction_note": "Saldo Awal",
+      "reason_code": "SALDO_AWAL_TANPA_HARGA",
+      "reason": "Saldo awal tidak memiliki detail harga atau rujukan pembelian untuk batch ini di kedua sumber lokal.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 1,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "29f31d97bd1065bf3562fb8d962a601fd07150396333fd9943fb99c05f6252a4",
+          "attachment_refs": []
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 1,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "29f31d97bd1065bf3562fb8d962a601fd07150396333fd9943fb99c05f6252a4",
+          "attachment_refs": []
+        }
+      ]
+    }
+  ],
+  "QCLI001": [
+    {
+      "id_batch": 2722,
+      "id_transnk_masuk": 30,
+      "kd_barangsys": "KEU2QCLI00130",
+      "names": [
+        "Cling"
+      ],
+      "qty_sisa": 2.0,
+      "referensi_sumber": "PONK1410240001IN30",
+      "transaction_note": "Saldo Awal",
+      "reason_code": "SALDO_AWAL_TANPA_HARGA",
+      "reason": "Saldo awal tidak memiliki detail harga atau rujukan pembelian untuk batch ini di kedua sumber lokal.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 16,
+          "deleted_transactions": 1,
+          "priced_details": 1,
+          "source_evidence_sha256": "b4ac9c4f4797569bab4a6f5793eeb80f04a486f7ff6286cae68b986b1d724f0c",
+          "attachment_refs": [
+            {
+              "id_fk_bukti": 573,
+              "kd_po_nk": "NKPO2410250002",
+              "keterangan": "Cling + Harpic + Vanish - Roxy. Karet + Tinta - Online Shopee\r\n",
+              "user_upload": "KEU011",
+              "file_name": "2025101761538086",
+              "file_uploaded": "2025101761538086",
+              "create_at": "2025-10-27 11:08:06"
+            }
+          ]
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 16,
+          "deleted_transactions": 1,
+          "priced_details": 1,
+          "source_evidence_sha256": "5f8d30dd34a4fb422dce4d956bb97783708707f0595e7cbfae32a27f2561e74a",
+          "attachment_refs": [
+            {
+              "id_fk_bukti": 573,
+              "kd_po_nk": "NKPO2410250002",
+              "keterangan": "Cling + Harpic + Vanish - Roxy. Karet + Tinta - Online Shopee\r\n",
+              "user_upload": "KEU011",
+              "file_name": "2025101761538086",
+              "file_uploaded": "2025101761538086",
+              "create_at": "2025-10-27 11:08:06"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "QDIS001": [
+    {
+      "id_batch": 2726,
+      "id_transnk_masuk": 34,
+      "kd_barangsys": "KEU2QDIS00134",
+      "names": [
+        "Disket"
+      ],
+      "qty_sisa": 19.0,
+      "referensi_sumber": "PONK1410240001IN34",
+      "transaction_note": "Saldo Awal",
+      "reason_code": "SALDO_AWAL_TANPA_HARGA",
+      "reason": "Saldo awal tidak memiliki detail harga atau rujukan pembelian untuk batch ini di kedua sumber lokal.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 1,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "5ee7e5e39dc66c04200ce9217f5f72b91133116ecdb3970cb4090ad77c795936",
+          "attachment_refs": []
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 1,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "5ee7e5e39dc66c04200ce9217f5f72b91133116ecdb3970cb4090ad77c795936",
+          "attachment_refs": []
+        }
+      ]
+    }
+  ],
+  "QFOR001": [
+    {
+      "id_batch": 5178,
+      "id_transnk_masuk": 11425,
+      "kd_barangsys": "PONK2210250006",
+      "names": [
+        "Form Permintaan Service Kendaraan"
+      ],
+      "qty_sisa": 20.0,
+      "referensi_sumber": "ADJQTY0108260004",
+      "transaction_note": "Stok dari ruang belakang",
+      "reason_code": "TIDAK_ADA_HARGA_BARANG",
+      "reason": "Tidak ada detail pembelian berharga dengan kode barang dan kode sistem yang sama pada kedua sumber lokal.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 3,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "6b793a0c15caef76f2fa7416bd69e2d39472cab4221e4bf59d670289e44b7307",
+          "attachment_refs": []
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 3,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "6b793a0c15caef76f2fa7416bd69e2d39472cab4221e4bf59d670289e44b7307",
+          "attachment_refs": []
+        }
+      ]
+    }
+  ],
+  "QHAR001": [
+    {
+      "id_batch": 3194,
+      "id_transnk_masuk": 2231,
+      "kd_barangsys": "KEU2QHAR00139",
+      "names": [
+        "Harpic"
+      ],
+      "qty_sisa": 2.0,
+      "referensi_sumber": "ADJQTY0702250003",
+      "transaction_note": "menyesuaikan stok fisik",
+      "reason_code": "TIDAK_ADA_RUJUKAN_BATCH",
+      "reason": "Ada harga pembelian barang yang sama, tetapi tidak ada rujukan yang mengikat batch penyesuaian ini ke pembelian tersebut.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 37,
+          "deleted_transactions": 4,
+          "priced_details": 3,
+          "source_evidence_sha256": "b376cc4ed511dff9a8e7c9a877e44580703d83be0183dcf353ccf22e8de74f30",
+          "attachment_refs": [
+            {
+              "id_fk_bukti": 91,
+              "kd_po_nk": "NKPO0712240001",
+              "keterangan": "Offline Roxy",
+              "user_upload": "KEU02",
+              "file_name": "2024121733792469",
+              "file_uploaded": "2024121733792469",
+              "create_at": "2024-12-10 08:01:09"
+            },
+            {
+              "id_fk_bukti": 573,
+              "kd_po_nk": "NKPO2410250002",
+              "keterangan": "Cling + Harpic + Vanish - Roxy. Karet + Tinta - Online Shopee\r\n",
+              "user_upload": "KEU011",
+              "file_name": "2025101761538086",
+              "file_uploaded": "2025101761538086",
+              "create_at": "2025-10-27 11:08:06"
+            },
+            {
+              "id_fk_bukti": 1130,
+              "kd_po_nk": "NKPO1106260013",
+              "keterangan": "",
+              "user_upload": "KEU111",
+              "file_name": "2026061781228497",
+              "file_uploaded": "2026061781228497",
+              "create_at": "2026-06-12 08:41:37"
+            }
+          ]
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 39,
+          "deleted_transactions": 4,
+          "priced_details": 3,
+          "source_evidence_sha256": "352ee4ede536df50188ddb4be74f51573b224c258704ad66ab4d8cb68aa433e1",
+          "attachment_refs": [
+            {
+              "id_fk_bukti": 91,
+              "kd_po_nk": "NKPO0712240001",
+              "keterangan": "Offline Roxy",
+              "user_upload": "KEU02",
+              "file_name": "2024121733792469",
+              "file_uploaded": "2024121733792469",
+              "create_at": "2024-12-10 08:01:09"
+            },
+            {
+              "id_fk_bukti": 573,
+              "kd_po_nk": "NKPO2410250002",
+              "keterangan": "Cling + Harpic + Vanish - Roxy. Karet + Tinta - Online Shopee\r\n",
+              "user_upload": "KEU011",
+              "file_name": "2025101761538086",
+              "file_uploaded": "2025101761538086",
+              "create_at": "2025-10-27 11:08:06"
+            },
+            {
+              "id_fk_bukti": 1130,
+              "kd_po_nk": "NKPO1106260013",
+              "keterangan": "",
+              "user_upload": "KEU111",
+              "file_name": "2026061781228497",
+              "file_uploaded": "2026061781228497",
+              "create_at": "2026-06-12 08:41:37"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "QISI001": [
+    {
+      "id_batch": 2742,
+      "id_transnk_masuk": 50,
+      "kd_barangsys": "KEU2QISI00150",
+      "names": [
+        "Isi Staples"
+      ],
+      "qty_sisa": 41.0,
+      "referensi_sumber": "PONK1410240001IN50",
+      "transaction_note": "Saldo Awal",
+      "reason_code": "SALDO_AWAL_TANPA_HARGA",
+      "reason": "Saldo awal tidak memiliki detail harga atau rujukan pembelian untuk batch ini di kedua sumber lokal.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 12,
+          "deleted_transactions": 1,
+          "priced_details": 0,
+          "source_evidence_sha256": "5e7edbdc0d685d074fc4a79665e12f5e12394c383a0474e4ccf586ee9a6fb236",
+          "attachment_refs": []
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 13,
+          "deleted_transactions": 1,
+          "priced_details": 0,
+          "source_evidence_sha256": "1f2b77ab3223d995ac50265909355b8e2f4a158cdb3d593f67761b4908a38b49",
+          "attachment_refs": []
+        }
+      ]
+    }
+  ],
+  "QISI003": [
+    {
+      "id_batch": 2740,
+      "id_transnk_masuk": 48,
+      "kd_barangsys": "KEU2QISI00348",
+      "names": [
+        "Isi Staples"
+      ],
+      "qty_sisa": 2.0,
+      "referensi_sumber": "PONK1410240001IN48",
+      "transaction_note": "Saldo Awal",
+      "reason_code": "SALDO_AWAL_TANPA_HARGA",
+      "reason": "Saldo awal tidak memiliki detail harga atau rujukan pembelian untuk batch ini di kedua sumber lokal.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 2,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "e86425e13ddb95483f6a6b7127f369a7f378c270e9850bbea11774d905e0aee4",
+          "attachment_refs": []
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 2,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "e86425e13ddb95483f6a6b7127f369a7f378c270e9850bbea11774d905e0aee4",
+          "attachment_refs": []
+        }
+      ]
+    },
+    {
+      "id_batch": 3786,
+      "id_transnk_masuk": 5152,
+      "kd_barangsys": "KEU2QISI00348",
+      "names": [
+        "Isi Staples"
+      ],
+      "qty_sisa": 1.0,
+      "referensi_sumber": "ADJQTY1908250001",
+      "transaction_note": "Stok dari Bu Ika",
+      "reason_code": "TIDAK_ADA_HARGA_BARANG",
+      "reason": "Tidak ada detail pembelian berharga dengan kode barang dan kode sistem yang sama pada kedua sumber lokal.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 2,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "e86425e13ddb95483f6a6b7127f369a7f378c270e9850bbea11774d905e0aee4",
+          "attachment_refs": []
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 2,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "e86425e13ddb95483f6a6b7127f369a7f378c270e9850bbea11774d905e0aee4",
+          "attachment_refs": []
+        }
+      ]
+    }
+  ],
+  "QISI005": [
+    {
+      "id_batch": 2737,
+      "id_transnk_masuk": 45,
+      "kd_barangsys": "KEU2QISI00545",
+      "names": [
+        "Isi Cutter"
+      ],
+      "qty_sisa": 5.0,
+      "referensi_sumber": "PONK1410240001IN45",
+      "transaction_note": "Saldo Awal",
+      "reason_code": "SALDO_AWAL_TANPA_HARGA",
+      "reason": "Saldo awal tidak memiliki detail harga atau rujukan pembelian untuk batch ini di kedua sumber lokal.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 8,
+          "deleted_transactions": 1,
+          "priced_details": 0,
+          "source_evidence_sha256": "03d3e1deab74eafa8f8c841bde93539cf94227975a31bbdbd9e4d342a39111c0",
+          "attachment_refs": []
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 10,
+          "deleted_transactions": 1,
+          "priced_details": 0,
+          "source_evidence_sha256": "19022e9defdcfc66b86ba7420357fa609fc17c4aa25129426870ef696dfbd583",
+          "attachment_refs": []
+        }
+      ]
+    }
+  ],
+  "QISI006": [
+    {
+      "id_batch": 2735,
+      "id_transnk_masuk": 43,
+      "kd_barangsys": "KEU2QISI00643",
+      "names": [
+        "Isi Bulpen"
+      ],
+      "qty_sisa": 1.0,
+      "referensi_sumber": "PONK1410240001IN43",
+      "transaction_note": "Saldo Awal",
+      "reason_code": "SALDO_AWAL_TANPA_HARGA",
+      "reason": "Saldo awal tidak memiliki detail harga atau rujukan pembelian untuk batch ini di kedua sumber lokal.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 51,
+          "deleted_transactions": 3,
+          "priced_details": 2,
+          "source_evidence_sha256": "bb35aee3882c7730828f74f2e33365f29b61f1fef378f35da0ec16e3325d4259",
+          "attachment_refs": [
+            {
+              "id_fk_bukti": 65,
+              "kd_po_nk": "NKPO1611240004",
+              "keterangan": "Agung Wardana",
+              "user_upload": "KEU02",
+              "file_name": "2024111732005510",
+              "file_uploaded": "2024111732005510",
+              "create_at": "2024-11-19 15:38:30"
+            },
+            {
+              "id_fk_bukti": 958,
+              "kd_po_nk": "NKPO1104260037",
+              "keterangan": "",
+              "user_upload": "KEU111",
+              "file_name": "2026041776650688",
+              "file_uploaded": "2026041776650688",
+              "create_at": "2026-04-20 09:04:48"
+            }
+          ]
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 53,
+          "deleted_transactions": 3,
+          "priced_details": 2,
+          "source_evidence_sha256": "71f8020b1bbf99f7989295b6e78daa523aeca73beb7878697d2a47d45af72d9e",
+          "attachment_refs": [
+            {
+              "id_fk_bukti": 65,
+              "kd_po_nk": "NKPO1611240004",
+              "keterangan": "Agung Wardana",
+              "user_upload": "KEU02",
+              "file_name": "2024111732005510",
+              "file_uploaded": "2024111732005510",
+              "create_at": "2024-11-19 15:38:30"
+            },
+            {
+              "id_fk_bukti": 958,
+              "kd_po_nk": "NKPO1104260037",
+              "keterangan": "",
+              "user_upload": "KEU111",
+              "file_name": "2026041776650688",
+              "file_uploaded": "2026041776650688",
+              "create_at": "2026-04-20 09:04:48"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "QISI007": [
+    {
+      "id_batch": 2734,
+      "id_transnk_masuk": 42,
+      "kd_barangsys": "KEU2QISI00742",
+      "names": [
+        "Isi Bulpen"
+      ],
+      "qty_sisa": 1.0,
+      "referensi_sumber": "PONK1410240001IN42",
+      "transaction_note": "Saldo Awal",
+      "reason_code": "SALDO_AWAL_TANPA_HARGA",
+      "reason": "Saldo awal tidak memiliki detail harga atau rujukan pembelian untuk batch ini di kedua sumber lokal.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 46,
+          "deleted_transactions": 4,
+          "priced_details": 2,
+          "source_evidence_sha256": "e09a443881f8185f45ec593d141db7d276fb9cefbbfed92efc5e014695caccf3",
+          "attachment_refs": [
+            {
+              "id_fk_bukti": 65,
+              "kd_po_nk": "NKPO1611240004",
+              "keterangan": "Agung Wardana",
+              "user_upload": "KEU02",
+              "file_name": "2024111732005510",
+              "file_uploaded": "2024111732005510",
+              "create_at": "2024-11-19 15:38:30"
+            },
+            {
+              "id_fk_bukti": 1024,
+              "kd_po_nk": "NKPO0505260003",
+              "keterangan": "",
+              "user_upload": "KEU012",
+              "file_name": "2026051778115104",
+              "file_uploaded": "2026051778115104",
+              "create_at": "2026-05-07 07:51:44"
+            }
+          ]
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 48,
+          "deleted_transactions": 4,
+          "priced_details": 2,
+          "source_evidence_sha256": "82445454d33ddb33ea36c4311a415fb094e23cde9d12eff4bf2fbb52ee00bdf6",
+          "attachment_refs": [
+            {
+              "id_fk_bukti": 65,
+              "kd_po_nk": "NKPO1611240004",
+              "keterangan": "Agung Wardana",
+              "user_upload": "KEU02",
+              "file_name": "2024111732005510",
+              "file_uploaded": "2024111732005510",
+              "create_at": "2024-11-19 15:38:30"
+            },
+            {
+              "id_fk_bukti": 1024,
+              "kd_po_nk": "NKPO0505260003",
+              "keterangan": "",
+              "user_upload": "KEU012",
+              "file_name": "2026051778115104",
+              "file_uploaded": "2026051778115104",
+              "create_at": "2026-05-07 07:51:44"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "QISI009": [
+    {
+      "id_batch": 3133,
+      "id_transnk_masuk": 2066,
+      "kd_barangsys": "KEU2QISI00947",
+      "names": [
+        "Isi Pensil"
+      ],
+      "qty_sisa": 1.0,
+      "referensi_sumber": "ADJQTY3101250030",
+      "transaction_note": "menyesuaikan stok fisik",
+      "reason_code": "TIDAK_ADA_RUJUKAN_BATCH",
+      "reason": "Ada harga pembelian barang yang sama, tetapi tidak ada rujukan yang mengikat batch penyesuaian ini ke pembelian tersebut.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 21,
+          "deleted_transactions": 2,
+          "priced_details": 2,
+          "source_evidence_sha256": "c1329f69c15301a7a957c2d4ca26ed38583e90ffdcfbf3d1147fb18d978884d8",
+          "attachment_refs": [
+            {
+              "id_fk_bukti": 65,
+              "kd_po_nk": "NKPO1611240004",
+              "keterangan": "Agung Wardana",
+              "user_upload": "KEU02",
+              "file_name": "2024111732005510",
+              "file_uploaded": "2024111732005510",
+              "create_at": "2024-11-19 15:38:30"
+            },
+            {
+              "id_fk_bukti": 1304,
+              "kd_po_nk": "NKPO1208260161",
+              "keterangan": "",
+              "user_upload": "KEU111",
+              "file_name": "2026081786582513",
+              "file_uploaded": "2026081786582513",
+              "create_at": "2026-08-13 07:55:13"
+            }
+          ]
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 23,
+          "deleted_transactions": 2,
+          "priced_details": 2,
+          "source_evidence_sha256": "adb0f3015dcdb111bff003ada5e03229d41d97b1a7660ce2318fb53537426a8f",
+          "attachment_refs": [
+            {
+              "id_fk_bukti": 65,
+              "kd_po_nk": "NKPO1611240004",
+              "keterangan": "Agung Wardana",
+              "user_upload": "KEU02",
+              "file_name": "2024111732005510",
+              "file_uploaded": "2024111732005510",
+              "create_at": "2024-11-19 15:38:30"
+            },
+            {
+              "id_fk_bukti": 1304,
+              "kd_po_nk": "NKPO1208260161",
+              "keterangan": "",
+              "user_upload": "KEU111",
+              "file_name": "2026081786582513",
+              "file_uploaded": "2026081786582513",
+              "create_at": "2026-08-13 07:55:13"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "QISI010": [
+    {
+      "id_batch": 2736,
+      "id_transnk_masuk": 44,
+      "kd_barangsys": "KEU2QISI01044",
+      "names": [
+        "Isi Bulpen"
+      ],
+      "qty_sisa": 1.0,
+      "referensi_sumber": "PONK1410240001IN44",
+      "transaction_note": "Saldo Awal",
+      "reason_code": "SALDO_AWAL_TANPA_HARGA",
+      "reason": "Saldo awal tidak memiliki detail harga atau rujukan pembelian untuk batch ini di kedua sumber lokal.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 1,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "d42eb70146965cb35c9a8faa774e2e35e3527d856994d2fa38f25ea0587a13c8",
+          "attachment_refs": []
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 1,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "d42eb70146965cb35c9a8faa774e2e35e3527d856994d2fa38f25ea0587a13c8",
+          "attachment_refs": []
+        }
+      ]
+    }
+  ],
+  "QISO002": [
+    {
+      "id_batch": 4907,
+      "id_transnk_masuk": 10350,
+      "kd_barangsys": "KEU2QISO00252",
+      "names": [
+        "Isolasi"
+      ],
+      "qty_sisa": 1.0,
+      "referensi_sumber": "ADJQTY0206260001",
+      "transaction_note": "Menyesuaikan stok fisik",
+      "reason_code": "TIDAK_ADA_RUJUKAN_BATCH",
+      "reason": "Ada harga pembelian barang yang sama, tetapi tidak ada rujukan yang mengikat batch penyesuaian ini ke pembelian tersebut.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 8,
+          "deleted_transactions": 0,
+          "priced_details": 1,
+          "source_evidence_sha256": "02fab2d6c0ef1f21f5b1f6b65968f34a788cce8477c10fad4daecdbb0d2eeafd",
+          "attachment_refs": [
+            {
+              "id_fk_bukti": 1081,
+              "kd_po_nk": "NKPO2305260006",
+              "keterangan": "",
+              "user_upload": "KEU111",
+              "file_name": "2026051779517931",
+              "file_uploaded": "2026051779517931",
+              "create_at": "2026-05-23 13:32:11"
+            }
+          ]
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 9,
+          "deleted_transactions": 0,
+          "priced_details": 1,
+          "source_evidence_sha256": "3a0b8d579945ba228f6035703f933d8561376b54cffbf5ca0c8b87105ba4c6ff",
+          "attachment_refs": [
+            {
+              "id_fk_bukti": 1081,
+              "kd_po_nk": "NKPO2305260006",
+              "keterangan": "",
+              "user_upload": "KEU111",
+              "file_name": "2026051779517931",
+              "file_uploaded": "2026051779517931",
+              "create_at": "2026-05-23 13:32:11"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "QJAR001": [
+    {
+      "id_batch": 2748,
+      "id_transnk_masuk": 56,
+      "kd_barangsys": "KEU2QJAR00156",
+      "names": [
+        "Jarum Karung"
+      ],
+      "qty_sisa": 20.0,
+      "referensi_sumber": "PONK1410240001IN56",
+      "transaction_note": "Saldo Awal",
+      "reason_code": "SALDO_AWAL_TANPA_HARGA",
+      "reason": "Saldo awal tidak memiliki detail harga atau rujukan pembelian untuk batch ini di kedua sumber lokal.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 1,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "aa5904f4592813ee6d829f57a6869b5b499691543009445378210f8f624eb88e",
+          "attachment_refs": []
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 1,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "aa5904f4592813ee6d829f57a6869b5b499691543009445378210f8f624eb88e",
+          "attachment_refs": []
+        }
+      ]
+    }
+  ],
+  "QKER002": [
+    {
+      "id_batch": 2762,
+      "id_transnk_masuk": 70,
+      "kd_barangsys": "KEU2QKER00270",
+      "names": [
+        "Kertas"
+      ],
+      "qty_sisa": 100.0,
+      "referensi_sumber": "PONK1410240001IN70",
+      "transaction_note": "Saldo Awal",
+      "reason_code": "SALDO_AWAL_TANPA_HARGA",
+      "reason": "Saldo awal tidak memiliki detail harga atau rujukan pembelian untuk batch ini di kedua sumber lokal.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 1,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "cdb4997d68961d31f556667ac38864cde2b451c4eead67eaea9f41fdbbed1b48",
+          "attachment_refs": []
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 1,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "cdb4997d68961d31f556667ac38864cde2b451c4eead67eaea9f41fdbbed1b48",
+          "attachment_refs": []
+        }
+      ]
+    }
+  ],
+  "QKER003": [
+    {
+      "id_batch": 2763,
+      "id_transnk_masuk": 71,
+      "kd_barangsys": "KEU2QKER00371",
+      "names": [
+        "Kertas"
+      ],
+      "qty_sisa": 100.0,
+      "referensi_sumber": "PONK1410240001IN71",
+      "transaction_note": "Saldo Awal",
+      "reason_code": "SALDO_AWAL_TANPA_HARGA",
+      "reason": "Saldo awal tidak memiliki detail harga atau rujukan pembelian untuk batch ini di kedua sumber lokal.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 1,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "1cb8b51436dfbea4076db0a523c0323b3bf79ff8a3ddd16cd99415364f9cfaee",
+          "attachment_refs": []
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 1,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "1cb8b51436dfbea4076db0a523c0323b3bf79ff8a3ddd16cd99415364f9cfaee",
+          "attachment_refs": []
+        }
+      ]
+    }
+  ],
+  "QKER004": [
+    {
+      "id_batch": 2759,
+      "id_transnk_masuk": 67,
+      "kd_barangsys": "KEU2QKER00467",
+      "names": [
+        "Kertas Label"
+      ],
+      "qty_sisa": 4.0,
+      "referensi_sumber": "PONK1410240001IN67",
+      "transaction_note": "Saldo Awal",
+      "reason_code": "SALDO_AWAL_TANPA_HARGA",
+      "reason": "Saldo awal tidak memiliki detail harga atau rujukan pembelian untuk batch ini di kedua sumber lokal.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 3,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "94a47151427cb58e4ce1f13f9904549a358b0ba7080a64eb42abad03c563ac90",
+          "attachment_refs": []
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 3,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "94a47151427cb58e4ce1f13f9904549a358b0ba7080a64eb42abad03c563ac90",
+          "attachment_refs": []
+        }
+      ]
+    },
+    {
+      "id_batch": 3205,
+      "id_transnk_masuk": 2245,
+      "kd_barangsys": "KEU2QKER00467",
+      "names": [
+        "Kertas Label"
+      ],
+      "qty_sisa": 5.0,
+      "referensi_sumber": "ADJQTY0702250021",
+      "transaction_note": "menyesuaikan stok fisik",
+      "reason_code": "TIDAK_ADA_HARGA_BARANG",
+      "reason": "Tidak ada detail pembelian berharga dengan kode barang dan kode sistem yang sama pada kedua sumber lokal.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 3,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "94a47151427cb58e4ce1f13f9904549a358b0ba7080a64eb42abad03c563ac90",
+          "attachment_refs": []
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 3,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "94a47151427cb58e4ce1f13f9904549a358b0ba7080a64eb42abad03c563ac90",
+          "attachment_refs": []
+        }
+      ]
+    }
+  ],
+  "QKER005": [
+    {
+      "id_batch": 2755,
+      "id_transnk_masuk": 63,
+      "kd_barangsys": "KEU2QKER00563",
+      "names": [
+        "Kertas"
+      ],
+      "qty_sisa": 2.0,
+      "referensi_sumber": "PONK1410240001IN63",
+      "transaction_note": "Saldo Awal",
+      "reason_code": "SALDO_AWAL_TANPA_HARGA",
+      "reason": "Saldo awal tidak memiliki detail harga atau rujukan pembelian untuk batch ini di kedua sumber lokal.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 2,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "62bee42badeb19c5f2d87477279618a90b87a2b780af8498523ed1710956d8df",
+          "attachment_refs": []
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 2,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "62bee42badeb19c5f2d87477279618a90b87a2b780af8498523ed1710956d8df",
+          "attachment_refs": []
+        }
+      ]
+    },
+    {
+      "id_batch": 4001,
+      "id_transnk_masuk": 6189,
+      "kd_barangsys": "KEU2QKER00563",
+      "names": [
+        "Kertas"
+      ],
+      "qty_sisa": 1.0,
+      "referensi_sumber": "ADJQTY2210250003",
+      "transaction_note": "Stok lama (dari Mb Riza)",
+      "reason_code": "TIDAK_ADA_HARGA_BARANG",
+      "reason": "Tidak ada detail pembelian berharga dengan kode barang dan kode sistem yang sama pada kedua sumber lokal.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 2,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "62bee42badeb19c5f2d87477279618a90b87a2b780af8498523ed1710956d8df",
+          "attachment_refs": []
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 2,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "62bee42badeb19c5f2d87477279618a90b87a2b780af8498523ed1710956d8df",
+          "attachment_refs": []
+        }
+      ]
+    }
+  ],
+  "QKER006": [
+    {
+      "id_batch": 3138,
+      "id_transnk_masuk": 2081,
+      "kd_barangsys": "KEU2QKER00668",
+      "names": [
+        "Kertas"
+      ],
+      "qty_sisa": 1.0,
+      "referensi_sumber": "ADJQTY0102250003",
+      "transaction_note": "menyesuaikan stok fisik",
+      "reason_code": "TIDAK_ADA_RUJUKAN_BATCH",
+      "reason": "Ada harga pembelian barang yang sama, tetapi tidak ada rujukan yang mengikat batch penyesuaian ini ke pembelian tersebut.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 272,
+          "deleted_transactions": 12,
+          "priced_details": 7,
+          "source_evidence_sha256": "c8f506e186b783d81663a1598c1cb20723cc822e3bc142c4ff322dee97465c1b",
+          "attachment_refs": [
+            {
+              "id_fk_bukti": 13,
+              "kd_po_nk": "NKPO2410240005",
+              "keterangan": "sedang dibelanjakan di Agung wardana",
+              "user_upload": "KEU02",
+              "file_name": "2024101729759307",
+              "file_uploaded": "2024101729759307.jpg",
+              "create_at": "2024-10-24 15:41:47"
+            },
+            {
+              "id_fk_bukti": 67,
+              "kd_po_nk": "NKPO1811240002",
+              "keterangan": "Agung Wardana",
+              "user_upload": "KEU02",
+              "file_name": "2024111732005623",
+              "file_uploaded": "2024111732005623",
+              "create_at": "2024-11-19 15:40:23"
+            },
+            {
+              "id_fk_bukti": 149,
+              "kd_po_nk": "NKPO2501250010",
+              "keterangan": "Offline Agung Wardhana",
+              "user_upload": "KEU02",
+              "file_name": "2025011738054339",
+              "file_uploaded": "2025011738054339",
+              "create_at": "2025-01-28 15:52:19"
+            },
+            {
+              "id_fk_bukti": 209,
+              "kd_po_nk": "NKPO1903250001",
+              "keterangan": "Offline - Agung Wardana",
+              "user_upload": "KEU011",
+              "file_name": "2025031742521051",
+              "file_uploaded": "2025031742521051.png",
+              "create_at": "2025-03-21 08:37:31"
+            },
+            {
+              "id_fk_bukti": 283,
+              "kd_po_nk": "NKPO2005250008",
+              "keterangan": "Offline - Bintang Satya Kencana",
+              "user_upload": "KEU011",
+              "file_name": "2025051747989095",
+              "file_uploaded": "2025051747989095.jpg",
+              "create_at": "2025-05-23 15:31:35"
+            },
+            {
+              "id_fk_bukti": 632,
+              "kd_po_nk": "NKPO2111250006",
+              "keterangan": "Offline - Bintang Surya Kencana\r\n",
+              "user_upload": "KEU011",
+              "file_name": "2025111763956224",
+              "file_uploaded": "2025111763956224",
+              "create_at": "2025-11-24 10:50:24"
+            },
+            {
+              "id_fk_bukti": 1103,
+              "kd_po_nk": "NKPO0206260068",
+              "keterangan": "",
+              "user_upload": "KEU111",
+              "file_name": "2026061780377854",
+              "file_uploaded": "2026061780377854",
+              "create_at": "2026-06-02 12:24:14"
+            }
+          ]
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 285,
+          "deleted_transactions": 12,
+          "priced_details": 7,
+          "source_evidence_sha256": "34c985847014a9aed1353156b0351fde8556847b5ee4d85f16eabc58b23e3af5",
+          "attachment_refs": [
+            {
+              "id_fk_bukti": 13,
+              "kd_po_nk": "NKPO2410240005",
+              "keterangan": "sedang dibelanjakan di Agung wardana",
+              "user_upload": "KEU02",
+              "file_name": "2024101729759307",
+              "file_uploaded": "2024101729759307.jpg",
+              "create_at": "2024-10-24 15:41:47"
+            },
+            {
+              "id_fk_bukti": 67,
+              "kd_po_nk": "NKPO1811240002",
+              "keterangan": "Agung Wardana",
+              "user_upload": "KEU02",
+              "file_name": "2024111732005623",
+              "file_uploaded": "2024111732005623",
+              "create_at": "2024-11-19 15:40:23"
+            },
+            {
+              "id_fk_bukti": 149,
+              "kd_po_nk": "NKPO2501250010",
+              "keterangan": "Offline Agung Wardhana",
+              "user_upload": "KEU02",
+              "file_name": "2025011738054339",
+              "file_uploaded": "2025011738054339",
+              "create_at": "2025-01-28 15:52:19"
+            },
+            {
+              "id_fk_bukti": 209,
+              "kd_po_nk": "NKPO1903250001",
+              "keterangan": "Offline - Agung Wardana",
+              "user_upload": "KEU011",
+              "file_name": "2025031742521051",
+              "file_uploaded": "2025031742521051.png",
+              "create_at": "2025-03-21 08:37:31"
+            },
+            {
+              "id_fk_bukti": 283,
+              "kd_po_nk": "NKPO2005250008",
+              "keterangan": "Offline - Bintang Satya Kencana",
+              "user_upload": "KEU011",
+              "file_name": "2025051747989095",
+              "file_uploaded": "2025051747989095.jpg",
+              "create_at": "2025-05-23 15:31:35"
+            },
+            {
+              "id_fk_bukti": 632,
+              "kd_po_nk": "NKPO2111250006",
+              "keterangan": "Offline - Bintang Surya Kencana\r\n",
+              "user_upload": "KEU011",
+              "file_name": "2025111763956224",
+              "file_uploaded": "2025111763956224",
+              "create_at": "2025-11-24 10:50:24"
+            },
+            {
+              "id_fk_bukti": 1103,
+              "kd_po_nk": "NKPO0206260068",
+              "keterangan": "",
+              "user_upload": "KEU111",
+              "file_name": "2026061780377854",
+              "file_uploaded": "2026061780377854",
+              "create_at": "2026-06-02 12:24:14"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "QKER007": [
+    {
+      "id_batch": 3139,
+      "id_transnk_masuk": 2082,
+      "kd_barangsys": "KEU2QKER00765",
+      "names": [
+        "Kertas"
+      ],
+      "qty_sisa": 2.0,
+      "referensi_sumber": "ADJQTY0102250004",
+      "transaction_note": "menyesuaikan ketersediaan stok",
+      "reason_code": "TIDAK_ADA_RUJUKAN_BATCH",
+      "reason": "Ada harga pembelian barang yang sama, tetapi tidak ada rujukan yang mengikat batch penyesuaian ini ke pembelian tersebut.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 83,
+          "deleted_transactions": 8,
+          "priced_details": 5,
+          "source_evidence_sha256": "60863cb76f16418488b502e0f7879fe787cf403f4354c775598bd0f523fe8618",
+          "attachment_refs": [
+            {
+              "id_fk_bukti": 13,
+              "kd_po_nk": "NKPO2410240005",
+              "keterangan": "sedang dibelanjakan di Agung wardana",
+              "user_upload": "KEU02",
+              "file_name": "2024101729759307",
+              "file_uploaded": "2024101729759307.jpg",
+              "create_at": "2024-10-24 15:41:47"
+            },
+            {
+              "id_fk_bukti": 149,
+              "kd_po_nk": "NKPO2501250010",
+              "keterangan": "Offline Agung Wardhana",
+              "user_upload": "KEU02",
+              "file_name": "2025011738054339",
+              "file_uploaded": "2025011738054339",
+              "create_at": "2025-01-28 15:52:19"
+            },
+            {
+              "id_fk_bukti": 487,
+              "kd_po_nk": "NKPO0909250004",
+              "keterangan": "",
+              "user_upload": "KEU011",
+              "file_name": "2025091757557252",
+              "file_uploaded": "2025091757557252",
+              "create_at": "2025-09-11 09:20:52"
+            },
+            {
+              "id_fk_bukti": 632,
+              "kd_po_nk": "NKPO2111250006",
+              "keterangan": "Offline - Bintang Surya Kencana\r\n",
+              "user_upload": "KEU011",
+              "file_name": "2025111763956224",
+              "file_uploaded": "2025111763956224",
+              "create_at": "2025-11-24 10:50:24"
+            },
+            {
+              "id_fk_bukti": 1341,
+              "kd_po_nk": "NKPO3108260176",
+              "keterangan": "",
+              "user_upload": "KEU111",
+              "file_name": "2026081788155300",
+              "file_uploaded": "2026081788155300",
+              "create_at": "2026-08-31 12:48:20"
+            }
+          ]
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 88,
+          "deleted_transactions": 8,
+          "priced_details": 5,
+          "source_evidence_sha256": "2c8d820f824981aaa4d2dcf58e131ed0520579d30a9801de0c291ff1e0288789",
+          "attachment_refs": [
+            {
+              "id_fk_bukti": 13,
+              "kd_po_nk": "NKPO2410240005",
+              "keterangan": "sedang dibelanjakan di Agung wardana",
+              "user_upload": "KEU02",
+              "file_name": "2024101729759307",
+              "file_uploaded": "2024101729759307.jpg",
+              "create_at": "2024-10-24 15:41:47"
+            },
+            {
+              "id_fk_bukti": 149,
+              "kd_po_nk": "NKPO2501250010",
+              "keterangan": "Offline Agung Wardhana",
+              "user_upload": "KEU02",
+              "file_name": "2025011738054339",
+              "file_uploaded": "2025011738054339",
+              "create_at": "2025-01-28 15:52:19"
+            },
+            {
+              "id_fk_bukti": 487,
+              "kd_po_nk": "NKPO0909250004",
+              "keterangan": "",
+              "user_upload": "KEU011",
+              "file_name": "2025091757557252",
+              "file_uploaded": "2025091757557252",
+              "create_at": "2025-09-11 09:20:52"
+            },
+            {
+              "id_fk_bukti": 632,
+              "kd_po_nk": "NKPO2111250006",
+              "keterangan": "Offline - Bintang Surya Kencana\r\n",
+              "user_upload": "KEU011",
+              "file_name": "2025111763956224",
+              "file_uploaded": "2025111763956224",
+              "create_at": "2025-11-24 10:50:24"
+            },
+            {
+              "id_fk_bukti": 1341,
+              "kd_po_nk": "NKPO3108260176",
+              "keterangan": "",
+              "user_upload": "KEU111",
+              "file_name": "2026081788155300",
+              "file_uploaded": "2026081788155300",
+              "create_at": "2026-08-31 12:48:20"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "QKER017": [
+    {
+      "id_batch": 3752,
+      "id_transnk_masuk": 4957,
+      "kd_barangsys": "PONK1504250001",
+      "names": [
+        "Kertas Kuning"
+      ],
+      "qty_sisa": 2.0,
+      "referensi_sumber": "ADJQTY0708250002",
+      "transaction_note": "Stok Lama",
+      "reason_code": "TIDAK_ADA_RUJUKAN_BATCH",
+      "reason": "Ada harga pembelian barang yang sama, tetapi tidak ada rujukan yang mengikat batch penyesuaian ini ke pembelian tersebut.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 3,
+          "deleted_transactions": 0,
+          "priced_details": 1,
+          "source_evidence_sha256": "31e385a18443aa3fe1256a5fb18fed88edc154696bfdee7826ba9b6dc99ca4d5",
+          "attachment_refs": [
+            {
+              "id_fk_bukti": 236,
+              "kd_po_nk": "NKPO1704250017",
+              "keterangan": "Kertas | Online - Shopee (PIAGAM kertas POTONGAN BOX). Pigura | Offline - Senyum Media Hayam Wuruk",
+              "user_upload": "KEU011",
+              "file_name": "2025041745026634",
+              "file_uploaded": "2025041745026634.jpg",
+              "create_at": "2025-04-19 08:37:14"
+            }
+          ]
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 3,
+          "deleted_transactions": 0,
+          "priced_details": 1,
+          "source_evidence_sha256": "cf32c44d42fbbe04416f57fda256f549af5eb469c301fed4fa33e009b6f65405",
+          "attachment_refs": [
+            {
+              "id_fk_bukti": 236,
+              "kd_po_nk": "NKPO1704250017",
+              "keterangan": "Kertas | Online - Shopee (PIAGAM kertas POTONGAN BOX). Pigura | Offline - Senyum Media Hayam Wuruk",
+              "user_upload": "KEU011",
+              "file_name": "2025041745026634",
+              "file_uploaded": "2025041745026634.jpg",
+              "create_at": "2025-04-19 08:37:14"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "QKRE001": [
+    {
+      "id_batch": 2775,
+      "id_transnk_masuk": 83,
+      "kd_barangsys": "KEU2QKRE00183",
+      "names": [
+        "Kresek"
+      ],
+      "qty_sisa": 6.0,
+      "referensi_sumber": "PONK1410240001IN83",
+      "transaction_note": "Saldo Awal",
+      "reason_code": "SALDO_AWAL_TANPA_HARGA",
+      "reason": "Saldo awal tidak memiliki detail harga atau rujukan pembelian untuk batch ini di kedua sumber lokal.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 68,
+          "deleted_transactions": 0,
+          "priced_details": 1,
+          "source_evidence_sha256": "13dc14a654e1d85bbc44613a83829995e67416dc6f8602b8dc3ff9d196df4895",
+          "attachment_refs": [
+            {
+              "id_fk_bukti": 1103,
+              "kd_po_nk": "NKPO0206260068",
+              "keterangan": "",
+              "user_upload": "KEU111",
+              "file_name": "2026061780377854",
+              "file_uploaded": "2026061780377854",
+              "create_at": "2026-06-02 12:24:14"
+            }
+          ]
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 68,
+          "deleted_transactions": 0,
+          "priced_details": 1,
+          "source_evidence_sha256": "14c0c77236e501738b820754b2f006bc21ca099c8965e27d31a52de075226941",
+          "attachment_refs": [
+            {
+              "id_fk_bukti": 1103,
+              "kd_po_nk": "NKPO0206260068",
+              "keterangan": "",
+              "user_upload": "KEU111",
+              "file_name": "2026061780377854",
+              "file_uploaded": "2026061780377854",
+              "create_at": "2026-06-02 12:24:14"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "QKRE009": [
+    {
+      "id_batch": 2768,
+      "id_transnk_masuk": 76,
+      "kd_barangsys": "KEU2QKRE00976",
+      "names": [
+        "Kresek"
+      ],
+      "qty_sisa": 0.75,
+      "referensi_sumber": "PONK1410240001IN76",
+      "transaction_note": "Saldo Awal",
+      "reason_code": "SALDO_AWAL_TANPA_HARGA",
+      "reason": "Saldo awal tidak memiliki detail harga atau rujukan pembelian untuk batch ini di kedua sumber lokal.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 2,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "5dfd2ec993fbdecaf88a5ee9cedfb483c66d17e02810fb3aee25a2bda5fe88e0",
+          "attachment_refs": []
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 2,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "5dfd2ec993fbdecaf88a5ee9cedfb483c66d17e02810fb3aee25a2bda5fe88e0",
+          "attachment_refs": []
+        }
+      ]
+    }
+  ],
+  "QLAK001": [
+    {
+      "id_batch": 2780,
+      "id_transnk_masuk": 89,
+      "kd_barangsys": "KEU2QLAK00189",
+      "names": [
+        "Lakban"
+      ],
+      "qty_sisa": 3.0,
+      "referensi_sumber": "PONK1410240001IN89",
+      "transaction_note": "Saldo Awal",
+      "reason_code": "SALDO_AWAL_TANPA_HARGA",
+      "reason": "Saldo awal tidak memiliki detail harga atau rujukan pembelian untuk batch ini di kedua sumber lokal.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 132,
+          "deleted_transactions": 9,
+          "priced_details": 10,
+          "source_evidence_sha256": "b9e7120a6e12db07b20003ae9890d4f290765b1be3653d420504b2ea7036c80a",
+          "attachment_refs": [
+            {
+              "id_fk_bukti": 62,
+              "kd_po_nk": "NKPO0811240020",
+              "keterangan": "Agung wardana",
+              "user_upload": "KEU02",
+              "file_name": "2024111732005182",
+              "file_uploaded": "2024111732005182",
+              "create_at": "2024-11-19 15:33:02"
+            },
+            {
+              "id_fk_bukti": 149,
+              "kd_po_nk": "NKPO2501250010",
+              "keterangan": "Offline Agung Wardhana",
+              "user_upload": "KEU02",
+              "file_name": "2025011738054339",
+              "file_uploaded": "2025011738054339",
+              "create_at": "2025-01-28 15:52:19"
+            },
+            {
+              "id_fk_bukti": 209,
+              "kd_po_nk": "NKPO1903250001",
+              "keterangan": "Offline - Agung Wardana",
+              "user_upload": "KEU011",
+              "file_name": "2025031742521051",
+              "file_uploaded": "2025031742521051.png",
+              "create_at": "2025-03-21 08:37:31"
+            },
+            {
+              "id_fk_bukti": 325,
+              "kd_po_nk": "NKPO1906250008",
+              "keterangan": "Online - Shopee. Lakban Coklat - Hemat Peking Rp 340.580. Tinta Epson 664 Magenta - Digital Print Store Rp 164.419",
+              "user_upload": "KEU011",
+              "file_name": "2025061750644248",
+              "file_uploaded": "2025061750644248.jpg",
+              "create_at": "2025-06-23 09:04:08"
+            },
+            {
+              "id_fk_bukti": 431,
+              "kd_po_nk": "NKPO1208250051",
+              "keterangan": "Online - Shopee (Hemat Peking)",
+              "user_upload": "KEU011",
+              "file_name": "2025081755138861",
+              "file_uploaded": "2025081755138861.jpeg",
+              "create_at": "2025-08-14 09:34:21"
+            },
+            {
+              "id_fk_bukti": 498,
+              "kd_po_nk": "NKPO1009250010",
+              "keterangan": "Online - Shopee",
+              "user_upload": "KEU011",
+              "file_name": "2025091757728045",
+              "file_uploaded": "2025091757728045",
+              "create_at": "2025-09-13 08:47:25"
+            },
+            {
+              "id_fk_bukti": 638,
+              "kd_po_nk": "NKPO2111250008",
+              "keterangan": "",
+              "user_upload": "KEU011",
+              "file_name": "2025111764055126",
+              "file_uploaded": "2025111764055126",
+              "create_at": "2025-11-25 14:18:46"
+            },
+            {
+              "id_fk_bukti": 842,
+              "kd_po_nk": "NKPO1602260003",
+              "keterangan": "",
+              "user_upload": "KEU011",
+              "file_name": "2026021771402004",
+              "file_uploaded": "2026021771402004",
+              "create_at": "2026-02-18 15:06:44"
+            },
+            {
+              "id_fk_bukti": 1036,
+              "kd_po_nk": "NKPO0805260001",
+              "keterangan": "",
+              "user_upload": "KEU111",
+              "file_name": "2026051778290831",
+              "file_uploaded": "2026051778290831",
+              "create_at": "2026-05-09 08:40:31"
+            },
+            {
+              "id_fk_bukti": 1304,
+              "kd_po_nk": "NKPO1208260161",
+              "keterangan": "",
+              "user_upload": "KEU111",
+              "file_name": "2026081786582513",
+              "file_uploaded": "2026081786582513",
+              "create_at": "2026-08-13 07:55:13"
+            }
+          ]
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 136,
+          "deleted_transactions": 9,
+          "priced_details": 10,
+          "source_evidence_sha256": "42a073005af3e93504a73800762a180a41976e6bcf58a6626f61bedf42ed521b",
+          "attachment_refs": [
+            {
+              "id_fk_bukti": 62,
+              "kd_po_nk": "NKPO0811240020",
+              "keterangan": "Agung wardana",
+              "user_upload": "KEU02",
+              "file_name": "2024111732005182",
+              "file_uploaded": "2024111732005182",
+              "create_at": "2024-11-19 15:33:02"
+            },
+            {
+              "id_fk_bukti": 149,
+              "kd_po_nk": "NKPO2501250010",
+              "keterangan": "Offline Agung Wardhana",
+              "user_upload": "KEU02",
+              "file_name": "2025011738054339",
+              "file_uploaded": "2025011738054339",
+              "create_at": "2025-01-28 15:52:19"
+            },
+            {
+              "id_fk_bukti": 209,
+              "kd_po_nk": "NKPO1903250001",
+              "keterangan": "Offline - Agung Wardana",
+              "user_upload": "KEU011",
+              "file_name": "2025031742521051",
+              "file_uploaded": "2025031742521051.png",
+              "create_at": "2025-03-21 08:37:31"
+            },
+            {
+              "id_fk_bukti": 325,
+              "kd_po_nk": "NKPO1906250008",
+              "keterangan": "Online - Shopee. Lakban Coklat - Hemat Peking Rp 340.580. Tinta Epson 664 Magenta - Digital Print Store Rp 164.419",
+              "user_upload": "KEU011",
+              "file_name": "2025061750644248",
+              "file_uploaded": "2025061750644248.jpg",
+              "create_at": "2025-06-23 09:04:08"
+            },
+            {
+              "id_fk_bukti": 431,
+              "kd_po_nk": "NKPO1208250051",
+              "keterangan": "Online - Shopee (Hemat Peking)",
+              "user_upload": "KEU011",
+              "file_name": "2025081755138861",
+              "file_uploaded": "2025081755138861.jpeg",
+              "create_at": "2025-08-14 09:34:21"
+            },
+            {
+              "id_fk_bukti": 498,
+              "kd_po_nk": "NKPO1009250010",
+              "keterangan": "Online - Shopee",
+              "user_upload": "KEU011",
+              "file_name": "2025091757728045",
+              "file_uploaded": "2025091757728045",
+              "create_at": "2025-09-13 08:47:25"
+            },
+            {
+              "id_fk_bukti": 638,
+              "kd_po_nk": "NKPO2111250008",
+              "keterangan": "",
+              "user_upload": "KEU011",
+              "file_name": "2025111764055126",
+              "file_uploaded": "2025111764055126",
+              "create_at": "2025-11-25 14:18:46"
+            },
+            {
+              "id_fk_bukti": 842,
+              "kd_po_nk": "NKPO1602260003",
+              "keterangan": "",
+              "user_upload": "KEU011",
+              "file_name": "2026021771402004",
+              "file_uploaded": "2026021771402004",
+              "create_at": "2026-02-18 15:06:44"
+            },
+            {
+              "id_fk_bukti": 1036,
+              "kd_po_nk": "NKPO0805260001",
+              "keterangan": "",
+              "user_upload": "KEU111",
+              "file_name": "2026051778290831",
+              "file_uploaded": "2026051778290831",
+              "create_at": "2026-05-09 08:40:31"
+            },
+            {
+              "id_fk_bukti": 1304,
+              "kd_po_nk": "NKPO1208260161",
+              "keterangan": "",
+              "user_upload": "KEU111",
+              "file_name": "2026081786582513",
+              "file_uploaded": "2026081786582513",
+              "create_at": "2026-08-13 07:55:13"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "QLAK002": [
+    {
+      "id_batch": 3150,
+      "id_transnk_masuk": 2096,
+      "kd_barangsys": "KEU2QLAK00288",
+      "names": [
+        "Lakban"
+      ],
+      "qty_sisa": 2.0,
+      "referensi_sumber": "ADJQTY0102250018",
+      "transaction_note": "menyesuaikan stok fisik",
+      "reason_code": "TIDAK_ADA_RUJUKAN_BATCH",
+      "reason": "Ada harga pembelian barang yang sama, tetapi tidak ada rujukan yang mengikat batch penyesuaian ini ke pembelian tersebut.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 152,
+          "deleted_transactions": 6,
+          "priced_details": 10,
+          "source_evidence_sha256": "e5f0fac52c446ff543d4123e07d181bf9bed4795f430889f431c0bd1da884f34",
+          "attachment_refs": [
+            {
+              "id_fk_bukti": 26,
+              "kd_po_nk": "NKPO2610240010",
+              "keterangan": "agung wardana",
+              "user_upload": "KEU02",
+              "file_name": "2024101730165315",
+              "file_uploaded": "2024101730165315",
+              "create_at": "2024-10-29 08:28:35"
+            },
+            {
+              "id_fk_bukti": 65,
+              "kd_po_nk": "NKPO1611240004",
+              "keterangan": "Agung Wardana",
+              "user_upload": "KEU02",
+              "file_name": "2024111732005510",
+              "file_uploaded": "2024111732005510",
+              "create_at": "2024-11-19 15:38:30"
+            },
+            {
+              "id_fk_bukti": 149,
+              "kd_po_nk": "NKPO2501250010",
+              "keterangan": "Offline Agung Wardhana",
+              "user_upload": "KEU02",
+              "file_name": "2025011738054339",
+              "file_uploaded": "2025011738054339",
+              "create_at": "2025-01-28 15:52:19"
+            },
+            {
+              "id_fk_bukti": 281,
+              "kd_po_nk": "NKPO2105250001",
+              "keterangan": "Online - Shopee. \r\nLakban Bening (Kemasan Berkah-Rp 347.683) \r\nSpidol Marker hitam (Paw Paper Store-Rp 50.885) \r\nTinta EPSON 003 (Digital Print Store-Rp 168.813) \r\nLem G (Auto Shop-Rp 8.063) \r\nStella Aerosol (fhatanstore7-Rp 64.425) \r\nTali Rafia Besar (Bc_lakban.store-Rp 25.442) ",
+              "user_upload": "KEU011",
+              "file_name": "2025051747963119",
+              "file_uploaded": "2025051747963119.jpg",
+              "create_at": "2025-05-23 08:18:40"
+            },
+            {
+              "id_fk_bukti": 498,
+              "kd_po_nk": "NKPO1009250010",
+              "keterangan": "Online - Shopee",
+              "user_upload": "KEU011",
+              "file_name": "2025091757728045",
+              "file_uploaded": "2025091757728045",
+              "create_at": "2025-09-13 08:47:25"
+            },
+            {
+              "id_fk_bukti": 638,
+              "kd_po_nk": "NKPO2111250008",
+              "keterangan": "",
+              "user_upload": "KEU011",
+              "file_name": "2025111764055126",
+              "file_uploaded": "2025111764055126",
+              "create_at": "2025-11-25 14:18:46"
+            },
+            {
+              "id_fk_bukti": 748,
+              "kd_po_nk": "NKPO1401260011",
+              "keterangan": "",
+              "user_upload": "KEU011",
+              "file_name": "2026011768796816",
+              "file_uploaded": "2026011768796816",
+              "create_at": "2026-01-19 11:26:56"
+            },
+            {
+              "id_fk_bukti": 903,
+              "kd_po_nk": "NKPO1003260003",
+              "keterangan": "",
+              "user_upload": "KEU011",
+              "file_name": "2026031773383124",
+              "file_uploaded": "2026031773383124",
+              "create_at": "2026-03-13 13:25:24"
+            },
+            {
+              "id_fk_bukti": 1036,
+              "kd_po_nk": "NKPO0805260001",
+              "keterangan": "",
+              "user_upload": "KEU111",
+              "file_name": "2026051778290831",
+              "file_uploaded": "2026051778290831",
+              "create_at": "2026-05-09 08:40:31"
+            },
+            {
+              "id_fk_bukti": 1204,
+              "kd_po_nk": "NKPO0707260003",
+              "keterangan": "",
+              "user_upload": "KEU111",
+              "file_name": "2026071783410285",
+              "file_uploaded": "2026071783410285",
+              "create_at": "2026-07-07 14:44:45"
+            }
+          ]
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 157,
+          "deleted_transactions": 6,
+          "priced_details": 11,
+          "source_evidence_sha256": "c0ddb38181476e7d9f3474aeadc96f9fce15077a1ab4543273437935976c65a1",
+          "attachment_refs": [
+            {
+              "id_fk_bukti": 26,
+              "kd_po_nk": "NKPO2610240010",
+              "keterangan": "agung wardana",
+              "user_upload": "KEU02",
+              "file_name": "2024101730165315",
+              "file_uploaded": "2024101730165315",
+              "create_at": "2024-10-29 08:28:35"
+            },
+            {
+              "id_fk_bukti": 65,
+              "kd_po_nk": "NKPO1611240004",
+              "keterangan": "Agung Wardana",
+              "user_upload": "KEU02",
+              "file_name": "2024111732005510",
+              "file_uploaded": "2024111732005510",
+              "create_at": "2024-11-19 15:38:30"
+            },
+            {
+              "id_fk_bukti": 149,
+              "kd_po_nk": "NKPO2501250010",
+              "keterangan": "Offline Agung Wardhana",
+              "user_upload": "KEU02",
+              "file_name": "2025011738054339",
+              "file_uploaded": "2025011738054339",
+              "create_at": "2025-01-28 15:52:19"
+            },
+            {
+              "id_fk_bukti": 281,
+              "kd_po_nk": "NKPO2105250001",
+              "keterangan": "Online - Shopee. \r\nLakban Bening (Kemasan Berkah-Rp 347.683) \r\nSpidol Marker hitam (Paw Paper Store-Rp 50.885) \r\nTinta EPSON 003 (Digital Print Store-Rp 168.813) \r\nLem G (Auto Shop-Rp 8.063) \r\nStella Aerosol (fhatanstore7-Rp 64.425) \r\nTali Rafia Besar (Bc_lakban.store-Rp 25.442) ",
+              "user_upload": "KEU011",
+              "file_name": "2025051747963119",
+              "file_uploaded": "2025051747963119.jpg",
+              "create_at": "2025-05-23 08:18:40"
+            },
+            {
+              "id_fk_bukti": 498,
+              "kd_po_nk": "NKPO1009250010",
+              "keterangan": "Online - Shopee",
+              "user_upload": "KEU011",
+              "file_name": "2025091757728045",
+              "file_uploaded": "2025091757728045",
+              "create_at": "2025-09-13 08:47:25"
+            },
+            {
+              "id_fk_bukti": 638,
+              "kd_po_nk": "NKPO2111250008",
+              "keterangan": "",
+              "user_upload": "KEU011",
+              "file_name": "2025111764055126",
+              "file_uploaded": "2025111764055126",
+              "create_at": "2025-11-25 14:18:46"
+            },
+            {
+              "id_fk_bukti": 748,
+              "kd_po_nk": "NKPO1401260011",
+              "keterangan": "",
+              "user_upload": "KEU011",
+              "file_name": "2026011768796816",
+              "file_uploaded": "2026011768796816",
+              "create_at": "2026-01-19 11:26:56"
+            },
+            {
+              "id_fk_bukti": 903,
+              "kd_po_nk": "NKPO1003260003",
+              "keterangan": "",
+              "user_upload": "KEU011",
+              "file_name": "2026031773383124",
+              "file_uploaded": "2026031773383124",
+              "create_at": "2026-03-13 13:25:24"
+            },
+            {
+              "id_fk_bukti": 1036,
+              "kd_po_nk": "NKPO0805260001",
+              "keterangan": "",
+              "user_upload": "KEU111",
+              "file_name": "2026051778290831",
+              "file_uploaded": "2026051778290831",
+              "create_at": "2026-05-09 08:40:31"
+            },
+            {
+              "id_fk_bukti": 1204,
+              "kd_po_nk": "NKPO0707260003",
+              "keterangan": "",
+              "user_upload": "KEU111",
+              "file_name": "2026071783410285",
+              "file_uploaded": "2026071783410285",
+              "create_at": "2026-07-07 14:44:45"
+            },
+            {
+              "id_fk_bukti": 1450,
+              "kd_po_nk": "NKPO2010260214",
+              "keterangan": "",
+              "user_upload": "KEU111",
+              "file_name": "2026101792548156",
+              "file_uploaded": "2026101792548156",
+              "create_at": "2026-10-21 09:02:36"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "QLAM001": [
+    {
+      "id_batch": 5268,
+      "id_transnk_masuk": 11869,
+      "kd_barangsys": "KEU2QLAM00193",
+      "names": [
+        "Lampu Hannochs"
+      ],
+      "qty_sisa": 1.0,
+      "referensi_sumber": "ADJQTY0109260004",
+      "transaction_note": "menyesuaikan stok fisik",
+      "reason_code": "TIDAK_ADA_RUJUKAN_BATCH",
+      "reason": "Ada harga pembelian barang yang sama, tetapi tidak ada rujukan yang mengikat batch penyesuaian ini ke pembelian tersebut.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 20,
+          "deleted_transactions": 0,
+          "priced_details": 4,
+          "source_evidence_sha256": "d9cf4f1c839e485da3c9ed71bbb8ab99a3f6edc76863c2b332c22279fcac55a8",
+          "attachment_refs": [
+            {
+              "id_fk_bukti": 311,
+              "kd_po_nk": "NKPO1006250010",
+              "keterangan": "Online - Shopee. \r\nBatrai AAA - Macan Tertawa Rp 51.869, \r\nLampu Hannochs 12 Watt - Mikro Elektrik Rp 135.082, \r\nStella Pocket - Kana-Store Rp 23.804, \r\nPita Printer - Fixprint Jakarta Rp 84.300.",
+              "user_upload": "KEU011",
+              "file_name": "2025061749632189",
+              "file_uploaded": "2025061749632189.jpg",
+              "create_at": "2025-06-11 15:56:30"
+            },
+            {
+              "id_fk_bukti": 345,
+              "kd_po_nk": "NKPO0307250021",
+              "keterangan": "Online - Shopee. Bulpen Hitam & Biru - Toko Alat Tulis Makadata, Shopee. Kartu Stok Kuning - Wahana atk, Shopee. Lampu Hannochs 25 Watt - Cello Electricm Shopee. Lampu Hannochs 12 Watt - Nyala Elektrik, Shopee. Stella Aerosol - Almiraco, Shopee. Toilet Cleaner - AtharShop18, Shopee. Super Pell Apel&Lemon - Unilever Indonesia Official Shop, Shopee",
+              "user_upload": "KEU011",
+              "file_name": "2025071751697925",
+              "file_uploaded": "2025071751697925",
+              "create_at": "2025-07-05 13:45:25"
+            },
+            {
+              "id_fk_bukti": 819,
+              "kd_po_nk": "NKPO3101260004",
+              "keterangan": "",
+              "user_upload": "KEU011",
+              "file_name": "2026021770277755",
+              "file_uploaded": "2026021770277755",
+              "create_at": "2026-02-05 14:49:15"
+            },
+            {
+              "id_fk_bukti": 917,
+              "kd_po_nk": "NKPO1403260029",
+              "keterangan": "",
+              "user_upload": "KEU011",
+              "file_name": "2026031773723281",
+              "file_uploaded": "2026031773723281",
+              "create_at": "2026-03-17 11:54:41"
+            }
+          ]
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 21,
+          "deleted_transactions": 0,
+          "priced_details": 4,
+          "source_evidence_sha256": "81681dbc92c2ea099ccebec61d486df26a8969cbabc0a9533856ef1b2791496a",
+          "attachment_refs": [
+            {
+              "id_fk_bukti": 311,
+              "kd_po_nk": "NKPO1006250010",
+              "keterangan": "Online - Shopee. \r\nBatrai AAA - Macan Tertawa Rp 51.869, \r\nLampu Hannochs 12 Watt - Mikro Elektrik Rp 135.082, \r\nStella Pocket - Kana-Store Rp 23.804, \r\nPita Printer - Fixprint Jakarta Rp 84.300.",
+              "user_upload": "KEU011",
+              "file_name": "2025061749632189",
+              "file_uploaded": "2025061749632189.jpg",
+              "create_at": "2025-06-11 15:56:30"
+            },
+            {
+              "id_fk_bukti": 345,
+              "kd_po_nk": "NKPO0307250021",
+              "keterangan": "Online - Shopee. Bulpen Hitam & Biru - Toko Alat Tulis Makadata, Shopee. Kartu Stok Kuning - Wahana atk, Shopee. Lampu Hannochs 25 Watt - Cello Electricm Shopee. Lampu Hannochs 12 Watt - Nyala Elektrik, Shopee. Stella Aerosol - Almiraco, Shopee. Toilet Cleaner - AtharShop18, Shopee. Super Pell Apel&Lemon - Unilever Indonesia Official Shop, Shopee",
+              "user_upload": "KEU011",
+              "file_name": "2025071751697925",
+              "file_uploaded": "2025071751697925",
+              "create_at": "2025-07-05 13:45:25"
+            },
+            {
+              "id_fk_bukti": 819,
+              "kd_po_nk": "NKPO3101260004",
+              "keterangan": "",
+              "user_upload": "KEU011",
+              "file_name": "2026021770277755",
+              "file_uploaded": "2026021770277755",
+              "create_at": "2026-02-05 14:49:15"
+            },
+            {
+              "id_fk_bukti": 917,
+              "kd_po_nk": "NKPO1403260029",
+              "keterangan": "",
+              "user_upload": "KEU011",
+              "file_name": "2026031773723281",
+              "file_uploaded": "2026031773723281",
+              "create_at": "2026-03-17 11:54:41"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "QMAP002": [
+    {
+      "id_batch": 3966,
+      "id_transnk_masuk": 6065,
+      "kd_barangsys": "PONK1803250001",
+      "names": [
+        "Map Plastik"
+      ],
+      "qty_sisa": 5.0,
+      "referensi_sumber": "ADJQTY1410250001",
+      "transaction_note": "Stok Lama R Belakang",
+      "reason_code": "TIDAK_ADA_RUJUKAN_BATCH",
+      "reason": "Ada harga pembelian barang yang sama, tetapi tidak ada rujukan yang mengikat batch penyesuaian ini ke pembelian tersebut.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 6,
+          "deleted_transactions": 0,
+          "priced_details": 2,
+          "source_evidence_sha256": "b7b293995846dea06ca494f1f42d347b96775491dabfdc0ccb29e06d43be57fc",
+          "attachment_refs": [
+            {
+              "id_fk_bukti": 208,
+              "kd_po_nk": "NKPO1903250007",
+              "keterangan": "Online - Shopee (m3lshop88)",
+              "user_upload": "KEU011",
+              "file_name": "2025031742458796",
+              "file_uploaded": "2025031742458796.jpeg",
+              "create_at": "2025-03-20 15:19:56"
+            },
+            {
+              "id_fk_bukti": 731,
+              "kd_po_nk": "NKPO0501260002",
+              "keterangan": "",
+              "user_upload": "KEU011",
+              "file_name": "2026011768191293",
+              "file_uploaded": "2026011768191293",
+              "create_at": "2026-01-12 11:14:53"
+            }
+          ]
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 6,
+          "deleted_transactions": 0,
+          "priced_details": 2,
+          "source_evidence_sha256": "ca57f847f52540230271d0a65cfe010a515ffec3348a784f70c048c5078f33f0",
+          "attachment_refs": [
+            {
+              "id_fk_bukti": 208,
+              "kd_po_nk": "NKPO1903250007",
+              "keterangan": "Online - Shopee (m3lshop88)",
+              "user_upload": "KEU011",
+              "file_name": "2025031742458796",
+              "file_uploaded": "2025031742458796.jpeg",
+              "create_at": "2025-03-20 15:19:56"
+            },
+            {
+              "id_fk_bukti": 731,
+              "kd_po_nk": "NKPO0501260002",
+              "keterangan": "",
+              "user_upload": "KEU011",
+              "file_name": "2026011768191293",
+              "file_uploaded": "2026011768191293",
+              "create_at": "2026-01-12 11:14:53"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "QMAS001": [
+    {
+      "id_batch": 5374,
+      "id_transnk_masuk": 12182,
+      "kd_barangsys": "KEU2QMAS00199",
+      "names": [
+        "Masker"
+      ],
+      "qty_sisa": 80.0,
+      "referensi_sumber": "ADJQTY2109260001",
+      "transaction_note": "Stok dari belakang",
+      "reason_code": "TIDAK_ADA_HARGA_BARANG",
+      "reason": "Tidak ada detail pembelian berharga dengan kode barang dan kode sistem yang sama pada kedua sumber lokal.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 98,
+          "deleted_transactions": 1,
+          "priced_details": 0,
+          "source_evidence_sha256": "e904a19791de979b5917d0ba1240df47b4452dc95b54092ab5d31e8e08c9c07b",
+          "attachment_refs": []
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 107,
+          "deleted_transactions": 1,
+          "priced_details": 0,
+          "source_evidence_sha256": "324111439c897861eeb66ed7946677a53484f777a801d96dd29cd47f51a86d50",
+          "attachment_refs": []
+        }
+      ]
+    }
+  ],
+  "QNOT001": [
+    {
+      "id_batch": 3744,
+      "id_transnk_masuk": 4903,
+      "kd_barangsys": "PONK0411240002",
+      "names": [
+        "Nota Kasbon Driver"
+      ],
+      "qty_sisa": 74.0,
+      "referensi_sumber": "ADJQTY0508250004",
+      "transaction_note": "Stok Lemari + Ruang Belakang",
+      "reason_code": "TIDAK_ADA_RUJUKAN_BATCH",
+      "reason": "Ada harga pembelian barang yang sama, tetapi tidak ada rujukan yang mengikat batch penyesuaian ini ke pembelian tersebut.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 59,
+          "deleted_transactions": 0,
+          "priced_details": 1,
+          "source_evidence_sha256": "6ed70bd7518cc58c7efec2dbf8130ae3b98eea4c89422afb88dacf05d4e0f2fe",
+          "attachment_refs": [
+            {
+              "id_fk_bukti": 56,
+              "kd_po_nk": "NKPO1111240002",
+              "keterangan": "Offline DNY ",
+              "user_upload": "KEU02",
+              "file_name": "2024111731374336",
+              "file_uploaded": "2024111731374336",
+              "create_at": "2024-11-12 08:18:56"
+            }
+          ]
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 65,
+          "deleted_transactions": 0,
+          "priced_details": 1,
+          "source_evidence_sha256": "557e039efeafd95159b535c497c6eaa5fbe08dbfb6d97466610be87f9342c93f",
+          "attachment_refs": [
+            {
+              "id_fk_bukti": 56,
+              "kd_po_nk": "NKPO1111240002",
+              "keterangan": "Offline DNY ",
+              "user_upload": "KEU02",
+              "file_name": "2024111731374336",
+              "file_uploaded": "2024111731374336",
+              "create_at": "2024-11-12 08:18:56"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "QNOT002": [
+    {
+      "id_batch": 3609,
+      "id_transnk_masuk": 4254,
+      "kd_barangsys": "PONK2202250001",
+      "names": [
+        "Nota Tanda Terima"
+      ],
+      "qty_sisa": 30.0,
+      "referensi_sumber": "ADJQTY0107250005",
+      "transaction_note": "Stock Fisik",
+      "reason_code": "TIDAK_ADA_HARGA_BARANG",
+      "reason": "Tidak ada detail pembelian berharga dengan kode barang dan kode sistem yang sama pada kedua sumber lokal.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 31,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "35d1e3b2ce75874b476426a902d05350cf7704d7ae85d6a1ceca4550d8ac09e7",
+          "attachment_refs": []
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 33,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "89d13ea43c24ecee426a658fa898a79b3326b9f12f68eba8a979f57e3edccfb8",
+          "attachment_refs": []
+        }
+      ]
+    },
+    {
+      "id_batch": 3737,
+      "id_transnk_masuk": 4870,
+      "kd_barangsys": "PONK2202250001",
+      "names": [
+        "Nota Tanda Terima"
+      ],
+      "qty_sisa": 120.0,
+      "referensi_sumber": "ADJQTY0408250001",
+      "transaction_note": "Stok Ruang Belakang",
+      "reason_code": "TIDAK_ADA_HARGA_BARANG",
+      "reason": "Tidak ada detail pembelian berharga dengan kode barang dan kode sistem yang sama pada kedua sumber lokal.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 31,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "35d1e3b2ce75874b476426a902d05350cf7704d7ae85d6a1ceca4550d8ac09e7",
+          "attachment_refs": []
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 33,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "89d13ea43c24ecee426a658fa898a79b3326b9f12f68eba8a979f57e3edccfb8",
+          "attachment_refs": []
+        }
+      ]
+    },
+    {
+      "id_batch": 3742,
+      "id_transnk_masuk": 4901,
+      "kd_barangsys": "PONK2202250001",
+      "names": [
+        "Nota Tanda Terima"
+      ],
+      "qty_sisa": 70.0,
+      "referensi_sumber": "ADJQTY0508250001",
+      "transaction_note": "Stok Lama",
+      "reason_code": "TIDAK_ADA_HARGA_BARANG",
+      "reason": "Tidak ada detail pembelian berharga dengan kode barang dan kode sistem yang sama pada kedua sumber lokal.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 31,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "35d1e3b2ce75874b476426a902d05350cf7704d7ae85d6a1ceca4550d8ac09e7",
+          "attachment_refs": []
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 33,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "89d13ea43c24ecee426a658fa898a79b3326b9f12f68eba8a979f57e3edccfb8",
+          "attachment_refs": []
+        }
+      ]
+    }
+  ],
+  "QNOT003": [
+    {
+      "id_batch": 3743,
+      "id_transnk_masuk": 4902,
+      "kd_barangsys": "PONK0508250002",
+      "names": [
+        "Nota Kasbon"
+      ],
+      "qty_sisa": 56.0,
+      "referensi_sumber": "ADJQTY0508250003",
+      "transaction_note": "Stok Fisik",
+      "reason_code": "TIDAK_ADA_HARGA_BARANG",
+      "reason": "Tidak ada detail pembelian berharga dengan kode barang dan kode sistem yang sama pada kedua sumber lokal.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 39,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "1688fa8ba036cedacba21ee9774cb3a1ef16092f124ae0dd8c3ff47c501c1382",
+          "attachment_refs": []
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 42,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "40991a958cdc40831fe55f68bf334bc979ebc357404fa0d36a9f263e73a4dad7",
+          "attachment_refs": []
+        }
+      ]
+    },
+    {
+      "id_batch": 3926,
+      "id_transnk_masuk": 5920,
+      "kd_barangsys": "PONK0508250002",
+      "names": [
+        "Nota Kasbon"
+      ],
+      "qty_sisa": 38.0,
+      "referensi_sumber": "ADJQTY0410250003",
+      "transaction_note": "Stok dalam Kardus",
+      "reason_code": "TIDAK_ADA_HARGA_BARANG",
+      "reason": "Tidak ada detail pembelian berharga dengan kode barang dan kode sistem yang sama pada kedua sumber lokal.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 39,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "1688fa8ba036cedacba21ee9774cb3a1ef16092f124ae0dd8c3ff47c501c1382",
+          "attachment_refs": []
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 42,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "40991a958cdc40831fe55f68bf334bc979ebc357404fa0d36a9f263e73a4dad7",
+          "attachment_refs": []
+        }
+      ]
+    }
+  ],
+  "QNOT004": [
+    {
+      "id_batch": 3967,
+      "id_transnk_masuk": 6072,
+      "kd_barangsys": "PONK1410250002",
+      "names": [
+        "Nota PH"
+      ],
+      "qty_sisa": 6.0,
+      "referensi_sumber": "ADJQTY1410250003",
+      "transaction_note": "Stok Lemari Arsip + Ruang Belakang",
+      "reason_code": "TIDAK_ADA_RUJUKAN_BATCH",
+      "reason": "Ada harga pembelian barang yang sama, tetapi tidak ada rujukan yang mengikat batch penyesuaian ini ke pembelian tersebut.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 10,
+          "deleted_transactions": 0,
+          "priced_details": 1,
+          "source_evidence_sha256": "170fa2354eb5de407cccc7135e045ee603d19860ad73a31353f9d1e7cb637488",
+          "attachment_refs": [
+            {
+              "id_fk_bukti": 1057,
+              "kd_po_nk": "NKPO1605260044",
+              "keterangan": "",
+              "user_upload": "KEU111",
+              "file_name": "2026051778907442",
+              "file_uploaded": "2026051778907442",
+              "create_at": "2026-05-16 11:57:22"
+            }
+          ]
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 10,
+          "deleted_transactions": 0,
+          "priced_details": 1,
+          "source_evidence_sha256": "0ad173c1aa70ed6a94e945c5907526b030ece23f90d52360bd914417f296b56c",
+          "attachment_refs": [
+            {
+              "id_fk_bukti": 1057,
+              "kd_po_nk": "NKPO1605260044",
+              "keterangan": "",
+              "user_upload": "KEU111",
+              "file_name": "2026051778907442",
+              "file_uploaded": "2026051778907442",
+              "create_at": "2026-05-16 11:57:22"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "QNOT005": [
+    {
+      "id_batch": 4002,
+      "id_transnk_masuk": 6194,
+      "kd_barangsys": "PONK2210250004",
+      "names": [
+        "Nota Bukti Perincian / Pengiriman"
+      ],
+      "qty_sisa": 10.0,
+      "referensi_sumber": "ADJQTY2210250008",
+      "transaction_note": "Stok Ruang Belakang",
+      "reason_code": "TIDAK_ADA_RUJUKAN_BATCH",
+      "reason": "Ada harga pembelian barang yang sama, tetapi tidak ada rujukan yang mengikat batch penyesuaian ini ke pembelian tersebut.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 19,
+          "deleted_transactions": 0,
+          "priced_details": 1,
+          "source_evidence_sha256": "b010e9ccbc28b91db8aadf9bf4ff34e25adea450973b3942b722a7179c60c168",
+          "attachment_refs": [
+            {
+              "id_fk_bukti": 1058,
+              "kd_po_nk": "NKPO1605260043",
+              "keterangan": "",
+              "user_upload": "KEU111",
+              "file_name": "2026051779084680",
+              "file_uploaded": "2026051779084680",
+              "create_at": "2026-05-18 13:11:20"
+            }
+          ]
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 19,
+          "deleted_transactions": 0,
+          "priced_details": 1,
+          "source_evidence_sha256": "254f57edce4335d13fc029e945969c57e899230a3325dde9f792baa41f690af9",
+          "attachment_refs": [
+            {
+              "id_fk_bukti": 1058,
+              "kd_po_nk": "NKPO1605260043",
+              "keterangan": "",
+              "user_upload": "KEU111",
+              "file_name": "2026051779084680",
+              "file_uploaded": "2026051779084680",
+              "create_at": "2026-05-18 13:11:20"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "QPAP001": [
+    {
+      "id_batch": 3159,
+      "id_transnk_masuk": 2106,
+      "kd_barangsys": "KEU2QPAP001103",
+      "names": [
+        "Paperclip"
+      ],
+      "qty_sisa": 1.0,
+      "referensi_sumber": "ADJQTY0102250027",
+      "transaction_note": "ambil dari stok GA",
+      "reason_code": "TIDAK_ADA_HARGA_BARANG",
+      "reason": "Tidak ada detail pembelian berharga dengan kode barang dan kode sistem yang sama pada kedua sumber lokal.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 3,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "b3e96f519c45ba7a91cb8cffe897a6cfbad122dde7eaebd5025f0044e11dc86e",
+          "attachment_refs": []
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 3,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "b3e96f519c45ba7a91cb8cffe897a6cfbad122dde7eaebd5025f0044e11dc86e",
+          "attachment_refs": []
+        }
+      ]
+    }
+  ],
+  "QPEN001": [
+    {
+      "id_batch": 2796,
+      "id_transnk_masuk": 105,
+      "kd_barangsys": "KEU2QPEN001105",
+      "names": [
+        "Penghapus"
+      ],
+      "qty_sisa": 26.0,
+      "referensi_sumber": "PONK1410240001IN105",
+      "transaction_note": "Saldo Awal",
+      "reason_code": "SALDO_AWAL_TANPA_HARGA",
+      "reason": "Saldo awal tidak memiliki detail harga atau rujukan pembelian untuk batch ini di kedua sumber lokal.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 10,
+          "deleted_transactions": 1,
+          "priced_details": 0,
+          "source_evidence_sha256": "73bbb46c72f8159b45a119feb25dabd5909780dd873d5d872a5e7b63dac4cba9",
+          "attachment_refs": []
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 10,
+          "deleted_transactions": 1,
+          "priced_details": 0,
+          "source_evidence_sha256": "73bbb46c72f8159b45a119feb25dabd5909780dd873d5d872a5e7b63dac4cba9",
+          "attachment_refs": []
+        }
+      ]
+    }
+  ],
+  "QPIG001": [
+    {
+      "id_batch": 5165,
+      "id_transnk_masuk": 11367,
+      "kd_barangsys": "PONK1504250002",
+      "names": [
+        "Pigura"
+      ],
+      "qty_sisa": 1.0,
+      "referensi_sumber": "ADJQTY3007260001",
+      "transaction_note": "Pigura Hitam 10R untuk gathering",
+      "reason_code": "ASAL_PIGURA_BELUM_TERBUKTI",
+      "reason": "Penyesuaian 9 pigura berbeda dari pengeluaran gathering terbaru 3 pigura @23000. PO lama memuat 9 untuk gathering +1 untuk piagam @24000, tetapi batch sisa belum memiliki rujukan retur yang membuktikan lotnya.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 8,
+          "deleted_transactions": 0,
+          "priced_details": 3,
+          "source_evidence_sha256": "a328a4edd1604d95ae3555652ae11a6aa4ca8f0c40087aa8b33cf74d9dc728f1",
+          "attachment_refs": [
+            {
+              "id_fk_bukti": 236,
+              "kd_po_nk": "NKPO1704250017",
+              "keterangan": "Kertas | Online - Shopee (PIAGAM kertas POTONGAN BOX). Pigura | Offline - Senyum Media Hayam Wuruk",
+              "user_upload": "KEU011",
+              "file_name": "2025041745026634",
+              "file_uploaded": "2025041745026634.jpg",
+              "create_at": "2025-04-19 08:37:14"
+            },
+            {
+              "id_fk_bukti": 868,
+              "kd_po_nk": "NKPO2602260002",
+              "keterangan": "",
+              "user_upload": "KEU011",
+              "file_name": "2026021772089537",
+              "file_uploaded": "2026021772089537",
+              "create_at": "2026-02-26 14:05:37"
+            },
+            {
+              "id_fk_bukti": 1242,
+              "kd_po_nk": "NKPO1807260126",
+              "keterangan": "",
+              "user_upload": "KEU111",
+              "file_name": "2026071784354390",
+              "file_uploaded": "2026071784354390",
+              "create_at": "2026-07-18 12:59:50"
+            }
+          ]
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 8,
+          "deleted_transactions": 0,
+          "priced_details": 3,
+          "source_evidence_sha256": "8c471a18d1a6f52a15add4daba62fba7970251d99328ede11e606c1a03a0e837",
+          "attachment_refs": [
+            {
+              "id_fk_bukti": 236,
+              "kd_po_nk": "NKPO1704250017",
+              "keterangan": "Kertas | Online - Shopee (PIAGAM kertas POTONGAN BOX). Pigura | Offline - Senyum Media Hayam Wuruk",
+              "user_upload": "KEU011",
+              "file_name": "2025041745026634",
+              "file_uploaded": "2025041745026634.jpg",
+              "create_at": "2025-04-19 08:37:14"
+            },
+            {
+              "id_fk_bukti": 868,
+              "kd_po_nk": "NKPO2602260002",
+              "keterangan": "",
+              "user_upload": "KEU011",
+              "file_name": "2026021772089537",
+              "file_uploaded": "2026021772089537",
+              "create_at": "2026-02-26 14:05:37"
+            },
+            {
+              "id_fk_bukti": 1242,
+              "kd_po_nk": "NKPO1807260126",
+              "keterangan": "",
+              "user_upload": "KEU111",
+              "file_name": "2026071784354390",
+              "file_uploaded": "2026071784354390",
+              "create_at": "2026-07-18 12:59:50"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "QPLO001": [
+    {
+      "id_batch": 2799,
+      "id_transnk_masuk": 108,
+      "kd_barangsys": "KEU2QPLO001108",
+      "names": [
+        "Plong"
+      ],
+      "qty_sisa": 1.0,
+      "referensi_sumber": "PONK1410240001IN108",
+      "transaction_note": "Saldo Awal",
+      "reason_code": "SALDO_AWAL_TANPA_HARGA",
+      "reason": "Saldo awal tidak memiliki detail harga atau rujukan pembelian untuk batch ini di kedua sumber lokal.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 3,
+          "deleted_transactions": 0,
+          "priced_details": 1,
+          "source_evidence_sha256": "5a9b700fe203abb0b3a4800ea7c86565c3df6b5bfc3e2b0095c3e8a27d51ae43",
+          "attachment_refs": [
+            {
+              "id_fk_bukti": 928,
+              "kd_po_nk": "NKPO1803260001",
+              "keterangan": "",
+              "user_upload": "KEU011",
+              "file_name": "2026031774601730",
+              "file_uploaded": "2026031774601730",
+              "create_at": "2026-03-27 15:55:30"
+            }
+          ]
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 3,
+          "deleted_transactions": 0,
+          "priced_details": 1,
+          "source_evidence_sha256": "02ce55444e87e44b3a6969edce62e4012970261966c764648107d5d699b6527c",
+          "attachment_refs": [
+            {
+              "id_fk_bukti": 928,
+              "kd_po_nk": "NKPO1803260001",
+              "keterangan": "",
+              "user_upload": "KEU011",
+              "file_name": "2026031774601730",
+              "file_uploaded": "2026031774601730",
+              "create_at": "2026-03-27 15:55:30"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "QRIN001": [
+    {
+      "id_batch": 3846,
+      "id_transnk_masuk": 5461,
+      "kd_barangsys": "PONK0507250001",
+      "names": [
+        "Rinso Detergen"
+      ],
+      "qty_sisa": 8.0,
+      "referensi_sumber": "ADJQTY0609250001",
+      "transaction_note": "Stock lama detergent Kuat Harimau 5000",
+      "reason_code": "TIDAK_ADA_RUJUKAN_BATCH",
+      "reason": "Ada harga pembelian barang yang sama, tetapi tidak ada rujukan yang mengikat batch penyesuaian ini ke pembelian tersebut.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 17,
+          "deleted_transactions": 0,
+          "priced_details": 1,
+          "source_evidence_sha256": "10483b3e75030e5b91bcccc0cb1ac2b0d0dc627451986fdc1e2e6cac192ba547",
+          "attachment_refs": [
+            {
+              "id_fk_bukti": 349,
+              "kd_po_nk": "NKPO0507250023",
+              "keterangan": "Online - Shopee (Kelontong_Murah_4G kediri)",
+              "user_upload": "KEU011",
+              "file_name": "2025071751937523",
+              "file_uploaded": "2025071751937523.jpeg",
+              "create_at": "2025-07-08 08:18:43"
+            }
+          ]
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 19,
+          "deleted_transactions": 0,
+          "priced_details": 1,
+          "source_evidence_sha256": "72813dd63868474a69f510547d9ef269347e679926540e28158ef6b1991d6a27",
+          "attachment_refs": [
+            {
+              "id_fk_bukti": 349,
+              "kd_po_nk": "NKPO0507250023",
+              "keterangan": "Online - Shopee (Kelontong_Murah_4G kediri)",
+              "user_upload": "KEU011",
+              "file_name": "2025071751937523",
+              "file_uploaded": "2025071751937523.jpeg",
+              "create_at": "2025-07-08 08:18:43"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "QSAR001": [
+    {
+      "id_batch": 2811,
+      "id_transnk_masuk": 120,
+      "kd_barangsys": "KEU2QSAR001120",
+      "names": [
+        "Sarung Tangan"
+      ],
+      "qty_sisa": 12.0,
+      "referensi_sumber": "PONK1410240001IN120",
+      "transaction_note": "Saldo Awal",
+      "reason_code": "SALDO_AWAL_TANPA_HARGA",
+      "reason": "Saldo awal tidak memiliki detail harga atau rujukan pembelian untuk batch ini di kedua sumber lokal.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 2,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "42cb86fdffd61bbcc98ffbcfbf5e5eb17221ca7de0383c9112049cb848fcec08",
+          "attachment_refs": []
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 2,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "42cb86fdffd61bbcc98ffbcfbf5e5eb17221ca7de0383c9112049cb848fcec08",
+          "attachment_refs": []
+        }
+      ]
+    }
+  ],
+  "QSAR002": [
+    {
+      "id_batch": 2810,
+      "id_transnk_masuk": 119,
+      "kd_barangsys": "KEU2QSAR002119",
+      "names": [
+        "Sarung Tangan"
+      ],
+      "qty_sisa": 1.0,
+      "referensi_sumber": "PONK1410240001IN119",
+      "transaction_note": "Saldo Awal",
+      "reason_code": "SALDO_AWAL_TANPA_HARGA",
+      "reason": "Saldo awal tidak memiliki detail harga atau rujukan pembelian untuk batch ini di kedua sumber lokal.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 19,
+          "deleted_transactions": 1,
+          "priced_details": 0,
+          "source_evidence_sha256": "affb0d66499f3312d3680e2aec3d41d85b6e608155df4660933635c9c78aa1e9",
+          "attachment_refs": []
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 20,
+          "deleted_transactions": 1,
+          "priced_details": 0,
+          "source_evidence_sha256": "00dd8421d08d95cea0b84b53e044b0d682b4946602286d754ccc0bdd76b8dbed",
+          "attachment_refs": []
+        }
+      ]
+    },
+    {
+      "id_batch": 2897,
+      "id_transnk_masuk": 516,
+      "kd_barangsys": "KEU2QSAR002119",
+      "names": [
+        "Sarung Tangan"
+      ],
+      "qty_sisa": 57.0,
+      "referensi_sumber": "ADJQTY2910240002",
+      "transaction_note": "menampilkan stok per biji",
+      "reason_code": "TIDAK_ADA_HARGA_BARANG",
+      "reason": "Tidak ada detail pembelian berharga dengan kode barang dan kode sistem yang sama pada kedua sumber lokal.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 19,
+          "deleted_transactions": 1,
+          "priced_details": 0,
+          "source_evidence_sha256": "affb0d66499f3312d3680e2aec3d41d85b6e608155df4660933635c9c78aa1e9",
+          "attachment_refs": []
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 20,
+          "deleted_transactions": 1,
+          "priced_details": 0,
+          "source_evidence_sha256": "00dd8421d08d95cea0b84b53e044b0d682b4946602286d754ccc0bdd76b8dbed",
+          "attachment_refs": []
+        }
+      ]
+    }
+  ],
+  "QSPI001": [
+    {
+      "id_batch": 2813,
+      "id_transnk_masuk": 122,
+      "kd_barangsys": "KEU2QSPI001122",
+      "names": [
+        "Spidol Board Marker"
+      ],
+      "qty_sisa": 6.0,
+      "referensi_sumber": "PONK1410240001IN122",
+      "transaction_note": "Saldo Awal",
+      "reason_code": "SALDO_AWAL_TANPA_HARGA",
+      "reason": "Saldo awal tidak memiliki detail harga atau rujukan pembelian untuk batch ini di kedua sumber lokal.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 6,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "e39b1320b702de5b6ac64a4779930fe86a7f06647015fa79849929245bd3b57e",
+          "attachment_refs": []
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 6,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "e39b1320b702de5b6ac64a4779930fe86a7f06647015fa79849929245bd3b57e",
+          "attachment_refs": []
+        }
+      ]
+    }
+  ],
+  "QSPI003": [
+    {
+      "id_batch": 2815,
+      "id_transnk_masuk": 124,
+      "kd_barangsys": "KEU2QSPI003124",
+      "names": [
+        "Spidol Permanent Marker"
+      ],
+      "qty_sisa": 7.0,
+      "referensi_sumber": "PONK1410240001IN124",
+      "transaction_note": "Saldo Awal",
+      "reason_code": "SALDO_AWAL_TANPA_HARGA",
+      "reason": "Saldo awal tidak memiliki detail harga atau rujukan pembelian untuk batch ini di kedua sumber lokal.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 2,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "db85c28beefd0a7ee0f46d2dc242973cd80e577cfa967a9c7704dcd4f68c4541",
+          "attachment_refs": []
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 2,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "db85c28beefd0a7ee0f46d2dc242973cd80e577cfa967a9c7704dcd4f68c4541",
+          "attachment_refs": []
+        }
+      ]
+    }
+  ],
+  "QSTA004": [
+    {
+      "id_batch": 2822,
+      "id_transnk_masuk": 131,
+      "kd_barangsys": "KEU2QSTA001131",
+      "names": [
+        "Stater"
+      ],
+      "qty_sisa": 4.0,
+      "referensi_sumber": "PONK1410240001IN131",
+      "transaction_note": "Saldo Awal",
+      "reason_code": "SALDO_AWAL_TANPA_HARGA",
+      "reason": "Saldo awal tidak memiliki detail harga atau rujukan pembelian untuk batch ini di kedua sumber lokal.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 2,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "920a3392e12f13b4a87aa7023bd30177bcdd968fae5de90a6b7984a2f4998273",
+          "attachment_refs": []
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 2,
+          "deleted_transactions": 0,
+          "priced_details": 0,
+          "source_evidence_sha256": "920a3392e12f13b4a87aa7023bd30177bcdd968fae5de90a6b7984a2f4998273",
+          "attachment_refs": []
+        }
+      ]
+    }
+  ],
+  "QTIS001": [
+    {
+      "id_batch": 2837,
+      "id_transnk_masuk": 146,
+      "kd_barangsys": "KEU2QTIS001146",
+      "names": [
+        "Tissue"
+      ],
+      "qty_sisa": 1.0,
+      "referensi_sumber": "PONK1410240001IN146",
+      "transaction_note": "Saldo Awal",
+      "reason_code": "SALDO_AWAL_TANPA_HARGA",
+      "reason": "Saldo awal tidak memiliki detail harga atau rujukan pembelian untuk batch ini di kedua sumber lokal.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 97,
+          "deleted_transactions": 4,
+          "priced_details": 3,
+          "source_evidence_sha256": "943b1143e99c19eaaaa9d8f78232f47decc1e3ffa36eff041b6bc35741421ae5",
+          "attachment_refs": [
+            {
+              "id_fk_bukti": 243,
+              "kd_po_nk": "NKPO2204250019",
+              "keterangan": "Online - Shopee (dyahananda27). Harga CO 449.260",
+              "user_upload": "KEU011",
+              "file_name": "2025041745484917",
+              "file_uploaded": "2025041745484917.jpeg",
+              "create_at": "2025-04-24 15:55:17"
+            },
+            {
+              "id_fk_bukti": 807,
+              "kd_po_nk": "NKPO2801260035",
+              "keterangan": "",
+              "user_upload": "KEU011",
+              "file_name": "2026011769653026",
+              "file_uploaded": "2026011769653026",
+              "create_at": "2026-01-29 09:17:06"
+            },
+            {
+              "id_fk_bukti": 1244,
+              "kd_po_nk": "NKPO1807260127",
+              "keterangan": "",
+              "user_upload": "KEU111",
+              "file_name": "2026071784358819",
+              "file_uploaded": "2026071784358819",
+              "create_at": "2026-07-18 14:13:39"
+            }
+          ]
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 98,
+          "deleted_transactions": 4,
+          "priced_details": 3,
+          "source_evidence_sha256": "b4b19dcef08239e09d811108d5a6a7760fced989a187c6cb000e70d74eb8a419",
+          "attachment_refs": [
+            {
+              "id_fk_bukti": 243,
+              "kd_po_nk": "NKPO2204250019",
+              "keterangan": "Online - Shopee (dyahananda27). Harga CO 449.260",
+              "user_upload": "KEU011",
+              "file_name": "2025041745484917",
+              "file_uploaded": "2025041745484917.jpeg",
+              "create_at": "2025-04-24 15:55:17"
+            },
+            {
+              "id_fk_bukti": 807,
+              "kd_po_nk": "NKPO2801260035",
+              "keterangan": "",
+              "user_upload": "KEU011",
+              "file_name": "2026011769653026",
+              "file_uploaded": "2026011769653026",
+              "create_at": "2026-01-29 09:17:06"
+            },
+            {
+              "id_fk_bukti": 1244,
+              "kd_po_nk": "NKPO1807260127",
+              "keterangan": "",
+              "user_upload": "KEU111",
+              "file_name": "2026071784358819",
+              "file_uploaded": "2026071784358819",
+              "create_at": "2026-07-18 14:13:39"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "QVAN001": [
+    {
+      "id_batch": 3198,
+      "id_transnk_masuk": 2236,
+      "kd_barangsys": "KEU2QVAN001149",
+      "names": [
+        "Vanish"
+      ],
+      "qty_sisa": 1.0,
+      "referensi_sumber": "ADJQTY0702250008",
+      "transaction_note": "menyesuaikan stok fisik",
+      "reason_code": "TIDAK_ADA_RUJUKAN_BATCH",
+      "reason": "Ada harga pembelian barang yang sama, tetapi tidak ada rujukan yang mengikat batch penyesuaian ini ke pembelian tersebut.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 84,
+          "deleted_transactions": 6,
+          "priced_details": 4,
+          "source_evidence_sha256": "e27cb47f4090c1a197642c9277fe3f2fdd5b5eb1a9ff1f28c323e7b080bd660a",
+          "attachment_refs": [
+            {
+              "id_fk_bukti": 91,
+              "kd_po_nk": "NKPO0712240001",
+              "keterangan": "Offline Roxy",
+              "user_upload": "KEU02",
+              "file_name": "2024121733792469",
+              "file_uploaded": "2024121733792469",
+              "create_at": "2024-12-10 08:01:09"
+            },
+            {
+              "id_fk_bukti": 531,
+              "kd_po_nk": "NKPO0910250108",
+              "keterangan": "Online - Shopee (StarMAX Pro, Raja Grosir98, pusatdiskonkecantikan, Wings Official Shop)",
+              "user_upload": "KEU011",
+              "file_name": "2025101760156271",
+              "file_uploaded": "2025101760156271",
+              "create_at": "2025-10-11 11:17:51"
+            },
+            {
+              "id_fk_bukti": 573,
+              "kd_po_nk": "NKPO2410250002",
+              "keterangan": "Cling + Harpic + Vanish - Roxy. Karet + Tinta - Online Shopee\r\n",
+              "user_upload": "KEU011",
+              "file_name": "2025101761538086",
+              "file_uploaded": "2025101761538086",
+              "create_at": "2025-10-27 11:08:06"
+            },
+            {
+              "id_fk_bukti": 1244,
+              "kd_po_nk": "NKPO1807260127",
+              "keterangan": "",
+              "user_upload": "KEU111",
+              "file_name": "2026071784358819",
+              "file_uploaded": "2026071784358819",
+              "create_at": "2026-07-18 14:13:39"
+            }
+          ]
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 87,
+          "deleted_transactions": 6,
+          "priced_details": 4,
+          "source_evidence_sha256": "d5446ceba7fadc33ca342fd464b4b7b4fcf03b2886209ab4d1715bacc46867b8",
+          "attachment_refs": [
+            {
+              "id_fk_bukti": 91,
+              "kd_po_nk": "NKPO0712240001",
+              "keterangan": "Offline Roxy",
+              "user_upload": "KEU02",
+              "file_name": "2024121733792469",
+              "file_uploaded": "2024121733792469",
+              "create_at": "2024-12-10 08:01:09"
+            },
+            {
+              "id_fk_bukti": 531,
+              "kd_po_nk": "NKPO0910250108",
+              "keterangan": "Online - Shopee (StarMAX Pro, Raja Grosir98, pusatdiskonkecantikan, Wings Official Shop)",
+              "user_upload": "KEU011",
+              "file_name": "2025101760156271",
+              "file_uploaded": "2025101760156271",
+              "create_at": "2025-10-11 11:17:51"
+            },
+            {
+              "id_fk_bukti": 573,
+              "kd_po_nk": "NKPO2410250002",
+              "keterangan": "Cling + Harpic + Vanish - Roxy. Karet + Tinta - Online Shopee\r\n",
+              "user_upload": "KEU011",
+              "file_name": "2025101761538086",
+              "file_uploaded": "2025101761538086",
+              "create_at": "2025-10-27 11:08:06"
+            },
+            {
+              "id_fk_bukti": 1244,
+              "kd_po_nk": "NKPO1807260127",
+              "keterangan": "",
+              "user_upload": "KEU111",
+              "file_name": "2026071784358819",
+              "file_uploaded": "2026071784358819",
+              "create_at": "2026-07-18 14:13:39"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "QVIT001": [
+    {
+      "id_batch": 5177,
+      "id_transnk_masuk": 11424,
+      "kd_barangsys": "KEU2QVIT001150",
+      "names": [
+        "Vitamin C 250mg"
+      ],
+      "qty_sisa": 1.0,
+      "referensi_sumber": "ADJQTY0108260003",
+      "transaction_note": "Pengembalian dari GA (NPONK2507260008)",
+      "reason_code": "TETAP_PERLU_HARGA_PENGGUNA",
+      "reason": "Pengguna menjawab tetap pada 11 November 2026: pertahankan PERLU_HARGA. Pengeluaran 11384 dari dua harga; koreksi keluar 11423 qty2 dan masuk 11424 qty4 belum membuktikan asal tiap tube.",
+      "origin_review": [
+        {
+          "db": "kiucoid_kiupo_baru",
+          "transactions": 14,
+          "deleted_transactions": 0,
+          "priced_details": 2,
+          "source_evidence_sha256": "6917188d2662252e24adbe0726d03ac4c01b9c255d2e2cf0e835454af7cffdf3",
+          "attachment_refs": [
+            {
+              "id_fk_bukti": 436,
+              "kd_po_nk": "NKPO1408250057",
+              "keterangan": "Online - Shopee (vi store daily)",
+              "user_upload": "KEU011",
+              "file_name": "2025081755311156",
+              "file_uploaded": "2025081755311156",
+              "create_at": "2025-08-16 09:25:56"
+            },
+            {
+              "id_fk_bukti": 1264,
+              "kd_po_nk": "NKPO2507260144",
+              "keterangan": "",
+              "user_upload": "KEU111",
+              "file_name": "2026071785131503",
+              "file_uploaded": "2026071785131503",
+              "create_at": "2026-07-27 12:51:43"
+            }
+          ]
+        },
+        {
+          "db": "kiucoid_po",
+          "transactions": 14,
+          "deleted_transactions": 0,
+          "priced_details": 2,
+          "source_evidence_sha256": "a5f681007f2091d380d4969e7adbee755cce13fe20a0292942c7a4b35d1fc700",
+          "attachment_refs": [
+            {
+              "id_fk_bukti": 436,
+              "kd_po_nk": "NKPO1408250057",
+              "keterangan": "Online - Shopee (vi store daily)",
+              "user_upload": "KEU011",
+              "file_name": "2025081755311156",
+              "file_uploaded": "2025081755311156",
+              "create_at": "2025-08-16 09:25:56"
+            },
+            {
+              "id_fk_bukti": 1264,
+              "kd_po_nk": "NKPO2507260144",
+              "keterangan": "",
+              "user_upload": "KEU111",
+              "file_name": "2026071785131503",
+              "file_uploaded": "2026071785131503",
+              "create_at": "2026-07-27 12:51:43"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

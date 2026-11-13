@@ -1,0 +1,1245 @@
+{
+  "prepared": "2026-11-12",
+  "cases": [
+    {
+      "id": "A01",
+      "module": "Akses",
+      "role": "Admin",
+      "kind": "Prasyarat",
+      "fixture": "ENV",
+      "pre": "Prasyarat lingkungan selesai",
+      "steps": "1. Buka URL UAT lokal. 2. Cocokkan label lingkungan dan koneksi dengan Admin. 3. Catat versi kode.",
+      "expected": "Aplikasi menggunakan database uji yang ditetapkan. Kedua database asli tidak menjadi target penulisan."
+    },
+    {
+      "id": "A02",
+      "module": "Akses",
+      "role": "PIC",
+      "kind": "Negatif",
+      "fixture": "AKUN",
+      "pre": "A01",
+      "steps": "1. Login PIC-A. 2. Buka request milik PIC-B dan dokumennya melalui tautan yang diberikan Admin.",
+      "expected": "Data pihak lain ditolak atau tidak ditemukan. Tidak ada isi dokumen atau aksi perubahan yang terbuka."
+    },
+    {
+      "id": "A03",
+      "module": "Akses",
+      "role": "Kadep",
+      "kind": "Negatif",
+      "fixture": "AKUN",
+      "pre": "A01",
+      "steps": "1. Login Kadep-IT. 2. Buka dan coba putuskan request GA.",
+      "expected": "Kadep beda departemen ditolak. Status, aktor approval dan catatan transaksi tetap."
+    },
+    {
+      "id": "A04",
+      "module": "Akses",
+      "role": "Direktur Operasional",
+      "kind": "Negatif",
+      "fixture": "AKUN",
+      "pre": "A01",
+      "steps": "1. Login akun level 6 di departemen Direktur Operasional. 2. Buka antrean PO Jasa. 3. Ulangi dengan akun level 2 Keuangan biasa.",
+      "expected": "Akun DirOps dikenali. Akun level 2 Keuangan tidak memperoleh peran Purchasing pada PO Jasa."
+    },
+    {
+      "id": "A05",
+      "module": "Akses",
+      "role": "Purchasing",
+      "kind": "Negatif",
+      "fixture": "AKUN",
+      "pre": "A01",
+      "steps": "1. Gunakan sesi yang sudah logout. 2. Coba simpan melalui halaman lama. 3. Admin bantu uji permintaan tanpa token CSRF untuk PO Jasa.",
+      "expected": "Sesi/token yang tidak valid ditolak. Tidak ada transaksi atau approval baru."
+    },
+    {
+      "id": "A06",
+      "module": "Akses",
+      "role": "Admin",
+      "kind": "Integrasi",
+      "fixture": "AKUN",
+      "pre": "A01",
+      "steps": "1. Login peran berbeda pada profil browser terpisah. 2. Lakukan satu approval dan buka riwayatnya.",
+      "expected": "Aktor dan departemen pada audit sesuai akun yang melakukan aksi, bukan nama pemilik request atau teks formulir."
+    },
+    {
+      "id": "K01",
+      "module": "PO komersil",
+      "role": "Purchasing",
+      "kind": "Positif",
+      "fixture": "K-BASE",
+      "pre": "A01",
+      "steps": "1. Pilih supplier UAT dan dua barang. 2. Pilih Shipment To A. 3. Simpan draft, keluar halaman lalu buka ulang.",
+      "expected": "Dua item dan Shipment To A tetap tersimpan. Belum ada PO yang diajukan."
+    },
+    {
+      "id": "K02",
+      "module": "PO komersil",
+      "role": "Purchasing",
+      "kind": "Negatif",
+      "fixture": "K-CABANG",
+      "pre": "K01",
+      "steps": "1. Pada salinan draft, kosongkan Shipment To. 2. Coba ajukan.",
+      "expected": "Pengajuan ditolak. Item draft tetap tersedia untuk diperbaiki."
+    },
+    {
+      "id": "K03",
+      "module": "PO komersil",
+      "role": "Purchasing",
+      "kind": "Positif",
+      "fixture": "K-BASE",
+      "pre": "K01",
+      "steps": "1. Ajukan 2 × Rp10.000 dan 3 × Rp5.000. 2. Gunakan PPN fixture 11%. 3. Catat nomor PO.",
+      "expected": "Satu header dan dua detail. Nilai dasar Rp35.000, PPN fixture Rp3.850, status ON PROGRESS. Draft terkait dibersihkan."
+    },
+    {
+      "id": "K04",
+      "module": "PO komersil",
+      "role": "Direktur",
+      "kind": "Positif",
+      "fixture": "K-BASE",
+      "pre": "K03",
+      "steps": "1. Buka detail PO. 2. ACC. 3. Muat ulang dan coba aksi yang sama lagi.",
+      "expected": "Status ACC DIREKTUR, aktor sesuai sesi. Approval/catatan tidak menjadi dua kali."
+    },
+    {
+      "id": "K05",
+      "module": "PO komersil",
+      "role": "Purchasing",
+      "kind": "Positif",
+      "fixture": "K-BASE",
+      "pre": "K04",
+      "steps": "1. Konfirmasi pembelian menjadi ON DELIVERY. 2. Ulangi tombol yang sama.",
+      "expected": "Status ON DELIVERY. Pengulangan tidak menghasilkan perubahan atau mutasi tambahan."
+    },
+    {
+      "id": "K06",
+      "module": "PO komersil",
+      "role": "Purchasing",
+      "kind": "Positif",
+      "fixture": "K-BASE",
+      "pre": "K05",
+      "steps": "1. Cetak internal, supplier Include, supplier Exclude dan cetakan kompatibilitas. 2. Bandingkan dengan draft.",
+      "expected": "Tiap cetakan memuat satu header, dua detail, supplier yang dipilih dan Shipment To A. Tidak mencampur alamat B atau menggandakan detail."
+    },
+    {
+      "id": "K07",
+      "module": "PO komersil",
+      "role": "Purchasing",
+      "kind": "Positif",
+      "fixture": "K-BASE",
+      "pre": "K06",
+      "steps": "1. Konfirmasi barang diterima. 2. Ulangi konfirmasi. 3. Periksa riwayat mutasi dengan Admin.",
+      "expected": "Status DONE. Dua mutasi masuk akun 11411, total 5 unit, masing-masing hanya satu kali."
+    },
+    {
+      "id": "K08",
+      "module": "PO komersil",
+      "role": "Purchasing",
+      "kind": "Negatif",
+      "fixture": "K-CABANG",
+      "pre": "K01",
+      "steps": "1. Simpan Shipment To pada draft satu item. 2. Hapus item terakhir. 3. Buat ulang draft baru.",
+      "expected": "Item dan pilihan shipment draft lama dibersihkan. Draft baru tidak mewarisi Shipment To tanpa pilihan baru."
+    },
+    {
+      "id": "N01",
+      "module": "Request PIC dan PO NK",
+      "role": "PIC",
+      "kind": "Positif",
+      "fixture": "N-BELI",
+      "pre": "A01",
+      "steps": "1. Buat Request PIC dua detail, qty 1 dan 2. 2. Isi lokasi/keterangan. 3. Ajukan dan buka ulang.",
+      "expected": "Satu kode Request PIC, dua detail dan pemilik/lokasi benar. Pengajuan ulang tanpa draft tidak membentuk header baru."
+    },
+    {
+      "id": "N02",
+      "module": "Request PIC dan PO NK",
+      "role": "Kadep",
+      "kind": "Positif",
+      "fixture": "N-BELI",
+      "pre": "N01",
+      "steps": "1. Login Kadep GA. 2. ACC Request PIC GA. 3. Ulangi keputusan.",
+      "expected": "Status ON PROGRESS - ACC KADEP. Catatan approval tidak berulang."
+    },
+    {
+      "id": "N03",
+      "module": "Request PIC dan PO NK",
+      "role": "Purchasing",
+      "kind": "Positif",
+      "fixture": "N-BELI",
+      "pre": "N02",
+      "steps": "1. Rencanakan pembelian 2 unit @Rp1.000 dan 3 unit @Rp2.000. 2. Bentuk PO NK terkait request. 3. Muat ulang.",
+      "expected": "Satu PO NK, keterkaitan request/PIC/departemen benar. Nilai pembelian Rp8.000. Tidak ada PO ganda saat aksi diulang."
+    },
+    {
+      "id": "N04",
+      "module": "Request PIC dan PO NK",
+      "role": "Kadep",
+      "kind": "Positif",
+      "fixture": "N-BELI",
+      "pre": "N03",
+      "steps": "1. ACC PO NK dengan Kadep departemen terkait. 2. Purchasing lanjutkan pengajuan ke Direktur.",
+      "expected": "PO NK melewati ACC-KADEP lalu SEDANG DIAJUKAN. Akun Kadep lain tidak dapat menggantikan persetujuan ini."
+    },
+    {
+      "id": "N05",
+      "module": "Request PIC dan PO NK",
+      "role": "Direktur",
+      "kind": "Positif",
+      "fixture": "N-BELI",
+      "pre": "N04",
+      "steps": "1. ACC PO NK. 2. Purchasing ubah menjadi proses pembelian.",
+      "expected": "Status ACC DIREKTUR kemudian PROSES PEMBELIAN. Tidak ada stok masuk sebelum penerimaan."
+    },
+    {
+      "id": "N06",
+      "module": "Request PIC dan PO NK",
+      "role": "Purchasing",
+      "kind": "Positif",
+      "fixture": "N-BELI",
+      "pre": "N05",
+      "steps": "1. Konfirmasi penerimaan PO. 2. Buka ulang dan ulangi konfirmasi.",
+      "expected": "Dua mutasi 11511, total 5 unit. Batch terpisah sesuai detail/harga Rp1.000 dan Rp2.000. Tidak ada posting ganda."
+    },
+    {
+      "id": "N07",
+      "module": "Request PIC dan PO NK",
+      "role": "PIC",
+      "kind": "Positif",
+      "fixture": "N-BELI",
+      "pre": "N06",
+      "steps": "1. Ajukan pengambilan. 2. Kadep ACC pengambilan. 3. Purchasing serahkan qty 1 dan 2.",
+      "expected": "Request selesai setelah penyerahan. Total keluar 3 unit pada 11512, saldo tersisa 2. Pemilik dan lokasi detail terjaga."
+    },
+    {
+      "id": "N08",
+      "module": "Request PIC dan PO NK",
+      "role": "Purchasing",
+      "kind": "Positif",
+      "fixture": "N-SISA",
+      "pre": "N07",
+      "steps": "1. Pada fixture tersendiri dengan detail sudah diserahkan dan satu detail belum diserahkan, buka daftar pickup. 2. Serahkan hanya detail tersisa.",
+      "expected": "Daftar hanya menampilkan sisa. Detail lama tidak diposting ulang. Total keluar bertambah hanya sebesar sisa."
+    },
+    {
+      "id": "N09",
+      "module": "Request PIC dan PO NK",
+      "role": "Purchasing",
+      "kind": "Integrasi",
+      "fixture": "N-STOK",
+      "pre": "N06",
+      "steps": "1. Buat request baru 1 unit dari stok tersedia. 2. Selesaikan persetujuan dan pickup.",
+      "expected": "Tidak membuat PO pembelian baru. Satu mutasi keluar 1 unit. Jika memakai saldo 2 unit dari N07, saldo akhirnya 1."
+    },
+    {
+      "id": "N10",
+      "module": "Request PIC dan PO NK",
+      "role": "Purchasing",
+      "kind": "Integrasi",
+      "fixture": "N-TIMEOUT",
+      "pre": "N06 pada salinan",
+      "steps": "1. Catat waktu catatan BARANG DI TERIMA - ADMIN pada salinan request. 2. Tanpa update Kadep, periksa tombol penerusan sebelum dan sesudah lima menit. 3. Purchasing teruskan proses melalui tombol yang tersedia.",
+      "expected": "Sebelum ambang waktu, penerusan ditolak/tidak tersedia. Sesudah ambang tanpa update Kadep, status MENUNGGU PENYERAHAN BARANG dan catatan penerusan tersimpan. Belum ada stok keluar. Jangan mengubah jam server."
+    },
+    {
+      "id": "S01",
+      "module": "Stok",
+      "role": "Purchasing",
+      "kind": "Positif",
+      "fixture": "S-ADJ",
+      "pre": "A01",
+      "steps": "1. Adjustment masuk 2 unit pada SKU kosong. 2. Buka histori batch.",
+      "expected": "Saldo 2 unit. Batch masuk berstatus PERLU_HARGA sampai ada harga berbukti fixture."
+    },
+    {
+      "id": "S02",
+      "module": "Stok",
+      "role": "Purchasing",
+      "kind": "Negatif",
+      "fixture": "S-ADJ",
+      "pre": "S01",
+      "steps": "1. Sebelum mengisi harga, coba adjustment keluar 1 unit.",
+      "expected": "Ditolak tanpa mengurangi stok, batch, atau membuat transaksi keluar."
+    },
+    {
+      "id": "S03",
+      "module": "Stok",
+      "role": "Purchasing",
+      "kind": "Positif",
+      "fixture": "S-ADJ",
+      "pre": "S02",
+      "steps": "1. Isi harga fixture Rp2.500 dengan alasan. 2. Adjustment keluar 1 unit. 3. Periksa batch/harga snapshot.",
+      "expected": "Saldo 1 unit. Keluar 11514 memakai snapshot Rp2.500. Alasan harga dan aktor tersimpan."
+    },
+    {
+      "id": "S04",
+      "module": "Stok",
+      "role": "PIC",
+      "kind": "Negatif",
+      "fixture": "S-ADJ",
+      "pre": "S01",
+      "steps": "1. Login PIC biasa. 2. Coba adjustment dan pengubahan harga batch.",
+      "expected": "Aksi ditolak. Hak stok tidak diperoleh hanya karena memiliki Request PIC."
+    },
+    {
+      "id": "S05",
+      "module": "Stok",
+      "role": "Admin",
+      "kind": "Integrasi",
+      "fixture": "N-BELI",
+      "pre": "N06",
+      "steps": "1. Cocokkan detail PO, mutasi, batch dan saldo tampilan. 2. Cocokkan kuantitas keluar dengan alokasi LIFO.",
+      "expected": "Jumlah batch/mutasi sesuai transaksi fixture. Harga snapshot tetap sesuai batch asal, bukan harga PO yang dibaca ulang."
+    },
+    {
+      "id": "J01",
+      "module": "PO Jasa",
+      "role": "PIC",
+      "kind": "Positif",
+      "fixture": "J-BASE",
+      "pre": "A01",
+      "steps": "1. Buat draft satu scope jasa dan material master qty 3. 2. Simpan lalu buka ulang.",
+      "expected": "Pemilik, spesifikasi master, kuantitas dan jadwal tetap. Harga persetujuan ditentukan review Purchasing, bukan input PIC."
+    },
+    {
+      "id": "J02",
+      "module": "PO Jasa",
+      "role": "PIC",
+      "kind": "Negatif",
+      "fixture": "J-BASE",
+      "pre": "J01",
+      "steps": "1. Pada draft tanpa dokumen, coba ajukan. 2. Unggah dokumen pendukung nyata lalu ajukan.",
+      "expected": "Tanpa dokumen ditolak. Setelah dokumen valid tersedia, status MENUNGGU_PURCHASING_AWAL dan notifikasi Purchasing muncul."
+    },
+    {
+      "id": "J03",
+      "module": "PO Jasa",
+      "role": "Purchasing",
+      "kind": "Positif",
+      "fixture": "J-BASE",
+      "pre": "J02",
+      "steps": "1. Review vendor manual fixture. 2. Scope 1 × Rp150.000 dan material 3 × Rp10.000. 3. Simpan review dan draft pembelian.",
+      "expected": "Estimasi Purchasing Rp180.000. Identitas vendor manual tersimpan pada request. Belum ada SPK atau mutasi stok."
+    },
+    {
+      "id": "J04",
+      "module": "PO Jasa",
+      "role": "Purchasing",
+      "kind": "Positif",
+      "fixture": "J-BASE",
+      "pre": "J03",
+      "steps": "1. Pilih UPDATE dan isi catatan. 2. PIC buka notifikasi dan hasil review.",
+      "expected": "Status MENUNGGU_KONFIRMASI_PIC. Pengajuan belum melompati konfirmasi PIC."
+    },
+    {
+      "id": "J05",
+      "module": "PO Jasa",
+      "role": "PIC",
+      "kind": "Positif",
+      "fixture": "J-BASE",
+      "pre": "J04",
+      "steps": "1. Setujui hasil review dengan catatan. 2. Purchasing SUBMIT.",
+      "expected": "Status berurutan MENUNGGU_PURCHASING lalu MENUNGGU_KADEP."
+    },
+    {
+      "id": "J06",
+      "module": "PO Jasa",
+      "role": "Kadep",
+      "kind": "Positif",
+      "fixture": "J-BASE",
+      "pre": "J05",
+      "steps": "1. ACC sebagai Kadep GA. 2. Cek aktor dan antrean berikutnya.",
+      "expected": "Status MENUNGGU_DIRUT_OPS. Aktor sesuai Kadep yang login. Tidak kembali ke tahap Purchasing lama."
+    },
+    {
+      "id": "J07",
+      "module": "PO Jasa",
+      "role": "Direktur Operasional",
+      "kind": "Positif",
+      "fixture": "J-BASE",
+      "pre": "J06",
+      "steps": "1. ACC sebagai DirOps. 2. Coba opsi PENDING pada salinan request pada tahap ini.",
+      "expected": "ACC meneruskan ke MENUNGGU_DIREKTUR. PENDING tidak menjadi aksi yang sah untuk DirOps."
+    },
+    {
+      "id": "J08",
+      "module": "PO Jasa",
+      "role": "Direktur",
+      "kind": "Positif",
+      "fixture": "J-BASE",
+      "pre": "J07",
+      "steps": "1. ACC request. 2. Buka ulang sebelum Purchasing menerbitkan.",
+      "expected": "Status MENUNGGU_PENERBITAN_PURCHASING. SPK belum terbit otomatis oleh ACC Direktur."
+    },
+    {
+      "id": "J09",
+      "module": "PO Jasa",
+      "role": "Purchasing",
+      "kind": "Positif",
+      "fixture": "J-BASE",
+      "pre": "J08",
+      "steps": "1. TERBITKAN. 2. Buka SPK dan PO pembelian material yang terbentuk. 3. Ulangi aksi.",
+      "expected": "Satu nomor SPK, satu keterkaitan pembelian aktif yang sesuai sumbernya. Status SPK_TERBIT. Tidak ada nomor/header ganda."
+    },
+    {
+      "id": "J10",
+      "module": "PO Jasa",
+      "role": "Purchasing",
+      "kind": "Positif",
+      "fixture": "J-BASE",
+      "pre": "J09",
+      "steps": "1. Terima material 1 unit @Rp9.000. 2. Terima sisa 2 unit @Rp11.000. 3. Periksa biaya dan stok.",
+      "expected": "Total masuk 3 unit, biaya otomatis Rp31.000. Batch harga Rp9.000 dan Rp11.000 terpisah. Detail menjadi ON_HAND."
+    },
+    {
+      "id": "J11",
+      "module": "PO Jasa",
+      "role": "Purchasing",
+      "kind": "Negatif",
+      "fixture": "J-CABANG",
+      "pre": "J10",
+      "steps": "1. Coba terima lebih dari sisa. 2. Ulangi penerimaan tersimpan dengan data sama. 3. Admin bantu uji token sama dengan harga berbeda.",
+      "expected": "Kelebihan dan konflik token ditolak. Replay data identik tidak menambah stok, dokumen penerimaan atau biaya."
+    },
+    {
+      "id": "J12",
+      "module": "PO Jasa",
+      "role": "Purchasing",
+      "kind": "Integrasi",
+      "fixture": "J-RETUR",
+      "pre": "J09",
+      "steps": "1. Pada salinan sebelum pickup, terima 1 unit @Rp9.000 dan 2 unit @Rp11.000. 2. Reverse penerimaan pertama 1 unit.",
+      "expected": "Keluar koreksi 11514 memakai batch asal Rp9.000. Saldo 2 unit, biaya neto Rp22.000. Koreksi bersifat tambahan dan diaudit."
+    },
+    {
+      "id": "J13",
+      "module": "PO Jasa",
+      "role": "PIC",
+      "kind": "Positif",
+      "fixture": "J-PICREVISI",
+      "pre": "J04 pada salinan",
+      "steps": "1. PIC minta revisi hasil review dengan catatan. 2. Perbaiki draft dan dokumen yang diperlukan. 3. Ajukan ulang.",
+      "expected": "Status REVISI_PIC lalu MENUNGGU_PURCHASING_AWAL. Riwayat review terdahulu terjaga dan Purchasing menerima pengajuan ulang."
+    },
+    {
+      "id": "J14",
+      "module": "PO Jasa",
+      "role": "Kadep",
+      "kind": "Positif",
+      "fixture": "J-PENDING",
+      "pre": "J05 pada salinan",
+      "steps": "1. Kadep pilih PENDING. 2. PIC coba edit/ajukan. 3. Kadep lanjut ACC.",
+      "expected": "Saat PENDING_KADEP, PIC tidak dapat mengubah request. ACC berikutnya menuju MENUNGGU_DIRUT_OPS; tidak memerlukan tahap Purchasing lama."
+    },
+    {
+      "id": "J15",
+      "module": "PO Jasa",
+      "role": "Kadep",
+      "kind": "Positif",
+      "fixture": "J-KADEPREVISI",
+      "pre": "J05 pada salinan",
+      "steps": "1. Kadep minta REVISI dengan catatan. 2. Purchasing coba SUBMIT sebelum menyimpan. 3. Simpan review yang diperbaiki lalu SUBMIT.",
+      "expected": "Status REVISI_PURCHASING_KADEP, bukan revisi PIC. Submit sebelum simpan ditolak. Review tersimpan pada revisi baru, kemudian kembali MENUNGGU_KADEP."
+    },
+    {
+      "id": "J16",
+      "module": "PO Jasa",
+      "role": "Direktur Operasional",
+      "kind": "Positif",
+      "fixture": "J-OPSREVISI",
+      "pre": "J06 pada salinan",
+      "steps": "1. DirOps minta REVISI dengan catatan. 2. Purchasing simpan review perbaikan dan SUBMIT.",
+      "expected": "Status REVISI_PURCHASING_DIROPS kemudian kembali MENUNGGU_DIRUT_OPS. Baris revisi lama tidak ditimpa dan tidak melompati persetujuan ulang DirOps."
+    },
+    {
+      "id": "J17",
+      "module": "PO Jasa",
+      "role": "Direktur",
+      "kind": "Positif",
+      "fixture": "J-DIRREVISI",
+      "pre": "J07 pada salinan",
+      "steps": "1. Direktur minta REVISI dengan catatan. 2. Purchasing simpan review perbaikan dan SUBMIT.",
+      "expected": "Status REVISI_PURCHASING_DIRUT kemudian kembali MENUNGGU_DIREKTUR. Versi request bertambah dan SPK belum terbit."
+    },
+    {
+      "id": "J18",
+      "module": "PO Jasa",
+      "role": "Kadep",
+      "kind": "Negatif",
+      "fixture": "J-REJECT",
+      "pre": "J05/J06/J07 pada tiga salinan",
+      "steps": "1. Tolak tiga salinan pada tahap Kadep, DirOps dan Direktur memakai akun masing-masing. 2. Periksa reservasi, draft pembelian dan upaya melanjutkan request.",
+      "expected": "Masing-masing menjadi DITOLAK_KADEP, DITOLAK_DIRUT_OPS dan DITOLAK_DIREKTUR. Alasan/aktor tersimpan, reservasi dilepas, draft dibatalkan dan tidak terbit SPK."
+    },
+    {
+      "id": "H01",
+      "module": "Pickup PO Jasa",
+      "role": "PIC",
+      "kind": "Negatif",
+      "fixture": "J-BELUMSIAP",
+      "pre": "J09",
+      "steps": "1. Coba ajukan pickup saat pembelian belum ON_HAND atau material manual belum tertaut master.",
+      "expected": "Pengajuan ditolak. Tidak ada header/detail pickup setengah tersimpan."
+    },
+    {
+      "id": "H02",
+      "module": "Pickup PO Jasa",
+      "role": "PIC",
+      "kind": "Positif",
+      "fixture": "J-BASE",
+      "pre": "J10",
+      "steps": "1. Ajukan pickup material. 2. Muat ulang dan ulangi permintaan yang sama.",
+      "expected": "Satu permintaan aktif MENUNGGU_ACC_KADEP. Permintaan berulang yang identik tidak membuat header ganda."
+    },
+    {
+      "id": "H03",
+      "module": "Pickup PO Jasa",
+      "role": "Kadep",
+      "kind": "Negatif",
+      "fixture": "J-PICKREJ",
+      "pre": "H02",
+      "steps": "1. Tolak salinan pickup tanpa catatan, lalu isi catatan penolakan. 2. PIC ajukan ulang.",
+      "expected": "Penolakan tanpa catatan ditolak. Penolakan tercatat; pengajuan ulang membuat riwayat baru tanpa menghapus penolakan lama."
+    },
+    {
+      "id": "H04",
+      "module": "Pickup PO Jasa",
+      "role": "Kadep",
+      "kind": "Positif",
+      "fixture": "J-BASE",
+      "pre": "H02",
+      "steps": "1. ACC pickup GA. 2. Purchasing buka antrean persiapan.",
+      "expected": "Status MENUNGGU_PERSIAPAN_PURCHASING. Kadep departemen lain tidak dapat menyetujui."
+    },
+    {
+      "id": "H05",
+      "module": "Pickup PO Jasa",
+      "role": "Purchasing",
+      "kind": "Positif",
+      "fixture": "J-BASE",
+      "pre": "H04",
+      "steps": "1. Tandai material siap diambil. 2. Cek notifikasi PIC dan saldo.",
+      "expected": "Status SIAP_DIAMBIL. Material pembelian masuk reservasi sesuai kebutuhan. Saldo fisik tetap 3, belum ada 11512."
+    },
+    {
+      "id": "H06",
+      "module": "Pickup PO Jasa",
+      "role": "PIC",
+      "kind": "Positif",
+      "fixture": "J-BASE",
+      "pre": "H05",
+      "steps": "1. Konfirmasi diterima 1 unit. 2. Buka ulang lalu terima sisa 2 unit. 3. Ulangi konfirmasi terakhir.",
+      "expected": "Saldo 3 ke 2 ke 0. Hanya penerimaan PIC memicu 11512. Setelah lengkap status DITERIMA_PIC; replay tidak menggandakan mutasi."
+    },
+    {
+      "id": "H07",
+      "module": "Pickup PO Jasa",
+      "role": "Purchasing",
+      "kind": "Negatif",
+      "fixture": "J-PICKLOCK",
+      "pre": "H05",
+      "steps": "1. Pada salinan SIAP_DIAMBIL, coba lepas reservasi dan ajukan perubahan qty material SPK.",
+      "expected": "Pelepasan/perubahan material ditolak selama handover berjalan. Reservasi, qty dan versi SPK tetap."
+    },
+    {
+      "id": "R01",
+      "module": "Revisi SPK",
+      "role": "Purchasing",
+      "kind": "Positif",
+      "fixture": "J-JADWAL",
+      "pre": "J09",
+      "steps": "1. Ajukan jadwal baru dan alasan. 2. Buka SPK aktif sebelum keputusan.",
+      "expected": "Jadwal aktif belum berubah. Satu pengajuan menunggu Direktur dan menunjuk versi asal SPK."
+    },
+    {
+      "id": "R02",
+      "module": "Revisi SPK",
+      "role": "Direktur",
+      "kind": "Positif",
+      "fixture": "J-JADWAL",
+      "pre": "R01",
+      "steps": "1. Minta REVISI dengan catatan. 2. Purchasing ajukan ulang. 3. Direktur ACC.",
+      "expected": "Riwayat revisi tersimpan. Versi SPK bertambah satu setelah ACC; versi lama dapat dibuka. Revisi jadwal saja tidak mengubah estimasi."
+    },
+    {
+      "id": "R03",
+      "module": "Revisi SPK",
+      "role": "Purchasing",
+      "kind": "Positif",
+      "fixture": "J-DATA",
+      "pre": "J09",
+      "steps": "1. Sebelum pickup, ajukan perubahan scope dan alasannya melalui revisi data. 2. Buka ringkasan dampak.",
+      "expected": "Perubahan belum diterapkan sebelum persetujuan. Dampak qty/biaya sesuai data yang diajukan, bukan mereset baris lain."
+    },
+    {
+      "id": "R04",
+      "module": "Revisi SPK",
+      "role": "Direktur Operasional",
+      "kind": "Positif",
+      "fixture": "J-DATA",
+      "pre": "R03",
+      "steps": "1. Pada request GA, DirOps ACC revisi data. 2. Direktur ACC. 3. Purchasing buka versi aktif dan arsip.",
+      "expected": "Urutan DirOps lalu Direktur. Versi bertambah tepat sekali. Cetak memuat scope, vendor, material dan angka versi yang benar."
+    },
+    {
+      "id": "R05",
+      "module": "Revisi SPK",
+      "role": "Direktur",
+      "kind": "Negatif",
+      "fixture": "J-REJT",
+      "pre": "R01",
+      "steps": "1. Tolak salinan revisi jadwal dengan alasan. 2. Buka SPK aktif.",
+      "expected": "Jadwal, estimasi dan versi aktif tidak berubah. Keputusan penolakan tersimpan."
+    },
+    {
+      "id": "R06",
+      "module": "Revisi SPK",
+      "role": "Purchasing",
+      "kind": "Negatif",
+      "fixture": "J-TERTUNDA",
+      "pre": "R01",
+      "steps": "1. Saat revisi jadwal tertunda, coba ajukan revisi data. 2. Pada salinan terbalik, coba revisi jadwal saat revisi data tertunda.",
+      "expected": "Kedua jalur saling mengunci pengajuan tertunda. Tidak ada dua perubahan yang menimpa versi asal yang sama."
+    },
+    {
+      "id": "R07",
+      "module": "Revisi SPK",
+      "role": "PIC",
+      "kind": "Positif",
+      "fixture": "J-BIAYA",
+      "pre": "J09",
+      "steps": "1. Catat biaya nyata dengan bukti sehingga melewati plafon fixture. 2. Purchasing verifikasi dan ajukan revisi biaya. 3. Selesaikan approval yang diwajibkan.",
+      "expected": "Biaya mempunyai bukti dan referensi scope/material. Biaya menunggu persetujuan revisi; plafon hanya berubah setelah persetujuan final."
+    },
+    {
+      "id": "B01",
+      "module": "Progres dan BAST",
+      "role": "PIC",
+      "kind": "Positif",
+      "fixture": "J-BASE",
+      "pre": "H06",
+      "steps": "1. Simpan progres 25% dengan aktivitas dan evidence. 2. Buka ulang.",
+      "expected": "Status ON_PROGRESS. Aktivitas lengkap dan bukti tetap dapat dibuka oleh pihak yang berwenang."
+    },
+    {
+      "id": "B02",
+      "module": "Progres dan BAST",
+      "role": "PIC",
+      "kind": "Negatif",
+      "fixture": "J-CABANG",
+      "pre": "B01",
+      "steps": "1. Pada salinan progres 25%, coba 10% dan 101%. 2. Coba tutup pekerjaan sebagai PIC.",
+      "expected": "Progres mundur/lebih dari 100% ditolak. PIC tidak dapat menetapkan DITUTUP."
+    },
+    {
+      "id": "B03",
+      "module": "Progres dan BAST",
+      "role": "PIC",
+      "kind": "Positif",
+      "fixture": "J-BASE",
+      "pre": "B01",
+      "steps": "1. Simpan progres 100% dan status selesai. 2. Purchasing buka halaman BAST dan Pembayaran.",
+      "expected": "Status SELESAI. Pekerjaan belum DITUTUP sampai Purchasing/Admin menyimpan BAST."
+    },
+    {
+      "id": "B04",
+      "module": "Progres dan BAST",
+      "role": "Purchasing",
+      "kind": "Negatif",
+      "fixture": "J-BASTGATE",
+      "pre": "B03",
+      "steps": "1. Pada salinan, sisakan material belum diterima PIC atau revisi SPK menunggu keputusan. 2. Coba simpan BAST.",
+      "expected": "BAST ditolak sampai seluruh material dan keputusan revisi selesai. Tidak ada cap waktu penutupan prematur."
+    },
+    {
+      "id": "B05",
+      "module": "Progres dan BAST",
+      "role": "Purchasing",
+      "kind": "Positif",
+      "fixture": "J-BASE",
+      "pre": "B03",
+      "steps": "1. Isi nomor, tanggal, penerima dan catatan BAST. 2. Simpan dan buka ulang. 3. Ulangi penyimpanan identik.",
+      "expected": "Status DITUTUP, satu BAST, cap waktu dan aktor Purchasing. Replay identik tidak membentuk BAST kedua."
+    },
+    {
+      "id": "B06",
+      "module": "Progres dan BAST",
+      "role": "Admin",
+      "kind": "Negatif",
+      "fixture": "J-BASE",
+      "pre": "B05",
+      "steps": "1. Coba buat progres, penerimaan, reversal atau revisi SPK baru pada request tertutup.",
+      "expected": "Aksi operasional baru ditolak. Status penutupan dan saldo tidak berubah. Tracking pembayaran tetap terpisah."
+    },
+    {
+      "id": "P01",
+      "module": "Pembayaran",
+      "role": "Purchasing",
+      "kind": "Positif",
+      "fixture": "J-BASE",
+      "pre": "J09",
+      "steps": "1. Catat invoice Rp100.000,50, dibayar 0. 2. Buka ulang.",
+      "expected": "Satu invoice BELUM BAYAR. Invoice tidak menutup atau membuka ulang pekerjaan."
+    },
+    {
+      "id": "P02",
+      "module": "Pembayaran",
+      "role": "Purchasing",
+      "kind": "Positif",
+      "fixture": "J-BASE",
+      "pre": "P01",
+      "steps": "1. Perbarui total dibayar kumulatif menjadi Rp30.000,25. 2. Kemudian Rp100.000,50.",
+      "expected": "Invoice tetap satu. Status PARTIAL lalu LUNAS, dengan riwayat tiga penyimpanan. Total dibayar adalah kumulatif, bukan ditambah dua kali."
+    },
+    {
+      "id": "P03",
+      "module": "Pembayaran",
+      "role": "Purchasing",
+      "kind": "Negatif",
+      "fixture": "J-INVNEG",
+      "pre": "P01",
+      "steps": "1. Coba bayar melebihi tagihan, nominal negatif, nomor invoice duplikat dan pembaruan dari halaman versi lama.",
+      "expected": "Data tidak valid/duplikat/versi usang ditolak. Nilai lama dan audit tidak berubah akibat upaya gagal."
+    },
+    {
+      "id": "P04",
+      "module": "Pembayaran",
+      "role": "Purchasing",
+      "kind": "Positif",
+      "fixture": "J-SEN",
+      "pre": "J09",
+      "steps": "1. Catat invoice Rp0,30 dan dibayar Rp0,10. 2. Periksa total dan sisa.",
+      "expected": "Sisa tepat Rp0,20 dan status PARTIAL. Tidak muncul selisih pembulatan."
+    },
+    {
+      "id": "P05",
+      "module": "Pembayaran",
+      "role": "PIC",
+      "kind": "Negatif",
+      "fixture": "J-BASE",
+      "pre": "P01",
+      "steps": "1. Pemilik PIC buka hasil invoice. 2. Coba mengubah pembayaran. 3. Ulangi sebagai Direktur.",
+      "expected": "Pihak berwenang dapat membaca, tetapi PIC/Direktur tidak dapat menyimpan pembayaran."
+    },
+    {
+      "id": "E01",
+      "module": "Evaluasi vendor",
+      "role": "Purchasing",
+      "kind": "Negatif",
+      "fixture": "J-EVALAWAL",
+      "pre": "J09",
+      "steps": "1. Coba evaluasi sebelum BAST menutup pekerjaan.",
+      "expected": "Ditolak. Belum ada evaluasi tersimpan atau nilai vendor sebelum DITUTUP dan BAST tersedia."
+    },
+    {
+      "id": "E02",
+      "module": "Evaluasi vendor",
+      "role": "Purchasing",
+      "kind": "Positif",
+      "fixture": "J-BASE",
+      "pre": "B05",
+      "steps": "1. Isi kualitas 5, waktu 4 dan biaya 3. 2. Simpan lalu buka ulang.",
+      "expected": "Nilai rata-rata 4,00 dihitung server. Vendor sesuai request/master; vendor manual menyimpan nama snapshot tanpa vendor fiktif."
+    },
+    {
+      "id": "E03",
+      "module": "Evaluasi vendor",
+      "role": "Purchasing",
+      "kind": "Negatif",
+      "fixture": "J-BASE",
+      "pre": "E02",
+      "steps": "1. Coba nilai 5,01, 0 dan kosong. 2. Coba perbarui dari halaman versi lama.",
+      "expected": "Nilai di luar 1–5 dan versi usang ditolak. Evaluasi yang sah tetap utuh."
+    },
+    {
+      "id": "E04",
+      "module": "Evaluasi vendor",
+      "role": "PIC",
+      "kind": "Negatif",
+      "fixture": "J-BASE",
+      "pre": "E02",
+      "steps": "1. PIC pemilik baca evaluasi. 2. Coba simpan sebagai PIC dan Direktur.",
+      "expected": "Hasil dapat dibaca sesuai akses. Hanya Purchasing/Admin dapat menyimpan evaluasi."
+    },
+    {
+      "id": "X01",
+      "module": "Integrasi",
+      "role": "Purchasing",
+      "kind": "Integrasi",
+      "fixture": "X-RESERVASI",
+      "pre": "H05",
+      "steps": "1. Reservasi 3 unit untuk PO Jasa. 2. Coba Request PIC lain mengambil 1 unit dan adjustment keluar 1 unit.",
+      "expected": "Keduanya ditolak saat stok bebas nol. Status, detail, batch dan mutasi Request PIC tidak berubah sebagian."
+    },
+    {
+      "id": "X02",
+      "module": "Integrasi",
+      "role": "Purchasing",
+      "kind": "Integrasi",
+      "fixture": "X-RESERVASI",
+      "pre": "X01",
+      "steps": "1. Tambahkan 1 unit bebas dengan harga fixture Rp2.500. 2. Retry Request PIC yang tertahan. 3. Selesaikan pickup PO Jasa.",
+      "expected": "Request PIC memakai 1 unit bebas pada harga Rp2.500. Reservasi Jasa 3 unit tetap utuh. Setelah pickup Jasa, stok akhir nol."
+    },
+    {
+      "id": "X03",
+      "module": "Integrasi",
+      "role": "Admin",
+      "kind": "Integrasi",
+      "fixture": "X-AKUN",
+      "pre": "K07",
+      "steps": "1. Sediakan SKU yang sama di master nonkomersil fixture. 2. Periksa saldo setelah penerimaan komersil K07.",
+      "expected": "Mutasi 11411 tidak menambah saldo nonkomersil pada SKU yang sama. Saldo nonkomersil tetap nol bila belum ada 11511/11513."
+    },
+    {
+      "id": "X04",
+      "module": "Integrasi",
+      "role": "Admin",
+      "kind": "Integrasi",
+      "fixture": "ENV",
+      "pre": "Semua skenario selesai",
+      "steps": "1. Cocokkan kode run, mutasi dan bukti hasil. 2. Verifikasi checksum sumber asli. 3. Bersihkan hanya fixture milik run setelah bukti diarsipkan.",
+      "expected": "Kedua database asli tidak berubah. Fixture run lain dan data historis tidak dihapus. Hasil UAT serta daftar temuan tetap diarsipkan."
+    }
+  ],
+  "checks": [
+    {
+      "id": "CK01",
+      "role": "PIC",
+      "action": "Draft dan pengajuan Request PIC menyimpan item, lokasi dan pemilik.",
+      "refs": "N01,N07"
+    },
+    {
+      "id": "CK02",
+      "role": "PIC",
+      "action": "Akses request/dokumen PIC lain ditolak.",
+      "refs": "A02"
+    },
+    {
+      "id": "CK03",
+      "role": "PIC",
+      "action": "Draft PO Jasa tersimpan, pengajuan memerlukan dokumen dan revisi PIC dapat diajukan ulang.",
+      "refs": "J01,J02,J13"
+    },
+    {
+      "id": "CK04",
+      "role": "PIC",
+      "action": "Konfirmasi hasil review dilakukan sebelum approval berikutnya.",
+      "refs": "J04,J05"
+    },
+    {
+      "id": "CK05",
+      "role": "PIC",
+      "action": "Pickup hanya saat material siap; penerimaan parsial dan sisa tidak ganda.",
+      "refs": "H01,H02,H06"
+    },
+    {
+      "id": "CK06",
+      "role": "PIC",
+      "action": "Progres dan evidence terbaca; PIC tidak menutup pekerjaan.",
+      "refs": "B01,B02,B03"
+    },
+    {
+      "id": "CK07",
+      "role": "PIC",
+      "action": "Biaya nyata mempunyai bukti, bukan pengakuan ulang stok.",
+      "refs": "R07"
+    },
+    {
+      "id": "CK08",
+      "role": "PIC",
+      "action": "Pembayaran/evaluasi dapat dibaca sesuai hak, tetapi tidak disimpan.",
+      "refs": "P05,E04"
+    },
+    {
+      "id": "CK09",
+      "role": "Kadep",
+      "action": "Approval dibatasi pada departemen sendiri.",
+      "refs": "A03,N02"
+    },
+    {
+      "id": "CK10",
+      "role": "Kadep",
+      "action": "PO NK dan pengambilan Request PIC mengikuti approval.",
+      "refs": "N04,N07"
+    },
+    {
+      "id": "CK11",
+      "role": "Kadep",
+      "action": "Approval PO Jasa meneruskan ke DirOps, bukan Purchasing lama.",
+      "refs": "J06"
+    },
+    {
+      "id": "CK12",
+      "role": "Kadep",
+      "action": "Pickup dapat disetujui/ditolak dengan riwayat dan catatan.",
+      "refs": "H03,H04"
+    },
+    {
+      "id": "CK13",
+      "role": "Purchasing",
+      "action": "Shipment To draft, pengajuan, cetak dan penerimaan komersil konsisten.",
+      "refs": "K01,K02,K03,K05,K06,K07,K08"
+    },
+    {
+      "id": "CK14",
+      "role": "Purchasing",
+      "action": "PO NK terbentuk sekali dan penerimaannya membuat batch yang tepat.",
+      "refs": "N03,N06"
+    },
+    {
+      "id": "CK15",
+      "role": "Purchasing",
+      "action": "Penyerahan hanya memproses item/sisa yang sah; penerusan timeout mengikuti batas waktu.",
+      "refs": "N08,N09,N10"
+    },
+    {
+      "id": "CK16",
+      "role": "Purchasing",
+      "action": "Review harga/vendor dan UPDATE menunggu konfirmasi PIC.",
+      "refs": "J03,J04,J05"
+    },
+    {
+      "id": "CK17",
+      "role": "Purchasing",
+      "action": "SPK diterbitkan setelah approval lengkap, tidak ganda.",
+      "refs": "J09"
+    },
+    {
+      "id": "CK18",
+      "role": "Purchasing",
+      "action": "Penerimaan Jasa memakai harga aktual dan reversal batch asal.",
+      "refs": "J10,J11,J12"
+    },
+    {
+      "id": "CK19",
+      "role": "Purchasing",
+      "action": "Persiapan pickup mereservasi, belum mengurangi stok.",
+      "refs": "H05,H07"
+    },
+    {
+      "id": "CK20",
+      "role": "Purchasing",
+      "action": "Revisi review kembali ke tahap yang tepat; revisi SPK tidak menimpa versi dan arsip bisa dicetak.",
+      "refs": "J15,J16,J17,R01,R03,R06"
+    },
+    {
+      "id": "CK21",
+      "role": "Purchasing",
+      "action": "BAST hanya setelah 100%, material lengkap, revisi diputuskan.",
+      "refs": "B04,B05"
+    },
+    {
+      "id": "CK22",
+      "role": "Purchasing",
+      "action": "Invoice diperbarui kumulatif, unik dan tepat sampai sen.",
+      "refs": "P01,P02,P03,P04"
+    },
+    {
+      "id": "CK23",
+      "role": "Purchasing",
+      "action": "Evaluasi setelah BAST mempunyai nilai valid dan identitas vendor benar.",
+      "refs": "E01,E02,E03"
+    },
+    {
+      "id": "CK24",
+      "role": "Purchasing",
+      "action": "Harga batch/adjustment dan reservasi lintas modul konsisten.",
+      "refs": "S01,S02,S03,X01,X02"
+    },
+    {
+      "id": "CK25",
+      "role": "Direktur Operasional",
+      "action": "Akun/peran DirOps dikenali tanpa memberi hak Purchasing ke Keuangan.",
+      "refs": "A04"
+    },
+    {
+      "id": "CK26",
+      "role": "Direktur Operasional",
+      "action": "Approval PO Jasa tidak menerima PENDING dan menuju Direktur.",
+      "refs": "J07"
+    },
+    {
+      "id": "CK27",
+      "role": "Direktur Operasional",
+      "action": "Revisi data GA mendapat urutan DirOps lalu Direktur.",
+      "refs": "R04"
+    },
+    {
+      "id": "CK28",
+      "role": "Direktur",
+      "action": "Approval komersil dan PO NK tercatat sekali dengan aktor benar.",
+      "refs": "K04,N05"
+    },
+    {
+      "id": "CK29",
+      "role": "Direktur",
+      "action": "ACC PO Jasa menunggu penerbitan Purchasing.",
+      "refs": "J08"
+    },
+    {
+      "id": "CK30",
+      "role": "Direktur",
+      "action": "Revisi jadwal dapat dikembalikan/disetujui tanpa mengubah data prematur.",
+      "refs": "R02"
+    },
+    {
+      "id": "CK31",
+      "role": "Direktur",
+      "action": "Penolakan revisi menjaga jadwal/versi aktif.",
+      "refs": "R05"
+    },
+    {
+      "id": "CK32",
+      "role": "Direktur",
+      "action": "Akses baca pembayaran/evaluasi tidak memberi hak simpan.",
+      "refs": "P05,E04"
+    },
+    {
+      "id": "CK33",
+      "role": "Admin",
+      "action": "Lingkungan, akun dan data fixture disiapkan hanya pada database uji.",
+      "refs": "A01"
+    },
+    {
+      "id": "CK34",
+      "role": "Admin",
+      "action": "Aktor sesi dan token/sesi tidak valid diuji.",
+      "refs": "A05,A06"
+    },
+    {
+      "id": "CK35",
+      "role": "Admin",
+      "action": "Saldo, batch dan harga snapshot bisa ditelusuri dari dokumen sumber.",
+      "refs": "S05"
+    },
+    {
+      "id": "CK36",
+      "role": "Admin",
+      "action": "Pekerjaan tertutup menolak aksi operasional baru.",
+      "refs": "B06"
+    },
+    {
+      "id": "CK37",
+      "role": "Admin",
+      "action": "Akun komersil terpisah dari stok nonkomersil.",
+      "refs": "X03"
+    },
+    {
+      "id": "CK38",
+      "role": "Admin",
+      "action": "Integritas asli, arsip bukti dan cleanup berdasarkan manifest selesai.",
+      "refs": "X04"
+    },
+    {
+      "id": "CK39",
+      "role": "Kadep",
+      "action": "Cabang PENDING, REVISI dan REJECT menjaga status, riwayat serta reservasi.",
+      "refs": "J14,J15,J18"
+    },
+    {
+      "id": "CK40",
+      "role": "Direktur Operasional",
+      "action": "Revisi review kembali ke DirOps dan penolakan menjadi terminal.",
+      "refs": "J16,J18"
+    },
+    {
+      "id": "CK41",
+      "role": "Direktur",
+      "action": "Revisi review kembali ke Direktur dan penolakan tidak menerbitkan SPK.",
+      "refs": "J17,J18"
+    }
+  ],
+  "prereqs": [
+    [
+      "PR01",
+      "Admin",
+      "Koneksi lokal",
+      "Database penulisan hanya kiucoid_kiupo_merge_p0_20261110. Verifikasi CI_ENV testing dan konfigurasi koneksi sebelum akun tester dipakai."
+    ],
+    [
+      "PR02",
+      "Admin",
+      "URL dan versi",
+      "Tetapkan URL UAT lokal, commit/hash kode dan waktu mulai run. Server pengujian P6 sudah dihentikan; URL belum dianggap aktif."
+    ],
+    [
+      "PR03",
+      "Admin",
+      "Akun per peran",
+      "Siapkan alias PIC-A/PIC-B, Kadep-GA/Kadep-IT, Purchasing, DirOps, Direktur, Admin dan Keuangan-negatif. Jangan memakai nama/password nyata di workbook."
+    ],
+    [
+      "PR04",
+      "Admin",
+      "Akun biasa untuk uji negatif",
+      "Uji pembatas peran dengan akun biasa, bukan Admin. Admin dapat mempunyai kemampuan tambahan sehingga hasil negatif bisa salah."
+    ],
+    [
+      "PR05",
+      "Admin",
+      "Fixture terisolasi",
+      "Buat kode run UAT-<tanggal>-<sesi>. Catat seluruh kode yang dibentuk. Cabang negatif/revisi memakai salinan request dan SKU tersendiri."
+    ],
+    [
+      "PR06",
+      "Purchasing",
+      "Master dan dokumen",
+      "Sediakan supplier, dua alamat Shipment To, SKU/satuan/lokasi dan dokumen pendukung fixture. Harga hanya angka sintetis dalam paket, tidak diterapkan pada barang historis."
+    ],
+    [
+      "PR07",
+      "Admin",
+      "Struktur dan baseline",
+      "Jalankan gate baca-saja P2–P6; simpan baseline baru sebelum UAT. Acuan aplikasi 98 tabel + 1 view; database uji 135 tabel termasuk tabel pendukung historis."
+    ],
+    [
+      "PR08",
+      "Admin",
+      "Browser dan bukti",
+      "Gunakan profil browser terpisah untuk setiap akun. Tentukan folder bukti, printer/PDF dan penamaan ID kasus-kode run-waktu."
+    ],
+    [
+      "PR09",
+      "Admin",
+      "Kriteria penerimaan",
+      "Koordinator dan perwakilan peran menyepakati kriteria penutupan yang diusulkan pada panduan sebelum eksekusi."
+    ],
+    [
+      "PR10",
+      "Admin",
+      "Penjadwalan data",
+      "Hindari reset/runner otomatis P6 saat tester menyimpan fixture UAT. Runner P6 mengharuskan counter Jasa kosong dan mempunyai cleanup fixture sendiri."
+    ],
+    [
+      "PR11",
+      "Admin",
+      "Pemulihan dan cleanup",
+      "Arsipkan bukti sebelum cleanup. Hapus hanya kode fixture dalam manifest run ini. Jangan rebuild histori, impor, TRUNCATE atau rekonsiliasi sumber asli."
+    ]
+  ],
+  "fixtures": [
+    [
+      "K-BASE",
+      "Komersil item A",
+      "UAT-K-A",
+      2,
+      10000,
+      "PCS",
+      "Nilai 20.000. Dua Shipment To A/B; harga dan PPN 11% adalah fixture."
+    ],
+    [
+      "K-BASE",
+      "Komersil item B",
+      "UAT-K-B",
+      3,
+      5000,
+      "PCS",
+      "Nilai 15.000; total dasar 35.000 dan PPN fixture 3.850."
+    ],
+    [
+      "N-BELI",
+      "Pembelian NK detail A",
+      "UAT-N-A",
+      2,
+      1000,
+      "PCS",
+      "Kebutuhan Request PIC detail A hanya 1 unit; sisanya stok."
+    ],
+    [
+      "N-BELI",
+      "Pembelian NK detail B",
+      "UAT-N-B",
+      3,
+      2000,
+      "PCS",
+      "Kebutuhan Request PIC detail B 2 unit. Total masuk 5, keluar 3, sisa 2."
+    ],
+    [
+      "J-BASE",
+      "Scope jasa",
+      "UAT-J-SCOPE",
+      1,
+      150000,
+      "LOT",
+      "Scope 150.000 + estimasi material 30.000 = plafon awal 180.000."
+    ],
+    [
+      "J-BASE",
+      "Material kebutuhan",
+      "UAT-J-M",
+      3,
+      10000,
+      "PCS",
+      "Satu SKU. Penerimaan pertama 1 @9.000, berikutnya 2 @11.000; biaya aktual 31.000."
+    ],
+    [
+      "J-RETUR",
+      "Retur batch pertama",
+      "UAT-J-RET",
+      1,
+      9000,
+      "PCS",
+      "Salinan mandiri sebelum pickup. Setelah reverse: saldo 2, biaya neto 22.000."
+    ],
+    [
+      "S-ADJ",
+      "Adjustment masuk",
+      "UAT-S-ADJ",
+      2,
+      2500,
+      "PCS",
+      "Awalnya PERLU_HARGA. Isi harga fixture, lalu keluar 1; saldo akhir 1."
+    ],
+    [
+      "X-RESERVASI",
+      "Reservasi Jasa",
+      "UAT-X-M",
+      3,
+      11000,
+      "PCS",
+      "Stok fisik 3, reservasi 3, stok bebas 0. Harga batch boleh fixture valid tersendiri."
+    ],
+    [
+      "X-RESERVASI",
+      "Tambahan stok bebas",
+      "UAT-X-M",
+      1,
+      2500,
+      "PCS",
+      "Request PIC lain boleh mengambil 1 setelah tambahan; reservasi 3 tetap."
+    ],
+    [
+      "J-BASE",
+      "Invoice utama",
+      "UAT-INV",
+      1,
+      100000.5,
+      "Invoice",
+      "Dibayar kumulatif 0, lalu 30.000,25, lalu 100.000,50."
+    ],
+    [
+      "J-SEN",
+      "Invoice sen",
+      "UAT-INV-SEN",
+      1,
+      0.3,
+      "Invoice",
+      "Dibayar 0,10; sisa 0,20."
+    ]
+  ],
+  "roles": [
+    "PIC",
+    "Kadep",
+    "Purchasing",
+    "Direktur Operasional",
+    "Direktur",
+    "Admin"
+  ],
+  "sources": [
+    "Laporan penutupan P6, 12 November 2026: 33 kelompok HTTP dan 210 pemeriksaan CLI.",
+    "Kontrak peran: pojasa_authorization_helper.php; status: pojasa_status_helper.php.",
+    "Kontrak BAST, invoice dan evaluasi: M_PojasaSettlement.php. Pickup dan revisi mengikuti gate P5/P6.",
+    "Angka fixture adalah contoh sintetis untuk UAT, bukan harga historis atau aturan pajak umum."
+  ]
+}

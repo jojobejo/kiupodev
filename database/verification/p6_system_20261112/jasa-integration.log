@@ -1,0 +1,16 @@
+PASS draft reopen, server-owned master/prices, ownership, CSRF, supporting upload and submission
+PASS Purchasing review/draft, full sequential approval, department/role guards, replay and SPK/purchase linkage
+PASS partial receipts, actual-price LIFO batches, automatic costs, rollback, token conflict and over-receipt guard
+PASS common receipt entry avoids duplicates; reversal uses original batch/price and rejects token conflicts
+PASS P5 schedule revision/rework, data approval sequence, cross-path lock, replay binding, SPK archives and print
+PASS P5 pickup ownership, department approval, rejection note and reapplication
+PASS P6 shared SKU: adding free stock allows Request PIC retry at its own batch price while PO Jasa reservation stays intact
+PASS P6 shared SKU: Request PIC/adjustment cannot consume PO Jasa reservation; rollback preserves status, details and LIFO
+PASS P5 purchased material reservations, preparation without stock posting, PIC notification and material revision lock
+PASS PIC confirmation ownership, missing-price rollback, receipt replay and outgoing LIFO snapshot
+PASS P4 progress/evidence, long activity, replay/content conflict, percentage guard and PIC cannot close
+PASS P5 BAST waits for both revision paths; rejected changes preserve issued SPK
+PASS P4 BAST completion/material/version gates, unique handover, Purchasing closure and terminal guards
+PASS P4 invoice create/partial/paid update, derived status, cents, duplicate/stale guards, audit and read-only ownership
+PASS P5 vendor evaluation after BAST, manual vendor snapshot, exact scores, version/replay/CSRF guards, audit and closed SPK locks
+Fixture dan unggahan sintetis P3 dibersihkan.

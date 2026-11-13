@@ -1,0 +1,12 @@
+{
+  "result": "PASS",
+  "p3_p4_p5_http_groups": 13,
+  "p2_regression_groups": 9,
+  "cli_phase6_checks": 23,
+  "cli_phase8_checks": 32,
+  "php_syntax_files": 15,
+  "javascript_templates": 2,
+  "test_database": "kiucoid_kiupo_merge_p0_20261110",
+  "migration_performed": false,
+  "original_databases_modified": false
+}

@@ -1,0 +1,1 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>SPK <?= htmlspecialchars($spk->no_spk, ENT_QUOTES, 'UTF-8') ?></title></head><body><?php $this->load->view('content/po/jasa/spk/document', array('request' => $request, 'spk' => $spk, 'snapshot' => $snapshot)); ?></body></html>

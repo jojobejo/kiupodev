@@ -1,0 +1,269 @@
+.btnBawah{
+    text-align: end;
+    padding-right: 5%;
+}
+.conterbody1{
+    margin-top: -7px;
+    display: flex;
+    align-items: flex-start;
+    font-family: Century Gothic;
+}
+
+.conterbody1 label {
+    font-size: 16px;
+}
+
+.conterbody1 input{
+    height: 34px;
+}
+.contCard{
+    width: auto;
+    padding: 5px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.isiCont{
+    width: 23%;
+    height: auto;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+.isiCont a{
+    text-decoration: none;
+}
+
+.contCard .card.cardkeu{
+    width: 100%;
+    height: 270px;
+    background-color: #003399;
+    border-radius: 10px;
+}
+
+.contCard .card.cardkeu:hover{
+    box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.4);
+    transition: 0.15s;
+    background-color: #033eb4;
+}
+
+.isinya{
+    color: #fff;
+    text-align:center;
+}
+
+.isinya h4{
+    font-weight: bold;
+}
+.isinya h4.titl{
+    font-size: 20px;
+    font-weight: bold;
+}
+.isinya h5.txtjmlh{
+    font-size: 14px;
+    margin-top: 15px;
+}
+.isinya h5.txtNominal{
+    font-size: 22px;
+    margin-top: 15px;
+}
+.contIn{
+    width: 100%;
+    height: 240px;
+}
+
+.contfak{
+    width: 50%;
+    height: 200px;
+}
+
+.contBodyK{
+    float: left;
+    width: 100%;
+}
+
+.contBodyDet2{
+    
+    float: right;
+    width: 34%;
+    padding: 6px;
+}
+
+.contBodyDet{
+    margin-top: 2px;
+    display: flex;
+    align-items: flex-start;
+    font-family: Century Gothic;
+}
+
+.contBodyDet .isiDet{
+    align-items: center;
+}
+
+.contentss{
+    width: 100%;
+}
+
+.txtSt{
+    font-weight: bold;
+    font-family: Century Gothic;
+}
+
+.cardItem{
+    box-shadow: 0 4px 8px rgba(0,51,153,0.16), 0 4px 8px rgba(0,51,153,0.23);
+}
+.cardPr{
+    width: 15%;
+    float: right;
+    margin-right: 10px;
+}
+
+.cardian{
+    box-shadow: 0 4px 8px rgba(0,51,153,0.16), 0 4px 8px rgba(0,51,153,0.23);
+    border-radius: 10px;
+}
+
+.cardian h4{
+    font-size: 18px;
+}
+.cardian h5{
+    font-weight: bold;
+}
+.cardian h3{
+    font-size: 14px;
+}
+
+/* /// faktur */
+
+.tableAtas{
+    width:550px;
+    font-size:8pt;
+    font-family: Calibri;
+    border-collapse: collapse;
+}
+.tableAtas .tdkiri{
+    padding-right:80px;
+    vertical-align:top;
+}
+.tableIsin{
+    width:550px;
+    font-size:8pt;
+    font-family:calibri;
+    border-collapse: collapse;
+    margin-top: 5px;
+}
+
+.tableIsin td{
+    padding-left: 2px;
+}
+
+.table-borderless > tbody > tr > td,
+.table-borderless > tbody > tr > th,
+.table-borderless > tfoot > tr > td,
+.table-borderless > tfoot > tr > th,
+.table-borderless > thead > tr > td,
+.table-borderless > thead > tr > th {
+    border: none;
+}
+
+.noted{
+    background-color: yellow;
+    -webkit-print-color-adjust: exact !important;
+    color-adjust: exact !important;
+}
+
+.noted-green{
+    background-color: #00ff00;
+    color: #cc0000;
+    font-weight: bold;
+    text-align: center;
+    -webkit-print-color-adjust: exact !important;
+    color-adjust: exact !important;
+}
+
+.asd{
+    background-color:#999999;
+    -webkit-print-color-adjust: exact; 
+    }
+
+.theadprint{
+    background-color: #212529; 
+    color:white;
+    -webkit-print-color-adjust: exact !important;
+    color-adjust: exact !important;
+}
+
+@media print {
+    .table-striped tbody tr:nth-of-type(odd) td {
+        background-color: rgba(0,0,0,.08) !important;
+        -webkit-print-color-adjust: exact;
+    }
+    table.listdb {
+        border-collapse: unset;
+    }
+  }
+.noteDirektur{
+    border-style: solid;
+    position: relative;
+    max-height: 500px;
+    max-width: 100%;
+}
+.txtNoteDirektur{
+    text-size-adjust: 12px;
+    text-align: justify;
+    margin-left: 15px;
+    margin-right: 8px;
+    margin: 1;
+    line-height: 1;
+}
+
+.logNote{
+    text-size-adjust: 12px;
+    text-align: justify;
+    margin-left: 8px;
+    margin-right: 8px;
+    margin: 1;
+    line-height: 1;
+}
+
+table {
+    border-collapse: collapse;
+}
+table.autowidth td{
+    white-space:nowrap;
+}
+
+td {
+    border: none;
+}
+
+.tdnote {
+    text-align: left;
+}
+
+.tduser{
+    text-align: center;
+}
+
+.log-status {
+    border-style: solid;
+    background-color: #fca103;
+    max-height: 500px;
+}
+
+.btnAtas {
+    color: #212529;
+    background-color: #4dd0e1   ;
+    border-color: #4dd0e1   ;
+    box-shadow: none;
+  }
+
+  .btnAtas:hover {
+    color: #212529;
+    background-color: #30828d;
+    border-color: #30828d;
+  }
+
+  .table-stripeds > tbody > tr:nth-child(2n+1) > td, .table-stripeds > tbody > tr:nth-child(2n+1) > th {
+    background-color:#30828d ;
+ }

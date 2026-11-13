@@ -1,0 +1,10 @@
+PASS submit Request PIC, pembatasan departemen dan approval Kadep sekali
+PASS PO nonkomersil terkait, approval Kadep/Direktur dan proses pembelian
+PASS tampilan dan retry pembentukan PO
+PASS penerimaan 2 mutasi masuk (5 unit), batch LIFO per detail, retry dan konfirmasi PIC tanpa duplikasi
+PASS pickup Kadep, rollback transaksi parsial, 2 mutasi keluar (3 unit), retry ditolak
+PASS jalur stok tersedia tanpa membuat PO pembelian
+PASS penyerahan parsial hanya memproses item tersisa
+PASS halaman stok, histori batch dan tabel AJAX
+PASS adjustment masuk/keluar, guard role, harga wajib dan snapshot LIFO
+Fixture P2 dibersihkan.

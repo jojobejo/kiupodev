@@ -1,0 +1,1631 @@
+{
+  "source": "kiucoid_karismaerp_local",
+  "target": "db_kiupobaru",
+  "backup": "/Users/itkarisma/.codex/backups/kiupobaru/20261112/source_before_cleanup_152310.sql",
+  "removed_tables": [
+    "cctv_tracking",
+    "docsdig_access",
+    "docsdig_audit",
+    "docsdig_documents",
+    "docsdig_reminder_reads",
+    "stockopname_master",
+    "stockopname_master_box",
+    "stockopname_master_item",
+    "stockopname_master_manual_item",
+    "stockopname_opname",
+    "stockopname_opname_log",
+    "stockopname_opname_manual",
+    "stockopname_pending",
+    "stockopname_recyclebin_input",
+    "tb_akses_level",
+    "tb_akses_menu",
+    "tb_akun_tr",
+    "tb_auth",
+    "tb_auth_backup_20260610_072706",
+    "tb_barang",
+    "tb_barang_nk",
+    "tb_barang_nk_lokasi",
+    "tb_barangv2",
+    "tb_bobotkpi",
+    "tb_bongkaran",
+    "tb_bongkaran_checker",
+    "tb_checklist_kendaraan",
+    "tb_checklist_kendaraan_detail",
+    "tb_checkup_mekanik_kategori",
+    "tb_checkup_mekanik_kategori_detail",
+    "tb_checkup_mekanik_kategori_foto",
+    "tb_customer",
+    "tb_customer_bck",
+    "tb_customer_list_undian",
+    "tb_dailystock",
+    "tb_dailystock_global",
+    "tb_departemen",
+    "tb_det_tracking_driver",
+    "tb_detail_do",
+    "tb_detail_mutasi",
+    "tb_detail_po",
+    "tb_detail_retur_barang",
+    "tb_do",
+    "tb_editlog_faktur",
+    "tb_eviden",
+    "tb_eviden_backup",
+    "tb_expedisi",
+    "tb_feedback",
+    "tb_gbrupload_cheklist",
+    "tb_gudang",
+    "tb_gudang_wilayah",
+    "tb_hows",
+    "tb_ics",
+    "tb_ics_do",
+    "tb_ics_opname",
+    "tb_ics_po",
+    "tb_ics_supp",
+    "tb_indikator_hows",
+    "tb_indikator_whats",
+    "tb_issue",
+    "tb_jobdesk",
+    "tb_karyawan",
+    "tb_karyawan_keluarmasuk",
+    "tb_kasbon",
+    "tb_kd_system_stock",
+    "tb_kpi",
+    "tb_kpi_history",
+    "tb_kpi_history_backup_all_user_apr_mei_2026",
+    "tb_kpi_history_bck",
+    "tb_kpi_lock_settings",
+    "tb_kpi_reset_log",
+    "tb_kpi_verified",
+    "tb_lap_distribusi",
+    "tb_loading_kk",
+    "tb_loading_kk_bck",
+    "tb_loading_lk",
+    "tb_loading_lk_bck",
+    "tb_log_confirm_sales",
+    "tb_log_do",
+    "tb_log_ics",
+    "tb_log_mutasi",
+    "tb_login_log",
+    "tb_lpb",
+    "tb_lpb_batch",
+    "tb_lpb_detail",
+    "tb_lpb_log",
+    "tb_lpb_manual_log",
+    "tb_lpb_price_adjustment",
+    "tb_lpb_price_adjustment_detail",
+    "tb_lpb_revision_request",
+    "tb_lpb_revision_request_detail",
+    "tb_lpb_revision_request_log",
+    "tb_master_barang",
+    "tb_master_barang_all_salah",
+    "tb_mbarang",
+    "tb_menu",
+    "tb_mutasi",
+    "tb_notifikasi",
+    "tb_op_driver",
+    "tb_op_helper",
+    "tb_op_plat",
+    "tb_order_tracking_driver",
+    "tb_pemenang",
+    "tb_pengajuan_od",
+    "tb_pengajuan_od_faktur",
+    "tb_penilaian_karakter_assignment",
+    "tb_penilaian_karakter_response",
+    "tb_pnd_do",
+    "tb_po_pending",
+    "tb_po_received",
+    "tb_pre_do",
+    "tb_pre_po",
+    "tb_pre_po_adjustment_log",
+    "tb_pre_po_diskon_history",
+    "tb_pre_po_invoice_adjustment",
+    "tb_qty_lot",
+    "tb_req_opname",
+    "tb_retur_barang",
+    "tb_retur_pembelian",
+    "tb_retur_pembelian_detail",
+    "tb_retur_pembelian_log",
+    "tb_rutecs",
+    "tb_saldo_awal",
+    "tb_satuan",
+    "tb_schedule_dirut",
+    "tb_service_truk",
+    "tb_set_tax",
+    "tb_sop",
+    "tb_spr_detail",
+    "tb_spr_header",
+    "tb_ss",
+    "tb_ss_history",
+    "tb_ss_simulasi",
+    "tb_ss_verified",
+    "tb_sspoin",
+    "tb_stock_hold",
+    "tb_stock_status",
+    "tb_suplier",
+    "tb_surat_peringatan",
+    "tb_tamu",
+    "tb_tamu_lby",
+    "tb_terima_paket",
+    "tb_tim",
+    "tb_tmp_detaildo",
+    "tb_tmp_do",
+    "tb_tmp_lap_distribusi",
+    "tb_tmp_mutasi",
+    "tb_tmp_po_received",
+    "tb_truck",
+    "tb_truk",
+    "tb_user",
+    "tb_user_facility",
+    "tb_user_level_mapping",
+    "tb_users",
+    "tb_whats",
+    "tb_wilayah",
+    "tbar_archive",
+    "tbar_bobotkpi",
+    "tbar_hows",
+    "tbar_indikator_hows",
+    "tbar_indikator_whats",
+    "tbar_kpi",
+    "tbar_sp_archive",
+    "tbar_whats",
+    "tberp_stock_batch",
+    "tberp_stock_ledger",
+    "tbhrd_environment_issues",
+    "tbhrd_issue_evidences",
+    "tbhrd_issue_logs",
+    "tbhrd_issue_rating",
+    "tbhrd_issue_status",
+    "tbhrd_lokasi",
+    "tbhrd_nilai_lingkungan",
+    "tbkeu_akun",
+    "tbkeu_akun_karismaerp_ref",
+    "tbkeu_dummy_source",
+    "tbkeu_jenis_jurnal",
+    "tbkeu_jurnal",
+    "tbkeu_jurnal_detail",
+    "tbkeu_jurnal_log",
+    "tbkeu_karismaerp_import_batch",
+    "tbkeu_karismaerp_kelompok_jurnal",
+    "tbkeu_kas_keluar",
+    "tbkeu_kas_keluar_detail",
+    "tbkeu_kas_masuk",
+    "tbkeu_kas_masuk_detail",
+    "tbkeu_kasir_pilihan",
+    "tbkeu_kasir_saldo",
+    "tbkeu_kelompok_dagang",
+    "tbkeu_klasifikasi_akun",
+    "tbkeu_mapping_akun",
+    "tbkeu_nomor_dokumen",
+    "tbkeu_pembayaran",
+    "tbkeu_pembayaran_alokasi",
+    "tbkeu_pembayaran_faktur",
+    "tbkeu_penyesuaian_barang",
+    "tbkeu_penyesuaian_barang_detail",
+    "tbkeu_periode_fiskal",
+    "tbkeu_periode_fiskal_log",
+    "tbkeu_posting_exception",
+    "tbkeu_report_rule_akun",
+    "tbkeu_saldo_awal_akun",
+    "tbkeu_saldo_normal",
+    "tbkeu_sub_klasifikasi_akun",
+    "tbkeu_tipe_kontrol",
+    "tbkeu_transaksi_kasir",
+    "tbkmt_dca",
+    "tbkmt_dca_detail",
+    "tbkmt_dca_kegiatan",
+    "tbkmt_dca_verifikasi_log",
+    "tbkmt_gaji",
+    "tbkmt_omset",
+    "tbkmt_operasional",
+    "tbkmt_operasional_verifikasi_log",
+    "tbkmt_others",
+    "tbkmt_promo_material",
+    "tbkmt_retur",
+    "tbkmt_wilayah",
+    "tblpb_faktur_pajak",
+    "tbpo_akun_tr",
+    "tbpo_barang_akun",
+    "tbpo_barang_packaging",
+    "tbpo_ratings",
+    "tbq_nilaim",
+    "tbrp_activity_log",
+    "tbrp_retur_penjualan_detail",
+    "tbrp_retur_penjualan_header",
+    "tbrp_spr_detail",
+    "tbrp_spr_header",
+    "tbsim_bobotkpi",
+    "tbsim_hows",
+    "tbsim_indikator_hows",
+    "tbsim_indikator_whats",
+    "tbsim_kpi",
+    "tbsim_whats",
+    "tbso_activity_log",
+    "tbso_approval_harga",
+    "tbso_cancel_partial_request",
+    "tbso_faktur_detail",
+    "tbso_faktur_jurnal",
+    "tbso_faktur_log",
+    "tbso_faktur_penjualan",
+    "tbso_sales_order",
+    "tbso_sales_order_detail",
+    "tbso_so_approval",
+    "tbso_stock_reservation",
+    "trashbin_do",
+    "users"
+  ],
+  "retained_source_objects": [
+    "tbpo_admin_activity_log",
+    "tbpo_arsip_evident_ponk",
+    "tbpo_barang",
+    "tbpo_barang_nk",
+    "tbpo_barang_nk_lokasi",
+    "tbpo_detail_po",
+    "tbpo_detail_po_nk",
+    "tbpo_detail_req",
+    "tbpo_diskon",
+    "tbpo_diskon_merk",
+    "tbpo_file_bukti_beli",
+    "tbpo_file_nk",
+    "tbpo_formula",
+    "tbpo_formula_result",
+    "tbpo_formula_variable",
+    "tbpo_generate_kd",
+    "tbpo_generate_kd_ponk",
+    "tbpo_generateqrcode",
+    "tbpo_jasa_approval",
+    "tbpo_jasa_bast",
+    "tbpo_jasa_biaya",
+    "tbpo_jasa_biaya_aktual",
+    "tbpo_jasa_cost_audit",
+    "tbpo_jasa_dokumen",
+    "tbpo_jasa_draft_pembelian",
+    "tbpo_jasa_evaluation",
+    "tbpo_jasa_file",
+    "tbpo_jasa_log_aktivitas",
+    "tbpo_jasa_material",
+    "tbpo_jasa_material_usulan",
+    "tbpo_jasa_note",
+    "tbpo_jasa_notifikasi",
+    "tbpo_jasa_number_counter",
+    "tbpo_jasa_payment",
+    "tbpo_jasa_pickup_detail",
+    "tbpo_jasa_pickup_request",
+    "tbpo_jasa_progress",
+    "tbpo_jasa_purchase_adjustment",
+    "tbpo_jasa_purchase_receipt",
+    "tbpo_jasa_purchase_submission",
+    "tbpo_jasa_purchase_submission_detail",
+    "tbpo_jasa_request",
+    "tbpo_jasa_request_detail",
+    "tbpo_jasa_revisi",
+    "tbpo_jasa_scope",
+    "tbpo_jasa_spk",
+    "tbpo_jasa_spk_archive",
+    "tbpo_jasa_spk_change",
+    "tbpo_jasa_spk_change_approval",
+    "tbpo_jasa_spk_change_item",
+    "tbpo_jasa_spk_revision",
+    "tbpo_jasa_stock_allocation",
+    "tbpo_jasa_stock_receipt",
+    "tbpo_jasa_stock_receipt_detail",
+    "tbpo_jasa_vendor",
+    "tbpo_jasa_vendor_comparison",
+    "tbpo_kat_br",
+    "tbpo_note_barang",
+    "tbpo_note_direktur",
+    "tbpo_note_pembelian",
+    "tbpo_notetemplate",
+    "tbpo_nt_tmp_pembelian",
+    "tbpo_po",
+    "tbpo_po_nk",
+    "tbpo_realisasi_detail_po_nk",
+    "tbpo_realisasi_harganyata_log",
+    "tbpo_realisasi_po_nk",
+    "tbpo_req_masterbarang",
+    "tbpo_req_nk",
+    "tbpo_req_nk_supporting_file",
+    "tbpo_satuan",
+    "tbpo_set_note",
+    "tbpo_set_tax",
+    "tbpo_sosialisasi",
+    "tbpo_stock_lifo_allocation",
+    "tbpo_stock_lifo_batch_nk",
+    "tbpo_stock_lifo_harga_log",
+    "tbpo_stock_lifo_rebuild_issue",
+    "tbpo_stock_opname_nk",
+    "tbpo_stock_opname_nk_detail",
+    "tbpo_suplier",
+    "tbpo_tmp_diskon",
+    "tbpo_tmp_diskon_nk",
+    "tbpo_tmp_item",
+    "tbpo_tmp_item_nk",
+    "tbpo_tmp_note_barang",
+    "tbpo_tmp_tax",
+    "tbpo_tracking_po",
+    "tbpo_transaksi",
+    "tbpo_transaksi_tmp",
+    "tbpo_transaksi_trashbin",
+    "tbpo_user",
+    "tbq_module",
+    "tbq_review_pic",
+    "tbq_review_q",
+    "v_stockbarangnk"
+  ],
+  "added_tables": [
+    "tbpo_jasa_evaluation_audit",
+    "tbpo_jasa_payment_audit",
+    "tbpo_tmp_po_shipment"
+  ],
+  "references": {
+    "tbpo_admin_activity_log": [
+      "application/models/Admin/M_AdminData.php",
+      "application/controllers/user/C_User.php"
+    ],
+    "tbpo_arsip_evident_ponk": [
+      "application/models/PO/M_Postatus.php"
+    ],
+    "tbpo_barang": [
+      "application/models/Master_barang/M_MasterBarang.php",
+      "application/models/PO/M_Postatus.php",
+      "application/models/PO/M_Purchase.php",
+      "application/models/Api/M_Api.php",
+      "application/models/stock/M_Stockkomersil.php",
+      "application/controllers/postatus/C_PoStatus.php",
+      "application/controllers/purchaseorder/C_Order.php",
+      "application/views/content/po/datatables.php"
+    ],
+    "tbpo_barang_nk": [
+      "application/models/Master_barang/M_MasterBarang.php",
+      "application/models/Laporan/M_Laporanp.php",
+      "application/models/PO/M_PojasaCore.php",
+      "application/models/PO/M_Reqpic.php",
+      "application/models/PO/M_PojasaWorkflow.php",
+      "application/models/PO/M_PojasaExecution.php",
+      "application/models/PO/M_Postatus.php",
+      "application/models/PO/M_PojasaPickup.php",
+      "application/models/PO/M_PojasaPic.php",
+      "application/models/PO/M_Purchase.php",
+      "application/models/PO/M_PojasaPurchasing.php",
+      "application/models/PO/M_PojasaDemo.php",
+      "application/models/PO/M_PojasaIntegration.php",
+      "application/models/stock/M_Stockcontroller.php",
+      "application/models/stock/M_Stocknonkomersil.php",
+      "application/models/stock/M_StockLifo.php",
+      "application/controllers/cli/PojasaPhase8Check.php",
+      "application/controllers/cli/PojasaPhase9Check.php",
+      "application/controllers/cli/PojasaPhase2Check.php",
+      "application/controllers/cli/PojasaPhase7Check.php"
+    ],
+    "tbpo_barang_nk_lokasi": [
+      "application/models/stock/M_Stocknonkomersil.php"
+    ],
+    "tbpo_detail_po": [
+      "application/models/Admin/M_AdminData.php",
+      "application/models/PO/M_Postatus.php",
+      "application/models/PO/M_Purchase.php",
+      "application/models/Api/M_Api.php",
+      "application/controllers/postatus/C_PoStatus.php",
+      "application/controllers/purchaseorder/C_Order.php"
+    ],
+    "tbpo_detail_po_nk": [
+      "application/models/Laporan/M_Laporanp.php",
+      "application/models/Admin/M_AdminData.php",
+      "application/models/PO/M_Reqpic.php",
+      "application/models/PO/M_PojasaExecution.php",
+      "application/models/PO/M_Postatus.php",
+      "application/models/PO/M_Purchase.php",
+      "application/models/PO/M_PojasaDemo.php",
+      "application/models/PO/M_PojasaIntegration.php",
+      "application/models/stock/M_Stockcontroller.php",
+      "application/models/stock/M_Stocknonkomersil.php",
+      "application/models/stock/M_StockLifo.php",
+      "application/controllers/postatus/C_PoStatus.php",
+      "application/controllers/purchaseorder/C_Order.php",
+      "application/controllers/cli/PojasaPhase8Check.php",
+      "application/controllers/cli/PojasaPhase9Check.php"
+    ],
+    "tbpo_detail_req": [
+      "application/models/Admin/M_AdminData.php",
+      "application/models/PO/M_Reqpic.php",
+      "application/models/PO/M_Postatus.php",
+      "application/models/stock/M_Stocknonkomersil.php",
+      "application/controllers/purchaseorder/C_Reqpic.php"
+    ],
+    "tbpo_diskon": [
+      "application/models/PO/M_Postatus.php",
+      "application/models/PO/M_Purchase.php",
+      "application/models/Api/M_Api.php"
+    ],
+    "tbpo_diskon_merk": [
+      "application/models/PO/M_Postatus.php",
+      "application/controllers/postatus/C_PoStatus.php"
+    ],
+    "tbpo_file_bukti_beli": [
+      "application/models/Admin/M_AdminData.php",
+      "application/models/PO/M_Postatus.php",
+      "application/controllers/postatus/C_PoStatus.php"
+    ],
+    "tbpo_file_nk": [
+      "application/models/Admin/M_AdminData.php",
+      "application/models/PO/M_Postatus.php",
+      "application/controllers/postatus/C_PoStatus.php"
+    ],
+    "tbpo_formula": [
+      "application/models/Setting/M_Formulapo.php",
+      "application/controllers/settings/C_Formulapo.php"
+    ],
+    "tbpo_formula_result": [
+      "application/models/Setting/M_Formulapo.php"
+    ],
+    "tbpo_formula_variable": [
+      "application/models/Setting/M_Formulapo.php"
+    ],
+    "tbpo_generate_kd": [
+      "application/models/Master_barang/M_MasterBarang.php",
+      "application/models/PO/M_Reqpic.php",
+      "application/models/PO/M_Postatus.php",
+      "application/models/PO/M_Purchase.php",
+      "application/models/stock/M_Stocknonkomersil.php"
+    ],
+    "tbpo_generate_kd_ponk": [
+      "application/models/PO/M_Reqpic.php",
+      "application/controllers/purchaseorder/C_Reqpic.php"
+    ],
+    "tbpo_generateqrcode": [
+      "application/models/Master_barang/M_MasterBarang.php"
+    ],
+    "tbpo_jasa_approval": [
+      "application/models/PO/M_PojasaCore.php",
+      "application/models/PO/M_PojasaWorkflow.php",
+      "application/models/PO/M_PojasaPic.php",
+      "application/controllers/cli/PojasaPhase9Check.php",
+      "application/controllers/cli/PojasaPhase2Check.php",
+      "application/controllers/cli/PojasaPhase4Check.php"
+    ],
+    "tbpo_jasa_bast": [
+      "application/models/PO/M_Pojasa.php",
+      "application/models/PO/M_PojasaSettlement.php"
+    ],
+    "tbpo_jasa_biaya": [
+      "application/models/PO/M_Pojasa.php"
+    ],
+    "tbpo_jasa_biaya_aktual": [
+      "application/models/PO/M_PojasaSpkChange.php",
+      "application/models/PO/M_PojasaCore.php",
+      "application/models/PO/M_PojasaExecution.php",
+      "application/models/PO/M_PojasaPic.php",
+      "application/models/PO/M_PojasaPurchasing.php",
+      "application/models/PO/M_PojasaIntegration.php",
+      "application/controllers/cli/PojasaPhase8Check.php",
+      "application/controllers/cli/PojasaPhase2Check.php",
+      "application/controllers/cli/PojasaPhase6Check.php"
+    ],
+    "tbpo_jasa_cost_audit": [
+      "application/models/PO/M_PojasaCore.php",
+      "application/controllers/cli/PojasaPhase8Check.php"
+    ],
+    "tbpo_jasa_dokumen": [
+      "application/models/PO/M_PojasaCore.php",
+      "application/models/PO/M_PojasaWorkflow.php",
+      "application/models/PO/M_PojasaExecution.php",
+      "application/models/PO/M_PojasaPic.php",
+      "application/models/PO/M_PojasaPurchasing.php",
+      "application/controllers/cli/PojasaPhase2Check.php",
+      "application/controllers/cli/PojasaPhase3Check.php",
+      "application/controllers/cli/PojasaPhase5Check.php",
+      "application/controllers/cli/PojasaPhase4Check.php",
+      "application/controllers/cli/PojasaPhase6Check.php"
+    ],
+    "tbpo_jasa_draft_pembelian": [
+      "application/models/PO/M_PojasaCore.php",
+      "application/models/PO/M_PojasaWorkflow.php",
+      "application/models/PO/M_PojasaPic.php",
+      "application/models/PO/M_PojasaPurchasing.php",
+      "application/models/PO/M_PojasaDemo.php",
+      "application/models/PO/M_PojasaIntegration.php",
+      "application/controllers/cli/PojasaPhase8Check.php",
+      "application/controllers/cli/PojasaPhase9Check.php",
+      "application/controllers/cli/PojasaPhase5Check.php",
+      "application/controllers/cli/PojasaPhase7Check.php"
+    ],
+    "tbpo_jasa_evaluation": [
+      "application/models/PO/M_Pojasa.php",
+      "application/models/PO/M_PojasaSettlement.php"
+    ],
+    "tbpo_jasa_file": [
+      "application/models/PO/M_Pojasa.php"
+    ],
+    "tbpo_jasa_log_aktivitas": [
+      "application/models/PO/M_PojasaCore.php",
+      "application/models/PO/M_PojasaWorkflow.php",
+      "application/models/PO/M_PojasaPic.php",
+      "application/controllers/cli/PojasaPhase2Check.php",
+      "application/controllers/cli/PojasaPhase3Check.php",
+      "application/controllers/cli/PojasaPhase4Check.php",
+      "application/controllers/cli/PojasaPhase6Check.php",
+      "application/controllers/cli/PojasaPhase7Check.php"
+    ],
+    "tbpo_jasa_material": [
+      "application/models/Master_barang/M_MasterBarang.php",
+      "application/models/PO/M_PojasaSpkChange.php",
+      "application/models/PO/M_PojasaCore.php",
+      "application/models/PO/M_PojasaWorkflow.php",
+      "application/models/PO/M_PojasaExecution.php",
+      "application/models/PO/M_Postatus.php",
+      "application/models/PO/M_PojasaSettlement.php",
+      "application/models/PO/M_PojasaPickup.php",
+      "application/models/PO/M_PojasaPic.php",
+      "application/models/PO/M_PojasaPurchasing.php",
+      "application/models/PO/M_PojasaDemo.php",
+      "application/models/PO/M_PojasaIntegration.php",
+      "application/controllers/cli/PojasaPhase8Check.php",
+      "application/controllers/cli/PojasaPhase9Check.php",
+      "application/controllers/cli/PojasaPhase2Check.php",
+      "application/controllers/cli/PojasaPhase5Check.php",
+      "application/controllers/cli/PojasaPhase4Check.php",
+      "application/controllers/cli/PojasaPhase6Check.php",
+      "application/controllers/cli/PojasaPhase7Check.php"
+    ],
+    "tbpo_jasa_material_usulan": [
+      "application/models/Master_barang/M_MasterBarang.php",
+      "application/models/PO/M_PojasaPic.php",
+      "application/controllers/master_barang/C_MasterBarang.php"
+    ],
+    "tbpo_jasa_note": [
+      "application/models/PO/M_Pojasa.php"
+    ],
+    "tbpo_jasa_notifikasi": [
+      "application/models/PO/M_PojasaCore.php",
+      "application/models/PO/M_PojasaPickup.php",
+      "application/controllers/cli/PojasaPhase9Check.php",
+      "application/controllers/cli/PojasaPhase2Check.php",
+      "application/controllers/cli/PojasaPhase4Check.php",
+      "application/controllers/cli/PojasaPhase6Check.php",
+      "application/controllers/cli/PojasaPhase7Check.php"
+    ],
+    "tbpo_jasa_number_counter": [
+      "application/models/PO/M_PojasaCore.php"
+    ],
+    "tbpo_jasa_payment": [
+      "application/models/PO/M_Pojasa.php",
+      "application/models/PO/M_PojasaSettlement.php"
+    ],
+    "tbpo_jasa_pickup_detail": [
+      "application/models/PO/M_PojasaCore.php",
+      "application/models/PO/M_PojasaPickup.php",
+      "application/controllers/cli/PojasaPhase2Check.php",
+      "application/controllers/cli/PojasaPhase6Check.php"
+    ],
+    "tbpo_jasa_pickup_request": [
+      "application/models/PO/M_PojasaSpkChange.php",
+      "application/models/PO/M_PojasaCore.php",
+      "application/models/PO/M_PojasaExecution.php",
+      "application/models/PO/M_PojasaPickup.php",
+      "application/models/PO/M_PojasaPurchasing.php",
+      "application/controllers/cli/PojasaPhase2Check.php",
+      "application/controllers/cli/PojasaPhase6Check.php"
+    ],
+    "tbpo_jasa_progress": [
+      "application/models/PO/M_Pojasa.php",
+      "application/models/PO/M_PojasaCore.php",
+      "application/models/PO/M_PojasaExecution.php",
+      "application/models/PO/M_PojasaSettlement.php",
+      "application/models/PO/M_PojasaPic.php",
+      "application/models/PO/M_PojasaPurchasing.php",
+      "application/controllers/cli/PojasaPhase6Check.php",
+      "application/controllers/cli/PojasaPhase7Check.php"
+    ],
+    "tbpo_jasa_purchase_adjustment": [
+      "application/models/PO/M_PojasaIntegration.php",
+      "application/controllers/cli/PojasaPhase8Check.php"
+    ],
+    "tbpo_jasa_purchase_receipt": [
+      "application/models/PO/M_PojasaExecution.php",
+      "application/models/PO/M_PojasaIntegration.php",
+      "application/controllers/cli/PojasaPhase8Check.php"
+    ],
+    "tbpo_jasa_purchase_submission": [
+      "application/models/PO/M_Pojasa.php",
+      "application/models/PO/M_PojasaCore.php",
+      "application/models/PO/M_Postatus.php",
+      "application/models/PO/M_PojasaSettlement.php",
+      "application/models/PO/M_PojasaPickup.php",
+      "application/models/PO/M_PojasaPic.php",
+      "application/models/PO/M_PojasaDemo.php",
+      "application/models/PO/M_PojasaIntegration.php",
+      "application/controllers/cli/PojasaPhase8Check.php",
+      "application/controllers/cli/PojasaPhase9Check.php"
+    ],
+    "tbpo_jasa_purchase_submission_detail": [
+      "application/models/PO/M_PojasaCore.php",
+      "application/models/PO/M_Postatus.php",
+      "application/models/PO/M_PojasaSettlement.php",
+      "application/models/PO/M_PojasaPickup.php",
+      "application/models/PO/M_PojasaDemo.php",
+      "application/models/PO/M_PojasaIntegration.php"
+    ],
+    "tbpo_jasa_request": [
+      "application/models/Master_barang/M_MasterBarang.php",
+      "application/models/PO/M_PojasaSpkChange.php",
+      "application/models/PO/M_Pojasa.php",
+      "application/models/PO/M_PojasaCore.php",
+      "application/models/PO/M_PojasaWorkflow.php",
+      "application/models/PO/M_PojasaExecution.php",
+      "application/models/PO/M_PojasaSettlement.php",
+      "application/models/PO/M_PojasaPickup.php",
+      "application/models/PO/M_PojasaPic.php",
+      "application/models/PO/M_PojasaPurchasing.php",
+      "application/models/PO/M_PojasaDemo.php",
+      "application/models/PO/M_PojasaIntegration.php",
+      "application/models/stock/M_StockLifo.php",
+      "application/controllers/purchaseorder/C_Pojasa.php",
+      "application/controllers/cli/PojasaPhase8Check.php",
+      "application/controllers/cli/PojasaPhase9Check.php",
+      "application/controllers/cli/PojasaPhase2Check.php",
+      "application/controllers/cli/PojasaPhase3Check.php",
+      "application/controllers/cli/PojasaPhase5Check.php",
+      "application/controllers/cli/PojasaPhase4Check.php",
+      "application/controllers/cli/PojasaPhase6Check.php",
+      "application/controllers/cli/PojasaPhase7Check.php"
+    ],
+    "tbpo_jasa_request_detail": [
+      "application/models/PO/M_Pojasa.php",
+      "application/controllers/purchaseorder/C_Pojasa.php"
+    ],
+    "tbpo_jasa_revisi": [
+      "application/models/PO/M_PojasaCore.php",
+      "application/models/PO/M_PojasaWorkflow.php",
+      "application/models/PO/M_PojasaPic.php",
+      "application/controllers/cli/PojasaPhase3Check.php",
+      "application/controllers/cli/PojasaPhase4Check.php"
+    ],
+    "tbpo_jasa_scope": [
+      "application/models/PO/M_PojasaSpkChange.php",
+      "application/models/PO/M_PojasaCore.php",
+      "application/models/PO/M_PojasaWorkflow.php",
+      "application/models/PO/M_PojasaPic.php",
+      "application/models/PO/M_PojasaPurchasing.php",
+      "application/models/PO/M_PojasaDemo.php",
+      "application/models/PO/M_PojasaIntegration.php",
+      "application/controllers/cli/PojasaPhase8Check.php",
+      "application/controllers/cli/PojasaPhase9Check.php",
+      "application/controllers/cli/PojasaPhase5Check.php",
+      "application/controllers/cli/PojasaPhase4Check.php",
+      "application/controllers/cli/PojasaPhase6Check.php"
+    ],
+    "tbpo_jasa_spk": [
+      "application/models/PO/M_PojasaSpkChange.php",
+      "application/models/PO/M_PojasaCore.php",
+      "application/models/PO/M_PojasaExecution.php",
+      "application/models/PO/M_PojasaSettlement.php",
+      "application/models/PO/M_PojasaPurchasing.php",
+      "application/models/PO/M_PojasaDemo.php",
+      "application/models/PO/M_PojasaIntegration.php",
+      "application/controllers/cli/PojasaPhase8Check.php",
+      "application/controllers/cli/PojasaPhase9Check.php",
+      "application/controllers/cli/PojasaPhase2Check.php",
+      "application/controllers/cli/PojasaPhase5Check.php",
+      "application/controllers/cli/PojasaPhase4Check.php",
+      "application/controllers/cli/PojasaPhase6Check.php",
+      "application/controllers/cli/PojasaPhase7Check.php"
+    ],
+    "tbpo_jasa_spk_archive": [
+      "application/models/PO/M_PojasaSpkChange.php",
+      "application/models/PO/M_PojasaPurchasing.php",
+      "application/controllers/cli/PojasaPhase8Check.php",
+      "application/controllers/cli/PojasaPhase7Check.php"
+    ],
+    "tbpo_jasa_spk_change": [
+      "application/models/PO/M_PojasaSpkChange.php",
+      "application/models/PO/M_PojasaSettlement.php",
+      "application/models/PO/M_PojasaPickup.php",
+      "application/models/PO/M_PojasaPurchasing.php",
+      "application/controllers/cli/PojasaPhase8Check.php"
+    ],
+    "tbpo_jasa_spk_change_approval": [
+      "application/models/PO/M_PojasaSpkChange.php"
+    ],
+    "tbpo_jasa_spk_change_item": [
+      "application/models/PO/M_PojasaSpkChange.php"
+    ],
+    "tbpo_jasa_spk_revision": [
+      "application/models/PO/M_PojasaSpkChange.php",
+      "application/models/PO/M_PojasaSettlement.php",
+      "application/models/PO/M_PojasaPickup.php",
+      "application/models/PO/M_PojasaPurchasing.php",
+      "application/controllers/cli/PojasaPhase7Check.php"
+    ],
+    "tbpo_jasa_stock_allocation": [
+      "application/models/PO/M_PojasaCore.php",
+      "application/models/PO/M_PojasaWorkflow.php",
+      "application/models/PO/M_PojasaExecution.php",
+      "application/models/PO/M_PojasaSettlement.php",
+      "application/models/PO/M_PojasaPickup.php",
+      "application/models/PO/M_PojasaPic.php",
+      "application/models/PO/M_PojasaPurchasing.php",
+      "application/models/PO/M_PojasaDemo.php",
+      "application/models/stock/M_StockLifo.php",
+      "application/controllers/cli/PojasaPhase8Check.php",
+      "application/controllers/cli/PojasaPhase2Check.php",
+      "application/controllers/cli/PojasaPhase5Check.php",
+      "application/controllers/cli/PojasaPhase6Check.php",
+      "application/controllers/cli/PojasaPhase7Check.php"
+    ],
+    "tbpo_jasa_stock_receipt": [
+      "application/models/PO/M_PojasaCore.php",
+      "application/models/PO/M_PojasaExecution.php",
+      "application/models/PO/M_PojasaPurchasing.php",
+      "application/controllers/cli/PojasaPhase6Check.php"
+    ],
+    "tbpo_jasa_stock_receipt_detail": [
+      "application/models/PO/M_PojasaCore.php",
+      "application/models/PO/M_PojasaExecution.php",
+      "application/models/PO/M_PojasaPurchasing.php",
+      "application/controllers/cli/PojasaPhase6Check.php"
+    ],
+    "tbpo_jasa_vendor": [
+      "application/models/PO/M_Pojasa.php",
+      "application/models/PO/M_PojasaCore.php",
+      "application/models/PO/M_PojasaWorkflow.php",
+      "application/models/PO/M_PojasaSettlement.php",
+      "application/models/PO/M_PojasaPic.php",
+      "application/models/PO/M_PojasaPurchasing.php",
+      "application/controllers/purchaseorder/C_PojasaWorkflow.php",
+      "application/controllers/purchaseorder/C_PojasaPurchasing.php",
+      "application/controllers/purchaseorder/C_Pojasa.php",
+      "application/controllers/cli/PojasaPhase3Check.php",
+      "application/controllers/cli/PojasaPhase5Check.php",
+      "application/controllers/cli/PojasaPhase7Check.php"
+    ],
+    "tbpo_jasa_vendor_comparison": [
+      "application/models/PO/M_PojasaCore.php",
+      "application/models/PO/M_PojasaPurchasing.php",
+      "application/controllers/cli/PojasaPhase5Check.php",
+      "application/controllers/cli/PojasaPhase7Check.php"
+    ],
+    "tbpo_kat_br": [
+      "application/models/Master_barang/M_MasterBarang.php",
+      "application/models/PO/M_Postatus.php",
+      "application/models/stock/M_Stocknonkomersil.php",
+      "application/controllers/cli/PojasaPhase9Check.php"
+    ],
+    "tbpo_note_barang": [
+      "application/models/PO/M_Postatus.php",
+      "application/models/PO/M_Purchase.php"
+    ],
+    "tbpo_note_direktur": [
+      "application/models/PO/M_Reqpic.php",
+      "application/models/PO/M_Postatus.php",
+      "application/models/PO/M_Purchase.php",
+      "application/models/stock/M_Stocknonkomersil.php"
+    ],
+    "tbpo_note_pembelian": [
+      "application/models/PO/M_Postatus.php",
+      "application/models/PO/M_Purchase.php"
+    ],
+    "tbpo_notetemplate": [
+      "application/models/PO/M_Postatus.php",
+      "application/models/Setting/M_NoteSeting.php"
+    ],
+    "tbpo_nt_tmp_pembelian": [
+      "application/models/PO/M_Purchase.php"
+    ],
+    "tbpo_po": [
+      "application/models/Admin/M_AdminData.php",
+      "application/models/PO/M_Postatus.php",
+      "application/models/PO/M_Purchase.php",
+      "application/models/Api/M_Api.php",
+      "application/models/stock/M_Stockkomersil.php",
+      "application/controllers/postatus/C_PoStatus.php"
+    ],
+    "tbpo_po_nk": [
+      "application/models/M_Dashboard.php",
+      "application/models/Laporan/M_Laporanp.php",
+      "application/models/Admin/M_AdminData.php",
+      "application/models/PO/M_Pojasa.php",
+      "application/models/PO/M_Reqpic.php",
+      "application/models/PO/M_PojasaExecution.php",
+      "application/models/PO/M_Postatus.php",
+      "application/models/PO/M_PojasaSettlement.php",
+      "application/models/PO/M_PojasaPickup.php",
+      "application/models/PO/M_PojasaPic.php",
+      "application/models/PO/M_Purchase.php",
+      "application/models/PO/M_PojasaDemo.php",
+      "application/models/PO/M_PojasaIntegration.php",
+      "application/models/stock/M_Stockcontroller.php",
+      "application/models/stock/M_Stocknonkomersil.php",
+      "application/models/stock/M_StockLifo.php",
+      "application/controllers/purchaseorder/C_Reqpic.php",
+      "application/controllers/cli/PojasaPhase8Check.php",
+      "application/controllers/cli/PojasaPhase9Check.php"
+    ],
+    "tbpo_realisasi_detail_po_nk": [
+      "application/models/Laporan/M_Laporanp.php",
+      "application/models/PO/M_Postatus.php",
+      "application/models/stock/M_Stocknonkomersil.php",
+      "application/models/stock/M_StockLifo.php"
+    ],
+    "tbpo_realisasi_harganyata_log": [
+      "application/models/PO/M_Postatus.php"
+    ],
+    "tbpo_realisasi_po_nk": [
+      "application/models/PO/M_Postatus.php"
+    ],
+    "tbpo_req_masterbarang": [
+      "application/models/M_Dashboard.php",
+      "application/models/Master_barang/M_MasterBarang.php",
+      "application/models/PO/M_Reqpic.php",
+      "application/models/stock/M_Stocknonkomersil.php"
+    ],
+    "tbpo_req_nk": [
+      "application/models/Admin/M_AdminData.php",
+      "application/models/PO/M_Reqpic.php",
+      "application/models/stock/M_Stocknonkomersil.php",
+      "application/controllers/purchaseorder/C_Reqpic.php"
+    ],
+    "tbpo_req_nk_supporting_file": [
+      "application/models/PO/M_Reqpic.php",
+      "application/models/PO/M_Postatus.php"
+    ],
+    "tbpo_satuan": [
+      "application/models/Master_barang/M_MasterBarang.php",
+      "application/models/PO/M_Reqpic.php",
+      "application/models/PO/M_PojasaWorkflow.php",
+      "application/models/PO/M_Postatus.php",
+      "application/models/PO/M_PojasaPic.php",
+      "application/models/PO/M_Purchase.php",
+      "application/models/PO/M_PojasaPurchasing.php",
+      "application/models/PO/M_PojasaIntegration.php",
+      "application/models/Setting/M_SatuanSetting.php",
+      "application/models/stock/M_Stockkomersil.php",
+      "application/models/stock/M_Stockcontroller.php",
+      "application/models/stock/M_Stocknonkomersil.php",
+      "application/controllers/cli/PojasaPhase9Check.php"
+    ],
+    "tbpo_set_note": [
+      "application/models/Setting/M_NoteSeting.php"
+    ],
+    "tbpo_set_tax": [
+      "application/models/Master_barang/M_MasterBarang.php",
+      "application/models/PO/M_Postatus.php",
+      "application/models/PO/M_Purchase.php",
+      "application/models/Setting/M_TaxSetting.php"
+    ],
+    "tbpo_sosialisasi": [
+      "application/models/Setting/M_Appsrated.php"
+    ],
+    "tbpo_stock_lifo_allocation": [
+      "application/models/Laporan/M_Laporanp.php",
+      "application/models/PO/M_Reqpic.php",
+      "application/models/stock/M_Stocknonkomersil.php",
+      "application/models/stock/M_StockLifo.php"
+    ],
+    "tbpo_stock_lifo_batch_nk": [
+      "application/models/Laporan/M_Laporanp.php",
+      "application/models/PO/M_Reqpic.php",
+      "application/models/stock/M_Stocknonkomersil.php",
+      "application/models/stock/M_StockLifo.php"
+    ],
+    "tbpo_stock_lifo_harga_log": [
+      "application/models/stock/M_StockLifo.php"
+    ],
+    "tbpo_stock_lifo_rebuild_issue": [
+      "application/models/stock/M_StockLifo.php"
+    ],
+    "tbpo_stock_opname_nk": [
+      "application/models/stock/M_Stocknonkomersil.php",
+      "application/controllers/stock/C_Stocknonkomersil.php"
+    ],
+    "tbpo_stock_opname_nk_detail": [
+      "application/models/stock/M_Stocknonkomersil.php",
+      "application/controllers/stock/C_Stocknonkomersil.php"
+    ],
+    "tbpo_suplier": [
+      "application/models/Master_barang/M_MasterBarang.php",
+      "application/models/PO/M_Postatus.php",
+      "application/models/PO/M_Purchase.php",
+      "application/models/PO/M_PojasaPurchasing.php",
+      "application/models/Suplier/M_Suplier.php",
+      "application/models/Api/M_Api.php",
+      "application/models/stock/M_Stockkomersil.php"
+    ],
+    "tbpo_tmp_diskon": [
+      "application/models/PO/M_Purchase.php"
+    ],
+    "tbpo_tmp_diskon_nk": [
+      "application/models/PO/M_Purchase.php"
+    ],
+    "tbpo_tmp_item": [
+      "application/models/PO/M_Purchase.php",
+      "application/controllers/purchaseorder/C_Order.php"
+    ],
+    "tbpo_tmp_item_nk": [
+      "application/models/PO/M_Reqpic.php",
+      "application/models/PO/M_Purchase.php",
+      "application/models/stock/M_Stocknonkomersil.php"
+    ],
+    "tbpo_tmp_note_barang": [
+      "application/models/PO/M_Purchase.php"
+    ],
+    "tbpo_tmp_tax": [
+      "application/models/PO/M_Purchase.php"
+    ],
+    "tbpo_tracking_po": [
+      "application/models/PO/M_Postatus.php",
+      "application/controllers/postatus/C_PoStatus.php"
+    ],
+    "tbpo_transaksi": [
+      "application/models/Laporan/M_Laporanp.php",
+      "application/models/Admin/M_AdminData.php",
+      "application/models/PO/M_PojasaCore.php",
+      "application/models/PO/M_Reqpic.php",
+      "application/models/PO/M_PojasaExecution.php",
+      "application/models/PO/M_Postatus.php",
+      "application/models/PO/M_PojasaPickup.php",
+      "application/models/PO/M_PojasaPurchasing.php",
+      "application/models/PO/M_PojasaIntegration.php",
+      "application/models/stock/M_Stockkomersil.php",
+      "application/models/stock/M_Stockcontroller.php",
+      "application/models/stock/M_Stocknonkomersil.php",
+      "application/models/stock/M_StockLifo.php",
+      "application/controllers/postatus/C_PoStatus.php",
+      "application/controllers/cli/PojasaPhase8Check.php",
+      "application/controllers/cli/PojasaPhase2Check.php",
+      "application/controllers/cli/PojasaPhase5Check.php",
+      "application/controllers/cli/PojasaPhase6Check.php",
+      "application/controllers/cli/PojasaPhase7Check.php"
+    ],
+    "tbpo_transaksi_tmp": [
+      "application/models/Admin/M_AdminData.php",
+      "application/models/PO/M_Reqpic.php"
+    ],
+    "tbpo_transaksi_trashbin": [
+      "application/models/stock/M_Stocknonkomersil.php"
+    ],
+    "tbpo_user": [
+      "application/models/template.php",
+      "application/models/Master_barang/M_MasterBarang.php",
+      "application/models/Auth/M_Portal_sso.php",
+      "application/models/Auth/M_Auth.php",
+      "application/models/Laporan/M_Laporanp.php",
+      "application/models/User/M_User.php",
+      "application/models/PO/M_PojasaSpkChange.php",
+      "application/models/PO/M_PojasaCore.php",
+      "application/models/PO/M_Reqpic.php",
+      "application/models/PO/M_PojasaWorkflow.php",
+      "application/models/PO/M_PojasaExecution.php",
+      "application/models/PO/M_Postatus.php",
+      "application/models/PO/M_PojasaSettlement.php",
+      "application/models/PO/M_PojasaPickup.php",
+      "application/models/PO/M_PojasaPic.php",
+      "application/models/PO/M_PojasaPurchasing.php",
+      "application/models/PO/M_PojasaIntegration.php",
+      "application/models/Setting/M_Appsrated.php",
+      "application/models/stock/M_Stockkomersil.php",
+      "application/models/stock/M_Stocknonkomersil.php",
+      "application/controllers/admin/C_AdminData.php",
+      "application/controllers/user/C_User.php",
+      "application/controllers/cli/PojasaPhase8Check.php",
+      "application/controllers/cli/PojasaPhase9Check.php",
+      "application/controllers/cli/PojasaPhase2Check.php",
+      "application/controllers/cli/PojasaPhase3Check.php",
+      "application/controllers/cli/PojasaPhase5Check.php",
+      "application/controllers/cli/PojasaPhase4Check.php",
+      "application/controllers/cli/PojasaPhase6Check.php",
+      "application/controllers/cli/PojasaPhase7Check.php"
+    ],
+    "tbq_module": [
+      "application/models/Setting/M_Appsrated.php"
+    ],
+    "tbq_review_pic": [
+      "application/models/Setting/M_Appsrated.php"
+    ],
+    "tbq_review_q": [
+      "application/models/Setting/M_Appsrated.php"
+    ],
+    "v_stockbarangnk": [
+      "application/models/M_Dashboard.php",
+      "application/models/Laporan/M_Laporanp.php",
+      "application/models/PO/M_Reqpic.php",
+      "application/models/PO/M_PojasaWorkflow.php",
+      "application/models/PO/M_Postatus.php",
+      "application/models/PO/M_PojasaPic.php",
+      "application/models/PO/M_PojasaPurchasing.php",
+      "application/models/PO/M_PojasaDemo.php",
+      "application/models/stock/M_Stocknonkomersil.php",
+      "application/controllers/purchaseorder/C_Reqpic.php",
+      "application/controllers/cli/PojasaPhase5Check.php",
+      "application/controllers/cli/PojasaPhase6Check.php",
+      "application/controllers/cli/PojasaPhase7Check.php"
+    ]
+  },
+  "row_counts": [
+    {
+      "table": "tbpo_admin_activity_log",
+      "source_rows": 0,
+      "target_rows": 0
+    },
+    {
+      "table": "tbpo_arsip_evident_ponk",
+      "source_rows": 0,
+      "target_rows": 0
+    },
+    {
+      "table": "tbpo_barang",
+      "source_rows": 3966,
+      "target_rows": 3966
+    },
+    {
+      "table": "tbpo_barang_nk",
+      "source_rows": 949,
+      "target_rows": 949
+    },
+    {
+      "table": "tbpo_barang_nk_lokasi",
+      "source_rows": 9,
+      "target_rows": 9
+    },
+    {
+      "table": "tbpo_detail_po",
+      "source_rows": 8918,
+      "target_rows": 8918
+    },
+    {
+      "table": "tbpo_detail_po_nk",
+      "source_rows": 2189,
+      "target_rows": 2189
+    },
+    {
+      "table": "tbpo_detail_req",
+      "source_rows": 6816,
+      "target_rows": 6816
+    },
+    {
+      "table": "tbpo_diskon",
+      "source_rows": 1902,
+      "target_rows": 1902
+    },
+    {
+      "table": "tbpo_diskon_merk",
+      "source_rows": 0,
+      "target_rows": 0
+    },
+    {
+      "table": "tbpo_file_bukti_beli",
+      "source_rows": 1398,
+      "target_rows": 1398
+    },
+    {
+      "table": "tbpo_file_nk",
+      "source_rows": 34,
+      "target_rows": 34
+    },
+    {
+      "table": "tbpo_formula",
+      "source_rows": 0,
+      "target_rows": 0
+    },
+    {
+      "table": "tbpo_formula_result",
+      "source_rows": 0,
+      "target_rows": 0
+    },
+    {
+      "table": "tbpo_formula_variable",
+      "source_rows": 0,
+      "target_rows": 0
+    },
+    {
+      "table": "tbpo_generate_kd",
+      "source_rows": 1916,
+      "target_rows": 1916
+    },
+    {
+      "table": "tbpo_generate_kd_ponk",
+      "source_rows": 4290,
+      "target_rows": 4290
+    },
+    {
+      "table": "tbpo_generateqrcode",
+      "source_rows": 810,
+      "target_rows": 810
+    },
+    {
+      "table": "tbpo_jasa_approval",
+      "source_rows": 0,
+      "target_rows": 0
+    },
+    {
+      "table": "tbpo_jasa_bast",
+      "source_rows": 0,
+      "target_rows": 0
+    },
+    {
+      "table": "tbpo_jasa_biaya",
+      "source_rows": 0,
+      "target_rows": 0
+    },
+    {
+      "table": "tbpo_jasa_biaya_aktual",
+      "source_rows": 0,
+      "target_rows": 0
+    },
+    {
+      "table": "tbpo_jasa_cost_audit",
+      "source_rows": 0,
+      "target_rows": 0
+    },
+    {
+      "table": "tbpo_jasa_dokumen",
+      "source_rows": 0,
+      "target_rows": 0
+    },
+    {
+      "table": "tbpo_jasa_draft_pembelian",
+      "source_rows": 0,
+      "target_rows": 0
+    },
+    {
+      "table": "tbpo_jasa_evaluation",
+      "source_rows": 0,
+      "target_rows": 0
+    },
+    {
+      "table": "tbpo_jasa_file",
+      "source_rows": 0,
+      "target_rows": 0
+    },
+    {
+      "table": "tbpo_jasa_log_aktivitas",
+      "source_rows": 0,
+      "target_rows": 0
+    },
+    {
+      "table": "tbpo_jasa_material",
+      "source_rows": 0,
+      "target_rows": 0
+    },
+    {
+      "table": "tbpo_jasa_material_usulan",
+      "source_rows": 0,
+      "target_rows": 0
+    },
+    {
+      "table": "tbpo_jasa_note",
+      "source_rows": 0,
+      "target_rows": 0
+    },
+    {
+      "table": "tbpo_jasa_notifikasi",
+      "source_rows": 0,
+      "target_rows": 0
+    },
+    {
+      "table": "tbpo_jasa_number_counter",
+      "source_rows": 0,
+      "target_rows": 0
+    },
+    {
+      "table": "tbpo_jasa_payment",
+      "source_rows": 0,
+      "target_rows": 0
+    },
+    {
+      "table": "tbpo_jasa_pickup_detail",
+      "source_rows": 0,
+      "target_rows": 0
+    },
+    {
+      "table": "tbpo_jasa_pickup_request",
+      "source_rows": 0,
+      "target_rows": 0
+    },
+    {
+      "table": "tbpo_jasa_progress",
+      "source_rows": 0,
+      "target_rows": 0
+    },
+    {
+      "table": "tbpo_jasa_purchase_adjustment",
+      "source_rows": 0,
+      "target_rows": 0
+    },
+    {
+      "table": "tbpo_jasa_purchase_receipt",
+      "source_rows": 0,
+      "target_rows": 0
+    },
+    {
+      "table": "tbpo_jasa_purchase_submission",
+      "source_rows": 0,
+      "target_rows": 0
+    },
+    {
+      "table": "tbpo_jasa_purchase_submission_detail",
+      "source_rows": 0,
+      "target_rows": 0
+    },
+    {
+      "table": "tbpo_jasa_request",
+      "source_rows": 0,
+      "target_rows": 0
+    },
+    {
+      "table": "tbpo_jasa_request_detail",
+      "source_rows": 0,
+      "target_rows": 0
+    },
+    {
+      "table": "tbpo_jasa_revisi",
+      "source_rows": 0,
+      "target_rows": 0
+    },
+    {
+      "table": "tbpo_jasa_scope",
+      "source_rows": 0,
+      "target_rows": 0
+    },
+    {
+      "table": "tbpo_jasa_spk",
+      "source_rows": 0,
+      "target_rows": 0
+    },
+    {
+      "table": "tbpo_jasa_spk_archive",
+      "source_rows": 0,
+      "target_rows": 0
+    },
+    {
+      "table": "tbpo_jasa_spk_change",
+      "source_rows": 0,
+      "target_rows": 0
+    },
+    {
+      "table": "tbpo_jasa_spk_change_approval",
+      "source_rows": 0,
+      "target_rows": 0
+    },
+    {
+      "table": "tbpo_jasa_spk_change_item",
+      "source_rows": 0,
+      "target_rows": 0
+    },
+    {
+      "table": "tbpo_jasa_spk_revision",
+      "source_rows": 0,
+      "target_rows": 0
+    },
+    {
+      "table": "tbpo_jasa_stock_allocation",
+      "source_rows": 0,
+      "target_rows": 0
+    },
+    {
+      "table": "tbpo_jasa_stock_receipt",
+      "source_rows": 0,
+      "target_rows": 0
+    },
+    {
+      "table": "tbpo_jasa_stock_receipt_detail",
+      "source_rows": 0,
+      "target_rows": 0
+    },
+    {
+      "table": "tbpo_jasa_vendor",
+      "source_rows": 0,
+      "target_rows": 0
+    },
+    {
+      "table": "tbpo_jasa_vendor_comparison",
+      "source_rows": 0,
+      "target_rows": 0
+    },
+    {
+      "table": "tbpo_kat_br",
+      "source_rows": 2,
+      "target_rows": 2
+    },
+    {
+      "table": "tbpo_note_barang",
+      "source_rows": 3886,
+      "target_rows": 3886
+    },
+    {
+      "table": "tbpo_note_direktur",
+      "source_rows": 40980,
+      "target_rows": 40980
+    },
+    {
+      "table": "tbpo_note_pembelian",
+      "source_rows": 1554,
+      "target_rows": 1554
+    },
+    {
+      "table": "tbpo_notetemplate",
+      "source_rows": 35,
+      "target_rows": 35
+    },
+    {
+      "table": "tbpo_nt_tmp_pembelian",
+      "source_rows": 2,
+      "target_rows": 2
+    },
+    {
+      "table": "tbpo_po",
+      "source_rows": 3933,
+      "target_rows": 3933
+    },
+    {
+      "table": "tbpo_po_nk",
+      "source_rows": 1397,
+      "target_rows": 1397
+    },
+    {
+      "table": "tbpo_realisasi_detail_po_nk",
+      "source_rows": 1,
+      "target_rows": 1
+    },
+    {
+      "table": "tbpo_realisasi_harganyata_log",
+      "source_rows": 11,
+      "target_rows": 11
+    },
+    {
+      "table": "tbpo_realisasi_po_nk",
+      "source_rows": 1,
+      "target_rows": 1
+    },
+    {
+      "table": "tbpo_req_masterbarang",
+      "source_rows": 20,
+      "target_rows": 20
+    },
+    {
+      "table": "tbpo_req_nk",
+      "source_rows": 4271,
+      "target_rows": 4271
+    },
+    {
+      "table": "tbpo_req_nk_supporting_file",
+      "source_rows": 0,
+      "target_rows": 0
+    },
+    {
+      "table": "tbpo_satuan",
+      "source_rows": 25,
+      "target_rows": 25
+    },
+    {
+      "table": "tbpo_set_note",
+      "source_rows": 0,
+      "target_rows": 0
+    },
+    {
+      "table": "tbpo_set_tax",
+      "source_rows": 4,
+      "target_rows": 4
+    },
+    {
+      "table": "tbpo_sosialisasi",
+      "source_rows": 2,
+      "target_rows": 2
+    },
+    {
+      "table": "tbpo_stock_lifo_allocation",
+      "source_rows": 6115,
+      "target_rows": 6115
+    },
+    {
+      "table": "tbpo_stock_lifo_batch_nk",
+      "source_rows": 2692,
+      "target_rows": 2692
+    },
+    {
+      "table": "tbpo_stock_lifo_harga_log",
+      "source_rows": 3,
+      "target_rows": 3
+    },
+    {
+      "table": "tbpo_stock_lifo_rebuild_issue",
+      "source_rows": 746,
+      "target_rows": 746
+    },
+    {
+      "table": "tbpo_stock_opname_nk",
+      "source_rows": 0,
+      "target_rows": 0
+    },
+    {
+      "table": "tbpo_stock_opname_nk_detail",
+      "source_rows": 0,
+      "target_rows": 0
+    },
+    {
+      "table": "tbpo_suplier",
+      "source_rows": 309,
+      "target_rows": 309
+    },
+    {
+      "table": "tbpo_tmp_diskon",
+      "source_rows": 1,
+      "target_rows": 1
+    },
+    {
+      "table": "tbpo_tmp_diskon_nk",
+      "source_rows": 0,
+      "target_rows": 0
+    },
+    {
+      "table": "tbpo_tmp_item",
+      "source_rows": 7,
+      "target_rows": 7
+    },
+    {
+      "table": "tbpo_tmp_item_nk",
+      "source_rows": 2,
+      "target_rows": 2
+    },
+    {
+      "table": "tbpo_tmp_note_barang",
+      "source_rows": 1,
+      "target_rows": 1
+    },
+    {
+      "table": "tbpo_tmp_tax",
+      "source_rows": 2,
+      "target_rows": 2
+    },
+    {
+      "table": "tbpo_tracking_po",
+      "source_rows": 0,
+      "target_rows": 0
+    },
+    {
+      "table": "tbpo_transaksi",
+      "source_rows": 12069,
+      "target_rows": 12069
+    },
+    {
+      "table": "tbpo_transaksi_tmp",
+      "source_rows": 10,
+      "target_rows": 10
+    },
+    {
+      "table": "tbpo_transaksi_trashbin",
+      "source_rows": 215,
+      "target_rows": 215
+    },
+    {
+      "table": "tbpo_user",
+      "source_rows": 35,
+      "target_rows": 35
+    },
+    {
+      "table": "tbq_module",
+      "source_rows": 0,
+      "target_rows": 0
+    },
+    {
+      "table": "tbq_review_pic",
+      "source_rows": 0,
+      "target_rows": 0
+    },
+    {
+      "table": "tbq_review_q",
+      "source_rows": 0,
+      "target_rows": 0
+    }
+  ],
+  "preflight": {
+    "p2_system_preflight_20261111.sql": [
+      "tbpo_req_nk\tkd_po_nk"
+    ],
+    "p3_system_preflight_20261111.sql": [],
+    "p4_system_preflight_20261112.sql": [],
+    "p5_system_preflight_20261112.sql": [],
+    "p6_system_preflight_20261112.sql": [
+      "tbpo_req_nk\tkd_po_nk"
+    ]
+  },
+  "cross_database_dependencies": 0,
+  "objects": [
+    "BASE TABLE\t98",
+    "VIEW\t1"
+  ],
+  "matching_table_checksums": [
+    "tbpo_admin_activity_log",
+    "tbpo_arsip_evident_ponk",
+    "tbpo_barang",
+    "tbpo_barang_nk",
+    "tbpo_barang_nk_lokasi",
+    "tbpo_detail_po",
+    "tbpo_detail_po_nk",
+    "tbpo_detail_req",
+    "tbpo_diskon",
+    "tbpo_diskon_merk",
+    "tbpo_file_bukti_beli",
+    "tbpo_file_nk",
+    "tbpo_formula",
+    "tbpo_formula_result",
+    "tbpo_formula_variable",
+    "tbpo_generate_kd",
+    "tbpo_generate_kd_ponk",
+    "tbpo_generateqrcode",
+    "tbpo_jasa_approval",
+    "tbpo_jasa_biaya",
+    "tbpo_jasa_biaya_aktual",
+    "tbpo_jasa_cost_audit",
+    "tbpo_jasa_dokumen",
+    "tbpo_jasa_draft_pembelian",
+    "tbpo_jasa_file",
+    "tbpo_jasa_log_aktivitas",
+    "tbpo_jasa_material",
+    "tbpo_jasa_material_usulan",
+    "tbpo_jasa_note",
+    "tbpo_jasa_notifikasi",
+    "tbpo_jasa_number_counter",
+    "tbpo_jasa_pickup_detail",
+    "tbpo_jasa_progress",
+    "tbpo_jasa_purchase_adjustment",
+    "tbpo_jasa_purchase_receipt",
+    "tbpo_jasa_purchase_submission",
+    "tbpo_jasa_purchase_submission_detail",
+    "tbpo_jasa_request",
+    "tbpo_jasa_revisi",
+    "tbpo_jasa_scope",
+    "tbpo_jasa_spk",
+    "tbpo_jasa_spk_archive",
+    "tbpo_jasa_spk_change_approval",
+    "tbpo_jasa_spk_change_item",
+    "tbpo_jasa_spk_revision",
+    "tbpo_jasa_stock_allocation",
+    "tbpo_jasa_stock_receipt",
+    "tbpo_jasa_stock_receipt_detail",
+    "tbpo_jasa_vendor",
+    "tbpo_jasa_vendor_comparison",
+    "tbpo_kat_br",
+    "tbpo_note_barang",
+    "tbpo_note_direktur",
+    "tbpo_note_pembelian",
+    "tbpo_notetemplate",
+    "tbpo_nt_tmp_pembelian",
+    "tbpo_po_nk",
+    "tbpo_realisasi_detail_po_nk",
+    "tbpo_realisasi_harganyata_log",
+    "tbpo_realisasi_po_nk",
+    "tbpo_req_masterbarang",
+    "tbpo_req_nk",
+    "tbpo_req_nk_supporting_file",
+    "tbpo_satuan",
+    "tbpo_set_note",
+    "tbpo_set_tax",
+    "tbpo_sosialisasi",
+    "tbpo_stock_lifo_allocation",
+    "tbpo_stock_lifo_batch_nk",
+    "tbpo_stock_lifo_harga_log",
+    "tbpo_stock_lifo_rebuild_issue",
+    "tbpo_stock_opname_nk",
+    "tbpo_stock_opname_nk_detail",
+    "tbpo_suplier",
+    "tbpo_tmp_diskon",
+    "tbpo_tmp_diskon_nk",
+    "tbpo_tmp_item",
+    "tbpo_tmp_item_nk",
+    "tbpo_tmp_note_barang",
+    "tbpo_tmp_tax",
+    "tbpo_tracking_po",
+    "tbpo_transaksi",
+    "tbpo_transaksi_tmp",
+    "tbpo_transaksi_trashbin",
+    "tbpo_user",
+    "tbq_module",
+    "tbq_review_pic",
+    "tbq_review_q"
+  ],
+  "historical_duplicate_request_codes": 48,
+  "http_smoke": {
+    "login": 200,
+    "api_barang": 200,
+    "api_status": true
+  },
+  "active_config": "application/config/database.php"
+}

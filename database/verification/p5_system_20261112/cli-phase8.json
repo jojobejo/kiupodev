@@ -1,0 +1,133 @@
+{
+    "success": true,
+    "checks": [
+        {
+            "name": "phase8_schema_ready",
+            "passed": true
+        },
+        {
+            "name": "pic_owner_can_access_secure_workflow_document",
+            "passed": true
+        },
+        {
+            "name": "other_pic_cannot_access_secure_workflow_document",
+            "passed": true
+        },
+        {
+            "name": "workflow_document_access_all_required_roles",
+            "passed": true
+        },
+        {
+            "name": "image_pdf_preview_office_txt_download_only",
+            "passed": true
+        },
+        {
+            "name": "image_preview_uses_internal_modal",
+            "passed": true
+        },
+        {
+            "name": "fulfillment_formula_backend_computed",
+            "passed": true
+        },
+        {
+            "name": "material_with_active_planning_is_locked",
+            "passed": true
+        },
+        {
+            "name": "one_comprehensive_purchase_header_created",
+            "passed": true
+        },
+        {
+            "name": "purchase_header_starts_proses_pembelian",
+            "passed": true
+        },
+        {
+            "name": "purchase_submission_excludes_stale_material_drafts_and_keeps_pic_owner",
+            "passed": true
+        },
+        {
+            "name": "drafts_are_mapped_and_locked_after_submission",
+            "passed": true
+        },
+        {
+            "name": "purchase_creation_does_not_post_stock",
+            "passed": true
+        },
+        {
+            "name": "purchase_submission_is_idempotent_by_spk_version",
+            "passed": true
+        },
+        {
+            "name": "spk_without_draft_does_not_create_empty_purchase",
+            "passed": true
+        },
+        {
+            "name": "dev_purchase_can_create_legacy_po_without_spk_and_preserves_draft",
+            "passed": true
+        },
+        {
+            "name": "partial_on_hand_creates_automatic_cost",
+            "passed": true
+        },
+        {
+            "name": "on_hand_posts_stock_in_account_11511",
+            "passed": true
+        },
+        {
+            "name": "overbudget_cost_waits_for_revision_approval",
+            "passed": true
+        },
+        {
+            "name": "receipt_replay_does_not_duplicate_cost",
+            "passed": true
+        },
+        {
+            "name": "all_received_keeps_legacy_purchase_in_process",
+            "passed": true
+        },
+        {
+            "name": "receipt_reversal_is_additive_and_audited",
+            "passed": true
+        },
+        {
+            "name": "manual_cost_has_owner_allocation_and_audit",
+            "passed": true
+        },
+        {
+            "name": "manual_overbudget_also_requires_cost_revision",
+            "passed": true
+        },
+        {
+            "name": "purchasing_verifies_but_cannot_edit_manual_cost",
+            "passed": true
+        },
+        {
+            "name": "it_change_routes_to_dirops_without_pending_action",
+            "passed": true
+        },
+        {
+            "name": "dirops_then_director_approval_enforced",
+            "passed": true
+        },
+        {
+            "name": "approved_change_archives_and_versions_spk",
+            "passed": true
+        },
+        {
+            "name": "done_purchase_change_records_pending_adjustment",
+            "passed": true
+        },
+        {
+            "name": "cost_revision_acc_updates_budget_and_cost_status",
+            "passed": true
+        },
+        {
+            "name": "non_special_department_skips_dirops",
+            "passed": true
+        },
+        {
+            "name": "phase8_transaction_rolled_back_cleanly",
+            "passed": true
+        }
+    ]
+}

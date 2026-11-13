@@ -1,0 +1,10 @@
+PASS login Purchasing/Direktur dan halaman draft
+PASS simpan dan buka ulang draft, template palsu dan peran lain ditolak
+PASS pengajuan, dua detail, total 35000, PPN 3850, draft dibersihkan, retry ditolak
+PASS approval Direktur, audit aktor sesi dan konfirmasi ON DELIVERY
+PASS cetak internal, supplier Include/Exclude dan cetak lama memakai Shipment To yang dipilih
+PASS PO baru tetap terikat ke pemasok yang dipilih saat kode yang sama ditambah kemudian
+PASS fallback Shipment To PO lama dan penerimaan dua item tepat sekali
+PASS P6 commercial account 11411 does not enter noncommercial stock for the same SKU
+PASS hapus item terakhir membersihkan pilihan shipment
+Fixture uji dibersihkan dari database uji.

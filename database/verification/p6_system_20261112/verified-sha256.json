@@ -1,0 +1,23 @@
+{
+  "application/models/stock/M_StockLifo.php": "4f4aa7d03f3f33f67136fa349bc5da9857c5b6a1ee412611c6b313826191f0b7",
+  "application/models/PO/M_PojasaCore.php": "e147e6983b1af4b261ce7d5a15f0fcbb8c4c60ac5ff31a3fd667755a6eb64218",
+  "application/models/PO/M_PojasaPickup.php": "a66db163edaf804ea1f7faab7106a2834380acc66f13a1072b7cf909d47f3a16",
+  "application/models/PO/M_PojasaPurchasing.php": "2ce4394494c5cd4cf8e8f92d20a9ab31d886c677f2ab7ee95540579b997559be",
+  "application/controllers/cli/PojasaPhase2Check.php": "6395721b481a9bfb59a4e653bfe1637d3bbcb2553292d529fd5c0d8673721cf3",
+  "application/controllers/cli/PojasaPhase3Check.php": "f5ea770d6ac941ca4db3d1f9b4bea939a471a20e3addad1097a17be42a214789",
+  "application/controllers/cli/PojasaPhase4Check.php": "827631aca1d98690665f1815c329f8166af70f4601d509a0e5cf50a78ee9e94b",
+  "application/controllers/cli/PojasaPhase5Check.php": "826096b2c5ea5e64b58da3322cd5ba2521caf09c676e86544c9ad471ef9dc8d4",
+  "application/controllers/cli/PojasaPhase6Check.php": "3ac4f138209d10fbbd63660b8537c1c6785589f566322f929a3ce55d41dbc5b2",
+  "application/controllers/cli/PojasaPhase7Check.php": "ae52df0e502a7f0242168d6acf26dd25918b7574ebcbfa03c2d2d5b6678b0c18",
+  "application/controllers/cli/PojasaPhase8Check.php": "bd26d8ba332d00dc51fe7235f9fc2965c32dfc3852903771c13ffd3ce9584b69",
+  "application/controllers/cli/PojasaPhase9Check.php": "ef5eb13ecdf10f91adc52026716c71a5c513a01c571bf4834f6430edebc401c0",
+  "database/schema/p5_merged_structure_20261112.sql": "07ecd43df0b52d226083f2574f013cb52c04b2c88201b520ac5c46085b8aafde",
+  "database/sql/p6_system_preflight_20261112.sql": "8799d26e221d3be54b30cee2733296210b9b58d5fb8fbd1dba8c1f855fea54e7",
+  "database/verification/p6_system_20261112/http_support.py": "92e3b66d2b55485fa3ca2272b4ca5a894ebbea6f182c43a5805e42e98867b06e",
+  "database/verification/p6_system_20261112/check_schema.py": "2e2fff0b7f18ef58dfb4bcc94d875ad0df0b53cf918e390ef2470432d900a513",
+  "database/verification/p6_system_20261112/check_commercial.py": "a1bc2b979ae3cbe03b4dbde44b45eace5f8b6087204115bb98b5440a88f42920",
+  "database/verification/p6_system_20261112/check_jasa_integration.py": "92a1d933e8f9d5c57088830849c1505369442f5e64ad39988b93f80ad4d7c2c2",
+  "database/verification/p6_system_20261112/check_integrity.py": "6bb958e6f1f38ed78c56920804b3a8a1aa065c4db2963bf1c7d0a53fc15a6815",
+  "database/verification/p6_system_20261112/run_all.py": "85dcd37c5d0e3982e691f220aee31f7e6e71f7fac74ba12875521f70ba5a60c3",
+  "database/verification/p6_system_20261112/capture_baseline.py": "1454c9f113d9a0dc977dd67cb2d1ae86b52920e23b2cd2f0b4921efda5d5ac63"
+}

@@ -1,0 +1,97 @@
+{
+    "success": true,
+    "checks": [
+        {
+            "name": "phase6_schema_ready",
+            "passed": true
+        },
+        {
+            "name": "stock_is_reserved_before_spk",
+            "passed": true
+        },
+        {
+            "name": "pic_owner_execution_state_contains_reserved_material",
+            "passed": true
+        },
+        {
+            "name": "other_pic_cannot_view_execution_state",
+            "passed": true
+        },
+        {
+            "name": "invalid_work_status_percent_is_rejected",
+            "passed": true
+        },
+        {
+            "name": "progress_evidence_and_structured_fields_are_atomic",
+            "passed": true
+        },
+        {
+            "name": "progress_idempotency_is_bound_to_actor_and_payload",
+            "passed": true
+        },
+        {
+            "name": "progress_percentage_cannot_regress",
+            "passed": true
+        },
+        {
+            "name": "noncommercial_stock_cannot_be_actual_cost",
+            "passed": true
+        },
+        {
+            "name": "purchasing_cannot_input_actual_cost",
+            "passed": true
+        },
+        {
+            "name": "pic_actual_cost_requires_document_and_non_stock_source",
+            "passed": true
+        },
+        {
+            "name": "actual_cost_idempotency_is_bound_to_actor_and_payload",
+            "passed": true
+        },
+        {
+            "name": "receipt_atomically_posts_account_11512",
+            "passed": true
+        },
+        {
+            "name": "receipt_replay_does_not_post_twice",
+            "passed": true
+        },
+        {
+            "name": "receipt_idempotency_is_bound_to_payload",
+            "passed": true
+        },
+        {
+            "name": "pic_cannot_close_without_purchasing_bast",
+            "passed": true
+        },
+        {
+            "name": "purchasing_bast_closes_completed_work_with_audit_timestamps",
+            "passed": true
+        },
+        {
+            "name": "closed_request_is_terminal",
+            "passed": true
+        },
+        {
+            "name": "execution_state_calculates_actual_and_variance",
+            "passed": true
+        },
+        {
+            "name": "execution_changes_create_logs_and_notifications",
+            "passed": true
+        },
+        {
+            "name": "role_dashboards_are_scoped",
+            "passed": true
+        },
+        {
+            "name": "migration_did_not_create_director_ops_user",
+            "passed": true
+        },
+        {
+            "name": "phase6_transaction_rolled_back_cleanly",
+            "passed": true
+        }
+    ]
+}

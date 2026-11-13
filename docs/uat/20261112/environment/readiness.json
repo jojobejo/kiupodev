@@ -1,0 +1,438 @@
+{
+  "result": "PASS",
+  "run": "UAT-20261112-S01",
+  "url": "http://127.0.0.1:18762/uat",
+  "login_url": "http://127.0.0.1:18762/Auth",
+  "accounts": 9,
+  "synthetic_skus": 36,
+  "prepared_fixtures": 29,
+  "mapped_scenarios": 80,
+  "uat_execution": "NOT_STARTED",
+  "original_databases": {
+    "kiucoid_kiupo_baru": {
+      "base_tables": 95,
+      "data_unchanged": true,
+      "schema_unchanged": true
+    },
+    "kiucoid_po": {
+      "base_tables": 44,
+      "data_unchanged": true,
+      "schema_unchanged": true
+    }
+  },
+  "test_schema_unchanged": true,
+  "all_preexisting_test_rows_preserved": true,
+  "added_rows": {
+    "tbpo_barang": 4,
+    "tbpo_barang_nk": 36,
+    "tbpo_barang_nk_lokasi": 1,
+    "tbpo_detail_po_nk": 16,
+    "tbpo_detail_req": 5,
+    "tbpo_generate_kd": 6,
+    "tbpo_generate_kd_ponk": 3,
+    "tbpo_jasa_approval": 140,
+    "tbpo_jasa_biaya_aktual": 12,
+    "tbpo_jasa_dokumen": 25,
+    "tbpo_jasa_draft_pembelian": 24,
+    "tbpo_jasa_log_aktivitas": 349,
+    "tbpo_jasa_material": 26,
+    "tbpo_jasa_notifikasi": 580,
+    "tbpo_jasa_number_counter": 4,
+    "tbpo_jasa_payment": 1,
+    "tbpo_jasa_payment_audit": 1,
+    "tbpo_jasa_pickup_detail": 5,
+    "tbpo_jasa_pickup_request": 5,
+    "tbpo_jasa_progress": 2,
+    "tbpo_jasa_purchase_receipt": 12,
+    "tbpo_jasa_purchase_submission": 16,
+    "tbpo_jasa_purchase_submission_detail": 16,
+    "tbpo_jasa_request": 26,
+    "tbpo_jasa_scope": 26,
+    "tbpo_jasa_spk": 16,
+    "tbpo_jasa_spk_change": 1,
+    "tbpo_jasa_spk_change_item": 1,
+    "tbpo_jasa_spk_revision": 2,
+    "tbpo_jasa_stock_allocation": 7,
+    "tbpo_jasa_stock_receipt": 1,
+    "tbpo_jasa_stock_receipt_detail": 1,
+    "tbpo_jasa_vendor": 1,
+    "tbpo_kat_br": 1,
+    "tbpo_notetemplate": 2,
+    "tbpo_note_direktur": 23,
+    "tbpo_po_nk": 16,
+    "tbpo_req_nk": 3,
+    "tbpo_stock_lifo_allocation": 4,
+    "tbpo_stock_lifo_batch_nk": 18,
+    "tbpo_stock_lifo_harga_log": 6,
+    "tbpo_stock_lifo_rebuild_issue": 6,
+    "tbpo_suplier": 2,
+    "tbpo_transaksi": 21,
+    "tbpo_user": 9
+  },
+  "checks": [
+    {
+      "name": "portal_80_scenarios",
+      "result": "PASS"
+    },
+    {
+      "name": "passwords_not_served",
+      "result": "PASS"
+    },
+    {
+      "name": "login_PIC-A",
+      "result": "PASS"
+    },
+    {
+      "name": "login_PIC-B",
+      "result": "PASS"
+    },
+    {
+      "name": "login_Kadep-GA",
+      "result": "PASS"
+    },
+    {
+      "name": "login_Kadep-IT",
+      "result": "PASS"
+    },
+    {
+      "name": "login_Purchasing",
+      "result": "PASS"
+    },
+    {
+      "name": "login_DirOps",
+      "result": "PASS"
+    },
+    {
+      "name": "login_Direktur",
+      "result": "PASS"
+    },
+    {
+      "name": "login_Admin",
+      "result": "PASS"
+    },
+    {
+      "name": "login_Keuangan-negatif",
+      "result": "PASS"
+    },
+    {
+      "name": "fixture_page_J-BASE",
+      "result": "PASS"
+    },
+    {
+      "name": "fixture_page_J-PIC-B",
+      "result": "PASS"
+    },
+    {
+      "name": "fixture_page_J-CABANG",
+      "result": "PASS"
+    },
+    {
+      "name": "fixture_page_J-RETUR",
+      "result": "PASS"
+    },
+    {
+      "name": "fixture_page_J-BELUMSIAP",
+      "result": "PASS"
+    },
+    {
+      "name": "fixture_page_J-PICKREJ",
+      "result": "PASS"
+    },
+    {
+      "name": "fixture_page_J-PICKLOCK",
+      "result": "PASS"
+    },
+    {
+      "name": "fixture_page_J-JADWAL",
+      "result": "PASS"
+    },
+    {
+      "name": "fixture_page_J-DATA",
+      "result": "PASS"
+    },
+    {
+      "name": "fixture_page_J-REJT",
+      "result": "PASS"
+    },
+    {
+      "name": "fixture_page_J-TERTUNDA",
+      "result": "PASS"
+    },
+    {
+      "name": "fixture_page_J-TERTUNDA-DATA",
+      "result": "PASS"
+    },
+    {
+      "name": "fixture_page_J-BIAYA",
+      "result": "PASS"
+    },
+    {
+      "name": "fixture_page_J-BASTGATE",
+      "result": "PASS"
+    },
+    {
+      "name": "fixture_page_J-INVNEG",
+      "result": "PASS"
+    },
+    {
+      "name": "fixture_page_J-SEN",
+      "result": "PASS"
+    },
+    {
+      "name": "fixture_page_J-EVALAWAL",
+      "result": "PASS"
+    },
+    {
+      "name": "fixture_page_J-PICREVISI",
+      "result": "PASS"
+    },
+    {
+      "name": "fixture_page_J-PENDING",
+      "result": "PASS"
+    },
+    {
+      "name": "fixture_page_J-KADEPREVISI",
+      "result": "PASS"
+    },
+    {
+      "name": "fixture_page_J-OPSREVISI",
+      "result": "PASS"
+    },
+    {
+      "name": "fixture_page_J-DIRREVISI",
+      "result": "PASS"
+    },
+    {
+      "name": "fixture_page_J-REJECT-KADEP",
+      "result": "PASS"
+    },
+    {
+      "name": "fixture_page_J-REJECT-OPS",
+      "result": "PASS"
+    },
+    {
+      "name": "fixture_page_J-REJECT-DIR",
+      "result": "PASS"
+    },
+    {
+      "name": "fixture_page_X-RESERVASI",
+      "result": "PASS"
+    },
+    {
+      "name": "fixture_page_X-REQUEST-PIC",
+      "result": "PASS"
+    },
+    {
+      "name": "fixture_page_N-TIMEOUT",
+      "result": "PASS"
+    },
+    {
+      "name": "fixture_page_N-SISA",
+      "result": "PASS"
+    },
+    {
+      "name": "other_pic_request_denied",
+      "result": "PASS"
+    },
+    {
+      "name": "other_pic_document_denied",
+      "result": "PASS"
+    },
+    {
+      "name": "wrong_department_denied",
+      "result": "PASS"
+    },
+    {
+      "name": "finance_is_not_purchasing_jasa",
+      "result": "PASS"
+    },
+    {
+      "name": "private_path_denied_/application/config/database.php",
+      "result": "PASS"
+    },
+    {
+      "name": "private_path_denied_/access/AKUN_UAT.md",
+      "result": "PASS"
+    },
+    {
+      "name": "private_path_denied_/vendor/autoload.php",
+      "result": "PASS"
+    },
+    {
+      "name": "private_path_denied_/%2e%2e/access/accounts.json",
+      "result": "PASS"
+    },
+    {
+      "name": "private_permissions_accounts.json",
+      "result": "PASS"
+    },
+    {
+      "name": "private_permissions_AKUN_UAT.md",
+      "result": "PASS"
+    },
+    {
+      "name": "safe_config_database.php",
+      "result": "PASS"
+    },
+    {
+      "name": "safe_config_testing/database.php",
+      "result": "PASS"
+    },
+    {
+      "name": "shared_stock_initial_3",
+      "result": "PASS"
+    },
+    {
+      "name": "shared_reservation_3",
+      "result": "PASS"
+    },
+    {
+      "name": "shared_request_denial_rolls_back",
+      "result": "PASS"
+    },
+    {
+      "name": "partial_fixture_2_done_1_pending",
+      "result": "PASS"
+    },
+    {
+      "name": "main_jasa_still_draft",
+      "result": "PASS"
+    },
+    {
+      "name": "scenario_execution_not_started",
+      "result": "PASS"
+    },
+    {
+      "name": "structure_p2",
+      "result": "PASS"
+    },
+    {
+      "name": "structure_p3",
+      "result": "PASS"
+    },
+    {
+      "name": "structure_p4",
+      "result": "PASS"
+    },
+    {
+      "name": "structure_p5",
+      "result": "PASS"
+    },
+    {
+      "name": "structure_p6",
+      "result": "PASS"
+    },
+    {
+      "name": "original_contents_kiucoid_kiupo_baru",
+      "result": "PASS"
+    },
+    {
+      "name": "original_schema_kiucoid_kiupo_baru",
+      "result": "PASS"
+    },
+    {
+      "name": "original_contents_kiucoid_po",
+      "result": "PASS"
+    },
+    {
+      "name": "original_schema_kiucoid_po",
+      "result": "PASS"
+    },
+    {
+      "name": "test_schema_unchanged",
+      "result": "PASS"
+    },
+    {
+      "name": "all_preexisting_test_rows_preserved",
+      "result": "PASS"
+    },
+    {
+      "name": "source_unchanged_application/models/stock/M_StockLifo.php",
+      "result": "PASS"
+    },
+    {
+      "name": "source_unchanged_application/models/PO/M_PojasaCore.php",
+      "result": "PASS"
+    },
+    {
+      "name": "source_unchanged_application/models/PO/M_PojasaPickup.php",
+      "result": "PASS"
+    },
+    {
+      "name": "source_unchanged_application/models/PO/M_PojasaPurchasing.php",
+      "result": "PASS"
+    },
+    {
+      "name": "source_unchanged_application/controllers/cli/PojasaPhase2Check.php",
+      "result": "PASS"
+    },
+    {
+      "name": "source_unchanged_application/controllers/cli/PojasaPhase3Check.php",
+      "result": "PASS"
+    },
+    {
+      "name": "source_unchanged_application/controllers/cli/PojasaPhase4Check.php",
+      "result": "PASS"
+    },
+    {
+      "name": "source_unchanged_application/controllers/cli/PojasaPhase5Check.php",
+      "result": "PASS"
+    },
+    {
+      "name": "source_unchanged_application/controllers/cli/PojasaPhase6Check.php",
+      "result": "PASS"
+    },
+    {
+      "name": "source_unchanged_application/controllers/cli/PojasaPhase7Check.php",
+      "result": "PASS"
+    },
+    {
+      "name": "source_unchanged_application/controllers/cli/PojasaPhase8Check.php",
+      "result": "PASS"
+    },
+    {
+      "name": "source_unchanged_application/controllers/cli/PojasaPhase9Check.php",
+      "result": "PASS"
+    },
+    {
+      "name": "source_unchanged_database/schema/p5_merged_structure_20261112.sql",
+      "result": "PASS"
+    },
+    {
+      "name": "source_unchanged_database/sql/p6_system_preflight_20261112.sql",
+      "result": "PASS"
+    },
+    {
+      "name": "source_unchanged_database/verification/p6_system_20261112/http_support.py",
+      "result": "PASS"
+    },
+    {
+      "name": "source_unchanged_database/verification/p6_system_20261112/check_schema.py",
+      "result": "PASS"
+    },
+    {
+      "name": "source_unchanged_database/verification/p6_system_20261112/check_commercial.py",
+      "result": "PASS"
+    },
+    {
+      "name": "source_unchanged_database/verification/p6_system_20261112/check_jasa_integration.py",
+      "result": "PASS"
+    },
+    {
+      "name": "source_unchanged_database/verification/p6_system_20261112/check_integrity.py",
+      "result": "PASS"
+    },
+    {
+      "name": "source_unchanged_database/verification/p6_system_20261112/run_all.py",
+      "result": "PASS"
+    },
+    {
+      "name": "source_unchanged_database/verification/p6_system_20261112/capture_baseline.py",
+      "result": "PASS"
+    },
+    {
+      "name": "live_database_target",
+      "result": "PASS"
+    }
+  ]
+}

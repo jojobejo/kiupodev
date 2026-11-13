@@ -1,0 +1,237 @@
+{
+    "success": true,
+    "checks": [
+        {
+            "name": "phase4_schema_ready",
+            "passed": true
+        },
+        {
+            "name": "kadep_waiting_actions",
+            "passed": true
+        },
+        {
+            "name": "kadep_pending_has_no_second_pending",
+            "passed": true
+        },
+        {
+            "name": "director_ops_no_pending",
+            "passed": true
+        },
+        {
+            "name": "director_no_pending",
+            "passed": true
+        },
+        {
+            "name": "initial_purchasing_routes_pic",
+            "passed": true
+        },
+        {
+            "name": "confirmed_pic_purchasing_routes_kadep",
+            "passed": true
+        },
+        {
+            "name": "post_ops_purchasing_routes_director",
+            "passed": true
+        },
+        {
+            "name": "purchasing_revision_returns_ops",
+            "passed": true
+        },
+        {
+            "name": "purchasing_revision_returns_director",
+            "passed": true
+        },
+        {
+            "name": "GA_purchasing_update_requires_pic_confirmation",
+            "passed": true
+        },
+        {
+            "name": "GA_pic_then_purchasing_routes_kadep",
+            "passed": true
+        },
+        {
+            "name": "GA_other_kadep_denied",
+            "passed": true
+        },
+        {
+            "name": "GA_kadep_routes_ops",
+            "passed": true
+        },
+        {
+            "name": "GA_cannot_skip_ops_or_pending",
+            "passed": true
+        },
+        {
+            "name": "GA_ops_routes_director",
+            "passed": true
+        },
+        {
+            "name": "GA_director_does_not_issue_early",
+            "passed": true
+        },
+        {
+            "name": "GA_purchasing_issues_single_spk",
+            "passed": true
+        },
+        {
+            "name": "GA_replay_other_actor_denied",
+            "passed": true
+        },
+        {
+            "name": "GA_notification_purchasing",
+            "passed": true
+        },
+        {
+            "name": "GA_notification_director",
+            "passed": true
+        },
+        {
+            "name": "GA_notification_pic",
+            "passed": true
+        },
+        {
+            "name": "KEUANGAN_purchasing_update_requires_pic_confirmation",
+            "passed": true
+        },
+        {
+            "name": "KEUANGAN_pic_then_purchasing_routes_kadep",
+            "passed": true
+        },
+        {
+            "name": "KEUANGAN_other_kadep_denied",
+            "passed": true
+        },
+        {
+            "name": "KEUANGAN_kadep_routes_ops",
+            "passed": true
+        },
+        {
+            "name": "KEUANGAN_cannot_skip_ops_or_pending",
+            "passed": true
+        },
+        {
+            "name": "KEUANGAN_ops_routes_director",
+            "passed": true
+        },
+        {
+            "name": "KEUANGAN_director_does_not_issue_early",
+            "passed": true
+        },
+        {
+            "name": "KEUANGAN_purchasing_issues_single_spk",
+            "passed": true
+        },
+        {
+            "name": "KEUANGAN_replay_other_actor_denied",
+            "passed": true
+        },
+        {
+            "name": "KEUANGAN_notification_purchasing",
+            "passed": true
+        },
+        {
+            "name": "KEUANGAN_notification_director",
+            "passed": true
+        },
+        {
+            "name": "KEUANGAN_notification_pic",
+            "passed": true
+        },
+        {
+            "name": "kadep_revision_note_required_backend",
+            "passed": true
+        },
+        {
+            "name": "kadep_revision_returns_purchasing_next_version",
+            "passed": true
+        },
+        {
+            "name": "kadep_revision_does_not_allow_pic_edit",
+            "passed": true
+        },
+        {
+            "name": "kadep_revision_requires_saved_review",
+            "passed": true
+        },
+        {
+            "name": "kadep_revision_resubmits_to_kadep",
+            "passed": true
+        },
+        {
+            "name": "kadep_pending_locks_pic",
+            "passed": true
+        },
+        {
+            "name": "kadep_can_continue_pending_to_ops",
+            "passed": true
+        },
+        {
+            "name": "ops_revision_returns_purchasing",
+            "passed": true
+        },
+        {
+            "name": "ops_revision_cannot_submit_before_save",
+            "passed": true
+        },
+        {
+            "name": "ops_revision_resubmits_directly_ops",
+            "passed": true
+        },
+        {
+            "name": "purchasing_revision_preserves_versioned_rows",
+            "passed": true
+        },
+        {
+            "name": "director_revision_returns_purchasing",
+            "passed": true
+        },
+        {
+            "name": "director_revision_resubmits_directly_director",
+            "passed": true
+        },
+        {
+            "name": "stale_status_version_blocked",
+            "passed": true
+        },
+        {
+            "name": "reject_ditolak_kadep",
+            "passed": true
+        },
+        {
+            "name": "reject_ditolak_dirut_ops",
+            "passed": true
+        },
+        {
+            "name": "reject_ditolak_direktur",
+            "passed": true
+        },
+        {
+            "name": "director_ops_accesses_all_departments",
+            "passed": true
+        },
+        {
+            "name": "kadep_access_only_own_department",
+            "passed": true
+        },
+        {
+            "name": "approval_history_records_actor_time_status_note",
+            "passed": true
+        },
+        {
+            "name": "approval_action_logged",
+            "passed": true
+        },
+        {
+            "name": "phase4_test_transaction_rolled_back",
+            "passed": true
+        },
+        {
+            "name": "no_director_ops_user_created",
+            "passed": true
+        }
+    ],
+    "prerequisites": {
+        "director_ops_level_6_user_present": true,
+        "note": "User Direktur Operasional tersedia."
+    }
+}

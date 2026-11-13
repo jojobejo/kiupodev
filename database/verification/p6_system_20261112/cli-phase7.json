@@ -1,0 +1,53 @@
+{
+    "success": true,
+    "checks": [
+        {
+            "name": "phase7_schema_ready",
+            "passed": true
+        },
+        {
+            "name": "manual_offer_does_not_create_active_master_vendor",
+            "passed": true
+        },
+        {
+            "name": "manual_offer_is_renderable_as_selected_request_vendor",
+            "passed": true
+        },
+        {
+            "name": "draft_formula_is_need_minus_active_reservation_minus_active_draft",
+            "passed": true
+        },
+        {
+            "name": "delete_draft_and_reservation_restore_remaining_need_without_stock_posting",
+            "passed": true
+        },
+        {
+            "name": "spk_revision_validates_dates_requires_director_and_keeps_schedule_until_acc",
+            "passed": true
+        },
+        {
+            "name": "director_acc_atomically_archives_snapshot_and_activates_next_version",
+            "passed": true
+        },
+        {
+            "name": "progress_keeps_active_spk_version_reference",
+            "passed": true
+        },
+        {
+            "name": "authorized_user_can_open_archived_spk_version",
+            "passed": true
+        },
+        {
+            "name": "director_reject_does_not_change_active_schedule_or_version",
+            "passed": true
+        },
+        {
+            "name": "spk_revision_actions_are_audited_and_notified",
+            "passed": true
+        },
+        {
+            "name": "phase7_transaction_rolled_back_cleanly",
+            "passed": true
+        }
+    ]
+}

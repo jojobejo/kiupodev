@@ -1,0 +1,62 @@
+{
+  "date": "2026-11-11",
+  "timezone": "Asia/Jakarta",
+  "decision": "P3_CLOSED_STRUCTURE_AND_SYSTEM",
+  "scope": [
+    "pengajuan PO Jasa",
+    "approval",
+    "SPK dan PO pembelian",
+    "penerimaan pembelian parsial",
+    "konfirmasi stok PIC",
+    "integrasi batch LIFO"
+  ],
+  "historical_data_migration": false,
+  "http_test_groups_passed": 5,
+  "cli_checks": {
+    "phase3-check.json": 24,
+    "phase9-check.json": 8
+  },
+  "p2_regression_groups_passed": 9,
+  "synthetic_fixtures_cleaned": true,
+  "structure": {
+    "result": "PASS",
+    "base_tables": 96,
+    "views": 1,
+    "historical_rows": 0,
+    "foundation_replay": "PASS",
+    "schema_replay": "PASS",
+    "p3_contract": "PASS",
+    "p2_contract": "PASS",
+    "cross_database_dependencies": 0,
+    "scratch_schema_removed_on_exit": true
+  },
+  "integrity": {
+    "kiucoid_kiupo_baru": {
+      "base_tables": 95,
+      "existing_data_unchanged": true
+    },
+    "kiucoid_po": {
+      "base_tables": 44,
+      "existing_data_unchanged": true
+    },
+    "kiucoid_kiupo_merge_p0_20261110": {
+      "base_tables": 133,
+      "existing_data_unchanged": true
+    }
+  },
+  "schema_changes": [
+    "tbpo_jasa_request_detail.jenis_detail added",
+    "tbpo_jasa_biaya_aktual.verification_status VARCHAR(50)"
+  ],
+  "sha256": {
+    "application/models/PO/M_PojasaIntegration.php": "3b3880a7e7e7c7291bae1b9e4dd9e786e83e2b046ecf0926a6037ebeedc5d9d6",
+    "application/models/PO/M_PojasaCore.php": "8887c17cde3d1be18ec8c52b7df9c3d6b3c9517e471abb861d7d8a9449b53336",
+    "application/models/stock/M_StockLifo.php": "01ec14ffc0aa5b917f82e1050da1654a011502c10224d475d9d455f0ca821a70",
+    "application/controllers/cli/PojasaPhase3Check.php": "f5ea770d6ac941ca4db3d1f9b4bea939a471a20e3addad1097a17be42a214789",
+    "application/controllers/cli/PojasaPhase9Check.php": "ef5eb13ecdf10f91adc52026716c71a5c513a01c571bf4834f6430edebc401c0",
+    "database/sql/pojasa_phase2_foundation_20260910.sql": "066e53da24454a2dabc7c22de2460a599865235d84d2a89da43938f6e3df0654",
+    "database/sql/p3_pojasa_structure_20261111.sql": "9dc65e7f231ff0e6bf622e461b715de3cede011c9ab80a533f7b7ec4e6465ffe",
+    "database/sql/p3_system_preflight_20261111.sql": "29049e714f37cbc3d3ad3c326313f374ab4fc61b92823a8172777ffa2e849608",
+    "database/schema/p3_merged_structure_20261111.sql": "4d905ed7dd4220b45e88d16a7bffd37232cb2af3fb1011163e3320f08a5588ac"
+  }
+}

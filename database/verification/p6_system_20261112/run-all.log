@@ -1,0 +1,58 @@
+PASS commercial 9 groups
+PASS noncommercial_reqpic_stock 9 groups
+PASS jasa_shared_stock 15 groups
+PASS CLI 2 33 checks
+PASS CLI 3 24 checks
+PASS CLI 4 57 checks
+PASS CLI 5 21 checks
+PASS CLI 6 23 checks
+PASS CLI 7 12 checks
+PASS CLI 8 32 checks
+PASS CLI 9 8 checks
+{
+  "result": "PASS",
+  "test_database": "kiucoid_kiupo_merge_p0_20261110",
+  "data_migration": false,
+  "http": {
+    "commercial": 9,
+    "noncommercial_reqpic_stock": 9,
+    "jasa_shared_stock": 15
+  },
+  "cli": {
+    "phase2": 33,
+    "phase3": 24,
+    "phase4": 57,
+    "phase5": 21,
+    "phase6": 23,
+    "phase7": 12,
+    "phase8": 32,
+    "phase9": 8
+  },
+  "schema": {
+    "result": "PASS",
+    "base_tables": 98,
+    "views": 1,
+    "historical_rows": 0,
+    "foundation_replay": "PASS",
+    "schema_replay": "PASS",
+    "p6_contract": "PASS",
+    "p5_contract": "PASS",
+    "p4_contract": "PASS",
+    "p3_contract": "PASS",
+    "p2_contract": "PASS",
+    "cross_database_dependencies": 0,
+    "scratch_schema_removed_on_exit": true
+  },
+  "live_structure_gates": [
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "php_syntax_files": 12,
+  "http_groups": 33,
+  "cli_checks": 210,
+  "original_data_and_schema_unchanged": true,
+  "test_data_and_normalized_schema_unchanged": true
+}

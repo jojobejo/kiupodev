@@ -1,0 +1,51 @@
+/* /// faktur */
+@media print {
+    ticket_element {page-break-after: always;}
+    table.listdb {
+      border-collapse: unset;
+  }
+  }
+  
+  .tableAtas {
+    font-size: 8pt;
+    font-family: Calibri;
+    border-collapse: collapse;
+  }
+  
+  .tableAtas .tdkiri {
+    padding-right: 80px;
+    vertical-align: top;
+  }
+  
+  .tableIsin {
+    font-size: 8pt;
+    font-family: calibri;
+    border-collapse: collapse;
+    margin-top: 5px;
+  }
+  
+  .tableIsin td {
+    padding-left: 2px;
+  }
+  
+  table.table-bordered{
+    border:1px solid rgb(0, 0, 0);
+  }
+  table.table-bordered > thead > tr > th{
+    border:1px solid rgb(0, 0, 0);
+  }
+  table.table-bordered > tbody > tr > td{
+    border:1px solid rgb(0, 0, 0);
+  }
+  .mainDiv {
+    height: auto; /* height of receipt 4.5 inches*/
+    width: auto;  /* weight of receipt 8.6 inches*/
+    position:absolute; /* positioned relative to its normal position */
+    }
+    .wrapper-table > table
+  {
+      width: 100%;
+  }
+  .fontTable {
+    font-size: 8px;
+  }

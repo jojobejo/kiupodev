@@ -1,0 +1,13 @@
+{
+  "result": "PASS",
+  "base_tables": 97,
+  "views": 1,
+  "historical_rows": 0,
+  "foundation_replay": "PASS",
+  "schema_replay": "PASS",
+  "p4_contract": "PASS",
+  "p3_contract": "PASS",
+  "p2_contract": "PASS",
+  "cross_database_dependencies": 0,
+  "scratch_schema_removed_on_exit": true
+}

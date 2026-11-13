@@ -1,0 +1,33 @@
+{
+  "preparation": "COMPLETE",
+  "uat_execution": "NOT_STARTED",
+  "scenarios": 80,
+  "role_checklists": 41,
+  "roles": 6,
+  "prerequisites": 11,
+  "workbook_sheets": [
+    "Ringkasan",
+    "Skenario",
+    "Peran",
+    "Prasyarat",
+    "Data Uji",
+    "Temuan",
+    "Persetujuan"
+  ],
+  "workbook_sha256": "5da0c3061e54c34478779c456d6f73a160e17e0a7e3f36b87930dad0b9947d35",
+  "qa_cases": [
+    "premature_acceptance_blocked",
+    "missing_evidence_blocked",
+    "open_prerequisite_blocked",
+    "open_critical_defect_blocked",
+    "complete_acceptance_updates",
+    "minor_acceptance_requires_rationale",
+    "all_temporary_inputs_cleared"
+  ],
+  "xlsx_structure_validation": "PASS",
+  "formula_error_scan": "0 matches",
+  "visual_review": "7 sheets reviewed",
+  "original_and_test_database_contents_and_normalized_schema_unchanged": true,
+  "account_creation": false,
+  "data_migration": false
+}

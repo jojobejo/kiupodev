@@ -1,0 +1,30 @@
+{
+  "original_databases": {
+    "kiucoid_kiupo_baru": {
+      "tables": 95,
+      "unchanged": true
+    },
+    "kiucoid_po": {
+      "tables": 44,
+      "unchanged": true
+    }
+  },
+  "changed_tables": [
+    "tbpo_stock_lifo_allocation",
+    "tbpo_stock_lifo_batch_nk",
+    "tbpo_stock_lifo_harga_log",
+    "tbpo_stock_lifo_rebuild_issue"
+  ],
+  "reviewed_batches": 101,
+  "reviewed_items": 89,
+  "priced_batches": 12,
+  "priced_items": 12,
+  "priced_qty": 16.0,
+  "updated_allocations": 51,
+  "resolved_price_issues": 12,
+  "remaining_batches": 89,
+  "remaining_items": 77,
+  "remaining_qty": 2404.75,
+  "stock_unchanged": true,
+  "p2_full_closure": "BLOCKED_BY_PRICE_EVIDENCE"
+}

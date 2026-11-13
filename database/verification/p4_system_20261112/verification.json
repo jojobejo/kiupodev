@@ -1,0 +1,73 @@
+{
+  "date": "2026-11-12",
+  "timezone": "Asia/Jakarta",
+  "decision": "P4_CLOSED_STRUCTURE_AND_SYSTEM",
+  "user_workflow_decision": "Purchasing/Admin closes through BAST after progress 100%",
+  "scope": [
+    "progres pekerjaan",
+    "BAST",
+    "tracking invoice/pembayaran"
+  ],
+  "historical_data_migration": false,
+  "http_groups": {
+    "p3_regression": 5,
+    "p4": 3
+  },
+  "cli_checks_passed": 23,
+  "p2_regression_groups_passed": 9,
+  "synthetic_fixtures_cleaned": true,
+  "structure": {
+    "result": "PASS",
+    "base_tables": 97,
+    "views": 1,
+    "historical_rows": 0,
+    "foundation_replay": "PASS",
+    "schema_replay": "PASS",
+    "p4_contract": "PASS",
+    "p3_contract": "PASS",
+    "p2_contract": "PASS",
+    "cross_database_dependencies": 0,
+    "scratch_schema_removed_on_exit": true
+  },
+  "ui_script": {
+    "syntax": "PASS",
+    "uuid_v4_samples": 1000,
+    "uuid_valid_unique": true
+  },
+  "integrity": {
+    "kiucoid_kiupo_baru": {
+      "base_tables": 95,
+      "existing_data_unchanged": true
+    },
+    "kiucoid_po": {
+      "base_tables": 44,
+      "existing_data_unchanged": true
+    },
+    "kiucoid_kiupo_merge_p0_20261110": {
+      "base_tables": 133,
+      "existing_data_unchanged": true
+    }
+  },
+  "new_table": {
+    "tbpo_jasa_payment_audit": {
+      "rows_after_cleanup": 0
+    }
+  },
+  "sha256": {
+    "application/controllers/purchaseorder/C_Pojasa.php": "663eaabee596e27cf2499f4f8f7cf58ffbfc30c9e671ad324b616cade3644587",
+    "application/controllers/purchaseorder/C_PojasaPic.php": "9245f7ab9b140a470804d12bf2731018b79ee09703101bf13ef009bcb5c6db22",
+    "application/controllers/purchaseorder/C_PojasaPurchasing.php": "bf76024f483b92adb7c5eb0f458f3ddc34011231aa17e943c4309d2cdb94ea1e",
+    "application/controllers/cli/PojasaPhase6Check.php": "9bb79b0ffa6345ad701cd2a2802c54e39751a291586abc71ec7b2ddd8a6102cf",
+    "application/models/PO/M_PojasaExecution.php": "29dc89854ab04020e2b5f314ea5a2b5fa6c6b6affc1c71bfd1b7832ae3841f03",
+    "application/models/PO/M_PojasaSettlement.php": "87f5e4939128e61c6407a81de087c572cc1a2890d5b602bc9543bf7848e459d7",
+    "application/models/PO/M_PojasaIntegration.php": "f6b739f297f73747ad6df4e12df76235671920e47d8a038997e14c29aa78eaa7",
+    "application/config/routes.php": "b36c11ff4ec8422c6358d27b719bbf65859c01bb0c06537adc76d7e4ed66299c",
+    "application/views/content/po/jasa/settlement.php": "7440270d16f9b9454169f20930385c566c53e7f13cfde5c5cb6259943f7b213d",
+    "application/views/content/po/jasa/pic/detail.php": "e138b703505e6e691f633be40de14a9ca666c9cbbcaede3742d6fa1a58d06d2a",
+    "application/views/content/po/jasa/workflow/detail.php": "94cc3f17df698a2ef5ea3ecdfd64929d273afe41f2412d44eaa97559404ba755",
+    "application/views/content/po/jasa/detail.php": "f8cb523c65f8d9503e841b7885f9ff6321dd4242813e85a95f9eaa8fe9232087",
+    "database/sql/p4_pojasa_structure_20261112.sql": "b5d5b159c2cba8e384bec92ea02ba5c48b122e6fd702fad320d42604bd7dc55e",
+    "database/sql/p4_system_preflight_20261112.sql": "2466211f3b7247876790c387e0d62a22653ec67c04f6154e4a7ab61d88cb8b3a",
+    "database/schema/p4_merged_structure_20261112.sql": "4987d56a40b309582955f99a23d31e8f8a49e695005c6a6ceb8ecc4c63d10028"
+  }
+}

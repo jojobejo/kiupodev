@@ -1,0 +1,141 @@
+{
+    "success": true,
+    "checks": [
+        {
+            "name": "schema_ready",
+            "passed": true
+        },
+        {
+            "name": "status_count",
+            "passed": true
+        },
+        {
+            "name": "department_typo_normalized",
+            "passed": true
+        },
+        {
+            "name": "finance_level_2_excluded",
+            "passed": true
+        },
+        {
+            "name": "purchasing_exact_policy",
+            "passed": true
+        },
+        {
+            "name": "director_ops_level_6_policy",
+            "passed": true
+        },
+        {
+            "name": "director_ops_no_pending",
+            "passed": true
+        },
+        {
+            "name": "director_no_pending",
+            "passed": true
+        },
+        {
+            "name": "director_acc_waits_for_purchasing",
+            "passed": true
+        },
+        {
+            "name": "pic_routes_to_initial_purchasing",
+            "passed": true
+        },
+        {
+            "name": "initial_purchasing_update_routes_to_pic",
+            "passed": true
+        },
+        {
+            "name": "confirmed_pic_purchasing_routes_to_kadep",
+            "passed": true
+        },
+        {
+            "name": "post_ops_purchasing_routes_to_director",
+            "passed": true
+        },
+        {
+            "name": "kadep_routes_to_ops",
+            "passed": true
+        },
+        {
+            "name": "cost_pic_owner_allowed",
+            "passed": true
+        },
+        {
+            "name": "cost_other_pic_denied",
+            "passed": true
+        },
+        {
+            "name": "cost_purchasing_input_denied",
+            "passed": true
+        },
+        {
+            "name": "cost_admin_allowed",
+            "passed": true
+        },
+        {
+            "name": "request_numbers_unique",
+            "passed": true
+        },
+        {
+            "name": "spk_numbers_unique",
+            "passed": true
+        },
+        {
+            "name": "request_number_legacy_format",
+            "passed": true
+        },
+        {
+            "name": "spk_number_legacy_format",
+            "passed": true
+        },
+        {
+            "name": "legacy_request_generator_uses_atomic_core",
+            "passed": true
+        },
+        {
+            "name": "legacy_spk_generator_uses_atomic_core",
+            "passed": true
+        },
+        {
+            "name": "audit_log_transactional_insert",
+            "passed": true
+        },
+        {
+            "name": "notification_transactional_insert",
+            "passed": true
+        },
+        {
+            "name": "director_acc_atomic_approval_without_early_spk",
+            "passed": true
+        },
+        {
+            "name": "director_approval_idempotency",
+            "passed": true
+        },
+        {
+            "name": "receipt_posts_only_11512",
+            "passed": true
+        },
+        {
+            "name": "receipt_idempotency",
+            "passed": true
+        },
+        {
+            "name": "actual_cost_requires_evidence_relation",
+            "passed": true
+        },
+        {
+            "name": "actual_cost_purchasing_model_guard",
+            "passed": true
+        },
+        {
+            "name": "smoke_test_data_rolled_back",
+            "passed": true
+        }
+    ],
+    "prerequisites": {
+        "director_ops_level_6_user_present": true,
+        "note": "User Direktur Operasional tersedia."
+    }
+}

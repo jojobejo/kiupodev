@@ -1,0 +1,1695 @@
+{
+  "run": "UAT-20261112-S01",
+  "prefix": "U26A",
+  "database": "kiucoid_kiupo_merge_p0_20261110",
+  "url": "http://127.0.0.1:18762/uat",
+  "login_url": "http://127.0.0.1:18762/Auth",
+  "app_root": "/Users/itkarisma/.codex/uat/kiupo/20261112-s01/app",
+  "runtime_root": "/Users/itkarisma/.codex/uat/kiupo/20261112-s01",
+  "accounts": [
+    {
+      "alias": "PIC-A",
+      "code": "U26A_PICA",
+      "username": "uat26a_pic_a",
+      "level": 4,
+      "department": "GA",
+      "id": 307
+    },
+    {
+      "alias": "PIC-B",
+      "code": "U26A_PICB",
+      "username": "uat26a_pic_b",
+      "level": 4,
+      "department": "GA",
+      "id": 308
+    },
+    {
+      "alias": "Kadep-GA",
+      "code": "U26A_KGA",
+      "username": "uat26a_kadep_ga",
+      "level": 5,
+      "department": "GA",
+      "id": 309
+    },
+    {
+      "alias": "Kadep-IT",
+      "code": "U26A_KIT",
+      "username": "uat26a_kadep_it",
+      "level": 5,
+      "department": "IT",
+      "id": 310
+    },
+    {
+      "alias": "Purchasing",
+      "code": "U26A_BUY",
+      "username": "uat26a_purchasing",
+      "level": 2,
+      "department": "PURCHASING",
+      "id": 311
+    },
+    {
+      "alias": "DirOps",
+      "code": "U26A_OPS",
+      "username": "uat26a_dirops",
+      "level": 6,
+      "department": "DIREKTUR OPERASIONAL",
+      "id": 312
+    },
+    {
+      "alias": "Direktur",
+      "code": "U26A_DIR",
+      "username": "uat26a_direktur",
+      "level": 3,
+      "department": "DIREKTUR",
+      "id": 313
+    },
+    {
+      "alias": "Admin",
+      "code": "U26A_ADM",
+      "username": "uat26a_admin",
+      "level": 1,
+      "department": "ADMIN",
+      "id": 314
+    },
+    {
+      "alias": "Keuangan-negatif",
+      "code": "U26A_FIN",
+      "username": "uat26a_keuangan",
+      "level": 2,
+      "department": "KEUANGAN",
+      "id": 315
+    }
+  ],
+  "masters": {
+    "J-BASE": {
+      "sku": "U26A_M01",
+      "syscode": "U26A_M01S",
+      "name": "UAT-20261112-S01 J-BASE",
+      "id": 1003
+    },
+    "J-BASTGATE": {
+      "sku": "U26A_M02",
+      "syscode": "U26A_M02S",
+      "name": "UAT-20261112-S01 J-BASTGATE",
+      "id": 1004
+    },
+    "J-BELUMSIAP": {
+      "sku": "U26A_M03",
+      "syscode": "U26A_M03S",
+      "name": "UAT-20261112-S01 J-BELUMSIAP",
+      "id": 1005
+    },
+    "J-BIAYA": {
+      "sku": "U26A_M04",
+      "syscode": "U26A_M04S",
+      "name": "UAT-20261112-S01 J-BIAYA",
+      "id": 1006
+    },
+    "J-CABANG": {
+      "sku": "U26A_M05",
+      "syscode": "U26A_M05S",
+      "name": "UAT-20261112-S01 J-CABANG",
+      "id": 1007
+    },
+    "J-DATA": {
+      "sku": "U26A_M06",
+      "syscode": "U26A_M06S",
+      "name": "UAT-20261112-S01 J-DATA",
+      "id": 1008
+    },
+    "J-DIRREVISI": {
+      "sku": "U26A_M07",
+      "syscode": "U26A_M07S",
+      "name": "UAT-20261112-S01 J-DIRREVISI",
+      "id": 1009
+    },
+    "J-EVALAWAL": {
+      "sku": "U26A_M08",
+      "syscode": "U26A_M08S",
+      "name": "UAT-20261112-S01 J-EVALAWAL",
+      "id": 1010
+    },
+    "J-INVNEG": {
+      "sku": "U26A_M09",
+      "syscode": "U26A_M09S",
+      "name": "UAT-20261112-S01 J-INVNEG",
+      "id": 1011
+    },
+    "J-JADWAL": {
+      "sku": "U26A_M10",
+      "syscode": "U26A_M10S",
+      "name": "UAT-20261112-S01 J-JADWAL",
+      "id": 1012
+    },
+    "J-KADEPREVISI": {
+      "sku": "U26A_M11",
+      "syscode": "U26A_M11S",
+      "name": "UAT-20261112-S01 J-KADEPREVISI",
+      "id": 1013
+    },
+    "J-OPSREVISI": {
+      "sku": "U26A_M12",
+      "syscode": "U26A_M12S",
+      "name": "UAT-20261112-S01 J-OPSREVISI",
+      "id": 1014
+    },
+    "J-PENDING": {
+      "sku": "U26A_M13",
+      "syscode": "U26A_M13S",
+      "name": "UAT-20261112-S01 J-PENDING",
+      "id": 1015
+    },
+    "J-PICKLOCK": {
+      "sku": "U26A_M14",
+      "syscode": "U26A_M14S",
+      "name": "UAT-20261112-S01 J-PICKLOCK",
+      "id": 1016
+    },
+    "J-PICKREJ": {
+      "sku": "U26A_M15",
+      "syscode": "U26A_M15S",
+      "name": "UAT-20261112-S01 J-PICKREJ",
+      "id": 1017
+    },
+    "J-PICREVISI": {
+      "sku": "U26A_M16",
+      "syscode": "U26A_M16S",
+      "name": "UAT-20261112-S01 J-PICREVISI",
+      "id": 1018
+    },
+    "J-REJECT": {
+      "sku": "U26A_M17",
+      "syscode": "U26A_M17S",
+      "name": "UAT-20261112-S01 J-REJECT",
+      "id": 1019
+    },
+    "J-REJT": {
+      "sku": "U26A_M18",
+      "syscode": "U26A_M18S",
+      "name": "UAT-20261112-S01 J-REJT",
+      "id": 1020
+    },
+    "J-RETUR": {
+      "sku": "U26A_M19",
+      "syscode": "U26A_M19S",
+      "name": "UAT-20261112-S01 J-RETUR",
+      "id": 1021
+    },
+    "J-SEN": {
+      "sku": "U26A_M20",
+      "syscode": "U26A_M20S",
+      "name": "UAT-20261112-S01 J-SEN",
+      "id": 1022
+    },
+    "J-TERTUNDA": {
+      "sku": "U26A_M21",
+      "syscode": "U26A_M21S",
+      "name": "UAT-20261112-S01 J-TERTUNDA",
+      "id": 1023
+    },
+    "K-BASE": {
+      "sku": "U26A_M22",
+      "syscode": "U26A_M22S",
+      "name": "UAT-20261112-S01 K-BASE",
+      "id": 1024
+    },
+    "K-CABANG": {
+      "sku": "U26A_M23",
+      "syscode": "U26A_M23S",
+      "name": "UAT-20261112-S01 K-CABANG",
+      "id": 1025
+    },
+    "N-BELI": {
+      "sku": "U26A_M24",
+      "syscode": "U26A_M24S",
+      "name": "UAT-20261112-S01 N-BELI",
+      "id": 1026
+    },
+    "N-SISA": {
+      "sku": "U26A_M25",
+      "syscode": "U26A_M25S",
+      "name": "UAT-20261112-S01 N-SISA",
+      "id": 1027
+    },
+    "N-STOK": {
+      "sku": "U26A_M26",
+      "syscode": "U26A_M26S",
+      "name": "UAT-20261112-S01 N-STOK",
+      "id": 1028
+    },
+    "N-TIMEOUT": {
+      "sku": "U26A_M27",
+      "syscode": "U26A_M27S",
+      "name": "UAT-20261112-S01 N-TIMEOUT",
+      "id": 1029
+    },
+    "S-ADJ": {
+      "sku": "U26A_M28",
+      "syscode": "U26A_M28S",
+      "name": "UAT-20261112-S01 S-ADJ",
+      "id": 1030
+    },
+    "X-AKUN": {
+      "sku": "U26A_KA",
+      "syscode": "U26A_KAS",
+      "name": "UAT-20261112-S01 X-AKUN",
+      "id": 1031
+    },
+    "X-RESERVASI": {
+      "sku": "U26A_M30",
+      "syscode": "U26A_M30S",
+      "name": "UAT-20261112-S01 X-RESERVASI",
+      "id": 1032
+    },
+    "J-REJECT-KADEP": {
+      "sku": "U26A_M31",
+      "syscode": "U26A_M31S",
+      "name": "UAT-20261112-S01 J-REJECT-KADEP",
+      "id": 1033
+    },
+    "J-REJECT-OPS": {
+      "sku": "U26A_M32",
+      "syscode": "U26A_M32S",
+      "name": "UAT-20261112-S01 J-REJECT-OPS",
+      "id": 1034
+    },
+    "J-REJECT-DIR": {
+      "sku": "U26A_M33",
+      "syscode": "U26A_M33S",
+      "name": "UAT-20261112-S01 J-REJECT-DIR",
+      "id": 1035
+    },
+    "J-TERTUNDA-DATA": {
+      "sku": "U26A_M34",
+      "syscode": "U26A_M34S",
+      "name": "UAT-20261112-S01 J-TERTUNDA-DATA",
+      "id": 1036
+    },
+    "J-PIC-B": {
+      "sku": "U26A_M35",
+      "syscode": "U26A_M35S",
+      "name": "UAT-20261112-S01 J-PIC-B",
+      "id": 1037
+    },
+    "N-BELI-B": {
+      "sku": "U26A_M36",
+      "syscode": "U26A_M36S",
+      "name": "UAT-20261112-S01 N-BELI-B",
+      "id": 1038
+    }
+  },
+  "category": "U26A_CAT",
+  "unit": 2,
+  "location_id": 12,
+  "supplier": "U26A_SUP",
+  "supplier_branch": "U26A_SUPB",
+  "shipment_a": "U26A_SHIPA",
+  "shipment_b": "U26A_SHIPB",
+  "vendor": "U26A_VJ",
+  "fixture_states": {
+    "J-BASE": {
+      "kind": "PO_JASA",
+      "code": "PJASA1211260001",
+      "owner": "PIC-A",
+      "sku": "U26A_M01",
+      "target": "DRAFT",
+      "url": "http://127.0.0.1:18762/pojasa/pic/detail/PJASA1211260001",
+      "status": "DRAFT"
+    },
+    "J-PIC-B": {
+      "kind": "PO_JASA",
+      "code": "PJASA1211260002",
+      "owner": "PIC-B",
+      "sku": "U26A_M35",
+      "target": "DRAFT",
+      "url": "http://127.0.0.1:18762/pojasa/pic/detail/PJASA1211260002",
+      "status": "DRAFT"
+    },
+    "J-CABANG": {
+      "kind": "PO_JASA",
+      "code": "PJASA1211260003",
+      "owner": "PIC-A",
+      "sku": "U26A_M05",
+      "target": "ON_PROGRESS",
+      "url": "http://127.0.0.1:18762/pojasa/pic/detail/PJASA1211260003",
+      "material_id": 226,
+      "status": "ON_PROGRESS",
+      "pickup_status": "DITERIMA_PIC"
+    },
+    "J-RETUR": {
+      "kind": "PO_JASA",
+      "code": "PJASA1211260004",
+      "owner": "PIC-A",
+      "sku": "U26A_M19",
+      "target": "ON_HAND",
+      "url": "http://127.0.0.1:18762/pojasa/pic/detail/PJASA1211260004",
+      "material_id": 227,
+      "status": "SPK_TERBIT",
+      "pickup_status": null
+    },
+    "J-BELUMSIAP": {
+      "kind": "PO_JASA",
+      "code": "PJASA1211260005",
+      "owner": "PIC-A",
+      "sku": "U26A_M03",
+      "target": "SPK_TERBIT",
+      "url": "http://127.0.0.1:18762/pojasa/pic/detail/PJASA1211260005",
+      "material_id": 228,
+      "status": "SPK_TERBIT",
+      "pickup_status": null
+    },
+    "J-PICKREJ": {
+      "kind": "PO_JASA",
+      "code": "PJASA1211260006",
+      "owner": "PIC-A",
+      "sku": "U26A_M15",
+      "target": "PICKUP_PENDING",
+      "url": "http://127.0.0.1:18762/pojasa/pic/detail/PJASA1211260006",
+      "material_id": 229,
+      "status": "SPK_TERBIT",
+      "pickup_status": "MENUNGGU_ACC_KADEP"
+    },
+    "J-PICKLOCK": {
+      "kind": "PO_JASA",
+      "code": "PJASA1211260007",
+      "owner": "PIC-A",
+      "sku": "U26A_M14",
+      "target": "PICKUP_READY",
+      "url": "http://127.0.0.1:18762/pojasa/pic/detail/PJASA1211260007",
+      "material_id": 230,
+      "status": "SPK_TERBIT",
+      "pickup_status": "SIAP_DIAMBIL"
+    },
+    "J-JADWAL": {
+      "kind": "PO_JASA",
+      "code": "PJASA1211260008",
+      "owner": "PIC-A",
+      "sku": "U26A_M10",
+      "target": "SPK_TERBIT",
+      "url": "http://127.0.0.1:18762/pojasa/pic/detail/PJASA1211260008",
+      "material_id": 231,
+      "status": "SPK_TERBIT",
+      "pickup_status": null
+    },
+    "J-DATA": {
+      "kind": "PO_JASA",
+      "code": "PJASA1211260009",
+      "owner": "PIC-A",
+      "sku": "U26A_M06",
+      "target": "SPK_TERBIT",
+      "url": "http://127.0.0.1:18762/pojasa/pic/detail/PJASA1211260009",
+      "material_id": 232,
+      "status": "SPK_TERBIT",
+      "pickup_status": null
+    },
+    "J-REJT": {
+      "kind": "PO_JASA",
+      "code": "PJASA1211260010",
+      "owner": "PIC-A",
+      "sku": "U26A_M18",
+      "target": "SCHEDULE_PENDING",
+      "url": "http://127.0.0.1:18762/pojasa/pic/detail/PJASA1211260010",
+      "material_id": 233,
+      "status": "SPK_TERBIT",
+      "pickup_status": null
+    },
+    "J-TERTUNDA": {
+      "kind": "PO_JASA",
+      "code": "PJASA1211260011",
+      "owner": "PIC-A",
+      "sku": "U26A_M21",
+      "target": "SCHEDULE_PENDING",
+      "url": "http://127.0.0.1:18762/pojasa/pic/detail/PJASA1211260011",
+      "material_id": 234,
+      "status": "SPK_TERBIT",
+      "pickup_status": null
+    },
+    "J-TERTUNDA-DATA": {
+      "kind": "PO_JASA",
+      "code": "PJASA1211260012",
+      "owner": "PIC-A",
+      "sku": "U26A_M34",
+      "target": "SPK_TERBIT",
+      "url": "http://127.0.0.1:18762/pojasa/pic/detail/PJASA1211260012",
+      "material_id": 235,
+      "status": "SPK_TERBIT",
+      "pickup_status": null
+    },
+    "J-BIAYA": {
+      "kind": "PO_JASA",
+      "code": "PJASA1211260013",
+      "owner": "PIC-A",
+      "sku": "U26A_M04",
+      "target": "SPK_TERBIT",
+      "url": "http://127.0.0.1:18762/pojasa/pic/detail/PJASA1211260013",
+      "material_id": 236,
+      "status": "SPK_TERBIT",
+      "pickup_status": null
+    },
+    "J-BASTGATE": {
+      "kind": "PO_JASA",
+      "code": "PJASA1211260014",
+      "owner": "PIC-A",
+      "sku": "U26A_M02",
+      "target": "SELESAI",
+      "url": "http://127.0.0.1:18762/pojasa/pic/detail/PJASA1211260014",
+      "material_id": 237,
+      "status": "SELESAI",
+      "pickup_status": "SIAP_DIAMBIL"
+    },
+    "J-INVNEG": {
+      "kind": "PO_JASA",
+      "code": "PJASA1211260015",
+      "owner": "PIC-A",
+      "sku": "U26A_M09",
+      "target": "INVOICE",
+      "url": "http://127.0.0.1:18762/pojasa/pic/detail/PJASA1211260015",
+      "material_id": 238,
+      "status": "SPK_TERBIT",
+      "pickup_status": null
+    },
+    "J-SEN": {
+      "kind": "PO_JASA",
+      "code": "PJASA1211260016",
+      "owner": "PIC-A",
+      "sku": "U26A_M20",
+      "target": "SPK_TERBIT",
+      "url": "http://127.0.0.1:18762/pojasa/pic/detail/PJASA1211260016",
+      "material_id": 239,
+      "status": "SPK_TERBIT",
+      "pickup_status": null
+    },
+    "J-EVALAWAL": {
+      "kind": "PO_JASA",
+      "code": "PJASA1211260017",
+      "owner": "PIC-A",
+      "sku": "U26A_M08",
+      "target": "SPK_TERBIT",
+      "url": "http://127.0.0.1:18762/pojasa/pic/detail/PJASA1211260017",
+      "material_id": 240,
+      "status": "SPK_TERBIT",
+      "pickup_status": null
+    },
+    "J-PICREVISI": {
+      "kind": "PO_JASA",
+      "code": "PJASA1211260018",
+      "owner": "PIC-A",
+      "sku": "U26A_M16",
+      "target": "MENUNGGU_KONFIRMASI_PIC",
+      "url": "http://127.0.0.1:18762/pojasa/pic/detail/PJASA1211260018",
+      "material_id": 241,
+      "status": "MENUNGGU_KONFIRMASI_PIC",
+      "pickup_status": null
+    },
+    "J-PENDING": {
+      "kind": "PO_JASA",
+      "code": "PJASA1211260019",
+      "owner": "PIC-A",
+      "sku": "U26A_M13",
+      "target": "MENUNGGU_KADEP",
+      "url": "http://127.0.0.1:18762/pojasa/pic/detail/PJASA1211260019",
+      "material_id": 242,
+      "status": "MENUNGGU_KADEP",
+      "pickup_status": null
+    },
+    "J-KADEPREVISI": {
+      "kind": "PO_JASA",
+      "code": "PJASA1211260020",
+      "owner": "PIC-A",
+      "sku": "U26A_M11",
+      "target": "MENUNGGU_KADEP",
+      "url": "http://127.0.0.1:18762/pojasa/pic/detail/PJASA1211260020",
+      "material_id": 243,
+      "status": "MENUNGGU_KADEP",
+      "pickup_status": null
+    },
+    "J-OPSREVISI": {
+      "kind": "PO_JASA",
+      "code": "PJASA1211260021",
+      "owner": "PIC-A",
+      "sku": "U26A_M12",
+      "target": "MENUNGGU_DIRUT_OPS",
+      "url": "http://127.0.0.1:18762/pojasa/pic/detail/PJASA1211260021",
+      "material_id": 244,
+      "status": "MENUNGGU_DIRUT_OPS",
+      "pickup_status": null
+    },
+    "J-DIRREVISI": {
+      "kind": "PO_JASA",
+      "code": "PJASA1211260022",
+      "owner": "PIC-A",
+      "sku": "U26A_M07",
+      "target": "MENUNGGU_DIREKTUR",
+      "url": "http://127.0.0.1:18762/pojasa/pic/detail/PJASA1211260022",
+      "material_id": 245,
+      "status": "MENUNGGU_DIREKTUR",
+      "pickup_status": null
+    },
+    "J-REJECT-KADEP": {
+      "kind": "PO_JASA",
+      "code": "PJASA1211260023",
+      "owner": "PIC-A",
+      "sku": "U26A_M31",
+      "target": "MENUNGGU_KADEP",
+      "url": "http://127.0.0.1:18762/pojasa/pic/detail/PJASA1211260023",
+      "material_id": 246,
+      "status": "MENUNGGU_KADEP",
+      "pickup_status": null
+    },
+    "J-REJECT-OPS": {
+      "kind": "PO_JASA",
+      "code": "PJASA1211260024",
+      "owner": "PIC-A",
+      "sku": "U26A_M32",
+      "target": "MENUNGGU_DIRUT_OPS",
+      "url": "http://127.0.0.1:18762/pojasa/pic/detail/PJASA1211260024",
+      "material_id": 247,
+      "status": "MENUNGGU_DIRUT_OPS",
+      "pickup_status": null
+    },
+    "J-REJECT-DIR": {
+      "kind": "PO_JASA",
+      "code": "PJASA1211260025",
+      "owner": "PIC-A",
+      "sku": "U26A_M33",
+      "target": "MENUNGGU_DIREKTUR",
+      "url": "http://127.0.0.1:18762/pojasa/pic/detail/PJASA1211260025",
+      "material_id": 248,
+      "status": "MENUNGGU_DIREKTUR",
+      "pickup_status": null
+    },
+    "X-RESERVASI": {
+      "kind": "PO_JASA",
+      "code": "PJASA1211260026",
+      "owner": "PIC-A",
+      "sku": "U26A_M30",
+      "target": "PICKUP_READY",
+      "url": "http://127.0.0.1:18762/pojasa/pic/detail/PJASA1211260026",
+      "material_id": 249,
+      "status": "SPK_TERBIT",
+      "pickup_status": "SIAP_DIAMBIL"
+    },
+    "X-REQUEST-PIC": {
+      "kind": "REQUEST_PIC",
+      "code": "NPONK121126U26APICB0001",
+      "owner": "PIC-B",
+      "sku": "U26A_M30",
+      "url": "http://127.0.0.1:18762/reqpic/detreqbarangpic/NPONK121126U26APICB0001",
+      "status": "MENUNGGU PENYERAHAN BARANG"
+    },
+    "N-TIMEOUT": {
+      "kind": "REQUEST_PIC",
+      "code": "NPONK121126U26APICB0002",
+      "owner": "PIC-B",
+      "sku": "U26A_M27",
+      "url": "http://127.0.0.1:18762/reqpic/detreqbarangpic/NPONK121126U26APICB0002",
+      "status": "BARANG TERSEDIA"
+    },
+    "N-SISA": {
+      "kind": "REQUEST_PIC",
+      "code": "NPONK121126U26APICB0003",
+      "owner": "PIC-B",
+      "sku": "U26A_M25",
+      "url": "http://127.0.0.1:18762/reqpic/detreqbarangpic/NPONK121126U26APICB0003",
+      "status": "MENUNGGU PENYERAHAN BARANG",
+      "partial_history_initialized": true,
+      "setup_note": "Two prior deliveries posted through UI; one outstanding synthetic line initialized for N08 only."
+    }
+  },
+  "status": "READY_FOR_UAT",
+  "credentials_file": "/Users/itkarisma/.codex/uat/kiupo/20261112-s01/access/AKUN_UAT.md",
+  "login_check": {
+    "PIC-A": "PASS",
+    "PIC-B": "PASS",
+    "Kadep-GA": "PASS",
+    "Kadep-IT": "PASS",
+    "Purchasing": "PASS",
+    "DirOps": "PASS",
+    "Direktur": "PASS",
+    "Admin": "PASS",
+    "Keuangan-negatif": "PASS"
+  },
+  "opening_stock": {
+    "J-REJECT-KADEP": {
+      "transaction_reference": "U26A_OPEN1033",
+      "qty": 1,
+      "price": 11000,
+      "batch_id": 8224
+    },
+    "J-REJECT-OPS": {
+      "transaction_reference": "U26A_OPEN1034",
+      "qty": 1,
+      "price": 11000,
+      "batch_id": 8225
+    },
+    "J-REJECT-DIR": {
+      "transaction_reference": "U26A_OPEN1035",
+      "qty": 1,
+      "price": 11000,
+      "batch_id": 8226
+    },
+    "N-STOK": {
+      "transaction_reference": "U26A_OPEN1028",
+      "qty": 2,
+      "price": 2000,
+      "batch_id": 8229
+    },
+    "N-SISA": {
+      "transaction_reference": "U26A_OPEN1027",
+      "qty": 3,
+      "price": 2000,
+      "batch_id": 8230
+    },
+    "N-TIMEOUT": {
+      "transaction_reference": "U26A_OPEN1029",
+      "qty": 2,
+      "price": 2000,
+      "batch_id": 8231
+    }
+  },
+  "scenario_map": {
+    "A01": {
+      "fixture": "ENV",
+      "role": "Admin",
+      "targets": [
+        {
+          "code": "Mulai melalui UI",
+          "url": "http://127.0.0.1:18762/Auth",
+          "status_at_setup": "Belum dieksekusi"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "A02": {
+      "fixture": "AKUN",
+      "role": "PIC",
+      "targets": [
+        {
+          "code": "PJASA1211260002",
+          "url": "http://127.0.0.1:18762/pojasa/pic/detail/PJASA1211260002",
+          "status_at_setup": "DRAFT"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "A03": {
+      "fixture": "AKUN",
+      "role": "Kadep",
+      "targets": [
+        {
+          "code": "PJASA1211260019",
+          "url": "http://127.0.0.1:18762/pojasa/workflow/detail/PJASA1211260019",
+          "status_at_setup": "MENUNGGU_KADEP"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "A04": {
+      "fixture": "AKUN",
+      "role": "Direktur Operasional",
+      "targets": [
+        {
+          "code": "Mulai melalui UI",
+          "url": "http://127.0.0.1:18762/Auth",
+          "status_at_setup": "Belum dieksekusi"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "A05": {
+      "fixture": "AKUN",
+      "role": "Purchasing",
+      "targets": [
+        {
+          "code": "Mulai melalui UI",
+          "url": "http://127.0.0.1:18762/Auth",
+          "status_at_setup": "Belum dieksekusi"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "A06": {
+      "fixture": "AKUN",
+      "role": "Admin",
+      "targets": [
+        {
+          "code": "Mulai melalui UI",
+          "url": "http://127.0.0.1:18762/Auth",
+          "status_at_setup": "Belum dieksekusi"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "K01": {
+      "fixture": "K-BASE",
+      "role": "Purchasing",
+      "targets": [
+        {
+          "code": "Mulai melalui UI",
+          "url": "http://127.0.0.1:18762/purchase/sup/U26A_SUP",
+          "status_at_setup": "Belum dieksekusi"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "K02": {
+      "fixture": "K-CABANG",
+      "role": "Purchasing",
+      "targets": [
+        {
+          "code": "Mulai melalui UI",
+          "url": "http://127.0.0.1:18762/purchase/sup/U26A_SUPB",
+          "status_at_setup": "Belum dieksekusi"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "K03": {
+      "fixture": "K-BASE",
+      "role": "Purchasing",
+      "targets": [
+        {
+          "code": "Mulai melalui UI",
+          "url": "http://127.0.0.1:18762/purchase/sup/U26A_SUP",
+          "status_at_setup": "Belum dieksekusi"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "K04": {
+      "fixture": "K-BASE",
+      "role": "Direktur",
+      "targets": [
+        {
+          "code": "Mulai melalui UI",
+          "url": "http://127.0.0.1:18762/purchase/sup/U26A_SUP",
+          "status_at_setup": "Belum dieksekusi"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "K05": {
+      "fixture": "K-BASE",
+      "role": "Purchasing",
+      "targets": [
+        {
+          "code": "Mulai melalui UI",
+          "url": "http://127.0.0.1:18762/purchase/sup/U26A_SUP",
+          "status_at_setup": "Belum dieksekusi"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "K06": {
+      "fixture": "K-BASE",
+      "role": "Purchasing",
+      "targets": [
+        {
+          "code": "Mulai melalui UI",
+          "url": "http://127.0.0.1:18762/purchase/sup/U26A_SUP",
+          "status_at_setup": "Belum dieksekusi"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "K07": {
+      "fixture": "K-BASE",
+      "role": "Purchasing",
+      "targets": [
+        {
+          "code": "Mulai melalui UI",
+          "url": "http://127.0.0.1:18762/purchase/sup/U26A_SUP",
+          "status_at_setup": "Belum dieksekusi"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "K08": {
+      "fixture": "K-CABANG",
+      "role": "Purchasing",
+      "targets": [
+        {
+          "code": "Mulai melalui UI",
+          "url": "http://127.0.0.1:18762/purchase/sup/U26A_SUPB",
+          "status_at_setup": "Belum dieksekusi"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "N01": {
+      "fixture": "N-BELI",
+      "role": "PIC",
+      "targets": [
+        {
+          "code": "Mulai melalui UI",
+          "url": "http://127.0.0.1:18762/reqpic",
+          "status_at_setup": "Belum dieksekusi"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "N02": {
+      "fixture": "N-BELI",
+      "role": "Kadep",
+      "targets": [
+        {
+          "code": "Mulai melalui UI",
+          "url": "http://127.0.0.1:18762/reqpic",
+          "status_at_setup": "Belum dieksekusi"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "N03": {
+      "fixture": "N-BELI",
+      "role": "Purchasing",
+      "targets": [
+        {
+          "code": "Mulai melalui UI",
+          "url": "http://127.0.0.1:18762/reqpic",
+          "status_at_setup": "Belum dieksekusi"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "N04": {
+      "fixture": "N-BELI",
+      "role": "Kadep",
+      "targets": [
+        {
+          "code": "Mulai melalui UI",
+          "url": "http://127.0.0.1:18762/reqpic",
+          "status_at_setup": "Belum dieksekusi"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "N05": {
+      "fixture": "N-BELI",
+      "role": "Direktur",
+      "targets": [
+        {
+          "code": "Mulai melalui UI",
+          "url": "http://127.0.0.1:18762/reqpic",
+          "status_at_setup": "Belum dieksekusi"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "N06": {
+      "fixture": "N-BELI",
+      "role": "Purchasing",
+      "targets": [
+        {
+          "code": "Mulai melalui UI",
+          "url": "http://127.0.0.1:18762/reqpic",
+          "status_at_setup": "Belum dieksekusi"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "N07": {
+      "fixture": "N-BELI",
+      "role": "PIC",
+      "targets": [
+        {
+          "code": "Mulai melalui UI",
+          "url": "http://127.0.0.1:18762/reqpic",
+          "status_at_setup": "Belum dieksekusi"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "N08": {
+      "fixture": "N-SISA",
+      "role": "Purchasing",
+      "targets": [
+        {
+          "code": "NPONK121126U26APICB0003",
+          "url": "http://127.0.0.1:18762/reqpic/detreqbarangpic/NPONK121126U26APICB0003",
+          "status_at_setup": "MENUNGGU PENYERAHAN BARANG"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "N09": {
+      "fixture": "N-STOK",
+      "role": "Purchasing",
+      "targets": [
+        {
+          "code": "Mulai melalui UI",
+          "url": "http://127.0.0.1:18762/reqpic",
+          "status_at_setup": "Belum dieksekusi"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "N10": {
+      "fixture": "N-TIMEOUT",
+      "role": "Purchasing",
+      "targets": [
+        {
+          "code": "NPONK121126U26APICB0002",
+          "url": "http://127.0.0.1:18762/reqpic/detreqbarangpic/NPONK121126U26APICB0002",
+          "status_at_setup": "BARANG TERSEDIA"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "S01": {
+      "fixture": "S-ADJ",
+      "role": "Purchasing",
+      "targets": [
+        {
+          "code": "Mulai melalui UI",
+          "url": "http://127.0.0.1:18762/detailtransaksi/U26A_M28",
+          "status_at_setup": "Belum dieksekusi"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "S02": {
+      "fixture": "S-ADJ",
+      "role": "Purchasing",
+      "targets": [
+        {
+          "code": "Mulai melalui UI",
+          "url": "http://127.0.0.1:18762/detailtransaksi/U26A_M28",
+          "status_at_setup": "Belum dieksekusi"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "S03": {
+      "fixture": "S-ADJ",
+      "role": "Purchasing",
+      "targets": [
+        {
+          "code": "Mulai melalui UI",
+          "url": "http://127.0.0.1:18762/detailtransaksi/U26A_M28",
+          "status_at_setup": "Belum dieksekusi"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "S04": {
+      "fixture": "S-ADJ",
+      "role": "PIC",
+      "targets": [
+        {
+          "code": "Mulai melalui UI",
+          "url": "http://127.0.0.1:18762/detailtransaksi/U26A_M28",
+          "status_at_setup": "Belum dieksekusi"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "S05": {
+      "fixture": "N-BELI",
+      "role": "Admin",
+      "targets": [
+        {
+          "code": "Mulai melalui UI",
+          "url": "http://127.0.0.1:18762/detailtransaksi/U26A_M24",
+          "status_at_setup": "Belum dieksekusi"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "J01": {
+      "fixture": "J-BASE",
+      "role": "PIC",
+      "targets": [
+        {
+          "code": "PJASA1211260001",
+          "url": "http://127.0.0.1:18762/pojasa/pic/detail/PJASA1211260001",
+          "status_at_setup": "DRAFT"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "J02": {
+      "fixture": "J-BASE",
+      "role": "PIC",
+      "targets": [
+        {
+          "code": "PJASA1211260001",
+          "url": "http://127.0.0.1:18762/pojasa/pic/detail/PJASA1211260001",
+          "status_at_setup": "DRAFT"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "J03": {
+      "fixture": "J-BASE",
+      "role": "Purchasing",
+      "targets": [
+        {
+          "code": "PJASA1211260001",
+          "url": "http://127.0.0.1:18762/pojasa/purchasing/detail/PJASA1211260001",
+          "status_at_setup": "DRAFT"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "J04": {
+      "fixture": "J-BASE",
+      "role": "Purchasing",
+      "targets": [
+        {
+          "code": "PJASA1211260001",
+          "url": "http://127.0.0.1:18762/pojasa/purchasing/detail/PJASA1211260001",
+          "status_at_setup": "DRAFT"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "J05": {
+      "fixture": "J-BASE",
+      "role": "PIC",
+      "targets": [
+        {
+          "code": "PJASA1211260001",
+          "url": "http://127.0.0.1:18762/pojasa/pic/detail/PJASA1211260001",
+          "status_at_setup": "DRAFT"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "J06": {
+      "fixture": "J-BASE",
+      "role": "Kadep",
+      "targets": [
+        {
+          "code": "PJASA1211260001",
+          "url": "http://127.0.0.1:18762/pojasa/workflow/detail/PJASA1211260001",
+          "status_at_setup": "DRAFT"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "J07": {
+      "fixture": "J-BASE",
+      "role": "Direktur Operasional",
+      "targets": [
+        {
+          "code": "PJASA1211260001",
+          "url": "http://127.0.0.1:18762/pojasa/workflow/detail/PJASA1211260001",
+          "status_at_setup": "DRAFT"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "J08": {
+      "fixture": "J-BASE",
+      "role": "Direktur",
+      "targets": [
+        {
+          "code": "PJASA1211260001",
+          "url": "http://127.0.0.1:18762/pojasa/workflow/detail/PJASA1211260001",
+          "status_at_setup": "DRAFT"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "J09": {
+      "fixture": "J-BASE",
+      "role": "Purchasing",
+      "targets": [
+        {
+          "code": "PJASA1211260001",
+          "url": "http://127.0.0.1:18762/pojasa/purchasing/detail/PJASA1211260001",
+          "status_at_setup": "DRAFT"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "J10": {
+      "fixture": "J-BASE",
+      "role": "Purchasing",
+      "targets": [
+        {
+          "code": "PJASA1211260001",
+          "url": "http://127.0.0.1:18762/pojasa/purchasing/detail/PJASA1211260001",
+          "status_at_setup": "DRAFT"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "J11": {
+      "fixture": "J-CABANG",
+      "role": "Purchasing",
+      "targets": [
+        {
+          "code": "PJASA1211260003",
+          "url": "http://127.0.0.1:18762/pojasa/purchasing/detail/PJASA1211260003",
+          "status_at_setup": "ON_PROGRESS"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "J12": {
+      "fixture": "J-RETUR",
+      "role": "Purchasing",
+      "targets": [
+        {
+          "code": "PJASA1211260004",
+          "url": "http://127.0.0.1:18762/pojasa/purchasing/detail/PJASA1211260004",
+          "status_at_setup": "SPK_TERBIT"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "J13": {
+      "fixture": "J-PICREVISI",
+      "role": "PIC",
+      "targets": [
+        {
+          "code": "PJASA1211260018",
+          "url": "http://127.0.0.1:18762/pojasa/pic/detail/PJASA1211260018",
+          "status_at_setup": "MENUNGGU_KONFIRMASI_PIC"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "J14": {
+      "fixture": "J-PENDING",
+      "role": "Kadep",
+      "targets": [
+        {
+          "code": "PJASA1211260019",
+          "url": "http://127.0.0.1:18762/pojasa/workflow/detail/PJASA1211260019",
+          "status_at_setup": "MENUNGGU_KADEP"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "J15": {
+      "fixture": "J-KADEPREVISI",
+      "role": "Kadep",
+      "targets": [
+        {
+          "code": "PJASA1211260020",
+          "url": "http://127.0.0.1:18762/pojasa/workflow/detail/PJASA1211260020",
+          "status_at_setup": "MENUNGGU_KADEP"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "J16": {
+      "fixture": "J-OPSREVISI",
+      "role": "Direktur Operasional",
+      "targets": [
+        {
+          "code": "PJASA1211260021",
+          "url": "http://127.0.0.1:18762/pojasa/workflow/detail/PJASA1211260021",
+          "status_at_setup": "MENUNGGU_DIRUT_OPS"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "J17": {
+      "fixture": "J-DIRREVISI",
+      "role": "Direktur",
+      "targets": [
+        {
+          "code": "PJASA1211260022",
+          "url": "http://127.0.0.1:18762/pojasa/workflow/detail/PJASA1211260022",
+          "status_at_setup": "MENUNGGU_DIREKTUR"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "J18": {
+      "fixture": "J-REJECT",
+      "role": "Kadep",
+      "targets": [
+        {
+          "code": "PJASA1211260023",
+          "url": "http://127.0.0.1:18762/pojasa/workflow/detail/PJASA1211260023",
+          "status_at_setup": "MENUNGGU_KADEP"
+        },
+        {
+          "code": "PJASA1211260024",
+          "url": "http://127.0.0.1:18762/pojasa/workflow/detail/PJASA1211260024",
+          "status_at_setup": "MENUNGGU_DIRUT_OPS"
+        },
+        {
+          "code": "PJASA1211260025",
+          "url": "http://127.0.0.1:18762/pojasa/workflow/detail/PJASA1211260025",
+          "status_at_setup": "MENUNGGU_DIREKTUR"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "H01": {
+      "fixture": "J-BELUMSIAP",
+      "role": "PIC",
+      "targets": [
+        {
+          "code": "PJASA1211260005",
+          "url": "http://127.0.0.1:18762/pojasa/pic/detail/PJASA1211260005",
+          "status_at_setup": "SPK_TERBIT"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "H02": {
+      "fixture": "J-BASE",
+      "role": "PIC",
+      "targets": [
+        {
+          "code": "PJASA1211260001",
+          "url": "http://127.0.0.1:18762/pojasa/pic/detail/PJASA1211260001",
+          "status_at_setup": "DRAFT"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "H03": {
+      "fixture": "J-PICKREJ",
+      "role": "Kadep",
+      "targets": [
+        {
+          "code": "PJASA1211260006",
+          "url": "http://127.0.0.1:18762/pojasa/workflow/detail/PJASA1211260006",
+          "status_at_setup": "SPK_TERBIT"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "H04": {
+      "fixture": "J-BASE",
+      "role": "Kadep",
+      "targets": [
+        {
+          "code": "PJASA1211260001",
+          "url": "http://127.0.0.1:18762/pojasa/workflow/detail/PJASA1211260001",
+          "status_at_setup": "DRAFT"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "H05": {
+      "fixture": "J-BASE",
+      "role": "Purchasing",
+      "targets": [
+        {
+          "code": "PJASA1211260001",
+          "url": "http://127.0.0.1:18762/pojasa/purchasing/detail/PJASA1211260001",
+          "status_at_setup": "DRAFT"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "H06": {
+      "fixture": "J-BASE",
+      "role": "PIC",
+      "targets": [
+        {
+          "code": "PJASA1211260001",
+          "url": "http://127.0.0.1:18762/pojasa/pic/detail/PJASA1211260001",
+          "status_at_setup": "DRAFT"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "H07": {
+      "fixture": "J-PICKLOCK",
+      "role": "Purchasing",
+      "targets": [
+        {
+          "code": "PJASA1211260007",
+          "url": "http://127.0.0.1:18762/pojasa/purchasing/detail/PJASA1211260007",
+          "status_at_setup": "SPK_TERBIT"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "R01": {
+      "fixture": "J-JADWAL",
+      "role": "Purchasing",
+      "targets": [
+        {
+          "code": "PJASA1211260008",
+          "url": "http://127.0.0.1:18762/pojasa/purchasing/detail/PJASA1211260008",
+          "status_at_setup": "SPK_TERBIT"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "R02": {
+      "fixture": "J-JADWAL",
+      "role": "Direktur",
+      "targets": [
+        {
+          "code": "PJASA1211260008",
+          "url": "http://127.0.0.1:18762/pojasa/workflow/detail/PJASA1211260008",
+          "status_at_setup": "SPK_TERBIT"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "R03": {
+      "fixture": "J-DATA",
+      "role": "Purchasing",
+      "targets": [
+        {
+          "code": "PJASA1211260009",
+          "url": "http://127.0.0.1:18762/pojasa/purchasing/detail/PJASA1211260009",
+          "status_at_setup": "SPK_TERBIT"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "R04": {
+      "fixture": "J-DATA",
+      "role": "Direktur Operasional",
+      "targets": [
+        {
+          "code": "PJASA1211260009",
+          "url": "http://127.0.0.1:18762/pojasa/workflow/detail/PJASA1211260009",
+          "status_at_setup": "SPK_TERBIT"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "R05": {
+      "fixture": "J-REJT",
+      "role": "Direktur",
+      "targets": [
+        {
+          "code": "PJASA1211260010",
+          "url": "http://127.0.0.1:18762/pojasa/workflow/detail/PJASA1211260010",
+          "status_at_setup": "SPK_TERBIT"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "R06": {
+      "fixture": "J-TERTUNDA",
+      "role": "Purchasing",
+      "targets": [
+        {
+          "code": "PJASA1211260011",
+          "url": "http://127.0.0.1:18762/pojasa/purchasing/detail/PJASA1211260011",
+          "status_at_setup": "SPK_TERBIT"
+        },
+        {
+          "code": "PJASA1211260012",
+          "url": "http://127.0.0.1:18762/pojasa/purchasing/detail/PJASA1211260012",
+          "status_at_setup": "SPK_TERBIT"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "R07": {
+      "fixture": "J-BIAYA",
+      "role": "PIC",
+      "targets": [
+        {
+          "code": "PJASA1211260013",
+          "url": "http://127.0.0.1:18762/pojasa/pic/detail/PJASA1211260013",
+          "status_at_setup": "SPK_TERBIT"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "B01": {
+      "fixture": "J-BASE",
+      "role": "PIC",
+      "targets": [
+        {
+          "code": "PJASA1211260001",
+          "url": "http://127.0.0.1:18762/pojasa/pic/detail/PJASA1211260001",
+          "status_at_setup": "DRAFT"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "B02": {
+      "fixture": "J-CABANG",
+      "role": "PIC",
+      "targets": [
+        {
+          "code": "PJASA1211260003",
+          "url": "http://127.0.0.1:18762/pojasa/pic/detail/PJASA1211260003",
+          "status_at_setup": "ON_PROGRESS"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "B03": {
+      "fixture": "J-BASE",
+      "role": "PIC",
+      "targets": [
+        {
+          "code": "PJASA1211260001",
+          "url": "http://127.0.0.1:18762/pojasa/pic/detail/PJASA1211260001",
+          "status_at_setup": "DRAFT"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "B04": {
+      "fixture": "J-BASTGATE",
+      "role": "Purchasing",
+      "targets": [
+        {
+          "code": "PJASA1211260014",
+          "url": "http://127.0.0.1:18762/pojasa/purchasing/detail/PJASA1211260014",
+          "status_at_setup": "SELESAI"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "B05": {
+      "fixture": "J-BASE",
+      "role": "Purchasing",
+      "targets": [
+        {
+          "code": "PJASA1211260001",
+          "url": "http://127.0.0.1:18762/pojasa/purchasing/detail/PJASA1211260001",
+          "status_at_setup": "DRAFT"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "B06": {
+      "fixture": "J-BASE",
+      "role": "Admin",
+      "targets": [
+        {
+          "code": "PJASA1211260001",
+          "url": "http://127.0.0.1:18762/pojasa/workflow/detail/PJASA1211260001",
+          "status_at_setup": "DRAFT"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "P01": {
+      "fixture": "J-BASE",
+      "role": "Purchasing",
+      "targets": [
+        {
+          "code": "PJASA1211260001",
+          "url": "http://127.0.0.1:18762/pojasa/purchasing/detail/PJASA1211260001",
+          "status_at_setup": "DRAFT"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "P02": {
+      "fixture": "J-BASE",
+      "role": "Purchasing",
+      "targets": [
+        {
+          "code": "PJASA1211260001",
+          "url": "http://127.0.0.1:18762/pojasa/purchasing/detail/PJASA1211260001",
+          "status_at_setup": "DRAFT"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "P03": {
+      "fixture": "J-INVNEG",
+      "role": "Purchasing",
+      "targets": [
+        {
+          "code": "PJASA1211260015",
+          "url": "http://127.0.0.1:18762/pojasa/purchasing/detail/PJASA1211260015",
+          "status_at_setup": "SPK_TERBIT"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "P04": {
+      "fixture": "J-SEN",
+      "role": "Purchasing",
+      "targets": [
+        {
+          "code": "PJASA1211260016",
+          "url": "http://127.0.0.1:18762/pojasa/purchasing/detail/PJASA1211260016",
+          "status_at_setup": "SPK_TERBIT"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "P05": {
+      "fixture": "J-BASE",
+      "role": "PIC",
+      "targets": [
+        {
+          "code": "PJASA1211260001",
+          "url": "http://127.0.0.1:18762/pojasa/pic/detail/PJASA1211260001",
+          "status_at_setup": "DRAFT"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "E01": {
+      "fixture": "J-EVALAWAL",
+      "role": "Purchasing",
+      "targets": [
+        {
+          "code": "PJASA1211260017",
+          "url": "http://127.0.0.1:18762/pojasa/purchasing/detail/PJASA1211260017",
+          "status_at_setup": "SPK_TERBIT"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "E02": {
+      "fixture": "J-BASE",
+      "role": "Purchasing",
+      "targets": [
+        {
+          "code": "PJASA1211260001",
+          "url": "http://127.0.0.1:18762/pojasa/purchasing/detail/PJASA1211260001",
+          "status_at_setup": "DRAFT"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "E03": {
+      "fixture": "J-BASE",
+      "role": "Purchasing",
+      "targets": [
+        {
+          "code": "PJASA1211260001",
+          "url": "http://127.0.0.1:18762/pojasa/purchasing/detail/PJASA1211260001",
+          "status_at_setup": "DRAFT"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "E04": {
+      "fixture": "J-BASE",
+      "role": "PIC",
+      "targets": [
+        {
+          "code": "PJASA1211260001",
+          "url": "http://127.0.0.1:18762/pojasa/pic/detail/PJASA1211260001",
+          "status_at_setup": "DRAFT"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "X01": {
+      "fixture": "X-RESERVASI",
+      "role": "Purchasing",
+      "targets": [
+        {
+          "code": "PJASA1211260026",
+          "url": "http://127.0.0.1:18762/pojasa/purchasing/detail/PJASA1211260026",
+          "status_at_setup": "SPK_TERBIT"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "X02": {
+      "fixture": "X-RESERVASI",
+      "role": "Purchasing",
+      "targets": [
+        {
+          "code": "PJASA1211260026",
+          "url": "http://127.0.0.1:18762/pojasa/purchasing/detail/PJASA1211260026",
+          "status_at_setup": "SPK_TERBIT"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "X03": {
+      "fixture": "X-AKUN",
+      "role": "Admin",
+      "targets": [
+        {
+          "code": "Mulai melalui UI",
+          "url": "http://127.0.0.1:18762/detailtransaksi/U26A_KA",
+          "status_at_setup": "Belum dieksekusi"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    },
+    "X04": {
+      "fixture": "ENV",
+      "role": "Admin",
+      "targets": [
+        {
+          "code": "Mulai melalui UI",
+          "url": "http://127.0.0.1:18762/Auth",
+          "status_at_setup": "Belum dieksekusi"
+        }
+      ],
+      "scenario_status": "Belum Diuji"
+    }
+  },
+  "owned_purchase_codes": [
+    "NKPO1211260001",
+    "NKPO1211260002",
+    "NKPO1211260003",
+    "NKPO1211260004",
+    "NKPO1211260005",
+    "NKPO1211260006",
+    "NKPO1211260007",
+    "NKPO1211260008",
+    "NKPO1211260009",
+    "NKPO1211260010",
+    "NKPO1211260011",
+    "NKPO1211260012",
+    "NKPO1211260013",
+    "NKPO1211260014",
+    "NKPO1211260015",
+    "NKPO1211260016"
+  ],
+  "owned_document_files": [
+    "images/pojasa/GA/2026/11/12/12c0b3083e7a939722882f8a903b0a4a.txt",
+    "images/pojasa/GA/2026/11/12/d9f7a25cc2e55ca44e15e7537e3d240d.txt",
+    "images/pojasa/GA/2026/11/12/cb61cd097882d5cefedf3e296f41b2f5.txt",
+    "images/pojasa/GA/2026/11/12/26781847af4bf3b6c24561af2d00fce0.txt",
+    "images/pojasa/GA/2026/11/12/366e338551660eff656accb21d6ae096.txt",
+    "images/pojasa/GA/2026/11/12/b65314c2890c465e5cb3bf157cc153d6.txt",
+    "images/pojasa/GA/2026/11/12/b68c04cd2ea4eafec832cdc7bb03ac15.txt",
+    "images/pojasa/GA/2026/11/12/258e39bfb013cf2b24b88299fdd8ee3c.txt",
+    "images/pojasa/GA/2026/11/12/c038d9c44df39ee580e028a180218b81.txt",
+    "images/pojasa/GA/2026/11/12/b2400bc2f126d957679b5f1a24979ca0.txt",
+    "images/pojasa/GA/2026/11/12/bac891536e1df6533e2c86bcae3735ac.txt",
+    "images/pojasa/GA/2026/11/12/885f8bfa473404d8252d28746e50c745.txt",
+    "images/pojasa/GA/2026/11/12/7b697f8acd013ad1ba7d261d67ce932e.txt",
+    "images/pojasa/GA/2026/11/12/7055c71ab11f6b0c1318e5a7f3ea1527.txt",
+    "images/pojasa/GA/2026/11/12/b3f701a0940dd3eda29b1c3f21fe7ac2.txt",
+    "images/pojasa/GA/2026/11/12/91b43cbb06af93ffb49e36b6fcff1554.txt",
+    "images/pojasa/GA/2026/11/12/1665583e19610bf9a85c1d2aad3ea020.txt",
+    "images/pojasa/GA/2026/11/12/065929f9df285e36f1d493fcd1a01a42.txt",
+    "images/pojasa/GA/2026/11/12/e44228fa7a3f3f185a7c93115c7d90e4.txt",
+    "images/pojasa/GA/2026/11/12/6a2c07a158b84988e247f865f393b5a3.txt",
+    "images/pojasa/GA/2026/11/12/43f3ffd9473f57dd975e741536bbb617.txt",
+    "images/pojasa/GA/2026/11/12/c4964fa8fc3f68b3f3a47942e38554b1.txt",
+    "images/pojasa/GA/2026/11/12/41af3b3d9b62751be928d97e81000885.txt",
+    "images/pojasa/GA/2026/11/12/159265a9ea4b6c2b4e21d0797f1fe47b.txt",
+    "images/pojasa/GA/2026/11/12/18ab2c1770ef1ee1e40b6c5158ae4f0b.txt"
+  ],
+  "uat_execution": "NOT_STARTED",
+  "readiness_result": "PASS",
+  "readiness_checks": 91
+}
